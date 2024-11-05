@@ -1,0 +1,63 @@
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "heading": "Heading",
+            "subText": "<p>Write information about your brand and vision with your customers. <\/p>"
+          }
+        },
+        "menu-1": {
+          "type": "menu",
+          "settings": {
+            "show_menu_title": false,
+            "heading": "Menu Link 1",
+            "menu": ""
+          }
+        },
+        "menu-2": {
+          "type": "menu",
+          "settings": {
+            "show_menu_title": false,
+            "heading": "Menu Link 2",
+            "menu": ""
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "newsletter_header": "Newsletter",
+            "newsletter_subtext": "<p>Subscribe to get notified about product launches, special offers and company news<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "menu-1",
+        "menu-2",
+        "newsletter"
+      ],
+      "settings": {
+        "payment_enable": true,
+        "show_country_selector": true,
+        "show_country_flag": true,
+        "show_country_name": false,
+        "show_locale_selector": true,
+        "padding_top": 56,
+        "padding_bottom": 0,
+        "color_scheme": "scheme-2",
+        "pno_info_tag": "",
+        "email_info_tag": "",
+        "use_outline_button_styles": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,199 @@
+{
+    "sections": {
+        "main": {
+            "type": "main-page",
+            "disabled": true,
+            "settings": {
+                "content_width": 600,
+                "padding_top": 28,
+                "padding_bottom": 28,
+                "color_scheme": ""
+            }
+        },
+        "image_with_text_overlay": {
+            "type": "image-with-text-overlay",
+            "blocks": {
+                "heading": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "Heading",
+                        "style": "h2"
+                    }
+                },
+                "paragraph": {
+                    "type": "paragraph",
+                    "settings": {
+                        "content": "<p>Briefly describe what this heading is about</p>"
+                    }
+                }
+            },
+            "block_order": ["heading", "paragraph"],
+            "settings": {
+                "full_width": true,
+                "content_width": 560,
+                "image_aspect_ratio": "sm",
+                "text_aligment": "left",
+                "desktop_content_position": "center",
+                "mobile_text_aligment": "left",
+                "mobile_content_position": "top",
+                "overlay_color": "#000000",
+                "overlay_opacity": 0,
+                "padding_top": 0,
+                "padding_bottom": 36,
+                "color_scheme": ""
+            }
+        },
+        "faq-accordion": {
+            "type": "faq-accordion",
+            "blocks": {
+                "category_1": {
+                    "type": "category",
+                    "settings": {
+                        "heading": "Category 1"
+                    }
+                },
+                "question_1_1": {
+                    "type": "question",
+                    "settings": {
+                        "heading": "Add a question the customer might ask",
+                        "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+                        "page": ""
+                    }
+                },
+                "question_1_2": {
+                    "type": "question",
+                    "settings": {
+                        "heading": "Add a question the customer might ask",
+                        "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+                        "page": ""
+                    }
+                },
+                "question_1_3": {
+                    "type": "question",
+                    "settings": {
+                        "heading": "Add a question the customer might ask",
+                        "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+                        "page": ""
+                    }
+                },
+                "category_2": {
+                    "type": "category",
+                    "settings": {
+                        "heading": "Category 2"
+                    }
+                },
+                "question_2_1": {
+                    "type": "question",
+                    "settings": {
+                        "heading": "Add a question the customer might ask",
+                        "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+                        "page": ""
+                    }
+                },
+                "question_2_2": {
+                    "type": "question",
+                    "settings": {
+                        "heading": "Add a question the customer might ask",
+                        "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+                        "page": ""
+                    }
+                },
+                "question_2_3": {
+                    "type": "question",
+                    "settings": {
+                        "heading": "Add a question the customer might ask",
+                        "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+                        "page": ""
+                    }
+                },
+                "category_3": {
+                    "type": "category",
+                    "settings": {
+                        "heading": "Category 3"
+                    }
+                },
+                "question_3_1": {
+                    "type": "question",
+                    "settings": {
+                        "heading": "Add a question the customer might ask",
+                        "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+                        "page": ""
+                    }
+                },
+                "question_3_2": {
+                    "type": "question",
+                    "settings": {
+                        "heading": "Add a question the customer might ask",
+                        "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+                        "page": ""
+                    }
+                },
+                "question_3_3": {
+                    "type": "question",
+                    "settings": {
+                        "heading": "Add a question the customer might ask",
+                        "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+                        "page": ""
+                    }
+                }
+            },
+            "block_order": [
+                "category_1",
+                "question_1_1",
+                "question_1_2",
+                "question_1_3",
+                "category_2",
+                "question_2_1",
+                "question_2_2",
+                "question_2_3",
+                "category_3",
+                "question_3_1",
+                "question_3_2",
+                "question_3_3"
+            ],
+            "settings": {
+                "heading": "FAQ",
+                "padding_top": 36,
+                "padding_bottom": 80,
+                "color_scheme": "scheme-1"
+            }
+        },
+        "rich_text": {
+            "type": "rich-text",
+            "blocks": {
+                "heading": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "Rich Text Heading",
+                        "style": "h2"
+                    }
+                },
+                "text": {
+                    "type": "text",
+                    "settings": {
+                        "content": "<p>Briefly describe what this heading is about.</p>"
+                    }
+                },
+                "button": {
+                    "type": "button",
+                    "settings": {
+                        "button_text": "BUTTON LABEL",
+                        "link": "",
+                        "link_target": "_top",
+                        "use_outline_button": false
+                    }
+                }
+            },
+            "block_order": ["heading", "text", "button"],
+            "settings": {
+                "container_size": true,
+                "content_width": 500,
+                "content_alignment": "center",
+                "padding_top": 100,
+                "padding_bottom": 100,
+                "color_scheme": "scheme-3"
+            }
+        }
+    },
+    "order": ["main", "image_with_text_overlay", "faq-accordion", "rich_text"]
+}
