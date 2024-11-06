@@ -15,7 +15,8 @@
       "start": "NODE_ENV=development webpack --watch",
       "eslint": "eslint 'src/js/**'",
       "stylelint": "stylelint '**/*.scss'",
-      "migrate": "sass-migrator division ~**/*.scss"
+      "migrate": "sass-migrator division ~**/*.scss",
+      "pull": "shopify theme pull -s pareva-beauty.myshopify.com -t 173082771777"
     },
     "keywords": [
       "shopify",

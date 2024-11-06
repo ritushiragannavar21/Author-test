@@ -1,0 +1,25 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+
+@custom-selector :--product .banner-product__products-wrapper;
+
+.media-with-text {
+
+} 
+
+.image--desktop{
+    display: none;
+    @media(--sm){
+        display: block;
+    }
+}
+.image--mobile{
+    display: block;
+    @media(--sm){
+        display: none;
+    }
+}
