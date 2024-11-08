@@ -1,0 +1,53 @@
+
+<style>
+    .video-poster {
+        position: relative;
+      }
+      
+      .play-button-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      } 
+      
+</style> 
+ 
+ 
+ <!-- Poster Image Initially Displayed with Play Button -->
+ <div class="video-poster" style="cursor: pointer;" onclick="loadVideo(this)">
+    <div class="play-button-overlay">
+      <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 50 50" fill="none">
+        <path d="M10 5L40 25L10 45V5Z" fill="yellow" />
+      </svg>
+    </div>
+    {% if image %}
+        <div>
+          {% render 'shopify-responsive-image', image: image, aspect_ratio: aspect_ratio %}
+        </div>
+    {% endif %}      
+  </div>
+  
+  {% if video %}
+      <div class="video video--desktop {{ wrapper_class }}__video" {{ wrapper_attributes }} style="display: none;">
+        {% render 'responsive-video', video:video, aspect_ratio: aspect_ratio  %}
+      </div>
+  {% endif %}
+
+
+  <script>
+    function loadVideo(posterElement) {
+      var videoWrapper = posterElement.nextElementSibling;
+      var iframe = videoWrapper.querySelector('iframe');
+  
+      if (iframe) {
+        videoWrapper.style.display = 'block';
+        posterElement.style.display = 'none'; 
+      } 
+    }   
+  </script>

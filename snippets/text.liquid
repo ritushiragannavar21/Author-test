@@ -1,0 +1,53 @@
+{% style %} 
+ {% if color %} 
+   .text__{{id}} {
+    color: {{color}};
+   }
+ {% endif %}
+{% endstyle %}
+<div class="{{wrapper_class}}__text text__{{id}}" > 
+<div class="text-wrapper {{wrapper_class}}__text-wrapper">
+    {% if eyebrow != blank %}
+    <p class="{{wrapper_class}}__eyebrow text__eyebrow">{{eyebrow}}</p>
+    {% endif %}
+    {% if inline_heading %}
+      <p class="{{wrapper_class}}__heading text__heading">{{heading}} <span class="{{wrapper_class}}__subheading text__subheading">{{subheading}}</span></p>
+      {% else %}
+      {% if template.suffix != 'flyers' %}
+        {% if heading  != blank%}
+          <{{heading_tag | default: "p"}} class="text__heading {{wrapper_class}}__heading">{{heading}}</{{heading_tag | default: "p"}}>
+        {% endif %}
+      {% endif %}
+        {% if subheading  != blank and inline_cta != true %}
+          <p class="{{wrapper_class}}__subheading text__subheading">{{subheading}}</p>
+        {% endif %}
+    {% endif %}
+
+    {% if inline_cta %}
+      <p class="{{ wrapper_class }}__subheading text__subheading">{{subheading}}
+      {% if cta_text != blank and cta_url != blank %}
+        <a class=" button {{wrapper_class}}__cta text__cta
+          {% if button_type %} button--{{button_type}} {% endif %}
+           {% if button_background_type %} button--{{button_background_type}} {% endif %}
+           {% if secondary_button_type %} button--{{secondary_button_type}} {% endif %}
+          " {% if cta_url %} href="{% render 'render-metafield-local-aware-url', cta_url: cta_url %} {% endif%}"><span class="btn-text">  {{ cta_text }} </span>
+          <span class= "arrow-icon">{% if button_type == "text" or button_type == "outline"%}{% render 'icon' with 'chevron-right-icon'%}{% endif%}</span>
+          <span class= "arrow ">{% if secondary_button_type and  secondary_button_type == "link" %} {% render 'right-arrow'%} {% endif%}</span>
+         </a> 
+        {% endif %}</p>
+    {% endif %}
+
+  </div>
+  {% unless inline_cta %}
+   {% if cta_text != blank and cta_url != blank %}
+   <a class="button {{wrapper_class}}__cta text__cta
+     {% if button_type %} button--{{button_type}} {% endif %}
+      {% if button_background_type %} button--{{button_background_type}} {% endif %}
+      {% if secondary_button_type %} button--{{secondary_button_type}} {% endif %}
+     " {%if cta_url %} href="{% render 'render-metafield-local-aware-url', cta_url: cta_url %}{% endif%}"><span class="btn-text"> {{ cta_text }} </span>
+     <span class= "arrow-icon">{% if button_type == "text" or button_type == "outline"%}{% render 'icon' with 'chevron-right-icon'%}{% endif%}</span>
+     <span class= "arrow ">{% if secondary_button_type and  secondary_button_type == "link" %} {% render 'right-arrow'%} {% endif%}</span>
+    </a> 
+   {% endif %}
+  {% endunless %}
+</div> 

@@ -5,10 +5,15 @@
 @import 'breakpoints';
 
 
-@custom-selector :--product .banner-product__products-wrapper;
+.media-text {
+    @include mixins.grid(6,250,250);
+    column-gap:0;
+    row-gap: 0;
 
-.media-with-text {
-
+    &__wrapper{
+        grid-column: span 3;
+        width: 100%;
+    }
 } 
 
 .image--desktop{

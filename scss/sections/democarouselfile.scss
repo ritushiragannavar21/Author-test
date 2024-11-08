@@ -1,0 +1,88 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/breakpoints';
+
+
+@custom-selector :--heading .banner-grid__heading.text__heading;
+@custom-selector :--subheading .banner-grid__subheading.text__subheading;
+@custom-selector :--text-wrapper .banner-grid-content__text-wrapper.text-image__text-wrapper;
+@custom-selector :--content .banner-grid-content__text-image;
+
+
+.banner-grid {
+    $block: &;
+
+    &__wrapper {
+        @media(--sm) {
+            @include mixins.container;
+        }
+        margin-top: var(--grid-row-gap);
+    }
+
+    :--text-wrapper {
+        padding: var(--section-content-margin);
+    }
+
+    :--heading {
+        margin-bottom: 2px;
+    }
+
+    &__cta.button {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: left;
+        left:0;
+        padding-top:20px;
+        padding-bottom: 20px;
+        display: none; 
+
+        @media (--md) {
+            display: block;
+        }
+
+        &:hover {
+            background: colors.$red !important;
+        }   
+    }
+
+    .arrow-icon{
+        display: none;
+    }
+
+    .text-image__text-wrapper {
+        width: 100%;
+        height: unset;
+        top: unset;
+        bottom:var(--section-content-margin);
+        transform: unset;
+
+        @media (--md) {
+            height:100%;
+            top: 50%;
+            bottom: unset;
+            transform: translateY(-50%);
+        }
+    }
+
+    :--content {
+        &:hover{
+            cursor: pointer;
+            // #{$block}__cta.button {
+            //     background: colors.$red !important;
+            // }
+        }
+    }
+
+    @include mixins.overflowCarousel;
+   .swiper-initialized {
+    @media (--sm) {
+        padding-left:0 !important;
+        padding-right: 0 !important;
+       }
+    }
+}
+

@@ -1,0 +1,172 @@
+{{'democarousel.css' | asset_url | stylesheet_tag }}
+{% liquid 
+    assign banner_desktop_aspect_ratio = 1.9
+    assign banner_mobile_aspect_ratio = 1.9
+   %}
+<div class="banner-grid banner-grid__wrapper" data-parent>
+        <div class="banner__carousel"> 
+            <div class="swiper-navigations" data-swiper-navigations></div>
+          <custom-carousel circleArrow="true">
+            <div class="custom-carousel__content hide" data-carousel-content>
+              {% for block in section.blocks %} 
+              {% liquid 
+                assign id = block.id
+                assign color = block.settings.color
+                assign eyebrow = block.settings.eyebrow
+                assign heading = block.settings.heading
+                assign subheading = block.settings.subheading
+                assign cta_text = block.settings.cta_text
+                assign cta_url = block.settings.cta_url
+                assign image_desktop = block.settings.image_desktop
+                assign image_mobile = block.settings.image_mobile
+                assign inline_heading = block.settings.inline_heading
+                assign button_type = 'text'
+                assign button_background_type = 'transparent'
+                assign promotion = block.settings.promotion
+                assign promotion_name = block.settings.promotion_name
+                assign promotion_creative_name = block.settings.promotion_creative_name
+              %}  
+               <div class="swiper-slide">
+                  {% render 'image-with-text-overlay', 
+                    wrapper_class: "banner-grid-content"
+                    id: id,
+                    color: color,
+                    eyebrow: eyebrow,
+                    heading: heading, 
+                    subheading: subheading, 
+                    cta_text: cta_text, 
+                    cta_url: cta_url, 
+                    image_desktop: image_desktop,
+                    image_mobile: image_mobile,
+                    text_wrapper_class: 'banner-grid',
+                    inline_heading: inline_heading,
+                    desktop_aspect_ratio: banner_desktop_aspect_ratio,
+                    mobile_aspect_ratio: 1.06,
+                    desktop_crop: true,
+                    mobile_crop: true,
+                    button_type: button_type,
+                    button_background_type: button_background_type,
+                    promotion: promotion,
+                    promotion_name: promotion_name,
+                    promotion_creative_name: promotion_creative_name
+                    %}
+                </div>
+              {% endfor %}
+            </div>
+            <div class="carousel-placeholders"></div>
+              <script type="text/json" data-settings>
+                {
+                  "slidesPerView": 2.1,
+                  "spaceBetween": 10,
+                  "overflowNagivation": true,
+                  "pagination":"true",
+                  "breakpoints": {
+                    "768": {
+                      "spaceBetween": 20,
+                      "navigation": true,
+                      "slidesPerView": 3,
+                      "pagination":"true"
+                    }
+                  }
+                }
+              </script>
+            </custom-carousel>
+        </div>
+</div>
+
+
+{% schema %}
+ {
+   "name": "Banner - Grid",
+   "settings": [],
+   "blocks": [
+    {
+        "type": "image_with_text_overlay",
+        "name": "Image with text overlay",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Promotion Config"
+          },
+          {
+            "type": "checkbox",
+            "id": "promotion",
+            "label": "Is Promotion ?",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "promotion_name",
+            "label": "Promotion Name"
+          },
+          {
+            "type": "text",
+            "id": "promotion_creative_name",
+            "label": "Creative Name"
+          },
+         {
+           "type": "header",
+           "content": "Block Group"
+         },
+    
+         {
+           "type": "header",
+           "content": "Block Contents"
+         },
+           {
+               "type": "color",
+               "id": "text_color",
+               "label": "Text color"
+           },
+           {
+             "type": "image_picker",
+             "id": "image_desktop",
+             "label": "Image Desktop"
+           },
+           {
+             "type": "image_picker",
+             "id": "image_mobile",
+             "label": "Image Mobile"
+           },
+           {
+             "type": "text",
+             "id": "eyebrow",
+             "label": "Eyebrow"
+           },
+           {
+               "type": "checkbox",
+               "id":  "inline_heading",
+               "label": "Inline Heading ?",
+               "default": false
+             },
+           {
+             "type": "text",
+             "id":  "heading",
+             "label": "Heading"
+           },
+           {
+             "type": "text",
+             "id":  "subheading",
+             "label": "Subheading"
+           },
+           {
+             "type": "text",
+             "id":  "cta_text",
+             "label": "CTA Text"
+           },
+           {
+             "type": "url",
+             "id":  "cta_url",
+             "label": "CTA Url"
+           }
+        ]
+       }
+    ],
+   "presets": [
+    {
+      "name": "Banner-Grid"
+    }
+   ]
+ }
+
+{% endschema %}
