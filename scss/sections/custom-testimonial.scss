@@ -1,0 +1,18 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/breakpoints';
+
+
+.custom-testimonial{
+    position: relative;
+    text-align: center;
+
+    .carousel__container{
+        @media(--sm){
+            width: 21%;
+        }
+    }
+}

@@ -7,6 +7,10 @@
     <meta content="" name="theme-color">
     <link href="{{ canonical_url }}" rel="canonical">
     <link crossorigin href="https://cdn.shopify.com" rel="preconnect">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
     {%- if settings.favicon != blank -%}
       <link href="{{ settings.favicon | image_url: width: 32, height: 32 }}" rel="icon" type="image/png">
@@ -278,6 +282,13 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    {{'custom-carousel.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'common-imports.css' | asset_url }}">
+    <script src="{{'vendors.js' | asset_url }}" defer></script>  
+    <script src="{{'global.js' | asset_url }}" defer></script>  
+    <script src="{{'shared.js' | asset_url }}" defer></script>
+    <script src="{{'share.js' | asset_url }}" defer></script> 
+    <script src="{{'sections.js' | asset_url }}" defer></script>  
   </head>
 
   <body class="gradient ">
@@ -318,12 +329,5 @@
     {% if settings.scrolltotop_available %}
       {% render 'scroll-to-top' %}
     {% endif %}
-    {{'custom-carousel.css' | asset_url | stylesheet_tag }}
-    <link rel="stylesheet" href="{{ 'common-imports.css' | asset_url }}">
-    <script src="{{'vendors.js' | asset_url }}" defer></script>  
-    <script src="{{'global.js' | asset_url }}" defer></script>  
-    <script src="{{'shared.js' | asset_url }}" defer></script>
-    <script src="{{'share.js' | asset_url }}" defer></script> 
-    <script src="{{'sections.js' | asset_url }}" defer></script>  
   </body>
 </html>

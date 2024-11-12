@@ -1,14 +1,9 @@
-{% if image_desktop or image_mobile %}
+
     {% liquid 
      assign fill = fill | default: false
     %}
-    
     {% if text_background %} 
-    <style>
-    .text-image__text-wrapper-{{ id }} {
-      background: {{ text_background }}
-    }
-    </style>
+
     {% endif %}
     {%assign split_classes = wrapper_class | split: ',' %}
     {% assign primary_class = split_classes.first %}
@@ -18,43 +13,44 @@
       {% if promotion and promotion_name != blank %}
         data-promotion data-promotion-name="{{- promotion_name -}}" data-promotion-id="{{- promotion_name | handleize -}}"
         data-creative-name = "{{ promotion_creative_name }}"
-      {% endif %}
-    >
+      {% endif %}>
     
     {% assign bottom_overlay = bottom_overlay | default: false %}
+    {% if image_desktop or image_mobile%}
      <div class="text-image__image-wrapper image {{primary_class}}__image-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %} {% if overlay == false and bottom_overlay == false %} image--no-radius {% endif%}
-      {% if is_half_width %} text-image__image-wrapper--half-width {{primary_class}}__image-wrapper--half-width {% endif %}
-     ">
-      {% if image_desktop %}
-      <div class="image image--desktop {{primary_class}}__image"> 
-        {% render 'shopify-responsive-image',
-            image: image_desktop,
-            aspect_ratio: desktop_aspect_ratio,
-            crop: desktop_crop,
-            contain: desktop_contain,
-            fill: fill,
-            no_lazyload: no_lazyload,
-            max_height: max_height_desktop
-          %}
+        {% if is_half_width %} text-image__image-wrapper--half-width {{primary_class}}__image-wrapper--half-width {% endif %}">
+        {% if image_desktop %}
+          <div class="image image--desktop {{primary_class}}__image {% if hide_mobile == true %}hide_video__mobile{% endif %}"> 
+            {% render 'shopify-responsive-image',
+                image: image_desktop,
+                aspect_ratio: desktop_aspect_ratio,
+                crop: desktop_crop,
+                contain: desktop_contain,
+                fill: fill,
+                no_lazyload: no_lazyload,
+                max_height: max_height_desktop
+              %}
+          </div>
+        {% endif %}
+        {% if image_mobile %}
+          <div class="image image--mobile {{primary_class}}__image {% if hide_mobile == true %}hide_video__mobile{% endif %}">
+            {% render 'shopify-responsive-image',
+                image: image_mobile,
+                aspect_ratio: mobile_aspect_ratio,
+                crop: mobile_crop,
+                contain: mobile_contain,
+                fill: fill,
+                no_lazyload: no_lazyload,
+                max_height: max_height_mobile
+              %}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
-    {% if image_mobile %}
-      <div class="image image--mobile {{primary_class}}__image">
-        {% render 'shopify-responsive-image',
-            image: image_mobile,
-            aspect_ratio: mobile_aspect_ratio,
-            crop: mobile_crop,
-            contain: mobile_contain,
-            fill: fill,
-            no_lazyload: no_lazyload,
-            max_height: max_height_mobile
-          %}
-        </div>
-      {% endif %}
-    </div>
-    <div class="text-image__text-wrapper text-image__text-wrapper-{{id}} content {{primary_class}}__text-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %}  {% if overlay == false %} text-image__text-wrapper--no-overlay {% endif%}"
-      {% if cta_url %} onclick="location.href='{{cta_url}}';" {% endif %}
-    >
+    {% if eyebrow != blank or heading != blank or subheading != blank or cta_text != blank %}
+      <div class="text-image__text-wrapper text-image__text-wrapper-{{id}} content {{primary_class}}__text-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %}  {% if overlay == false %} text-image__text-wrapper--no-overlay {% endif%}{% if hide_mobile == true %}text-image__text-wrapper--no-overlay__mobile{% endif%} {% if subheading != blank or cta_text != blank %}text-image__justify-between{% endif %}"
+        {% if cta_url %} onclick="location.href='{{cta_url}}';" {% endif %}
+      >
         {% render 'text', 
             id: id,
             color: color, 
@@ -73,6 +69,5 @@
             secondary_button_type: secondary_button_type
           %}
       </div>
-    </div>
-    
     {% endif %}
+  </div>

@@ -10,6 +10,7 @@
     font-family: 'poppins';
     box-shadow: none;
     outline: 0;
+    letter-spacing: 0.3px;
 
     @media(--xxs) {
         padding: 13px 28px;
@@ -32,6 +33,11 @@
         border:0;
         outline:0;
         box-shadow: none;
+    }
+
+    &--text{
+        padding: 0;
+        text-decoration: none;
     }
 
     &--transparent {
@@ -61,4 +67,8 @@
 
 .needsclick {
     min-height: 0 !important;
+}
+
+.arrow-icon{
+    padding-left: 10px;
 }

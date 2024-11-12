@@ -17,31 +17,35 @@
       } 
       
 </style> 
- 
- 
- <!-- Poster Image Initially Displayed with Play Button -->
- <div class="video-poster" style="cursor: pointer;" onclick="loadVideo(this)">
-    <div class="play-button-overlay">
-      <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 50 50" fill="none">
-        <path d="M10 5L40 25L10 45V5Z" fill="yellow" />
-      </svg>
-    </div>
-    {% if image %}
-        <div>
-          {% render 'shopify-responsive-image', image: image, aspect_ratio: aspect_ratio %}
+
+{% if video_url  %}
+    <div class="video-poster" style="cursor: pointer;" onclick="loadVideo(this)">
+        <div class="play-button-overlay">
+            <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 50 50" fill="none">
+                <path d="M10 5L40 25L10 45V5Z" fill="yellow" />
+            </svg>
         </div>
-    {% endif %}      
-  </div>
-  
-  {% if video %}
-      <div class="video video--desktop {{ wrapper_class }}__video" {{ wrapper_attributes }} style="display: none;">
-        {% render 'responsive-video', video:video, aspect_ratio: aspect_ratio  %}
-      </div>
-  {% endif %}
+        {% if image %}
+            <div>
+                {% render 'shopify-responsive-image', image: image, aspect_ratio: aspect_ratio %}
+            </div>
+        {% endif %}      
+    </div>
+
+    
+    <div class="video video--desktop {{ wrapper_class }}__video " {{ wrapper_attributes }} style="display: none;">
+        {% render 'responsive-video', video_url:video_url, aspect_ratio: aspect_ratio %}
+    </div>   
+{% else %} 
+    <div class="video-poster">
+        {% render 'responsive-video', video:video, aspect_ratio: aspect_ratio %}
+    </div>  
+{% endif %}
 
 
   <script>
     function loadVideo(posterElement) {
+        console.log("-----hiii")
       var videoWrapper = posterElement.nextElementSibling;
       var iframe = videoWrapper.querySelector('iframe');
   

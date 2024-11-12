@@ -2,44 +2,40 @@
 @import 'StyleComponents/typography';
 
 
-$fonts: (
-  'poppins': ('source': 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,700&display=swap"')
-);
-
 $typography: (
-  'heading-1' : ('font': 'poppins',
+  'heading-1' : ('font': var(--secondary-font), 
     'size': #{$heading-1-size},
     'weight': #{$heading-1-weight},
     'height': #{$heading-1-height}),
-    'heading-1-alt' : ('font': 'poppins',
+  'heading-1-alt' : ('font': var(--primary-font),
     'size': #{$heading-1-alt-size},
     'weight': #{$heading-1-alt-weight},
     'height': #{$heading-1-alt-height}),
-  'heading-2' : ('font': 'poppins',
+  'heading-2' : ('font': var(--primary-font),
     'size': #{$heading-2-size},
     'weight': #{$heading-2-weight},
     'height': #{$heading-2-height}),
-  'heading-3' : ('font': 'poppins',
+  'heading-3' : ('font': var(--primary-font),
     'size': #{$heading-3-size},
     'weight': #{$heading-3-weight},
     'height': #{$heading-3-height}),
-  'body-title' : ('font': 'poppins',
+  'body-title' : ('font': var(--primary-font),
     'size': #{$body-title-size},
     'weight': #{$body-title-weight},
     'height': #{$body-title-height}),
-  'body-regular' : ('font': 'poppins',
+  'body-regular' : ('font': var(--primary-font),
     'size': #{$body-regular-size},
     'weight': #{$body-regular-weight},
     'height': #{$body-regular-height}),
-  'body-alt' : ('font': 'poppins',
+  'body-alt' : ('font': var(--primary-font),
     'size': #{$body-alt-size},
     'weight': #{$body-alt-weight},
     'height': #{$body-alt-height}),
-  'body-small' : ('font': 'poppins',
+  'body-small' : ('font': var(--primary-font),
     'size': #{$body-small-size},
     'weight': #{$body-small-weight},
     'height': #{$body-small-height}),
-  'body-alt-small' : ('font': 'poppins',
+  'body-alt-small' : ('font': var(--primary-font),
     'size': #{$body-small-alt-size},
     'weight': #{$body-small-alt-weight},
     'height': #{$body-small-alt-height})
@@ -52,6 +48,10 @@ $typography: (
 
 @mixin use-text-style($token: "body") {
   $type: get-token($typography, $token);
+
+  @if (get-token($type, "font-secondary") !="font-secondary") {
+    font-family: get-token($type, "font-secondary");
+  }
 
   @if (get-token($type, "font") !="font") {
     font-family: get-token($type, "font");

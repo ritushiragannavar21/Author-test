@@ -1,49 +1,3 @@
-{% comment %} {% assign video_aspect_ratio = aspect_ratio | default: "0.9" %}
-{% assign min = 100 %}
-{% assign max = 10000 %}
-{% assign diff = max | minus: min %}
-{% assign generated_video_id = "now" | date: "%N" | modulo: diff | plus: min %}
-
-<style>
-  /* Ensure the video wrapper maintains the specified aspect ratio */
- 
-
-  /* Style the iframe to fill the wrapper */
-  #Video-{{ generated_video_id }} {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-  #VideoWrapper-{{ generated_video_id }} {
-    position: relative;
-    width: 100%;
-    max-width: {{ max_width | default: '720' }}px;
-    padding-top: {{ 100 | divided_by: video_aspect_ratio }}%;
-    overflow: hidden;
-  }  
-</style>
-
-<iframe
-    id="Video-{{ generated_video_id }}"
-    src="{{ video | replace: 'watch?v=', 'embed/' }}"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-    {% if no_lazyload == false %} loading="lazy" {% endif %}
-  >
-</iframe>
-
-{% comment %} <noscript>
-  <iframe
-    src="{{ video | replace: 'watch?v=', 'embed/' }}"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-    class="{{ wrapper_class }}"
-  >
-  </iframe>
-</noscript> {% endcomment %} {% endcomment %}
 
 
 {% assign video_aspect_ratio = aspect_ratio | default: "0.9" %}
@@ -53,7 +7,6 @@
 {% assign generated_video_id = "now" | date: "%N" | modulo: diff | plus: min %}
 
 <style>
-  /* Ensure the video wrapper maintains the specified aspect ratio */
   #VideoWrapper-{{ generated_video_id }} {
     position: relative;
     width: 100%;
@@ -62,8 +15,7 @@
     overflow: hidden;
   }
 
-  /* Style the iframe to fill the wrapper */
-  #Video-{{ generated_video_id }} {
+  #Video-{{ generated_video_id }} ,  video{
     position: absolute;
     top: 0;
     left: 0;
@@ -71,25 +23,25 @@
     height: 100%;
     border: 0;
   }
+
+
 </style>
 
-<div id="VideoWrapper-{{ generated_video_id }}">
-  <iframe
-    id="Video-{{ generated_video_id }}"
-    src="{{ video | replace: 'watch?v=', 'embed/' }}"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-    {% if no_lazyload == false %} loading="lazy" {% endif %}
-  >
-  </iframe>
-</div>
+{% if video_url %}
+    <div id="VideoWrapper-{{ generated_video_id }}" >
+        <iframe
+          id="Video-{{ generated_video_id }}"
+          src="{{ video_url | replace: 'watch?v=', 'embed/' }}?autoplay=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          {% if no_lazyload == false %} loading="lazy" {% endif %}
+        ></iframe>
+    </div>
 
-<noscript>
-  <iframe
-    src="{{ video | replace: 'watch?v=', 'embed/' }}"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-    class="{{ wrapper_class }}"
-  >
-  </iframe>
-</noscript>
+{% else %}
+    <div id="VideoWrapper-{{ generated_video_id }}" >
+       {{ video | video_tag: autoplay: true, loop: true, muted: true }}
+    </div>
+{% endif %}
+
+
