@@ -8,7 +8,7 @@
 {% endfor %}
 
 
-<div class="media-text" style= "display: grid; grid-template-columns: repeat({{ block_count }}, minmax(200px, 1fr) ) ;background:{{background}}" >
+<div class="media-text container" style= "display: grid; grid-template-columns: repeat({{ block_count }}, minmax(200px, 1fr) ) ;background:{{background}}" >
     {% for block in section.blocks %}
         {% liquid
             assign desktop_image = block.settings.image_desktop

@@ -136,7 +136,8 @@
         }
     }
     &__subheading{
-        @include use-text-style('body-regular');
+        @include use-text-style('body-title');
+        font-weight: typography.$regular-weight;
         letter-spacing: 0.2px;
         margin-bottom: 40px; 
         @media(--md){
@@ -147,7 +148,7 @@
         }
     }
     &__cta{
-        @include use-text-style('body-small');
+        @include use-text-style('body-regular');
         font-weight: typography.$regular-weight;
     }
 }

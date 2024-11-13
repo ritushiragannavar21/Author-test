@@ -114,7 +114,7 @@
           "type": "testimonial",
           "settings": {
             "quote": "My skin looks and feels so much better. I look 8 years younger!",
-            "author": "Sarah",
+            "author": "SARAH",
             "rating": 3,
             "text_color": "#0000ff"
           }
@@ -124,16 +124,25 @@
           "settings": {
             "quote": "My skin looks and feels so much better. I look 8 years younger!",
             "author": "Sarah",
-            "rating": 5,
+            "rating": 2,
             "text_color": "#2828e2"
+          }
+        },
+        "testimonial_6fUjiW": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "My skin looks and feels so much better. I look 8 years younger!",
+            "author": "SARAH",
+            "rating": 5,
+            "text_color": "#0000FF"
           }
         },
         "testimonial_inYCCw": {
           "type": "testimonial",
           "settings": {
             "quote": "My skin looks and feels so much better. I look 8 years younger!",
-            "author": "Sarah",
-            "rating": 5,
+            "author": "SARAH",
+            "rating": 4,
             "text_color": "#0000ff"
           }
         }
@@ -141,6 +150,7 @@
       "block_order": [
         "testimonial_LFkHjz",
         "testimonial_WYKanz",
+        "testimonial_6fUjiW",
         "testimonial_inYCCw"
       ],
       "settings": {

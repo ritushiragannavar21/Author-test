@@ -4,6 +4,9 @@
 @import 'Token';
 @import 'breakpoints';
 
+.media-text.container{
+    padding: 0;
+}
 
 .media-text {
     column-gap:0;
