@@ -8,8 +8,14 @@
 <div class="{{wrapper_class}}__text text__{{id}} text-wrapper__heigt" > 
 <div class="text-wrapper {{wrapper_class}}__text-wrapper text-wrapper__flex">
    <div>
+        {% if logo != blank  or teaser != blank %}
+          <div class="text-wrapper__teaser">
+              <span class="text-wrapper__logo">{{ logo }}</span>
+              <span class="text-wrapper__text">{{ teaser }}</span>
+          </div>
+        {% endif %} 
         {% if eyebrow != blank %}
-          <p class="{{wrapper_class}}__eyebrow text__eyebrow">{{eyebrow}}</p>
+          <div class="{{wrapper_class}}__eyebrow text__eyebrow">{{eyebrow}}</div>
         {% endif %}
         {% if heading != blank %}
           <div class="{{wrapper_class}}__heading text__heading">{{heading}}</div>

@@ -10,6 +10,13 @@
     flex-direction: column;
     justify-content: stretch;
 
+    &__overlay-reverse{
+        flex-direction:column-reverse;
+        @media(--md){
+            flex-direction: column;
+        }
+    }
+
     &__text-wrapper {
         
         display: flex;
@@ -75,6 +82,9 @@
 
     &__justify-between{
         height: 555px;
+        @media(--sm){
+            height: 425px;
+        }
         @media(--md){
             height: 69%;
         }
@@ -112,10 +122,10 @@
 }   
 
 .text{
-    &__heading p, &__eyebrow{
+    &__heading p, &__eyebrow p{
         @include use-text-style('heading-1');
         font-weight: typography.$regular-weight;
-        letter-spacing: 3.1px;
+        letter-spacing: 1.9px; 
         @media(--md){
             @include use-text-style('heading-2');
             font-weight: typography.$regular-weight;
@@ -139,5 +149,20 @@
     &__cta{
         @include use-text-style('body-small');
         font-weight: typography.$regular-weight;
+    }
+}
+
+.text-wrapper{
+    &__teaser{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: underline;
+    }
+
+    &__text p{
+        @include use-text-style('heading-1');
+        font-weight: typography.$regular-weight;
+        font-family: var(--tertiary-font);
     }
 }

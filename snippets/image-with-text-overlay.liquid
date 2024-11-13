@@ -8,12 +8,18 @@
     {%assign split_classes = wrapper_class | split: ',' %}
     {% assign primary_class = split_classes.first %}
     {% assign secondary_class = split_classes.last %}
-    <div class="text-image {{primary_class}}__text-image {{primary_class}} {{primary_class}}__text-image-{{id}} {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %}" 
+    <div class="text-image {{primary_class}}__text-image {{primary_class}} {{primary_class}}__text-image-{{id}} {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %} {% if top_overlay_mobile == true %}text-image__overlay-reverse{% endif %}" 
       {% if cta_url %} data-redirect-click data-js-click data-url="{% render 'render-metafield-local-aware-url', cta_url: cta_url %}"{% endif %}
       {% if promotion and promotion_name != blank %}
         data-promotion data-promotion-name="{{- promotion_name -}}" data-promotion-id="{{- promotion_name | handleize -}}"
         data-creative-name = "{{ promotion_creative_name }}"
       {% endif %}>
+
+    {% if button_url != blank  and button != blank %}
+     <div class="text-image__button {% if hide_mobile == true %}button__hide_button{% endif%}">
+      <a class="button button__custom-button {{wrapper_class}}__cta text__cta" href="{{ button_url }}"><span class="btn-text button__btn-text"> {{ button }} </span></a> 
+     </div>
+    {% endif %}
     
     {% assign bottom_overlay = bottom_overlay | default: false %}
     {% if image_desktop or image_mobile%}
@@ -66,7 +72,9 @@
             button_type: button_type,
             button_background_type: button_background_type,
             cta_arrow: cta_arrow,
-            secondary_button_type: secondary_button_type
+            secondary_button_type: secondary_button_type,
+            logo:logo,
+            teaser:teaser
           %}
       </div>
     {% endif %}

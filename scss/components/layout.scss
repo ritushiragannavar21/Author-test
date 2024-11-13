@@ -3,6 +3,7 @@
     --grid-row-gap: 10px;
     --grid-row-gap-large: 20px;
     --section-content-margin: 16px;
+    --heading-margin:40px;
     --section-margin: 20px;
     --section-padding:20px;
     --section-heading-margin: 10px;
@@ -11,6 +12,7 @@
     --nav-vertical-padding: 15px;
     --primary-font: "IBM Plex Mono", serif;
     --secondary-font: "IBM Plex Sans Condensed", sans-serif;
+    --tertiary-font: "BIZ UDMincho", serif;
 
     @media(min-width: 768px) {
         --grid-column-gap: 20px;

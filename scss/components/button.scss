@@ -63,6 +63,32 @@
             box-shadow: none !important;
        }
     }
+
+    &__custom-button{
+        position: absolute;
+        z-index: 5;
+        bottom: 8%;
+        right: 9%;
+        padding: 19px 21px;
+        border-radius: unset;
+        text-decoration: none;
+        @media(--md-large){
+            padding: 44px 52px;
+        }
+    }
+    &__btn-text{
+        @include use-text-style('body-title');
+        font-family: var(--secondary-font);
+        color: colors.$blue;
+        letter-spacing: 1.2px;
+    }
+
+    &__hide_button{
+        display: none;
+        @media(--md){
+            display: block;
+        }
+    }
 }
 
 .needsclick {

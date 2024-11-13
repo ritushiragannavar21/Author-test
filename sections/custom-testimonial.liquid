@@ -1,6 +1,6 @@
 {{ 'custom-testimonial.css' | asset_url | stylesheet_tag }}
 
-<div class="custom-testimonial container" data-parent>
+<div class="custom-testimonial" data-parent>
     <div class="custom-testimonial__heading">{{ section.settings.heading }}</div>
     <div class="swiper-navigations" data-swiper-navigations></div>
     <custom-carousel>
@@ -9,22 +9,26 @@
             {% if block.type == 'testimonial' %}
                 <div class="swiper-slide">
                     <div class="custom-testimonial__wrapper" style="color: {{ block.settings.text_color }};">
-                        {% for i in (1..block.settings.rating) %}
-                            <span style="font-size: 20px; color: {{ block.settings.text_color }};">★</span>
-                        {% endfor %}
-                        <p style="font-size: 24px;">{{ block.settings.quote }}</p>
-                        <p style="font-weight: bold;">{{ block.settings.author }}</p>
+                        <p class="custom-testimonial__quote">{{ block.settings.quote }}</p>
+                        <div class="custom-testimonial__star-container">
+                            {% for i in (1..block.settings.rating) %}
+                                <span class="custom-testimonial__star" style="color: {{ block.settings.text_color }};">★</span>
+                            {% endfor %}
+                        </div>
+                        <p class="custom-testimonial__author">{{ block.settings.author }}</p>
                     </div>
                 </div>
             {% endif %}
             {% endfor %}
+
         </div>
         <div class="carousel-placeholders"></div>
         <script type="text/json" data-settings>
           {
             "slidesPerView": 1,
             "spaceBetween": 10,
-            "overflowNagivation": true
+            "overflowNagivation": true,
+            "navigation": true
           }
         </script>
     </custom-carousel>

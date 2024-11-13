@@ -15,6 +15,13 @@
     @media(max-width: 1023px){
         grid-template-columns: 1fr !important;
     }
+
+    &__block-reverse:nth-of-type(1) {
+        order: 1;
+        @media(--md){
+            order: 0; 
+        }
+    } 
 } 
 
 .image--desktop{
@@ -29,3 +36,4 @@
         display: none !important;
     }
 }
+

@@ -121,13 +121,13 @@ class CustomCarousel extends HTMLElement {
         </div>
       `
       : `
-        <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''}">
+        <div class="swiper-navigation swiper-navigation--prev  ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''}">
           <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 48 48" fill="none">
             <line y1="-2" x2="33" y2="-2" transform="matrix(-0.707107 0.707107 0.707107 0.707107 27.1191 3.78516)" stroke="#282FEE" stroke-width="4"/>
             <line y1="-2" x2="33" y2="-2" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 24.334 47.6719)" stroke="#282FEE" stroke-width="4"/>
           </svg>
         </div>
-        <div class="swiper-navigation swiper-navigation--prev swiper-button-disabled ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''}">
+        <div class="swiper-navigation swiper-navigation--next swiper-button-disabled ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''}">
           <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 47 47" fill="none">
             <line y1="-2" x2="33" y2="-2" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 20.5479 43.8867)" stroke="#282FEE" stroke-width="4"/>
             <line y1="-2" x2="33" y2="-2" transform="matrix(0.707107 0.707107 0.707107 -0.707107 23.333 0)" stroke="#282FEE" stroke-width="4"/>
@@ -167,9 +167,9 @@ class CustomCarousel extends HTMLElement {
           }
         },
         init: (swiper) => {
-          if (!!swiper.navigation) {
-            swiper.navigation.destroy();
-          }
+          // if (!!swiper.navigation) {
+          //   swiper.navigation.destroy();
+          // }
         },
         afterInit: () => {
           parentSelector.querySelector('.carousel__container').classList.remove('hide');

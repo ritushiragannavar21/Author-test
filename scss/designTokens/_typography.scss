@@ -53,6 +53,10 @@ $typography: (
     font-family: get-token($type, "font-secondary");
   }
 
+  @if (get-token($type, "font-tertiary") !="font-tertiary") {
+    font-family: get-token($type, "font-tertiary");
+  }
+
   @if (get-token($type, "font") !="font") {
     font-family: get-token($type, "font");
   }

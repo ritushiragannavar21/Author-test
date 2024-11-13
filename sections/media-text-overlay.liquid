@@ -6,7 +6,7 @@
         assign block_count = section.blocks.size
      %}
 {% endfor %}
-{% comment %} style="background:{{background}} {% endcomment %}
+
 
 <div class="media-text" style= "display: grid; grid-template-columns: repeat({{ block_count }}, minmax(200px, 1fr) ) ;background:{{background}}" >
     {% for block in section.blocks %}
@@ -25,8 +25,14 @@
             assign cta_url = block.settings.cta_url
             assign button_type = 'text'
             assign button_background_type = 'transparent'
+            assign button = block.settings.button
+            assign button_url = block.settings.button_url
+            assign top_overlay_mobile = section.settings.overlay_reverse_mobile
+            assign teaser = block.settings.teaser
+            assign logo = block.settings.logo
         %}
-        <div class="media-text__wrapper">
+        <div class="media-text__wrapper {% if section.settings.swap_media_mobile == true %}media-text__block-reverse{% endif %}">
+            
             {%- case block.type -%}
             {%- when 'first-block' -%}
                 {% if video or video_url %}
@@ -46,6 +52,11 @@
                             text_wrapper_class: 'video-banner',
                             button_type: button_type,
                             button_background_type: button_background_type,
+                            button:button,
+                            button_url:button_url,
+                            top_overlay_mobile:top_overlay_mobile,
+                            teaser:teaser,
+                            logo:logo
                     %}
                     
                 {% elsif desktop_image or mobile_image %}
@@ -66,14 +77,18 @@
                             image_desktop: image_desktop,
                             image_mobile: image_mobile,
                             text_wrapper_class: 'image-banner',
-                            inline_heading: inline_heading,
-                            mobile_aspect_ratio: 0.92,
+                            mobile_aspect_ratio: 0.928,
                             desktop_aspect_ratio: 0.9,
                             desktop_crop: true,
                             mobile_crop: true,
                             button_type: button_type,
                             button_background_type: button_background_type,
-                            hide_mobile:hide_mobile
+                            hide_mobile:hide_mobile,
+                            button:button,
+                            button_url:button_url,
+                            top_overlay_mobile: top_overlay_mobile,
+                            teaser:teaser,
+                            logo:logo
                         %}
                     </div>
                 {% else %}
@@ -88,7 +103,12 @@
                             cta_url: cta_url,
                             button_type: button_type,
                             button_background_type: button_background_type,
-                            hide_mobile:hide_mobile
+                            hide_mobile:hide_mobile,
+                            button:button,
+                            button_url:button_url,
+                            top_overlay_mobile: top_overlay_mobile,
+                            teaser:teaser,
+                            logo:logo
                         %}
                 {% endif %}
             {%- endcase -%}
@@ -107,11 +127,24 @@
         "id": "bg_color",
         "label": "Background color"
     },
+    {
+        "type": "checkbox",
+        "id": "swap_media_mobile",
+        "label": "swipe blocks in mobile",
+        "default": false
+    },
+    {
+        "type": "checkbox",
+        "id": "overlay_reverse_mobile",
+        "label": "top overlay mobile",
+        "default": false
+    }
+
   ],
   "blocks": [
     {
       "type": "first-block",
-      "name": "First block",
+      "name": "Block",
       "settings": [
         {
           "type": "header",
@@ -159,19 +192,37 @@
           "label": "Image Mobile"
         },
         {
-          "type": "text",
+            "type": "header",
+            "content": "Teaser"
+        },
+        {
+            "type": "html",
+            "id": "logo",
+            "label": "Logo Icon"        
+        },
+        {
+            "type": "richtext",
+            "id": "teaser",
+            "label": "Teaser Text"
+        },
+        {
+            "type": "header",
+            "content": "Text Overlay"
+        },
+        {
+          "type": "richtext",
           "id": "eyebrow",
-          "label": "Eyebrow"
+          "label": "Heading"
         },
         {
           "type": "richtext", 
           "id": "heading",
-          "label": "Heading"
+          "label": "Block Heading"
         },
         {
           "type": "text",
           "id": "subheading",
-          "label": "Subheading"
+          "label": "Block Subheading"
         },
         {
           "type": "text",
@@ -182,6 +233,16 @@
           "type": "url",
           "id": "cta_url",
           "label": "CTA url"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url"
         }
       ]
     }
