@@ -20,9 +20,12 @@
         @media(--sm){
             width: 408px;
         }
+        @media(--md){
+            width: 600px;
+        }
     }
 
-    &__heading{
+    &__heading , &__heading p{
         @include use-text-style('heading-1');
         font-weight: typography.$regular-weight;
         letter-spacing: 3.1px;
@@ -57,5 +60,14 @@
 
     &__star-container{
         margin-bottom: var(--section-margin);
+    }
+
+    .swiper-navigation svg{
+        height: 17px;
+        width: 17px;
+        @media(--md){
+            height: 33px; 
+            width: 33px;
+        }
     }
 }

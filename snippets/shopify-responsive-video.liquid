@@ -34,11 +34,11 @@
 
     
     <div class="video video--desktop {{ wrapper_class }}__video " {{ wrapper_attributes }} style="display: none;">
-        {% render 'responsive-video', video_url:video_url, aspect_ratio: aspect_ratio %}
+        {% render 'responsive-video', video_url:video_url, aspect_ratio: aspect_ratio, crop :crop %}
     </div>   
 {% else %} 
     <div class="video-poster">
-        {% render 'responsive-video', video:video, aspect_ratio: aspect_ratio %}
+        {% render 'responsive-video', video:video, aspect_ratio: aspect_ratio , crop :crop%}
     </div>  
 {% endif %}
 

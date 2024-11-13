@@ -18,7 +18,7 @@
     >    
 
     {% if button_url != blank  and button != blank %}
-        <div class="text-image__button{% if hide_mobile == true %}button__hide_button{% endif%}">
+        <div class="text-image__button {% if hide_mobile == true %}button__hide_button{% endif%}">
             <a class="button button__custom-button {{wrapper_class}}__cta text__cta" href="{{ button_url }}"><span class="btn-text button__btn-text"> {{ button }} </span></a> 
         </div>
     {% endif %}
@@ -27,7 +27,7 @@
     {% if video_url or video or image %}
         <div class="text-image__image-wrapper image {% if hide_mobile == true %}hide_video__mobile{% endif %} {{primary_class}}__image-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %} {% if overlay == false and bottom_overlay == false %} image--no-radius {% endif%}
             {% if is_half_width %} text-image__image-wrapper--half-width {{primary_class}}__image-wrapper--half-width {% endif %}">
-                {% render 'shopify-responsive-video', video_url:video_url, aspect_ratio:0.9 , image:image , video: video %}
+                {% render 'shopify-responsive-video', video_url:video_url, aspect_ratio:0.9 , image:image , video: video , crop:desktop_crop %}
             
         </div>
     {% endif %}
@@ -42,6 +42,10 @@
               heading: heading , 
               heading_tag: heading_tag,
               subheading: subheading , 
+              heading_block_one:heading_block1,
+              subheading_block_one:subheading_block1,
+              heading_block_two:heading_block2,
+              subheading_block_two:subheading_block2,
               cta_text: cta_text, 
               wrapper_class: text_wrapper_class,
               inline_heading: inline_heading,

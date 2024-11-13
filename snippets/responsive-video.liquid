@@ -24,7 +24,31 @@
     border: 0;
   }
 
+  {% if crop == true %}
+    #VideoWrapper-{{ generated_video_id }} video {
+      object-fit: cover;
+    }
+  {% endif %}
 
+  {% if fill == true %} 
+    #VideoWrapper-{{ generated_video_id }} video{
+      object-fit: fill;
+    }
+  {% endif %}
+
+  {% if background == true %} 
+    #VideoWrapper-{{ generated_video_id }} video{
+      background-color:#fff;
+    }
+  {% endif %}
+
+
+  {% if contain == true %} 
+    #VideoWrapper-{{ generated_video_id }} video{
+      object-fit: contain;
+    }
+  {% endif %}
+  
 </style>
 
 {% if video_url %}
@@ -43,5 +67,3 @@
        {{ video | video_tag: autoplay: true, loop: true, muted: true }}
     </div>
 {% endif %}
-
-

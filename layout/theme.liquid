@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
     {%- if settings.favicon != blank -%}
       <link href="{{ settings.favicon | image_url: width: 32, height: 32 }}" rel="icon" type="image/png">
     {%- endif -%}
@@ -31,6 +32,23 @@
         &ndash; {{ shop.name -}}
       {%- endunless -%}
     </title>
+
+    <style>
+      @font-face {
+        font-family: "ASTherma Light";
+        src: url("{{ 'ASTherma-LightCondensed_copy.otf' | file_url }}") format("opentype");
+      }
+      @font-face {
+        font-family: "ASTherma Bold";
+        src: url("{{ 'ASTherma-BoldCondensed_copy.otf' | file_url }}") format("opentype");
+      }
+    
+      :root {
+        --quaternary-font-light: "ASTherma Light", sans-serif;
+        --quaternary-font-bold: "ASTherma Bold", sans-serif;
+      }
+    </style>
+    
 
     {% if page_description %}
       <meta content="{{ page_description | escape }}" name="description">

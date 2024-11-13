@@ -16,7 +16,7 @@
           "type": "first-block",
           "settings": {
             "hide_media_mobile": false,
-            "video": "shopify://files/videos/3aebde163786400b97b0ce4cf6efe2db.HD-1080p-3.3Mbps-14741641_89094a0e-7311-4c42-9045-daf80c77838e_b381c000-62ae-46b6-9cc0-de7090fd26cb.mp4",
+            "video": "shopify://files/videos/f192e66f4a6087266431651412a8e9f4b06f57a6.mov",
             "video_url": "",
             "logo": "",
             "teaser": "",
@@ -65,12 +65,12 @@
           "type": "first-block",
           "settings": {
             "hide_media_mobile": true,
+            "video": "shopify://files/videos/f9d08e1b4b711958e4cc41df7fcd2ef599fadf4c.mov",
             "video_url": "",
-            "image_desktop": "shopify://shop_images/FLOWERS_1.png",
             "logo": "",
             "teaser": "",
-            "eyebrow": "<p>CLEAN BEAUTY REIMAGINED –</p>",
-            "heading": "<p>YES, WE’RE CLEAN, BUT WE BELIEVE WE CAN BE SO MUCH MORE</p>",
+            "eyebrow": "<p>CLEAN BEAUTY REIMAGINED –<br/>YES, WE’RE CLEAN, BUT WE BELIEVE WE CAN BE SO MUCH MORE</p>",
+            "heading": "",
             "subheading": "Our mission is to reimagine the beauty category with radical transparency, good science and real joy.",
             "cta_text": "LEARN MORE",
             "cta_url": "shopify://collections",
@@ -107,6 +107,53 @@
         "overlay_reverse_mobile": false
       }
     },
+    "media_text_overlay_xtNpqk": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_XHr47H": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "<p>THE (F)ACTUALS™ – <br/>CODIFYING OUR  SPIRIT OF RADICAL TRANSPARENCY</p>",
+            "heading": "",
+            "subheading": "For too long the beauty industry has hidden behind a shroud of mystery, with “miracle” ingredients and exaggerated claims falling far short of promises made. We all deserve better.",
+            "cta_text": "LEARN MORE",
+            "cta_url": "shopify://collections",
+            "button": "",
+            "button_url": ""
+          }
+        },
+        "first_block_dTN7Ry": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video": "shopify://files/videos/bb67956dfbc84a2d6af349f40f0fd7f5baec37f8 (1).mov",
+            "video_url": "",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "SHOP ALL",
+            "button_url": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "first_block_XHr47H",
+        "first_block_dTN7Ry"
+      ],
+      "settings": {
+        "bg_color": "#e8ff5c",
+        "swap_media_mobile": true,
+        "overlay_reverse_mobile": false
+      }
+    },
     "custom_testimonial_Lh4zwt": {
       "type": "custom-testimonial",
       "blocks": {
@@ -134,7 +181,7 @@
             "quote": "My skin looks and feels so much better. I look 8 years younger!",
             "author": "SARAH",
             "rating": 5,
-            "text_color": "#0000FF"
+            "text_color": "#0000ff"
           }
         },
         "testimonial_inYCCw": {
@@ -155,54 +202,6 @@
       ],
       "settings": {
         "heading": "REAL PEOPLE, REAL RESULTS"
-      }
-    },
-    "media_text_overlay_xtNpqk": {
-      "type": "media-text-overlay",
-      "blocks": {
-        "first_block_XHr47H": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "",
-            "logo": "",
-            "teaser": "",
-            "eyebrow": "<p>THE (F)ACTUALS™ – <br/>CODIFYING OUR  SPIRIT OF RADICAL TRANSPARENCY</p>",
-            "heading": "",
-            "subheading": "For too long the beauty industry has hidden behind a shroud of mystery, with “miracle” ingredients and exaggerated claims falling far short of promises made. We all deserve better.",
-            "cta_text": "LEARN MORE",
-            "cta_url": "shopify://collections",
-            "button": "",
-            "button_url": ""
-          }
-        },
-        "first_block_dTN7Ry": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/DropPink_1.png",
-            "image_mobile": "shopify://shop_images/DropPink_1.png",
-            "logo": "",
-            "teaser": "",
-            "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "SHOP ALL",
-            "button_url": "shopify://collections"
-          }
-        }
-      },
-      "block_order": [
-        "first_block_XHr47H",
-        "first_block_dTN7Ry"
-      ],
-      "settings": {
-        "bg_color": "#e8ff5c",
-        "swap_media_mobile": true,
-        "overlay_reverse_mobile": false
       }
     },
     "media_text_overlay_4zQMgB": {
@@ -264,8 +263,8 @@
             "video_url": "",
             "logo": "<svg width=\"25\" height=\"28\" viewbox=\"0 0 25 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12.4997 11.057L9.02539 9.10333V5.1959L12.4997 3.24219L15.9739 5.1959V9.10333L12.4997 11.057ZM10.0916 8.51184L12.4997 9.87406L14.9077 8.51184V5.80532L12.4997 4.44309L10.0916 5.80532V8.51184Z\" fill=\"#282FEE\"></path>\n<path d=\"M12.4997 24.932L9.02539 22.9783V19.0709L12.4997 17.1172L15.9739 19.0709V22.9783L12.4997 24.932ZM10.0916 22.3868L12.4997 23.7491L14.9077 22.3868V19.6803L12.4997 18.3181L10.0916 19.6803V22.3868Z\" fill=\"#282FEE\"></path>\n<path d=\"M8.73093 11.9375H11.1574V16.1676H9.77872V13.2997C9.77872 13.2997 9.77872 13.1026 9.77872 12.9592C9.77872 12.8158 9.77872 12.6903 9.77872 12.6186L8.43681 16.1676H7.00299L5.67946 12.6186C5.67946 12.6186 5.67946 12.8158 5.67946 12.9592C5.67946 13.1026 5.67946 13.228 5.67946 13.2997V16.1676H4.30078V11.9375H6.74563L7.73828 14.5006L8.71255 11.9375H8.73093Z\" fill=\"#282FEE\"></path>\n<path d=\"M12.5 27.6575C11.9118 27.6575 11.3235 27.5141 10.8088 27.2094L1.69118 22.0831C0.643382 21.4916 0 20.3983 0 19.2153V8.96276C0 7.77978 0.643382 6.68641 1.69118 6.09492L10.8088 0.986587C11.8566 0.395096 13.1618 0.395096 14.2096 0.986587L23.3088 6.11285C24.3566 6.70434 25 7.7977 25 8.98068V19.2332C25 20.4162 24.3566 21.5095 23.3088 22.101L14.2096 27.2273C13.6949 27.5141 13.1066 27.6754 12.5184 27.6754L12.5 27.6575ZM12.5 1.57808C12.0956 1.57808 11.6912 1.68562 11.3419 1.88279L2.22426 7.00905C1.50735 7.4213 1.06618 8.1741 1.06618 8.98068V19.2332C1.06618 20.0398 1.50735 20.7926 2.22426 21.2048L11.3235 26.3311C12.0404 26.7434 12.9412 26.7434 13.6581 26.3311L22.7574 21.2048C23.4743 20.7926 23.9154 20.0398 23.9154 19.2332V8.98068C23.9154 8.1741 23.4743 7.4213 22.7574 7.00905L13.6581 1.88279C13.2904 1.68562 12.9044 1.57808 12.5 1.57808Z\" fill=\"#282FEE\"></path>\n<path d=\"M16.8004 17.9984L13.3262 16.0447V12.1373L16.8004 10.1836L20.2747 12.1373V16.0447L16.8004 17.9984ZM14.3923 15.4532L16.8004 16.8155L19.2085 15.4532V12.7467L16.8004 11.3845L14.3923 12.7467V15.4532Z\" fill=\"#282FEE\"></path>\n</svg>",
             "teaser": "<p>MOLECUR 3™</p>",
-            "eyebrow": "",
-            "heading": "<p>IT’S ONE OF OUR SUPER-POWERS<br/> (THE OTHER <br/>IS JOY!)</p>",
+            "eyebrow": "<p>IT’S ONE OF OUR SUPER-POWERS<br/> (THE OTHER <br/>IS JOY!)</p>",
+            "heading": "",
             "subheading": "Good science is at the heart of everything we do. Our proprietary technology, Molecur 3™ is the scientific breakthrough that powers all Pareva products and their game changing results.",
             "cta_text": "LEARN MORE",
             "cta_url": "shopify://collections",
@@ -276,7 +275,7 @@
         "first_block_nKxEz4": {
           "type": "first-block",
           "settings": {
-            "hide_media_mobile": false,
+            "hide_media_mobile": true,
             "video_url": "",
             "image_desktop": "shopify://shop_images/Mask_group_8.png",
             "logo": "",
@@ -305,8 +304,8 @@
   "order": [
     "media_text_overlay_WJhYYY",
     "media_text_overlay_kQ48kH",
-    "custom_testimonial_Lh4zwt",
     "media_text_overlay_xtNpqk",
+    "custom_testimonial_Lh4zwt",
     "media_text_overlay_4zQMgB",
     "media_text_overlay_qXjMq8"
   ]

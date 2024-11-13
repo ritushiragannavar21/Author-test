@@ -12,6 +12,7 @@
     "page_width": 1920,
     "block_border_radius": 8,
     "menu_drawer_border_radius": 0,
+    "drawer_color_scheme": "scheme-99f73b25-4598-4954-9e35-60094b44cb81",
     "type_header_font": "quattrocento_n4",
     "type_body_font": "helvetica_n3",
     "type_button_font": "helvetica_n4",
@@ -208,6 +209,40 @@
           "variant_color": "#000000",
           "border": "#000000",
           "controls": "#ffffff",
+          "primary": "#042436"
+        }
+      },
+      "scheme-90d6ffd7-cb95-4570-a227-21863f6991a9": {
+        "settings": {
+          "text": "#000000",
+          "background": "#ffffff",
+          "background_gradient": "",
+          "primary_button": "#042436",
+          "on_primary_button": "#ffffff",
+          "secondary_button": "#000000",
+          "icons": "#042436",
+          "links": "#042436",
+          "input_color": "#042436",
+          "variant_color": "#000000",
+          "border": "#dad9d9",
+          "controls": "#042436",
+          "primary": "#042436"
+        }
+      },
+      "scheme-99f73b25-4598-4954-9e35-60094b44cb81": {
+        "settings": {
+          "text": "#282fee",
+          "background": "#f4f1e8",
+          "background_gradient": "",
+          "primary_button": "#042436",
+          "on_primary_button": "#ffffff",
+          "secondary_button": "#000000",
+          "icons": "#282fee",
+          "links": "#282fee",
+          "input_color": "#042436",
+          "variant_color": "#000000",
+          "border": "#dad9d9",
+          "controls": "#042436",
           "primary": "#042436"
         }
       }
