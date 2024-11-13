@@ -1,1 +1,317 @@
-{"sections":{"main-product":{"type":"main-product","blocks":{"vendor":{"type":"vendor","settings":{"block_bottom_spacing":16}},"title":{"type":"title","settings":{"block_bottom_spacing":16}},"rating":{"type":"rating","settings":{"show_if_no_reviews":false,"block_bottom_spacing":16}},"price":{"type":"price","settings":{"show_taxes_notice":false,"block_bottom_spacing":30}},"description":{"type":"description","settings":{"collapse_content":false,"block_bottom_spacing":16}},"variant-picker":{"type":"variant_picker","settings":{"varaint_selector_type":"pills","block_bottom_spacing":5}},"quantity-selector":{"type":"quantity_selector","settings":{"block_bottom_spacing":30}},"inventory":{"type":"inventory","settings":{"show_status":"always","inventory_threshold":10,"inventory_base_quantity":30,"show_inventory_quantity":true,"show_inventory_progress":true,"inventory_background_color":"#fcf4e8","inventory_instock_color":"#042436","inventory_lowstock_color":"#042436","inventory_outofstock_color":"#787878","block_bottom_spacing":16}},"buy-buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"show_gift_card_recipient":true,"block_bottom_spacing":16}},"pickup":{"type":"pickup","settings":{"block_bottom_spacing":30}},"accordion_1":{"type":"accordion","settings":{"heading":"Heading","content":"<p>Write a clear and concise answer to guide your customers.<\/p>","page":"","block_bottom_spacing":5}},"accordion_2":{"type":"accordion","settings":{"heading":"Heading","content":"<p>Write a clear and concise answer to guide your customers.<\/p>","page":"","block_bottom_spacing":16}},"badges":{"type":"badges","settings":{"badge_stack_style":"wrap","icon_style_1":"star","text_color_1":"#000000","background_color_1":"#fcf4e8","heading_1":"Badge 1","content_1":"","icon_style_2":"star","text_color_2":"#000000","background_color_2":"#fcf4e8","heading_2":"Badge 2","content_2":"","icon_style_3":"star","text_color_3":"#000000","background_color_3":"#fcf4e8","heading_3":"Badge 3","content_3":"","icon_style_4":"star","text_color_4":"#000000","background_color_4":"#fcf4e8","heading_4":"","content_4":"","icon_style_5":"star","text_color_5":"#000000","background_color_5":"#f7f3f3","heading_5":"","content_5":"","icon_style_6":"star","text_color_6":"#000000","background_color_6":"#fcf4e8","heading_6":"","content_6":"","block_bottom_spacing":30}},"share":{"type":"share","settings":{"block_bottom_spacing":16}},"complementary-products":{"type":"complementary-products","settings":{"heading":"Also Bought Together","block_bottom_spacing":16}}},"block_order":["vendor","title","rating","price","description","variant-picker","quantity-selector","inventory","buy-buttons","pickup","accordion_1","accordion_2","badges","share","complementary-products"],"settings":{"display_options_layout":"grid-with-main-media","desktop_media_position":"left","desktop_media_size":"medium","image_aspect_ratio_desktop":"adapt","image_aspect_ratio_mobile":"adapt","media_autoplay":false,"slider_hide_arrows":false,"enable_media_zoom":true,"enable_sticky_add_to_cart":true,"sticky_add_to_cart_style":"button","show_only_for_mobile":false,"padding_top":52,"padding_bottom":52,"color_scheme":"scheme-1"}},"multicolumn":{"type":"multicolumn","blocks":{"card_1":{"type":"card","settings":{"title":"Step 1","heading":"Heading","card_content":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}},"card_2":{"type":"card","settings":{"title":"Step 2","heading":"Heading","card_content":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}},"card_3":{"type":"card","settings":{"title":"Step 3","heading":"Heading","card_content":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}},"card_4":{"type":"card","settings":{"title":"Step 4","heading":"Heading","card_content":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}}},"block_order":["card_1","card_2","card_3","card_4"],"settings":{"heading_content_alignment":"left","subheading":"","heading":"Multi Column","content":"","content_alignment":"left","caption_align":"left","image_aspect_ratio":"adapt","padding_top":36,"padding_bottom":36,"color_scheme":"scheme-1"}},"before_after":{"type":"before-after","blocks":{"slider_image":{"type":"slider_image","settings":{"drag_position":50,"before_text":"Before","before_product":"","after_text":"After","after_product":"","before_after_text_position":"bottom","control_bg":"#ffffff","control_arrow":"#042436","color_scheme":""}},"content":{"type":"content","settings":{"subheading":"","caption":"Before\/After","content":"<p>Briefly describe about the before and after impact of your products here<\/p>","content_alignment":"left","button_label":"","button_link":"","link_target":"_blank","use_outline_button":false,"overlay_color":"#000000","overlay_opacity":30,"color_scheme":"scheme-3"}}},"block_order":["slider_image","content"],"settings":{"full_width":false,"image_aspect_ratio":"sm","image_position":"d-flex-md-row-reverse","padding_top":36,"padding_bottom":36,"color_scheme":"scheme-1"}},"media_with_text":{"type":"media-and-text","blocks":{"image":{"type":"image","settings":{}},"text_content":{"type":"text-content","settings":{"heading":"Heading","subheading":"","content":"<p>Briefly describe what this heading is about<\/p>","content_alignment":"left","button_label":"Button label","button_link":"","link_target":"_blank","use_outline_button":false}}},"block_order":["image","text_content"],"settings":{"full_width":false,"media_width":50,"media_size":"md","padding_top":36,"padding_bottom":36,"color_scheme":"scheme-4","background_color":"#ffffff"}},"product-recommendation":{"type":"product-recommendation","settings":{"heading":"You may also like","products_to_show":4,"display_options":"grid","columns_desktop":"4","columns_mobile":"2","padding_top":52,"padding_bottom":52,"color_scheme":"scheme-1"}}},"order":["main-product","multicolumn","before_after","media_with_text","product-recommendation"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "settings": {
+            "block_bottom_spacing": 16
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "block_bottom_spacing": 16
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_if_no_reviews": false,
+            "block_bottom_spacing": 16
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false,
+            "block_bottom_spacing": 30
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "block_bottom_spacing": 16
+          }
+        },
+        "variant-picker": {
+          "type": "variant_picker",
+          "settings": {
+            "varaint_selector_type": "pills",
+            "show_swatches": true,
+            "block_bottom_spacing": 5,
+            "guide_heading": "",
+            "guide_option": "",
+            "guide_content": ""
+          }
+        },
+        "quantity-selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "block_bottom_spacing": 30
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "show_status": "always",
+            "inventory_threshold": 10,
+            "inventory_base_quantity": 30,
+            "show_inventory_quantity": true,
+            "show_inventory_progress": true,
+            "inventory_background_color": "#fcf4e8",
+            "inventory_instock_color": "#042436",
+            "inventory_lowstock_color": "#042436",
+            "inventory_outofstock_color": "#787878",
+            "block_bottom_spacing": 16
+          }
+        },
+        "buy-buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true,
+            "block_bottom_spacing": 16
+          }
+        },
+        "pickup": {
+          "type": "pickup",
+          "settings": {
+            "block_bottom_spacing": 30
+          }
+        },
+        "accordion_1": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Heading",
+            "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+            "page": "",
+            "block_bottom_spacing": 5
+          }
+        },
+        "accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Heading",
+            "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+            "page": "",
+            "block_bottom_spacing": 16
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {
+            "badge_stack_style": "wrap",
+            "icon_style_1": "star",
+            "text_color_1": "#000000",
+            "background_color_1": "#fcf4e8",
+            "heading_1": "Badge 1",
+            "content_1": "",
+            "page_1": "",
+            "icon_style_2": "star",
+            "text_color_2": "#000000",
+            "background_color_2": "#fcf4e8",
+            "heading_2": "Badge 2",
+            "content_2": "",
+            "page_2": "",
+            "icon_style_3": "star",
+            "text_color_3": "#000000",
+            "background_color_3": "#fcf4e8",
+            "heading_3": "Badge 3",
+            "content_3": "",
+            "page_3": "",
+            "icon_style_4": "star",
+            "text_color_4": "#000000",
+            "background_color_4": "#fcf4e8",
+            "heading_4": "",
+            "content_4": "",
+            "page_4": "",
+            "icon_style_5": "star",
+            "text_color_5": "#000000",
+            "background_color_5": "#f7f3f3",
+            "heading_5": "",
+            "content_5": "",
+            "page_5": "",
+            "icon_style_6": "star",
+            "text_color_6": "#000000",
+            "background_color_6": "#fcf4e8",
+            "heading_6": "",
+            "content_6": "",
+            "page_6": "",
+            "block_bottom_spacing": 30
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "block_bottom_spacing": 16
+          }
+        },
+        "complementary-products": {
+          "type": "complementary-products",
+          "settings": {
+            "heading": "Also Bought Together",
+            "block_bottom_spacing": 16
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating",
+        "price",
+        "description",
+        "variant-picker",
+        "quantity-selector",
+        "inventory",
+        "buy-buttons",
+        "pickup",
+        "accordion_1",
+        "accordion_2",
+        "badges",
+        "share",
+        "complementary-products"
+      ],
+      "settings": {
+        "display_options_layout": "grid-with-main-media",
+        "desktop_media_position": "left",
+        "desktop_media_size": "medium",
+        "image_aspect_ratio_desktop": "adapt",
+        "image_aspect_ratio_mobile": "adapt",
+        "media_autoplay": false,
+        "slider_hide_arrows": false,
+        "enable_media_zoom": true,
+        "enable_sticky_add_to_cart": true,
+        "sticky_add_to_cart_style": "button",
+        "show_only_for_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-recommendation": {
+      "type": "product-recommendation",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "products_to_show": 4,
+        "display_options": "grid",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "media_text_overlay_X3QrVH": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_ikifjM": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "https://www.youtube.com/watch?v=FTQ-3CK5zjQ",
+            "cover_image": "shopify://shop_images/Pareva_SHOT_01_0222_2_2.png",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": ""
+          }
+        },
+        "first_block_i7LC6e": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Group_2795.png",
+            "image_mobile": "shopify://shop_images/Group_2795.png",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "first_block_ikifjM",
+        "first_block_i7LC6e"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
+    },
+    "media_text_overlay_ftxkaz": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_dKrKAK": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Mask_group_10.png",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "",
+            "heading": "<p>BENEFITS</p>",
+            "subheading": "<ul><li>Fewer visible lines and wrinkles</li><li>Intense hydration suitable for all skin types</li><li>Improved skin resiliency and bounce</li><li>Detoxing properties in the formula contribute to a well rested appearance</li><li>Powered by patented Molecur 3TM technology to turbocharge skin's youthful properties with exosomes and NAD+.</li></ul>",
+            "heading_block1": "<p>HOW IT’S <br/>DIFFERENT</p>",
+            "subheading_block1": "<p>20% clinically proven technologies targeting youth collagen for a comprehensive skin rejuvenation system, targeting lines and wrinkles.</p>",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "first_block_dKrKAK"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
+    }
+  },
+  "order": [
+    "main-product",
+    "product-recommendation",
+    "media_text_overlay_X3QrVH",
+    "media_text_overlay_ftxkaz"
+  ]
+}

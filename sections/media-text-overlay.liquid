@@ -1,0 +1,318 @@
+{{ 'media-with-text-overlay.css' | asset_url | stylesheet_tag }}
+
+{% for block in section.blocks %}
+    {% liquid
+        assign background=section.settings.bg_color
+        assign block_count = section.blocks.size
+     %}
+{% endfor %}
+
+
+<div class="media-text container" style= "display: grid; grid-template-columns: repeat({{ block_count }}, minmax(200px, 1fr) ) ;background:{{background}}" >
+    {% for block in section.blocks %}
+        {% if  block_count == 2 %}
+            {% liquid
+                assign mobile_ratio = 0.928
+                assign desktop_ratio = 0.9
+            %}
+        {% else %}
+            {% liquid
+                assign mobile_ratio = 0.928
+                assign desktop_ratio = 1.8
+            %}
+        {% endif %}
+        {% liquid
+            assign desktop_image = block.settings.image_desktop
+            assign mobile_image = block.settings.image_mobile
+            assign video = block.settings.video
+            assign video_url = block.settings.video_url
+            assign bg_color = block.settings.bg_color
+            assign poster = block.settings.cover_image
+            assign hide_mobile = block.settings.hide_media_mobile
+            assign eyebrow = block.settings.eyebrow
+            assign heading = block.settings.heading
+            assign subheading = block.settings.subheading
+            assign cta_text = block.settings.cta_text
+            assign cta_url = block.settings.cta_url
+            assign button_type = 'text'
+            assign button_background_type = 'transparent'
+            assign button = block.settings.button
+            assign button_url = block.settings.button_url
+            assign top_overlay_mobile = section.settings.overlay_reverse_mobile
+            assign teaser = block.settings.teaser
+            assign logo = block.settings.logo
+            assign heading_block1 = block.settings.heading_block1
+            assign subheading_block1 = block.settings.subheading_block1
+            assign heading_block2 = block.settings.heading_block2
+            assign subheading_block2 = block.settings.subheading_block2
+
+        %}
+        <div class="media-text__wrapper {% if section.settings.swap_media_mobile == true %}media-text__block-reverse{% endif %}">
+            
+            {%- case block.type -%}
+            {%- when 'first-block' -%}
+                {% if video or video_url %}
+                    {% render 'video-with-text-overlay', 
+                            video_url: video_url, 
+                            video: video,
+                            image: poster, 
+                            id: block.id, 
+                            eyebrow: eyebrow,
+                            heading: heading,
+                            subheading: subheading,
+                            heading_block1:heading_block1,
+                            subheading_block1:subheading_block1,
+                            heading_block2:heading_block2,
+                            subheading_block2:subheading_block2,
+                            mobile_aspect_ratio:mobile_ratio,
+                            desktop_aspect_ratio:desktop_ratio,
+                            cta_text: cta_text,
+                            cta_url: cta_url,
+                            desktop_crop: true,
+                            mobile_crop: true,
+                            wrapper_class: 'your-wrapper-class',
+                            cta_url: cta_url,
+                            hide_mobile:hide_mobile,
+                            text_wrapper_class: 'video-banner',
+                            button_type: button_type,
+                            button_background_type: button_background_type,
+                            button:button,
+                            button_url:button_url,
+                            top_overlay_mobile:top_overlay_mobile,
+                            teaser:teaser,
+                            logo:logo
+                    %}
+                    
+                {% elsif desktop_image or mobile_image %}
+                    <div class="media-text__content">
+                        {% liquid
+                            assign id = block.id
+                            assign image_desktop = desktop_image
+                            assign image_mobile = mobile_image
+                        %}
+                        {% render 'image-with-text-overlay',
+                            wrapper_class: 'media-text__image-content',
+                            id: id,
+                            eyebrow: eyebrow,
+                            heading: heading,
+                            subheading: subheading,
+                            heading_block1:heading_block1,
+                            subheading_block1:subheading_block1,
+                            heading_block2:heading_block2,
+                            subheading_block2:subheading_block2,
+                            cta_text: cta_text,
+                            cta_url: cta_url,
+                            image_desktop: image_desktop,
+                            image_mobile: image_mobile,
+                            text_wrapper_class: 'image-banner',
+                            mobile_aspect_ratio:mobile_ratio,
+                            desktop_aspect_ratio:desktop_ratio,
+                            desktop_crop: true,
+                            mobile_crop: true,
+                            button_type: button_type,
+                            button_background_type: button_background_type,
+                            hide_mobile:hide_mobile,
+                            button:button,
+                            button_url:button_url,
+                            top_overlay_mobile: top_overlay_mobile,
+                            teaser:teaser,
+                            logo:logo
+                        %}
+                    </div>
+                {% else %}
+                        {% render 'image-with-text-overlay',
+                            wrapper_class: 'media-text__bge-content',
+                            id: id,
+                            eyebrow: eyebrow,
+                            heading: heading,
+                            text_wrapper_class: 'image-banner',
+                            subheading: subheading,
+                            heading_block1:heading_block1,
+                            subheading_block1:subheading_block1,
+                            heading_block2:heading_block2,
+                            subheading_block2:subheading_block2,
+                            cta_text: cta_text,
+                            cta_url: cta_url,
+                            mobile_aspect_ratio:mobile_ratio,
+                            desktop_aspect_ratio:desktop_ratio,
+                            button_type: button_type,
+                            button_background_type: button_background_type,
+                            hide_mobile:hide_mobile,
+                            button:button,
+                            button_url:button_url,
+                            top_overlay_mobile: top_overlay_mobile,
+                            teaser:teaser,
+                            logo:logo
+                        %}
+                {% endif %}
+            {%- endcase -%}
+        </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+{   
+  "name": "Media with Text overlay",
+  "tag": "section",
+  "max_blocks": 2,
+  "settings": [
+    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color"
+    },
+    {
+        "type": "checkbox",
+        "id": "swap_media_mobile",
+        "label": "Swap blocks in mobile",
+        "default": false
+    },
+    {
+        "type": "checkbox",
+        "id": "overlay_reverse_mobile",
+        "label": "top overlay mobile",
+        "default": false
+    }
+
+  ],
+  "blocks": [
+    {
+      "type": "first-block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Video"
+        },
+        {
+            "type": "checkbox",
+            "id": "hide_media_mobile",
+            "label": "hide media in mobile",
+            "default": false
+        },
+        {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+        },
+        {
+            "type": "video_url",
+            "id": "video_url",
+            "label": "Video URL",
+            "accept": ["youtube", "vimeo"]
+        },
+        {
+            "type": "image_picker",
+            "id": "cover_image",
+            "label": "Cover image",
+            "info": "1440 x 1280px (large) .jpg recommended"
+        },
+        {
+            "type": "header",
+            "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+            "type": "header",
+            "content": "Teaser"
+        },
+        {
+            "type": "html",
+            "id": "logo",
+            "label": "Logo Icon"        
+        },
+        {
+            "type": "richtext",
+            "id": "teaser",
+            "label": "Teaser Text"
+        },
+        {
+            "type": "header",
+            "content": "Text Overlay"
+        },
+        {
+          "type": "richtext",
+          "id": "eyebrow",
+          "label": "Heading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 1"
+        },
+        {
+          "type": "richtext", 
+          "id": "heading",
+          "label": "Block Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Block Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 2"
+        },
+        {
+          "type": "richtext", 
+          "id": "heading_block1",
+          "label": "Block Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading_block1",
+          "label": "Block Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 3"
+        },
+        {
+          "type": "richtext", 
+          "id": "heading_block2",
+          "label": "Block Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading_block2",
+          "label": "Block Subheading"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA url"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media with Text overlay"
+    }
+  ]
+}
+{% endschema %}

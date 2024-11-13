@@ -1,0 +1,43 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+.media-text.container{
+    padding: 0;
+}
+
+.media-text {
+    column-gap:0;
+    row-gap: 0;
+    min-height: 500px;
+
+    &__wrapper{
+        width: 100%;
+    }
+    @media(max-width: 1023px){
+        grid-template-columns: 1fr !important;
+    }
+
+    &__block-reverse:nth-of-type(1) {
+        order: 1;
+        @media(--md){
+            order: 0; 
+        }
+    } 
+} 
+
+.image--desktop{
+    display: none;
+    @media(--md){
+        display: block;
+    }
+}
+.image--mobile{
+    display: block !important;
+    @media(--md){
+        display: none !important;
+    }
+}
+

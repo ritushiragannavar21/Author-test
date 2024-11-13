@@ -1,0 +1,12 @@
+{% if cta_url contains 'https://parevabeauty.com/' %}
+    {% assign curated_cta_url = cta_url | split: 'https://parevabeauty.com/' | last %}
+    {% assign route_url_size  = routes.root_url | size %} 
+    {% if route_url_size > 1 %} 
+      {% assign curated_cta_url  = routes.root_url | append: '/' | append: curated_cta_url %}
+     {% else %}
+       {% assign curated_cta_url  = routes.root_url | append: curated_cta_url %}
+     {% endif %}
+  {% else %}
+    {% assign curated_cta_url = cta_url %}
+  {% endif %}
+  {{curated_cta_url}}

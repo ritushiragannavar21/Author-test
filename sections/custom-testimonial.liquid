@@ -1,0 +1,90 @@
+{{ 'custom-testimonial.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-testimonial container" data-parent>
+    <div class="custom-testimonial__heading">{{ section.settings.heading }}</div>
+    <div class="swiper-navigations" data-swiper-navigations></div>
+    <custom-carousel>
+        <div class="custom-testimonial__content hide" style="text-align: center;" data-carousel-content>
+            {% for block in section.blocks %}
+            {% if block.type == 'testimonial' %}
+                <div class="swiper-slide">
+                    <div class="custom-testimonial__wrapper" style="color: {{ block.settings.text_color }};">
+                        <p class="custom-testimonial__quote">{{ block.settings.quote }}</p>
+                        <div class="custom-testimonial__star-container">
+                            {% for i in (1..block.settings.rating) %}
+                                <span class="custom-testimonial__star" style="color: {{ block.settings.text_color }};">★</span>
+                            {% endfor %}
+                        </div>
+                        <p class="custom-testimonial__author">{{ block.settings.author }}</p>
+                    </div>
+                </div>
+            {% endif %}
+            {% endfor %}
+
+        </div>
+        <div class="carousel-placeholders"></div>
+        <script type="text/json" data-settings>
+          {
+            "slidesPerView": 1,
+            "spaceBetween": 10,
+            "overflowNagivation": true,
+            "navigation": true
+          }
+        </script>
+    </custom-carousel>
+</div>
+  
+
+  {% schema %}
+    {
+        "name": "Custom Testimonials",
+        "settings": [{
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Testimonial"
+        },
+
+        ],
+        "blocks": [
+        {
+            "type": "testimonial",
+            "name": "Testimonial",
+            "settings": [
+            {
+                "type": "text",
+                "id": "quote",
+                "label": "Testimonial Quote",
+                "default": "My skin looks and feels so much better. I look 8 years younger!"
+            },
+            {
+                "type": "text",
+                "id": "author",
+                "label": "Author",
+                "default": "Sarah"
+            },
+            {
+                "type": "range",
+                "id": "rating",
+                "label": "Star Rating",
+                "default": 5,
+                "min": 1,
+                "max": 5
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text Color",
+                "default": "#0000FF"
+            }
+            ]
+        }
+        ],
+        "presets": [
+            {
+            "name": "Custom Testimonials"
+            }
+        ]
+    }
+{% endschema %} 
+  

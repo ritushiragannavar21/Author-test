@@ -1,0 +1,73 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/breakpoints';
+
+
+.custom-testimonial{
+    position: relative;
+    text-align: center;
+    background: colors.$milk-color;
+    padding: var(--heading-margin) 0;
+
+    .carousel__container{
+        width: 243px;
+        @media(--xs){
+            width: 282px;
+        }
+        @media(--sm){
+            width: 408px;
+        }
+        @media(--md){
+            width: 600px;
+        }
+    }
+
+    &__heading , &__heading p{
+        @include use-text-style('heading-1');
+        font-weight: typography.$regular-weight;
+        letter-spacing: 3.1px;
+        color: colors.$blue;
+        padding: 0 16px 58px;
+        @media(--md){
+            padding: 32px var(--section-margin) var(--heading-margin);
+        }
+    }
+
+    &__quote{
+        @include use-text-style('heading-2');
+        font-weight: typography.$regular-weight;
+        font-family: var(--tertiary-font);
+        line-height: 32px;
+        letter-spacing: 0.2px;
+        margin-bottom: var(--section-margin);
+        @media(--md){
+            line-height: 40px;
+            letter-spacing: 2.4px;
+        }
+    }
+
+    &__author{
+        @include use-text-style('heading-3');
+        margin-bottom: 0;
+        font-family: var(--secondary-font);
+        @media(--md){
+            margin-bottom: var(--nav-vertical-padding);
+        }
+    }
+
+    &__star-container{
+        margin-bottom: var(--section-margin);
+    }
+
+    .swiper-navigation svg{
+        height: 17px;
+        width: 17px;
+        @media(--md){
+            height: 33px; 
+            width: 33px;
+        }
+    }
+}

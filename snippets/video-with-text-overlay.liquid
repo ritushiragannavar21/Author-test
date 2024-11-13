@@ -1,0 +1,65 @@
+
+    {% liquid 
+        assign fill = fill | default: false
+       %}
+       
+       {% if text_background %} 
+       {% endif %}
+       {%assign split_classes = wrapper_class | split: ',' %}
+       {% assign primary_class = split_classes.first %}
+       {% assign secondary_class = split_classes.last %}
+    
+    <div class="text-image {{primary_class}}__text-image {{primary_class}} {{primary_class}}__text-image-{{id}} {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %} {% if top_overlay_mobile == true %}text-image__overlay-reverse{% endif %}" 
+        {% if cta_url %} data-redirect-click data-js-click data-url="{% render 'render-metafield-local-aware-url', cta_url: cta_url %}"{% endif %}
+        {% if promotion and promotion_name != blank %}
+          data-promotion data-promotion-name="{{- promotion_name -}}" data-promotion-id="{{- promotion_name | handleize -}}"
+          data-creative-name = "{{ promotion_creative_name }}"
+        {% endif %}
+    >    
+
+    {% if button_url != blank  and button != blank %}
+        <div class="text-image__button {% if hide_mobile == true %}button__hide_button{% endif%}">
+            <a class="button button__custom-button {{wrapper_class}}__cta text__cta" href="{{ button_url }}"><span class="btn-text button__btn-text"> {{ button }} </span></a> 
+        </div>
+    {% endif %}
+    
+    {% assign bottom_overlay = bottom_overlay | default: false %}
+    {% if video_url or video or image %}
+        <div class="text-image__image-wrapper image {% if hide_mobile == true %}hide_video__mobile{% endif %} {{primary_class}}__image-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %} {% if overlay == false and bottom_overlay == false %} image--no-radius {% endif%}
+            {% if is_half_width %} text-image__image-wrapper--half-width {{primary_class}}__image-wrapper--half-width {% endif %}">
+                {% render 'shopify-responsive-video', video_url:video_url, aspect_ratio:0.9 , image:image , video: video , crop:desktop_crop %}
+            
+        </div>
+    {% endif %}
+     {% if eyebrow != blank or heading != blank or subheading != blank or cta_text != blank or logo != blank or teaser!= blank %}
+        <div class="text-image__text-wrapper text-image__text-wrapper-{{id}} content {{primary_class}}__text-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %} {% if overlay == false %} text-image__text-wrapper--no-overlay {% endif%}{% if hide_mobile == true %}text-image__text-wrapper--no-overlay__mobile{% endif%} {% if subheading != blank or cta_text != blank %}text-image__justify-between{% endif %}"
+            {% if cta_url %} onclick="location.href='{{cta_url}}';" {% endif %}
+        >
+          {% render 'text', 
+              id: id,
+              color: color, 
+              eyebrow: eyebrow, 
+              heading: heading , 
+              heading_tag: heading_tag,
+              subheading: subheading , 
+              heading_block_one:heading_block1,
+              subheading_block_one:subheading_block1,
+              heading_block_two:heading_block2,
+              subheading_block_two:subheading_block2,
+              cta_text: cta_text, 
+              wrapper_class: text_wrapper_class,
+              inline_heading: inline_heading,
+              inline_cta: inline_cta,
+              cta_url: cta_url,
+              button_type: button_type,
+              button_background_type: button_background_type,
+              cta_arrow: cta_arrow,
+              secondary_button_type: secondary_button_type,
+              logo:logo,
+              teaser:teaser
+            %}
+        </div>
+    {% endif %}
+  </div>
+
+

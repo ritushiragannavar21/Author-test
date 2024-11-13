@@ -1,1 +1,109 @@
-{"name":"Header group","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-1":{"type":"announcement","settings":{"text":"Announce something here","announcement_link":""}},"announcement-2":{"type":"announcement","settings":{"text":"Announce something here","announcement_link":""}}},"block_order":["announcement-1","announcement-2"],"settings":{"enable_sticky":false,"navigation":"slider","scroll_speed":18,"show_locale_selector":true,"show_country_selector":true,"show_country_flag":false,"show_country_name":false,"sublink":"custom_links","custom_link_heading_1":"Link 1","custom_link_url_1":"#","custom_link_heading_2":"Link 2","custom_link_url_2":"#","custom_link_heading_3":"Link 3","custom_link_url_3":"#","color_scheme":"scheme-4"}},"header":{"type":"header","settings":{"logo_position":"logo-center-menu-left","enable_sticky":true,"bottom_box_shadow":true,"logo_width":140,"logo_mobile_width":134,"menu":"main-menu","highlight_heading":"SHOP ALL","highlight_link":"#","use_outline_button_style":false,"enable_transparent_header":false,"show_on_only_homepage":false,"transparent_header_text_color":"#000000","hamberger_menu":"main-menu","show_locale_selector":false,"show_country_selector":false,"show_country_flag":false,"show_country_name":false,"color_scheme":"scheme-1","color_scheme-menu":""}}},"order":["announcement-bar","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Header group",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Announce something here",
+            "announcement_link": ""
+          }
+        },
+        "announcement-2": {
+          "type": "announcement",
+          "settings": {
+            "text": "Announce something here",
+            "announcement_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-1",
+        "announcement-2"
+      ],
+      "settings": {
+        "enable_sticky": false,
+        "navigation": "slider",
+        "scroll_speed": 18,
+        "show_locale_selector": true,
+        "show_country_selector": true,
+        "show_country_flag": false,
+        "show_country_name": false,
+        "enable_sublinks": false,
+        "sublink": "custom_links",
+        "custom_link_heading_1": "Link 1",
+        "custom_link_url_1": "#",
+        "custom_link_heading_2": "Link 2",
+        "custom_link_url_2": "#",
+        "custom_link_heading_3": "Link 3",
+        "custom_link_url_3": "#",
+        "color_scheme": "scheme-4"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_promotion_8tbYwq": {
+          "type": "mega_menu_promotion",
+          "settings": {
+            "mega_menu_trigger": "Shop",
+            "promotion_stack": "row",
+            "image_ratio": "adapt",
+            "content_alignment": "left",
+            "promotion-1_image": "shopify://shop_images/Screenshot_2024-10-23_at_11.31.48_AM_1_1.png",
+            "promotion-1_button_text": "View all",
+            "promotion-1_link": "",
+            "promotion-2_button_text": "View all",
+            "promotion-2_link": "",
+            "promotion-3_button_text": "View all",
+            "promotion-3_link": "",
+            "link_target": "_blank"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_promotion_8tbYwq"
+      ],
+      "settings": {
+        "logo_position": "logo-center-menu-left",
+        "dropdown_trigger_type": "hover",
+        "enable_sticky": true,
+        "sticky_header_style": "always",
+        "bottom_box_shadow": true,
+        "header_logo": "shopify://shop_images/Group_209.png",
+        "logo_width": 140,
+        "logo_mobile_width": 138,
+        "menu": "menu",
+        "highlight_heading": "SHOP ALL",
+        "highlight_link": "#",
+        "use_outline_button_style": false,
+        "enable_transparent_header": false,
+        "show_on_only_homepage": false,
+        "transparent_header_text_color": "#282fee",
+        "hamberger_menu": "menu",
+        "show_locale_selector": false,
+        "show_country_selector": false,
+        "show_country_flag": false,
+        "show_country_name": false,
+        "color_scheme": "scheme-99f73b25-4598-4954-9e35-60094b44cb81",
+        "color_scheme-menu": "scheme-99f73b25-4598-4954-9e35-60094b44cb81"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
