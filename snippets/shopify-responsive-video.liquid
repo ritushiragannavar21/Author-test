@@ -27,18 +27,17 @@
         </div>
         {% if image %}
             <div>
-                {% render 'shopify-responsive-image', image: image, aspect_ratio: aspect_ratio %}
+                {% render 'shopify-responsive-image', image: image, aspect_ratio: aspect_ratio_desktop %}
             </div>
         {% endif %}      
     </div>
-
     
     <div class="video video--desktop {{ wrapper_class }}__video " {{ wrapper_attributes }} style="display: none;">
-        {% render 'responsive-video', video_url:video_url, aspect_ratio: aspect_ratio, crop :crop %}
+        {% render 'responsive-video', video_url:video_url, desktop_aspect_ratio: desktop_aspect_ratio, crop :crop , mobile_aspect_ratio:aspect_ratio_mobile %}
     </div>   
 {% else %} 
     <div class="video-poster">
-        {% render 'responsive-video', video:video, aspect_ratio: aspect_ratio , crop :crop%}
+        {% render 'responsive-video', video:video,desktop_aspect_ratio: desktop_aspect_ratio , crop :crop, mobile_aspect_ratio:aspect_ratio_mobile%}
     </div>  
 {% endif %}
 

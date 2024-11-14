@@ -33,6 +33,7 @@
         "announcement-1",
         "announcement-2"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky": false,
         "navigation": "slider",

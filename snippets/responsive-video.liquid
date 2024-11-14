@@ -1,18 +1,23 @@
 
-
-{% assign video_aspect_ratio = aspect_ratio | default: "0.9" %}
+{% assign desktop_aspect_ratio = desktop_aspect_ratio  %}
+{% assign mobile_aspect_ratio = mobile_aspect_ratio %}
 {% assign min = 100 %}
 {% assign max = 10000 %}
 {% assign diff = max | minus: min %}
 {% assign generated_video_id = "now" | date: "%N" | modulo: diff | plus: min %}
 
 <style>
-  #VideoWrapper-{{ generated_video_id }} {
+  #VideoWrapper-{{ generated_video_id }}{
     position: relative;
     width: 100%;
-    max-width: {{ max_width | default: '720' }}px;
-    padding-top: {{ 100 | divided_by: video_aspect_ratio }}%;
+    max-height: {{ max_width | default: '800' }}px;
+    padding-top: {{ 100 | divided_by: mobile_aspect_ratio }}%;
     overflow: hidden;
+  }
+  @media(min-width: 1023px){
+     #VideoWrapper-{{ generated_video_id }}{
+      padding-top: {{ 100 | divided_by: desktop_aspect_ratio }}%;
+    }
   }
 
   #Video-{{ generated_video_id }} ,  video{

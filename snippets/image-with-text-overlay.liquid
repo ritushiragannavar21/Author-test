@@ -22,7 +22,7 @@
     {% endif %}
     
     {% assign bottom_overlay = bottom_overlay | default: false %}
-    {% if image_desktop or image_mobile%}
+    {% if image_desktop != blank or image_mobile != blank %}
      <div class="text-image__image-wrapper image {{primary_class}}__image-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %} {% if overlay == false and bottom_overlay == false %} image--no-radius {% endif%}
         {% if is_half_width %} text-image__image-wrapper--half-width {{primary_class}}__image-wrapper--half-width {% endif %}">
         {% if image_desktop %}

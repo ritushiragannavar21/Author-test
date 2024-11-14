@@ -1,0 +1,118 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": 600,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "color_scheme": ""
+      }
+    },
+    "media_text_overlay_iVbm6j": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_KPNi4M": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/162-Pareva_1_1.png",
+            "image_mobile": "shopify://shop_images/162-Pareva_1_1.png",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "SHOP ALL",
+            "button_url": "shopify://collections"
+          }
+        },
+        "first_block_UcfjQH": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "<p>A HIGH BAR FOR OUR future SELVES</p>",
+            "heading": "",
+            "subheading": "<p>We’ve set some demanding goals for the future and believe sharing them with our community is the first step to delivering:<br/><br/>1. Complete label transparency by 2030 (with only clinically studied and validated ingredients in each formula).<br/>2.  Fully recyclable packaging to 70% refillable and recycled materials by 2029<br/>3. Minimize complexities and simplify routines (less product = less waste) from day one.   <br/>4. Define a science-backed climate goal by 2028<br/>5. B Corp certification by 2029 <br/>6. No fear-mongering, age-shaming or judgment.</p>",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "first_block_KPNi4M",
+        "first_block_UcfjQH"
+      ],
+      "settings": {
+        "bg_color": "#e8ff5c",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
+    },
+    "media_text_overlay_8nWGmY": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_LUFAQW": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video": "shopify://files/videos/3b2a1aacfe23fee98f69a746403fd02972ac95ab (1).mov",
+            "video_url": "",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "<p>a PROBLEM Worth SOLVING</p>",
+            "heading": "",
+            "subheading": "<p>We believe passionately that there’s a better way.<br/><br/>All our products include a document – we call it The Factuals™ – that shares formulation details, product testing and our progress as a truly responsible beauty company.<br/><br/>We’re just getting started and we know we’ve a long way to go. Our promise is simple... we’ll   communicate the programs that reflect our values.</p>",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "first_block_LUFAQW"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": true,
+        "overlay_reverse_mobile": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "media_text_overlay_iVbm6j",
+    "media_text_overlay_8nWGmY"
+  ]
+}
