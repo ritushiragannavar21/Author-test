@@ -11,6 +11,9 @@
     box-shadow: none;
     outline: 0;
     letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+    display: inline-flex;
+
 
     @media(--xxs) {
         padding: 13px 28px;
@@ -97,4 +100,10 @@
 
 .arrow-icon{
     padding-left: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
+
+.button:hover .arrow-icon {
+    transform: translateX(5px); 
+  }

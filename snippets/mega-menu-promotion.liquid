@@ -1,3 +1,4 @@
+{{ 'header.css' | asset_url | stylesheet_tag }}
 {%- assign promos = '' -%}
 {%- for i in (1..4) -%}
   {%- liquid

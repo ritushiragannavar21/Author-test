@@ -1,3 +1,5 @@
+ {{ 'header.css' | asset_url | stylesheet_tag }}  
+
 <drawer-component
   aria-hidden="true"
   class="d-block drawer hamberger-drawer color-{{ settings.drawer_color_scheme }}"
@@ -14,7 +16,7 @@
           class="drawer__close__btn"
           close-drawer
         >
-          {% render 'icon' with 'close-drawer' %}
+          {% render 'icon' with 'close-btn' %}
         </button>
 
         {% comment %}

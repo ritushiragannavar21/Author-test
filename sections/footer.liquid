@@ -27,6 +27,8 @@
   }
 {% endstyle %}
 
+{{ 'footer.css' | asset_url | stylesheet_tag }} 
+
 <footer class="footer  section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
   <div class="container">
     <div class="footer__content">
@@ -557,10 +559,9 @@
           "default": 105
         },
         {
-          "type": "text",
+          "type": "richtext",
           "id": "heading",
-          "label": "Heading",
-          "default": "Heading"
+          "label": "Heading"
         },
         {
           "type": "richtext",

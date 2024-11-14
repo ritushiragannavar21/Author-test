@@ -38,6 +38,7 @@
             assign button_background_type = 'transparent'
             assign button = block.settings.button
             assign button_url = block.settings.button_url
+            assign hide_button_mobile = block.settings.hide_button_mobile
             assign top_overlay_mobile = section.settings.overlay_reverse_mobile
             assign teaser = block.settings.teaser
             assign logo = block.settings.logo
@@ -78,6 +79,7 @@
                             button_background_type: button_background_type,
                             button:button,
                             button_url:button_url,
+                            hide_button_mobile: hide_button_mobile,
                             top_overlay_mobile:top_overlay_mobile,
                             teaser:teaser,
                             logo:logo
@@ -114,6 +116,7 @@
                             hide_mobile:hide_mobile,
                             button:button,
                             button_url:button_url,
+                            hide_button_mobile:hide_button_mobile,
                             top_overlay_mobile: top_overlay_mobile,
                             teaser:teaser,
                             logo:logo
@@ -140,6 +143,7 @@
                             hide_mobile:hide_mobile,
                             button:button,
                             button_url:button_url,
+                            hide_button_mobile:hide_button_mobile,
                             top_overlay_mobile: top_overlay_mobile,
                             teaser:teaser,
                             logo:logo
@@ -305,7 +309,13 @@
             "type": "url",
             "id": "button_url",
             "label": "Button url"
-        }
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_button_mobile",
+          "label": "hide button in mobile",
+          "default": false
+      }
       ]
     }
   ],

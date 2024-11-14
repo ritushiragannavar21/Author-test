@@ -5103,19 +5103,19 @@ shopify-accelerated-checkout-cart {
   margin-bottom: 16px;
 }
 .bundle__item {
-  width: 256px;
+  width: 424px;
 }
 .bundle__item:not(:last-child) {
   margin-bottom: 14px;
 }
 @media (max-width: 1335px) {
   .bundle__item {
-    width: 230px;
+    width: 300px;
   }
 }
 @media (max-width: 1024px) {
   .bundle__item {
-    width: 156px;
+    width: 225px;
   }
 }
 .bundle__image {
@@ -5777,7 +5777,8 @@ details summary::-webkit-details-marker {
 }
 @media (min-width: 768px) {
   .footer__link-list {
-    width: 150px;
+    /* width: 150px; */
+    width: 160px;
   }
 }
 .footer__text-content {

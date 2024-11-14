@@ -49,6 +49,8 @@
   }
 {% endstyle %}
 
+{{ 'header.css' | asset_url | stylesheet_tag }} 
+
 {%- if section.settings.menu != blank -%}
   <height-calc class="d-block" variable="header">
     <header-component
@@ -375,6 +377,22 @@
                     assign button_style = 'fill'
                   endif
                 %}
+                <li class="header-right__nav">
+                  <a
+                    aria-label="Community"
+                    class="d-v-center"
+                    href="https://parevabeauty.com/pages/community"
+                  > COMMUNITY
+                  </a>
+                </li>
+                <li class="header-right__nav">
+                  <a
+                    aria-label="Community"
+                    class="d-v-center"
+                    href="https://parevabeauty.com/pages/community"
+                  > Pros
+                  </a>
+                </li>
                 {% if show_highlight_button %}
                   <li class="desktop-only">
                     <a

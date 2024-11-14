@@ -1,0 +1,71 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/breakpoints'; 
+
+.header-container  {
+    .navbar-nav {
+        .menu-main-link {
+            font-family: var(--secondary-font);
+            font-weight: typography.$medium-weight; 
+        }
+        .mega-menu__list--child-list{
+            .menu-main-link {
+                @include use-text-style('body-title');
+                font-family: var(--primary-font);
+                font-weight: typography.$regular-weight; 
+            }
+        }
+    }
+}
+
+.header-right__nav a{
+    display: none;
+    @media (min-width: 992px) {
+        display: block;
+        @include use-text-style('body-title');
+        font-family: var(--secondary-font);
+        font-weight: typography.$medium-weight !important; 
+        text-decoration: unset; 
+    }
+}
+
+hamburger-menu{
+    .hamberger-accordion{
+        gap: 20px;
+        .hamberger-accordion__item{
+            .hamberger-accordion__link-black , .hamberger-accordion__head {
+                @include use-text-style('heading-1-alt');
+                font-family: var(--secondary-font);
+                font-weight: typography.$regular-weight;  
+            }
+        }
+    }
+}
+
+.drawer__footer{
+    a{
+        @include use-text-style('heading-1-alt');
+        font-family: var(--secondary-font);
+        font-weight: typography.$regular-weight;  
+    }
+}
+
+.accordion__item__body{
+    .back-to-menu{
+        @include use-text-style('heading-1-alt');
+        font-family: var(--secondary-font);
+        font-weight: typography.$regular-weight;
+    }
+}
+
+.bundle__item{
+    .bundle__body{
+        .bundle__link{
+            font-family: var(--secondary-font);
+            font-weight: typography.$regular-weight;
+        }
+    }
+}

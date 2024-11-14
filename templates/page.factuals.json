@@ -19,6 +19,41 @@
         "color_scheme": ""
       }
     },
+    "media_text_overlay_8nWGmY": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_LUFAQW": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video": "shopify://files/videos/3b2a1aacfe23fee98f69a746403fd02972ac95ab (1).mov",
+            "video_url": "",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "<p>a PROBLEM Worth SOLVING</p>",
+            "heading": "",
+            "subheading": "<p>We believe passionately that there’s a better way.<br/><br/>All our products include a document – we call it The Factuals™ – that shares formulation details, product testing and our progress as a truly responsible beauty company.<br/><br/>We’re just getting started and we know we’ve a long way to go. Our promise is simple... we’ll   communicate the programs that reflect our values.</p>",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "SHOP ALL",
+            "button_url": "shopify://collections",
+            "hide_button_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "first_block_LUFAQW"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": true,
+        "overlay_reverse_mobile": false
+      }
+    },
     "media_text_overlay_iVbm6j": {
       "type": "media-text-overlay",
       "blocks": {
@@ -41,7 +76,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "SHOP ALL",
-            "button_url": "shopify://collections"
+            "button_url": "shopify://collections",
+            "hide_button_mobile": true
           }
         },
         "first_block_UcfjQH": {
@@ -61,7 +97,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         }
       },
@@ -74,45 +111,11 @@
         "swap_media_mobile": false,
         "overlay_reverse_mobile": false
       }
-    },
-    "media_text_overlay_8nWGmY": {
-      "type": "media-text-overlay",
-      "blocks": {
-        "first_block_LUFAQW": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video": "shopify://files/videos/3b2a1aacfe23fee98f69a746403fd02972ac95ab (1).mov",
-            "video_url": "",
-            "logo": "",
-            "teaser": "",
-            "eyebrow": "<p>a PROBLEM Worth SOLVING</p>",
-            "heading": "",
-            "subheading": "<p>We believe passionately that there’s a better way.<br/><br/>All our products include a document – we call it The Factuals™ – that shares formulation details, product testing and our progress as a truly responsible beauty company.<br/><br/>We’re just getting started and we know we’ve a long way to go. Our promise is simple... we’ll   communicate the programs that reflect our values.</p>",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "",
-            "button_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "first_block_LUFAQW"
-      ],
-      "settings": {
-        "bg_color": "",
-        "swap_media_mobile": true,
-        "overlay_reverse_mobile": false
-      }
     }
   },
   "order": [
     "main",
-    "media_text_overlay_iVbm6j",
-    "media_text_overlay_8nWGmY"
+    "media_text_overlay_8nWGmY",
+    "media_text_overlay_iVbm6j"
   ]
 }

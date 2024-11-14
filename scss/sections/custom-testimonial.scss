@@ -63,11 +63,15 @@
     }
 
     .swiper-navigation svg{
+        cursor: pointer;
         height: 17px;
         width: 17px;
         @media(--md){
             height: 33px; 
             width: 33px;
         }
+    }
+    .swiper-button-disabled svg line{
+        stroke: #A7ABF7;
     }
 }

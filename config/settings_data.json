@@ -245,6 +245,23 @@
           "controls": "#042436",
           "primary": "#042436"
         }
+      },
+      "scheme-3c198b06-970a-4cd6-b876-83a23aa3b97f": {
+        "settings": {
+          "text": "#f4f1e8",
+          "background": "#282fee",
+          "background_gradient": "",
+          "primary_button": "#042436",
+          "on_primary_button": "#ffffff",
+          "secondary_button": "#000000",
+          "icons": "#042436",
+          "links": "#042436",
+          "input_color": "#042436",
+          "variant_color": "#000000",
+          "border": "#dad9d9",
+          "controls": "#042436",
+          "primary": "#042436"
+        }
       }
     }
   },

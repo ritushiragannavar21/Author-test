@@ -1,0 +1,73 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/breakpoints';
+
+
+.newsletterForm__input{
+    border: 0;
+    border-bottom: 1px solid colors.$milk-color;
+    border-radius: 0;
+}
+
+.footerlink-head , .footer__logoContent p{
+    font-size: typography.$body-regular-size !important;
+    font-weight: typography.$regular-weight !important; 
+    font-family: var(--primary-font);
+}
+
+.new-letter{
+    .footerlink-head{
+        @include use-text-style('body-regular');
+        font-family: var(--secondary-font);
+        font-weight: typography.$heading-weight !important; 
+    }
+    .footerlink-link p{
+        @include use-text-style('body-regular');
+        font-family: var(--primary-font);
+        font-weight: 300;
+    }
+}
+
+.footer__link-list{
+    .footerlink-head.tab-only{
+        font-family: var(--secondary-font);
+        font-weight: typography.$heading-weight !important; 
+    }
+    .footers-linkList.tab-only a{
+        font-family: var(--primary-font);
+        font-weight: typography.$regular-weight !important; 
+    }
+}
+
+.footer__content{
+    @media(--md-large){
+        padding: 0 80px;
+    }
+}
+
+.footer__link-list:nth-child(1) {
+    @media(--md-large){
+        width: 120px;
+    }
+}
+
+.footer__link-list:nth-child(2) {
+    @media(--md-large){
+        width: 90px;
+    }
+}
+
+.footer__link-list:nth-child(3) {
+    @media(--md-large){
+        width: 100px;
+    }
+}
+
+.footer__link-list:nth-child(4) {
+    @media(--md-large){
+        width: 174px;
+    }
+}
