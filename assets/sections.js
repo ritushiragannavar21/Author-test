@@ -2,6 +2,25 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./js/sections/factuals.js":
+/*!*********************************!*\
+  !*** ./js/sections/factuals.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/react-wrapper */ "./js/components/react-wrapper.js");
+/* harmony import */ var ReactComponents_factuals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ReactComponents/factuals */ "./js/components/react/factuals.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(ReactComponents_factuals__WEBPACK_IMPORTED_MODULE_1__["default"], 'factual-data', '#factual-data');
+});
+
+/***/ }),
+
 /***/ "./js/sections/hello.js":
 /*!******************************!*\
   !*** ./js/sections/hello.js ***!
@@ -21,26 +40,6 @@
 
 /***/ }),
 
-/***/ "./js/sections/react.js":
-/*!******************************!*\
-  !*** ./js/sections/react.js ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/react-wrapper */ "./js/components/react-wrapper.js");
-/* harmony import */ var ReactComponents_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ReactComponents/react */ "./js/components/react/react.js");
-/* harmony import */ var ReactComponents_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ReactComponents_react__WEBPACK_IMPORTED_MODULE_1__);
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  (0,JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])((ReactComponents_react__WEBPACK_IMPORTED_MODULE_1___default()), 'react-page', '#account-data');
-});
-
-/***/ }),
-
 /***/ "./js/sections/sections.js":
 /*!*********************************!*\
   !*** ./js/sections/sections.js ***!
@@ -48,12 +47,12 @@
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 /* harmony import */ var _hello__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hello */ "./js/sections/hello.js");
-/* harmony import */ var _react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react */ "./js/sections/react.js");
+/* harmony import */ var _factuals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./factuals */ "./js/sections/factuals.js");
 
 
 document.addEventListener('DOMContentLoaded', () => {
   (0,_hello__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_react__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_factuals__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 
 /***/ })

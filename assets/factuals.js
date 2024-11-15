@@ -2,18 +2,18 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/sections/react.js":
-/*!******************************!*\
-  !*** ./js/sections/react.js ***!
-  \******************************/
+/***/ "./js/sections/factuals.js":
+/*!*********************************!*\
+  !*** ./js/sections/factuals.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony import */ var JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! JsComponents/react-wrapper */ "./js/components/react-wrapper.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'ReactComponents/react'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/react-wrapper */ "./js/components/react-wrapper.js");
+/* harmony import */ var ReactComponents_factuals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ReactComponents/factuals */ "./js/components/react/factuals.js");
 
 
 /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  (0,JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_1__["default"])(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'ReactComponents/react'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), 'react-page', '#account-data');
+  (0,JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(ReactComponents_factuals__WEBPACK_IMPORTED_MODULE_1__["default"], 'factual-data', '#factual-data');
 });
 
 /***/ })
@@ -141,7 +141,7 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"react": 0
+/******/ 			"factuals": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -191,7 +191,7 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/react.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/factuals.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

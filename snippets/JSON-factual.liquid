@@ -1,0 +1,30 @@
+
+{
+    "background_color": "{{ section.settings.bg_color }}",
+    "blocks": [
+        {% for block in section.blocks %}
+            {
+                "title": "{{ block.settings.title }}",
+                "block_size": {{ forloop.index }},
+                "description": "{{ block.settings.descriptione }}",
+                "image" :[ {% if block.settings.image != blank %}{ "src": "{{ block.settings.image | image_url }}", "height": "
+                    {{- block.settings.image.height | default: 1080 -}}","width": "{{ block.settings.image.width | default: 1920 }}" }{%  endif %}],
+                "cards": [
+                    {
+                        "text": "{{ block.settings.card1_text | escape }}",
+                        "color": "{{ block.settings.card1_color }}"
+                    },
+                    {
+                        "text": "{{ block.settings.card2_text | escape }}",
+                        "color": "{{ block.settings.card2_color }}"
+                    },
+                    {
+                        "text": "{{ block.settings.card3_text | escape }}",
+                        "color": "{{ block.settings.card3_color }}"
+                    }
+                ]
+            }{%- unless forloop.last %}, {% endunless %}
+        {% endfor %}
+    ]
+}
+

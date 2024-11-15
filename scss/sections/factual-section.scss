@@ -1,0 +1,62 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/breakpoints';
+
+
+.factual__section {
+    display: flex;
+    background-color: #f8f8f8;
+  }
+  
+  .factual__left {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .factual__title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .factual__description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .factual__cards {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .factual__card-item {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+  .factual__right {
+    flex: 1;
+  }
+
+  .factual{
+
+    .container{
+      padding: 0;
+    }
+
+    &__left{
+      padding: 0;
+    }
+  }
+  

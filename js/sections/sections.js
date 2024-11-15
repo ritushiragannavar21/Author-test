@@ -1,7 +1,7 @@
 import hello from "./hello";
-import react from "./react";
+import factuals from "./factuals";
 
 document.addEventListener('DOMContentLoaded', () => {
     hello();
-    react();
-});
+    factuals();
+}); 

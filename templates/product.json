@@ -216,6 +216,20 @@
         "color_scheme": "scheme-1"
       }
     },
+    "factuals_ak676L": {
+      "type": "factuals",
+      "settings": {
+        "background_image": "shopify://shop_images/162-Pareva_1_1.png",
+        "title": "title",
+        "description": "The (F)actuals is a breakdown of each and every ingredient in each of our products, along with its purpose and quantity.",
+        "card1_text": "C35.5™",
+        "card1_color": "#ff0000",
+        "card2_text": "RH5.5™",
+        "card2_color": "#0000ff",
+        "card3_text": "COLL20™",
+        "card3_color": "#00ff00"
+      }
+    },
     "media_text_overlay_X3QrVH": {
       "type": "media-text-overlay",
       "blocks": {
@@ -237,7 +251,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         },
         "first_block_i7LC6e": {
@@ -259,7 +274,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         }
       },
@@ -294,7 +310,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         }
       },
@@ -311,6 +328,7 @@
   "order": [
     "main-product",
     "product-recommendation",
+    "factuals_ak676L",
     "media_text_overlay_X3QrVH",
     "media_text_overlay_ftxkaz"
   ]

@@ -62,7 +62,7 @@
 
 .footer__link-list:nth-child(3) {
     @media(--md-large){
-        width: 100px;
+        width: 118px;
     }
 }
 
@@ -70,4 +70,19 @@
     @media(--md-large){
         width: 174px;
     }
+}
+
+.newsletter__email-input{
+    position: relative;
+    input::placeholder {
+        color: colors.$milk-color;
+      }
+}
+
+#SubscribeFooter{
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
