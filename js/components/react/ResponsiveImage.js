@@ -19,6 +19,7 @@ export default ({ image_aspect_ratio, image, srcTokens }) => {
   const aspectRatio = image_aspect_ratio;
   let { height: maxHeightImage, id: image_id, src: imageSrc, width: maxWidthImage } = displayImage;
   const IMAGE_WIDTHS = [180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2376, 2592, 2808, 3024]
+  
   const getImageWidths = nativeWidth => {
     const imageWidths = [];
     for (let i = 0; i < IMAGE_WIDTHS.length; i++) {
@@ -41,10 +42,10 @@ export default ({ image_aspect_ratio, image, srcTokens }) => {
 
   if (aspectRatio <= 1) {
     maxWidthImage = parseInt(maxHeightImage) * aspectRatio;
-  }
-  else {
+  } else {
     maxHeightImage = parseInt(maxWidthImage) / aspectRatio;
   }
+
   const maxWidthImageFloat = maxWidthImage * 1.0;
 
   const getWrapperStyles = () => {
@@ -84,7 +85,6 @@ export default ({ image_aspect_ratio, image, srcTokens }) => {
       height: 100%;
       left: 0;
       width: 100%;
-      
   }`
 
   return (
@@ -95,18 +95,20 @@ export default ({ image_aspect_ratio, image, srcTokens }) => {
         className="responsive-image__wrapper"
         style={getWrapperStyles()}
       >
-        <img
-          id={`Image-${image_id}-${generated_image_id}`}
-          className="responsive-image__image lazyload"
-          src={srcUrl}
-          srcSet={uriEncodedSrc}
-          data-src={dataSrcUrl}
-          data-widths={`[${imageWidth}]`}
-          data-aspectratio={aspectRatio}
-          data-sizes="auto"
-          tabIndex="-1"
-          style={getImageStyle()}
-        />
+        {imageSrc && (
+          <img
+            id={`Image-${image_id}-${generated_image_id}`}
+            className="responsive-image__image lazyload"
+            src={srcUrl}
+            srcSet={uriEncodedSrc}
+            data-src={dataSrcUrl}
+            data-widths={`[${imageWidth}]`}
+            data-aspectratio={aspectRatio}
+            data-sizes="auto"
+            tabIndex="-1"
+            style={getImageStyle()}
+          />
+        )}
       </div>
       <style>
         {css}

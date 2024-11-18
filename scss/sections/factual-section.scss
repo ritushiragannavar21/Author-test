@@ -6,34 +6,38 @@
 @import 'StyleComponents/breakpoints';
 
 
-.factual__section {
-    display: flex;
+.factual {
+
+  &__section {
     background-color: #f8f8f8;
+    @media(max-width: 1023px){
+      grid-template-columns: 1fr !important;
+    }
   }
-  
-  .factual__left {
+
+  &__left {
     flex: 1;
-    padding: 2rem;
+    padding: 17px 50px !important;
   }
-  
-  .factual__title {
+
+  &__title {
     font-size: 2rem;
     font-weight: bold;
   }
-  
-  .factual__description {
+
+  &__description {
     margin-top: 1rem;
     font-size: 1rem;
     color: #555;
   }
-  
-  .factual__cards {
+
+  &__cards {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
   }
   
-  .factual__card-item {
+  &__card-item {
     width: 100px;
     height: 100px;
     display: flex;
@@ -44,19 +48,11 @@
     font-weight: bold;
     border-radius: 8px;
   }
-  
-  .factual__right {
-    flex: 1;
+
+  .container{
+    padding: 0;
   }
 
-  .factual{
+}
 
-    .container{
-      padding: 0;
-    }
-
-    &__left{
-      padding: 0;
-    }
-  }
   

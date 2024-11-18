@@ -131,13 +131,13 @@
       objectFit: 'contain'
     };
   };
-  var css = "\n  .responsive-image__wrapper:before {\n    content: '';\n    width: 100%;\n    display: block;\n    padding-top: var(--padding-top);\n  }\n\n  .responsive-image__wrapper {\n      height: 100%;\n      position: relative;\n      max-width: var(--max-width);\n      max-height: var(--max-height);\n  }\n\n  .responsive-image__image {\n      position: absolute;\n      top: 0;\n      height: 100%;\n      left: 0;\n      width: 100%;\n      \n  }";
+  var css = "\n  .responsive-image__wrapper:before {\n    content: '';\n    width: 100%;\n    display: block;\n    padding-top: var(--padding-top);\n  }\n\n  .responsive-image__wrapper {\n      height: 100%;\n      position: relative;\n      max-width: var(--max-width);\n      max-height: var(--max-height);\n  }\n\n  .responsive-image__image {\n      position: absolute;\n      top: 0;\n      height: 100%;\n      left: 0;\n      width: 100%;\n  }";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "ImageWrapper-".concat(image_id, "-").concat(generated_image_id),
     "data-image-id": image_id,
     className: "responsive-image__wrapper",
     style: getWrapperStyles()
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  }, imageSrc && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     id: "Image-".concat(image_id, "-").concat(generated_image_id),
     className: "responsive-image__image lazyload",
     src: srcUrl,
@@ -168,6 +168,7 @@
 
 
 var FactualSection = _ref => {
+  var _shopifyData$data;
   var {
     shopifyData
   } = _ref;
@@ -177,6 +178,8 @@ var FactualSection = _ref => {
     dataSrcToken: "?width=width&height=height",
     srcToken: "?width=90&height=90"
   };
+  var blocks = ((_shopifyData$data = shopifyData.data) === null || _shopifyData$data === void 0 ? void 0 : _shopifyData$data.blocks) || [];
+  var blockCount = blocks.length;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container"
   }, shopifyData.data.blocks && shopifyData.data.blocks.length > 0 ? shopifyData.data.blocks.map((block, index) => {
