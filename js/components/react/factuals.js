@@ -3,10 +3,11 @@ import ResponsiveImage from "./ResponsiveImage";
 
 const FactualSection = ({ shopifyData }) => {
   console.log("Shopify Data:", shopifyData);
-
-  const [dynamicImageSrc, setDynamicImageSrc] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(null);
-  const [iconColor, setIconColor] = useState(null);
+  const blocks = shopifyData.data?.blocks || [];
+  const blockCount = blocks.length;
+  const imageArray = blocks.flatMap((block,index) => block.cards?.map((card) => card));
+  const [selectedBlock, setselectedBlock] = useState(false);
+  const [isSecondImageOpen, setIsSecondImageOpen] = useState(false);
 
   const srcTokens = {
     replacementToken: "?width=90&height=90",
@@ -14,38 +15,24 @@ const FactualSection = ({ shopifyData }) => {
     srcToken: "?width=90&height=90",
   };
 
-  const blocks = shopifyData.data?.blocks || [];
-  const blockCount = blocks.length;
-
-  const handleCardClick = (imageSrcArray, color) => {
-    const firstImageSrc = imageSrcArray?.[0]?.src;
-    if (firstImageSrc) {
-      setIconColor(color);
-      setDynamicImageSrc(firstImageSrc);
-    }
+  const handleCardClick = (cardIndex) => {
+    setselectedBlock(imageArray[cardIndex])
   };
 
   const handleCloseImage = () => {
-    setDynamicImageSrc(null); 
+    setselectedBlock(false); 
   };
 
-  const imageArray = blocks.flatMap((block,index) => block.cards?.map((card) => card.imageSrc?.[1]?.src));
 
   const handleNextImage = () => {
-    const secondImageSrc = imageArray;
-    if (secondImageSrc) {
-      setCurrentImageIndex(secondImageSrc);
-    }
+    // const secondImageSrc = selectedBlock.imageSrc[1];
+    setIsSecondImageOpen(true);
+
   };
 
   useEffect(() => {
-    if (dynamicImageSrc && iconColor) {
-      // Update the icon color whenever dynamicImageSrc changes
-      // console.log("Icon Color Updated:", iconColor);
-    }
-  }, [dynamicImageSrc, iconColor]);
-
-  console.log("Icon Color Updated:", iconColor);
+   console.log("data---",selectedBlock)
+  }, [selectedBlock]);
 
   return (
     <div className="container factual_container">
@@ -79,16 +66,16 @@ const FactualSection = ({ shopifyData }) => {
                     </div>
                   )}
                   <div className="factual__left">
-                    {dynamicImageSrc && (
+                    {selectedBlock && selectedBlock?.imageSrc[0] && (
                       <div className="factual__top-image" style={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 5 }}>  
                         <ResponsiveImage
                           image_aspect_ratio_desktop={0.9}
                           image_aspect_ratio_mobile={0.59}
-                          image={{ src: dynamicImageSrc, width, height }}
+                          image={{ src: selectedBlock?.imageSrc[0]?.src, width, height }}
                           srcTokens={srcTokens}
                         />
                         {/* Close icon */}
-                        {!currentImageIndex && (
+                        {selectedBlock && (
                           <div
                             className="close-icon"
                             style={{
@@ -101,14 +88,14 @@ const FactualSection = ({ shopifyData }) => {
                             onClick={handleCloseImage}
                           >
                             <svg width="71" height="70" viewBox="0 0 71 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <circle cx="35.5" cy="35" r="17.5" fill={iconColor} />
+                              <circle cx="35.5" cy="35" r="17.5" fill={selectedBlock?.color} />
                               <line x1="27.8399" y1="26.6601" x2="41.9821" y2="40.8022" stroke="#FEFDF6" stroke-width="2" />
                               <line x1="41.9805" y1="27.3321" x2="27.8384" y2="41.4742" stroke="#FEFDF6" stroke-width="2" />
                             </svg>
                           </div>
                         )}
 
-                        {!currentImageIndex && (
+                        {selectedBlock?.imageSrc[1]?.src && !isSecondImageOpen &&(
                           <div
                             className="factual__next-icon"
                             style={{
@@ -122,7 +109,7 @@ const FactualSection = ({ shopifyData }) => {
                             onClick={handleNextImage}
                           >
                             <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <circle cx="17.5" cy="18" r="17" fill={iconColor} stroke={iconColor} />
+                              <circle cx="17.5" cy="18" r="17" fill={selectedBlock?.color} stroke={selectedBlock?.color} />
                               <path d="M13.7908 27.9548L24.3868 18.1175L13.7908 8.28074" stroke="#FEFDF6" stroke-width="2" />
                             </svg>
                           </div>
@@ -150,7 +137,7 @@ const FactualSection = ({ shopifyData }) => {
                                 key={cardIndex}
                                 style={myStyle}
                                 className="factual__card-item"
-                                onClick={() => handleCardClick(card.imageSrc, card.color)}
+                                onClick={() => handleCardClick(cardIndex)}
                               >
                                 <div className="factual__card-icon">
                                   <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,12 +169,12 @@ const FactualSection = ({ shopifyData }) => {
                 
                 {/* Render static image if no dynamic image is set */}
                 <div className="factual__right">
-                  {currentImageIndex && src ? (
+                  { isSecondImageOpen ? (
                     <div className="factual__right-image" style={{ position: 'relative' }}>
                       <ResponsiveImage
                         image_aspect_ratio_desktop={0.9}
                         image_aspect_ratio_mobile={0.59}
-                        image={{ src: currentImageIndex, width, height }}
+                        image={{ src: selectedBlock?.imageSrc[1]?.src, width, height }}
                         srcTokens={srcTokens}
                       />
                       <div
@@ -199,10 +186,10 @@ const FactualSection = ({ shopifyData }) => {
                           cursor: 'pointer',
                           zIndex: 15,
                         }}
-                        onClick={() => setCurrentImageIndex(null)}
+                        onClick={() => setIsSecondImageOpen(false)}
                       >
                         <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="17.5" cy="17.5" r="17" transform="matrix(-1 0 0 1 35 0.5)" fill={iconColor} stroke={iconColor} />
+                          <circle cx="17.5" cy="17.5" r="17" transform="matrix(-1 0 0 1 35 0.5)" fill={selectedBlock?.color} stroke={selectedBlock?.color} />
                           <path d="M21.2092 27.9548L10.6132 18.1175L21.2092 8.28074" stroke="#FEFDF6" stroke-width="2" />
                         </svg>
                       </div>

@@ -186,47 +186,32 @@ var FactualSection = _ref => {
     shopifyData
   } = _ref;
   console.log("Shopify Data:", shopifyData);
-  var [dynamicImageSrc, setDynamicImageSrc] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  var [currentImageIndex, setCurrentImageIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  var [iconColor, setIconColor] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  var blocks = ((_shopifyData$data = shopifyData.data) === null || _shopifyData$data === void 0 ? void 0 : _shopifyData$data.blocks) || [];
+  var blockCount = blocks.length;
+  var imageArray = blocks.flatMap((block, index) => {
+    var _block$cards;
+    return (_block$cards = block.cards) === null || _block$cards === void 0 ? void 0 : _block$cards.map(card => card);
+  });
+  var [selectedBlock, setselectedBlock] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  var [isSecondImageOpen, setIsSecondImageOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   var srcTokens = {
     replacementToken: "?width=90&height=90",
     dataSrcToken: "?width=width&height=height",
     srcToken: "?width=90&height=90"
   };
-  var blocks = ((_shopifyData$data = shopifyData.data) === null || _shopifyData$data === void 0 ? void 0 : _shopifyData$data.blocks) || [];
-  var blockCount = blocks.length;
-  var handleCardClick = (imageSrcArray, color) => {
-    var _imageSrcArray$;
-    var firstImageSrc = imageSrcArray === null || imageSrcArray === void 0 || (_imageSrcArray$ = imageSrcArray[0]) === null || _imageSrcArray$ === void 0 ? void 0 : _imageSrcArray$.src;
-    if (firstImageSrc) {
-      setIconColor(color);
-      setDynamicImageSrc(firstImageSrc);
-    }
+  var handleCardClick = cardIndex => {
+    setselectedBlock(imageArray[cardIndex]);
   };
   var handleCloseImage = () => {
-    setDynamicImageSrc(null);
+    setselectedBlock(false);
   };
-  var imageArray = blocks.flatMap((block, index) => {
-    var _block$cards;
-    return (_block$cards = block.cards) === null || _block$cards === void 0 ? void 0 : _block$cards.map(card => {
-      var _card$imageSrc;
-      return (_card$imageSrc = card.imageSrc) === null || _card$imageSrc === void 0 || (_card$imageSrc = _card$imageSrc[1]) === null || _card$imageSrc === void 0 ? void 0 : _card$imageSrc.src;
-    });
-  });
   var handleNextImage = () => {
-    var secondImageSrc = imageArray;
-    if (secondImageSrc) {
-      setCurrentImageIndex(secondImageSrc);
-    }
+    // const secondImageSrc = selectedBlock.imageSrc[1];
+    setIsSecondImageOpen(true);
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (dynamicImageSrc && iconColor) {
-      // Update the icon color whenever dynamicImageSrc changes
-      // console.log("Icon Color Updated:", iconColor);
-    }
-  }, [dynamicImageSrc, iconColor]);
-  console.log("Icon Color Updated:", iconColor);
+    console.log("data---", selectedBlock);
+  }, [selectedBlock]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container factual_container"
   }, blockCount > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -236,7 +221,7 @@ var FactualSection = _ref => {
       gridTemplateColumns: "repeat(".concat(Math.min(blockCount, 2), ", 1fr)")
     }
   }, blocks.map((block, index) => {
-    var _block$image;
+    var _block$image, _selectedBlock$imageS, _selectedBlock$imageS2, _selectedBlock$imageS3;
     var image = (_block$image = block.image) === null || _block$image === void 0 ? void 0 : _block$image[0];
     var src = image === null || image === void 0 ? void 0 : image.src;
     var width = (image === null || image === void 0 ? void 0 : image.width) || 1920;
@@ -257,7 +242,7 @@ var FactualSection = _ref => {
       class: "btn-text button__btn-text"
     }, " ", block.button, " "))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__left"
-    }, dynamicImageSrc && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }, selectedBlock && (selectedBlock === null || selectedBlock === void 0 ? void 0 : selectedBlock.imageSrc[0]) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__top-image",
       style: {
         position: 'absolute',
@@ -270,12 +255,12 @@ var FactualSection = _ref => {
       image_aspect_ratio_desktop: 0.9,
       image_aspect_ratio_mobile: 0.59,
       image: {
-        src: dynamicImageSrc,
+        src: selectedBlock === null || selectedBlock === void 0 || (_selectedBlock$imageS = selectedBlock.imageSrc[0]) === null || _selectedBlock$imageS === void 0 ? void 0 : _selectedBlock$imageS.src,
         width,
         height
       },
       srcTokens: srcTokens
-    }), !currentImageIndex && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }), selectedBlock && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "close-icon",
       style: {
         position: 'absolute',
@@ -295,7 +280,7 @@ var FactualSection = _ref => {
       cx: "35.5",
       cy: "35",
       r: "17.5",
-      fill: iconColor
+      fill: selectedBlock === null || selectedBlock === void 0 ? void 0 : selectedBlock.color
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
       x1: "27.8399",
       y1: "26.6601",
@@ -310,7 +295,7 @@ var FactualSection = _ref => {
       y2: "41.4742",
       stroke: "#FEFDF6",
       "stroke-width": "2"
-    }))), !currentImageIndex && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }))), (selectedBlock === null || selectedBlock === void 0 || (_selectedBlock$imageS2 = selectedBlock.imageSrc[1]) === null || _selectedBlock$imageS2 === void 0 ? void 0 : _selectedBlock$imageS2.src) && !isSecondImageOpen && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__next-icon",
       style: {
         position: 'absolute',
@@ -331,8 +316,8 @@ var FactualSection = _ref => {
       cx: "17.5",
       cy: "18",
       r: "17",
-      fill: iconColor,
-      stroke: iconColor
+      fill: selectedBlock === null || selectedBlock === void 0 ? void 0 : selectedBlock.color,
+      stroke: selectedBlock === null || selectedBlock === void 0 ? void 0 : selectedBlock.color
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M13.7908 27.9548L24.3868 18.1175L13.7908 8.28074",
       stroke: "#FEFDF6",
@@ -356,7 +341,7 @@ var FactualSection = _ref => {
         key: cardIndex,
         style: myStyle,
         className: "factual__card-item",
-        onClick: () => handleCardClick(card.imageSrc, card.color)
+        onClick: () => handleCardClick(cardIndex)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         className: "factual__card-icon"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
@@ -389,7 +374,7 @@ var FactualSection = _ref => {
       })));
     }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__right"
-    }, currentImageIndex && src ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }, isSecondImageOpen ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__right-image",
       style: {
         position: 'relative'
@@ -398,7 +383,7 @@ var FactualSection = _ref => {
       image_aspect_ratio_desktop: 0.9,
       image_aspect_ratio_mobile: 0.59,
       image: {
-        src: currentImageIndex,
+        src: selectedBlock === null || selectedBlock === void 0 || (_selectedBlock$imageS3 = selectedBlock.imageSrc[1]) === null || _selectedBlock$imageS3 === void 0 ? void 0 : _selectedBlock$imageS3.src,
         width,
         height
       },
@@ -412,7 +397,7 @@ var FactualSection = _ref => {
         cursor: 'pointer',
         zIndex: 15
       },
-      onClick: () => setCurrentImageIndex(null)
+      onClick: () => setIsSecondImageOpen(false)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
       width: "35",
       height: "36",
@@ -424,8 +409,8 @@ var FactualSection = _ref => {
       cy: "17.5",
       r: "17",
       transform: "matrix(-1 0 0 1 35 0.5)",
-      fill: iconColor,
-      stroke: iconColor
+      fill: selectedBlock === null || selectedBlock === void 0 ? void 0 : selectedBlock.color,
+      stroke: selectedBlock === null || selectedBlock === void 0 ? void 0 : selectedBlock.color
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M21.2092 27.9548L10.6132 18.1175L21.2092 8.28074",
       stroke: "#FEFDF6",
@@ -440,7 +425,7 @@ var FactualSection = _ref => {
       },
       srcTokens: srcTokens
     })));
-  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "No data available."));
+  })) : '');
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FactualSection);
 
