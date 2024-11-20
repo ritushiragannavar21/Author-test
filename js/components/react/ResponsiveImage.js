@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import 'lazysizes';
 
-export default ({ image_aspect_ratio, image, srcTokens }) => {
+export default ({ image_aspect_ratio_desktop, image_aspect_ratio_mobile, image, srcTokens }) => {
   const min = 100;
   const max = 10000;
   const diff = max - min;
@@ -16,9 +16,23 @@ export default ({ image_aspect_ratio, image, srcTokens }) => {
     };
   }
 
-  const aspectRatio = image_aspect_ratio;
+  // Set aspect ratio based on screen size
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // You can adjust this breakpoint as needed
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call once on mount to set initial state
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const aspectRatio = isMobile ? image_aspect_ratio_mobile : image_aspect_ratio_desktop;
   let { height: maxHeightImage, id: image_id, src: imageSrc, width: maxWidthImage } = displayImage;
-  const IMAGE_WIDTHS = [180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2376, 2592, 2808, 3024]
+  const IMAGE_WIDTHS = [180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2376, 2592, 2808, 3024];
   
   const getImageWidths = nativeWidth => {
     const imageWidths = [];
@@ -32,7 +46,7 @@ export default ({ image_aspect_ratio, image, srcTokens }) => {
       }
     }
     return imageWidths.join(',');
-  }
+  };
 
   const imageWidth = getImageWidths(displayImage.width);
   let urlTokens = srcTokens;

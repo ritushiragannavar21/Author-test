@@ -46,7 +46,16 @@
                   "label": "Section Description"
                 },
                 {
-                  "type": "text",
+                  "type": "header",
+                  "content": "First Card Block"
+                },
+                {
+                  "type": "richtext",
+                  "id": "card1_title",
+                  "label": "First card eyebrow"
+                },
+                {
+                  "type": "html",
                   "id": "card1_text",
                   "label": "Card 1 Text",
                   "default": "C35.5™"
@@ -56,6 +65,30 @@
                   "id": "card1_color",
                   "label": "Card 1 Background Color",
                   "default": "#FF0000"
+                },
+                {
+                  "type":"image_picker",
+                  "id":"first_card_image_1",
+                  "label":"popup info"
+                },
+                {
+                  "type":"image_picker",
+                  "id":"first_card_image_2",
+                  "label":"popup info"
+                },
+                {
+                  "type":"image_picker",
+                  "id":"mobile_second_card_image_1",
+                  "label":"mobile popup info"
+                },
+                {
+                  "type": "header",
+                  "content": "Second Card Block"
+                },
+                {
+                  "type": "richtext",
+                  "id": "card2_title",
+                  "label": "Second card eyebrow"
                 },
                 {
                   "type": "text",
@@ -70,6 +103,30 @@
                   "default": "#0000FF"
                 },
                 {
+                  "type":"image_picker",
+                  "id":"second_card_image_1",
+                  "label":"popup info"
+                },
+                {
+                  "type":"image_picker",
+                  "id":"second_card_image_2",
+                  "label":"popup info"
+                },
+                {
+                  "type":"image_picker",
+                  "id":"mobile_second_card_image_2",
+                  "label":"mobile popup info"
+                },
+                {
+                  "type": "header",
+                  "content": "Third Card Block"
+                },
+                {
+                  "type": "richtext",
+                  "id": "card3_title",
+                  "label": "Third card eyebrow"
+                },
+                {
                   "type": "text",
                   "id": "card3_text",
                   "label": "Card 3 Text",
@@ -80,7 +137,32 @@
                   "id": "card3_color",
                   "label": "Card 3 Background Color",
                   "default": "#00FF00"
-                }
+                },
+                {
+                  "type":"image_picker",
+                  "id":"third_card_image_1",
+                  "label":"popup info"
+                },
+                {
+                  "type":"image_picker",
+                  "id":"third_card_image_2",
+                  "label":"popup info"
+                },
+                {
+                  "type":"image_picker",
+                  "id":"mobile_second_card_image_3",
+                  "label":"mobile popup info"
+                },
+                {
+                  "type": "text",
+                  "id": "button",
+                  "label": "Button Text"
+                },
+                {
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "Button url"
+                },
               ],
             }
           ],
@@ -91,333 +173,4 @@
         ]
       }
 {% endschema %}
-    
-
   
-  {% comment %} {{ 'media-with-text-overlay.css' | asset_url | stylesheet_tag }}
-
-{% for block in section.blocks %}
-    {% liquid
-        assign background=section.settings.bg_color
-        assign block_count = section.blocks.size
-     %}
-{% endfor %}
-
-
-<div class="media-text container" style= "display: grid; grid-template-columns: repeat({{ block_count }}, minmax(200px, 1fr) ) ;background:{{background}}" >
-    {% for block in section.blocks %}
-        {% if  block_count == 2 %}
-            {% liquid
-                assign mobile_ratio = 0.928
-                assign desktop_ratio = 0.9
-            %}
-        {% else %}
-            {% liquid
-                assign mobile_ratio = 0.928
-                assign desktop_ratio = 1.8
-            %}
-        {% endif %}
-        {% liquid
-            assign desktop_image = block.settings.image_desktop
-            assign mobile_image = block.settings.image_mobile
-            assign bg_color = block.settings.bg_color
-            assign poster = block.settings.cover_image
-            assign hide_mobile = block.settings.hide_media_mobile
-            assign eyebrow = block.settings.eyebrow
-            assign heading = block.settings.heading
-            assign subheading = block.settings.subheading
-            assign cta_text = block.settings.cta_text
-            assign cta_url = block.settings.cta_url
-            assign button_type = 'text'
-            assign button_background_type = 'transparent'
-            assign button = block.settings.button
-            assign button_url = block.settings.button_url
-            assign hide_button_mobile = block.settings.hide_button_mobile
-            assign top_overlay_mobile = section.settings.overlay_reverse_mobile
-            assign teaser = block.settings.teaser
-            assign logo = block.settings.logo
-
-        %}
-        <div class="media-text__wrapper {% if section.settings.swap_media_mobile == true %}media-text__block-reverse{% endif %}">
-            
-            {%- case block.type -%}
-            {%- when 'first-block' -%}
-                {% comment %} {% if video or video_url %}
-                    {% render 'video-with-text-overlay', 
-                            video_url: video_url, 
-                            video: video,
-                            image: poster, 
-                            id: block.id, 
-                            eyebrow: eyebrow,
-                            heading: heading,
-                            subheading: subheading,
-                            heading_block1:heading_block1,
-                            subheading_block1:subheading_block1,
-                            heading_block2:heading_block2,
-                            subheading_block2:subheading_block2,
-                            mobile_aspect_ratio:mobile_ratio,
-                            desktop_aspect_ratio:desktop_ratio,
-                            cta_text: cta_text,
-                            cta_url: cta_url,
-                            desktop_crop: true,
-                            mobile_crop: true,
-                            wrapper_class: 'your-wrapper-class',
-                            cta_url: cta_url,
-                            hide_mobile:hide_mobile,
-                            text_wrapper_class: 'video-banner',
-                            button_type: button_type,
-                            button_background_type: button_background_type,
-                            button:button,
-                            button_url:button_url,
-                            hide_button_mobile: hide_button_mobile,
-                            top_overlay_mobile:top_overlay_mobile,
-                            teaser:teaser,
-                            logo:logo
-                    %} {% endcomment %}
-                    
-                {% if desktop_image or mobile_image %}
-                    <div class="media-text__content">
-                        {% liquid
-                            assign id = block.id
-                            assign image_desktop = desktop_image
-                            assign image_mobile = mobile_image
-                        %}
-                        {% render 'image-with-text-overlay',
-                            wrapper_class: 'media-text__image-content',
-                            id: id,
-                            eyebrow: eyebrow,
-                            heading: heading,
-                            subheading: subheading,
-                            cta_text: cta_text,
-                            cta_url: cta_url,
-                            image_desktop: image_desktop,
-                            image_mobile: image_mobile,
-                            text_wrapper_class: 'image-banner',
-                            mobile_aspect_ratio:mobile_ratio,
-                            desktop_aspect_ratio:desktop_ratio,
-                            desktop_crop: true,
-                            mobile_crop: true,
-                            button_type: button_type,
-                            button_background_type: button_background_type,
-                            hide_mobile:hide_mobile,
-                            button:button,
-                            button_url:button_url,
-                            hide_button_mobile:hide_button_mobile,
-                            top_overlay_mobile: top_overlay_mobile,
-                            teaser:teaser,
-                            logo:logo
-                        %}
-                    </div>
-                {% else %}
-                        {% render 'image-with-text-overlay',
-                            wrapper_class: 'media-text__bge-content',
-                            id: id,
-                            eyebrow: eyebrow,
-                            heading: heading,
-                            text_wrapper_class: 'image-banner',
-                            subheading: subheading,
-                            cta_text: cta_text,
-                            cta_url: cta_url,
-                            mobile_aspect_ratio:mobile_ratio,
-                            desktop_aspect_ratio:desktop_ratio,
-                            button_type: button_type,
-                            button_background_type: button_background_type,
-                            hide_mobile:hide_mobile,
-                            button:button,
-                            button_url:button_url,
-                            hide_button_mobile:hide_button_mobile,
-                            top_overlay_mobile: top_overlay_mobile,
-                            teaser:teaser,
-                            logo:logo
-                        %}
-                {% endif %}
-            {%- endcase -%}
-        </div>
-    {% endfor %}
-</div>
-
-{% schema %}
-{   
-  "name": "Factuals",
-  "tag": "section",
-  "max_blocks": 2,
-  "settings": [
-    {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background color"
-    },
-    {
-        "type": "checkbox",
-        "id": "swap_media_mobile",
-        "label": "Swap blocks in mobile",
-        "default": false
-    },
-    {
-        "type": "checkbox",
-        "id": "overlay_reverse_mobile",
-        "label": "top overlay mobile",
-        "default": false
-    }
-
-  ],
-  "blocks": [
-    {
-      "type": "first-block",
-      "name": "Block",
-      "settings": [
-        {
-            "type": "checkbox",
-            "id": "hide_media_mobile",
-            "label": "hide media in mobile",
-            "default": false
-        },
-        {
-            "type": "header",
-            "content": "Image"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_desktop",
-          "label": "Image Desktop"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_mobile",
-          "label": "Image Mobile"
-        },
-        {
-            "type": "header",
-            "content": "Teaser"
-        },
-        {
-            "type": "html",
-            "id": "logo",
-            "label": "Logo Icon"        
-        },
-        {
-            "type": "richtext",
-            "id": "teaser",
-            "label": "Teaser Text"
-        },
-        {
-            "type": "header",
-            "content": "Text Overlay"
-        },
-        {
-          "type": "richtext",
-          "id": "eyebrow",
-          "label": "Heading"
-        },
-        {
-          "type": "color",
-          "id": "card1_color",
-          "label": "Card 1 Background Color",
-          "default": "#D93934"
-        },
-        {
-          "type": "text",
-          "id": "card1_title",
-          "label": "Card 1 Title",
-          "default": "FIRMING GLOW SERUM"
-        },
-        {
-          "type": "text",
-          "id": "card1_code",
-          "label": "Card 1 Code",
-          "default": "C35.5™"
-        },
-        {
-          "type": "color",
-          "id": "card2_color",
-          "label": "Card 2 Background Color",
-          "default": "#2264D9"
-        },
-        {
-          "type": "text",
-          "id": "card2_title",
-          "label": "Card 2 Title",
-          "default": "GEL CREAM MOISTURIZER"
-        },
-        {
-          "type": "text",
-          "id": "card2_code",
-          "label": "Card 2 Code",
-          "default": "COLL20™"
-        },
-        {
-          "type": "color",
-          "id": "card3_color",
-          "label": "Card 3 Background Color",
-          "default": "#39A860"
-        },
-        {
-          "type": "text",
-          "id": "card3_title",
-          "label": "Card 3 Title",
-          "default": "HYDRABOND PRIMER"
-        },
-        {
-          "type": "text",
-          "id": "card3_code",
-          "label": "Card 3 Code",
-          "default": "RH5.5™"
-        },
-        {
-            "type": "text",
-            "id": "button",
-            "label": "Button Text"
-        },
-        {
-            "type": "url",
-            "id": "button_url",
-            "label": "Button url"
-        },
-        {
-          "type": "checkbox",
-          "id": "hide_button_mobile",
-          "label": "hide button in mobile",
-          "default": false
-      }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Factuals"
-    }
-  ]
-}
-{% endschema %}
-
-<div class="custom-cards">
-  <div class="card" style="background-color: {{ section.settings.card1_color }}">
-    <div class="corner"></div>
-    <div class="content">
-      <p class="title">{{ section.settings.card1_title }}</p>
-      <p class="code">{{ section.settings.card1_code }}</p>
-    </div>
-    <span class="info-icon">i</span>
-  </div>
-
-  <div class="card" style="background-color: {{ section.settings.card2_color }}">
-    <div class="corner"></div>
-    <div class="content">
-      <p class="title">{{ section.settings.card2_title }}</p>
-      <p class="code">{{ section.settings.card2_code }}</p>
-    </div>
-    <span class="info-icon">i</span>
-  </div>
-
-  <div class="card" style="background-color: {{ section.settings.card3_color }}">
-    <div class="corner"></div>
-    <div class="content">
-      <p class="title">{{ section.settings.card3_title }}</p>
-      <p class="code">{{ section.settings.card3_code }}</p>
-    </div>
-    <span class="info-icon">i</span>
-  </div>
-</div> {% endcomment %}
-
-
-    

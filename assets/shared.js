@@ -68,7 +68,8 @@
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {
   var {
-    image_aspect_ratio,
+    image_aspect_ratio_desktop,
+    image_aspect_ratio_mobile,
     image,
     srcTokens
   } = _ref;
@@ -85,7 +86,19 @@
       src: 'https://cdn.shopify.com/s/files/1/0422/2255/1191/files/placeholderImage.webp?v=1692958737'
     };
   }
-  var aspectRatio = image_aspect_ratio;
+
+  // Set aspect ratio based on screen size
+  var [isMobile, setIsMobile] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    var handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // You can adjust this breakpoint as needed
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call once on mount to set initial state
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  var aspectRatio = isMobile ? image_aspect_ratio_mobile : image_aspect_ratio_desktop;
   var {
     height: maxHeightImage,
     id: image_id,
@@ -173,6 +186,9 @@ var FactualSection = _ref => {
     shopifyData
   } = _ref;
   console.log("Shopify Data:", shopifyData);
+  var [dynamicImageSrc, setDynamicImageSrc] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  var [currentImageIndex, setCurrentImageIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  var [iconColor, setIconColor] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   var srcTokens = {
     replacementToken: "?width=90&height=90",
     dataSrcToken: "?width=width&height=height",
@@ -180,34 +196,243 @@ var FactualSection = _ref => {
   };
   var blocks = ((_shopifyData$data = shopifyData.data) === null || _shopifyData$data === void 0 ? void 0 : _shopifyData$data.blocks) || [];
   var blockCount = blocks.length;
+  var handleCardClick = (imageSrcArray, color) => {
+    var _imageSrcArray$;
+    var firstImageSrc = imageSrcArray === null || imageSrcArray === void 0 || (_imageSrcArray$ = imageSrcArray[0]) === null || _imageSrcArray$ === void 0 ? void 0 : _imageSrcArray$.src;
+    if (firstImageSrc) {
+      setIconColor(color);
+      setDynamicImageSrc(firstImageSrc);
+    }
+  };
+  var handleCloseImage = () => {
+    setDynamicImageSrc(null);
+  };
+  var imageArray = blocks.flatMap((block, index) => {
+    var _block$cards;
+    return (_block$cards = block.cards) === null || _block$cards === void 0 ? void 0 : _block$cards.map(card => {
+      var _card$imageSrc;
+      return (_card$imageSrc = card.imageSrc) === null || _card$imageSrc === void 0 || (_card$imageSrc = _card$imageSrc[1]) === null || _card$imageSrc === void 0 ? void 0 : _card$imageSrc.src;
+    });
+  });
+  var handleNextImage = () => {
+    var secondImageSrc = imageArray;
+    if (secondImageSrc) {
+      setCurrentImageIndex(secondImageSrc);
+    }
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (dynamicImageSrc && iconColor) {
+      // Update the icon color whenever dynamicImageSrc changes
+      // console.log("Icon Color Updated:", iconColor);
+    }
+  }, [dynamicImageSrc, iconColor]);
+  console.log("Icon Color Updated:", iconColor);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "container"
-  }, shopifyData.data.blocks && shopifyData.data.blocks.length > 0 ? shopifyData.data.blocks.map((block, index) => {
-    var _block$image, _block$image2, _block$image3;
-    var src = ((_block$image = block.image) === null || _block$image === void 0 ? void 0 : _block$image.src) || 'https://cdn.shopify.com/s/files/1/0422/2255/1191/files/placeholderImage.webp?v=1692958737';
-    var width = ((_block$image2 = block.image) === null || _block$image2 === void 0 ? void 0 : _block$image2.width) || 1920;
-    var height = ((_block$image3 = block.image) === null || _block$image3 === void 0 ? void 0 : _block$image3.height) || 1080;
+    className: "container factual_container"
+  }, blockCount > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "factual__section",
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(".concat(Math.min(blockCount, 2), ", 1fr)")
+    }
+  }, blocks.map((block, index) => {
+    var _block$image;
+    var image = (_block$image = block.image) === null || _block$image === void 0 ? void 0 : _block$image[0];
+    var src = image === null || image === void 0 ? void 0 : image.src;
+    var width = (image === null || image === void 0 ? void 0 : image.width) || 1920;
+    var height = (image === null || image === void 0 ? void 0 : image.height) || 1080;
+    var isFirstBlock = index === 0;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       key: index,
-      className: "factual__section"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__item ".concat(isFirstBlock ? "factual__item--flex" : ""),
+      style: {
+        position: "relative"
+      }
+    }, isFirstBlock && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, block.url && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "text-image__button"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      className: "button button__custom-button text__cta",
+      href: block.url
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      class: "btn-text button__btn-text"
+    }, " ", block.button, " "))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__left"
+    }, dynamicImageSrc && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__top-image",
+      style: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        zIndex: 5
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      image_aspect_ratio_desktop: 0.9,
+      image_aspect_ratio_mobile: 0.59,
+      image: {
+        src: dynamicImageSrc,
+        width,
+        height
+      },
+      srcTokens: srcTokens
+    }), !currentImageIndex && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "close-icon",
+      style: {
+        position: 'absolute',
+        top: '10px',
+        right: '10px',
+        cursor: 'pointer',
+        zIndex: 15
+      },
+      onClick: handleCloseImage
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      width: "71",
+      height: "70",
+      viewBox: "0 0 71 70",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+      cx: "35.5",
+      cy: "35",
+      r: "17.5",
+      fill: iconColor
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      x1: "27.8399",
+      y1: "26.6601",
+      x2: "41.9821",
+      y2: "40.8022",
+      stroke: "#FEFDF6",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      x1: "41.9805",
+      y1: "27.3321",
+      x2: "27.8384",
+      y2: "41.4742",
+      stroke: "#FEFDF6",
+      "stroke-width": "2"
+    }))), !currentImageIndex && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__next-icon",
+      style: {
+        position: 'absolute',
+        top: '50%',
+        right: '17px',
+        transform: 'translateY(-50%)',
+        cursor: 'pointer',
+        zIndex: 15
+      },
+      onClick: handleNextImage
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      width: "35",
+      height: "36",
+      viewBox: "0 0 35 36",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+      cx: "17.5",
+      cy: "18",
+      r: "17",
+      fill: iconColor,
+      stroke: iconColor
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M13.7908 27.9548L24.3868 18.1175L13.7908 8.28074",
+      stroke: "#FEFDF6",
+      "stroke-width": "2"
+    })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__sub-container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
       className: "factual__title"
-    }, block.title || 'Default Title'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-      className: "factual__description"
-    }, block.description || 'Default Description'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "factual__cards"
-    }, block.cards.map((card, cardIndex) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      key: cardIndex,
-      className: "factual__card-item",
-      style: {
-        backgroundColor: card.color
+    }, block.title || "Default Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "factual__description",
+      dangerouslySetInnerHTML: {
+        __html: block.description
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, card.text))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }), block.cards && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__cards"
+    }, block.cards.map((card, cardIndex) => {
+      var myStyle = {
+        background: "\n                                linear-gradient(to right bottom, transparent 50%, #fff 0) no-repeat 0 0 / 2em 2em,\n                                linear-gradient(135deg, transparent 1.41em, ".concat(card.color, " 0)")
+      };
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        key: cardIndex,
+        style: myStyle,
+        className: "factual__card-item",
+        onClick: () => handleCardClick(card.imageSrc, card.color)
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "factual__card-icon"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+        width: "25",
+        height: "25",
+        viewBox: "0 0 25 25",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+        cx: "12.5",
+        cy: "12.5",
+        r: "12",
+        fill: "#FEFDF6",
+        stroke: "#FEFDF6"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+        d: "M12.9507 9.18C12.6241 9.18 12.3954 9.11467 12.2647 8.984C12.1341 8.844 12.0687 8.67133 12.0687 8.466V8.242C12.0687 8.03667 12.1341 7.86867 12.2647 7.738C12.3954 7.598 12.6241 7.528 12.9507 7.528C13.2774 7.528 13.5061 7.598 13.6367 7.738C13.7674 7.86867 13.8327 8.03667 13.8327 8.242V8.466C13.8327 8.67133 13.7674 8.844 13.6367 8.984C13.5061 9.11467 13.2774 9.18 12.9507 9.18ZM9.78673 17.048H12.3907V11.728H9.78673V10.776H13.5107V17.048H15.9467V18H9.78673V17.048Z",
+        fill: "#282FEE"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "factual__card-content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "factual__card-title",
+        dangerouslySetInnerHTML: {
+          __html: card.card_title
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+        className: "factual__code",
+        dangerouslySetInnerHTML: {
+          __html: card.text
+        }
+      })));
+    }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__right"
+    }, currentImageIndex && src ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__right-image",
+      style: {
+        position: 'relative'
+      }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      image_aspect_ratio: 0.9,
+      image_aspect_ratio_desktop: 0.9,
+      image_aspect_ratio_mobile: 0.59,
+      image: {
+        src: currentImageIndex,
+        width,
+        height
+      },
+      srcTokens: srcTokens
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "close-icon",
+      style: {
+        position: 'absolute',
+        top: '50%',
+        right: '17px',
+        cursor: 'pointer',
+        zIndex: 15
+      },
+      onClick: () => setCurrentImageIndex(null)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      width: "35",
+      height: "36",
+      viewBox: "0 0 35 36",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+      cx: "17.5",
+      cy: "17.5",
+      r: "17",
+      transform: "matrix(-1 0 0 1 35 0.5)",
+      fill: iconColor,
+      stroke: iconColor
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M21.2092 27.9548L10.6132 18.1175L21.2092 8.28074",
+      stroke: "#FEFDF6",
+      "stroke-width": "2"
+    })))) : src && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      image_aspect_ratio_desktop: 0.9,
+      image_aspect_ratio_mobile: 0.9,
       image: {
         src,
         width,

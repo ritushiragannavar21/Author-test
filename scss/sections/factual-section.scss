@@ -17,42 +17,147 @@
 
   &__left {
     flex: 1;
-    padding: 17px 50px !important;
+    height: 100%;
   }
 
-  &__title {
-    font-size: 2rem;
-    font-weight: bold;
+  &__sub-container{
+    padding: 17px 15px !important;
+    @media(--md){
+      padding: 17px 50px !important;
+    }
+  }
+
+  &__title{
+    font-size: 68px;
+    font-family: var(--quaternary-font-bold);
+    color:colors.$blue;
+    margin-top: 10px;
+    @media(--md){
+      font-size: 80px;
+      margin: var(--heading-margin) 0;
+    }
+    @media(--md-large){
+      font-size: 96px;
+    }
+  }
+
+  &__card-title {
+    @include use-text-style('body-title');
+    font-weight: typography.$regular-weight;
   }
 
   &__description {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: #555;
+    margin-top: 2rem;
+    font-size: typography.$body-title-size; 
+    font-weight: typography.$regular-weight;
+    color: colors.$blue;
+    line-height: 18.2px;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    @media(--md){
+      width: 406px;
+      margin-top: 4rem;
+    }
   }
 
   &__cards {
     display: flex;
-    gap: 1rem;
+    gap: 58px;
     margin-top: 2rem;
+    flex-wrap: wrap;
+    @media(--md){
+      gap: 20px;
+    }
+    @media(--md-large){
+      gap: 45px;
+    }
   }
   
   &__card-item {
-    width: 100px;
-    height: 100px;
+    cursor: pointer;
+    position: relative;
+    height: 147px;
+    width: 121px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 8px;
+    clip-path: polygon(2em 0, 100% 0, 100% 100%, 0 100%, 0 2em);
+    border: 2px solid colors.$blue;  
+   
+    @media(--md-large){
+      width: 160.5px;
+      height:206px;
+    }
+  }
+
+  &__code{
+    font-size: 45px;
+    margin: 0;
+    color:colors.$white;
+    font-family: var(--quaternary-font-bold);
+    @media(--md){
+      font-size: 32px;
+    }
+    @media(--md-large){
+      font-size: 64px;
+    }
+  }
+
+  &__card-icon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    @media(--md){
+      width: 25px;
+      height: 25px;
+      top: 14px;
+      right: 14px;
+    }
   }
 
   .container{
     padding: 0;
   }
 
+  &__card-content{
+    position: absolute;
+    bottom: 10px;
+    padding: 0 12px;
+    @media(--md){
+      padding: 0 14px;
+    }
+    @media(--md-large){
+      padding: 0 var(--section-padding);
+    }
+  }
+
+  &__next-icon{
+    display: none;
+    @media(--md){
+      display: block;
+    }
+  }
+
 }
 
+.factual__card-item::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  width: 2em;
+  height: 2em;
+  background: white; 
+  clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 92%, 0 90%);
+  border-left: 2px solid colors.$blue; 
+  border-top: 2px solid colors.$blue; 
+  border-right: 2px solid colors.$blue; 
+  transform: rotate(90deg);  
+  border-left: 2px solid colors.$blue;
   
+}
+
+
