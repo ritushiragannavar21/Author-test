@@ -1,5 +1,6 @@
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
 
+
 {% style %}
   .collectionBanner__image-wrp::after {
     background: {{ section.settings.overlay_color }}
@@ -7,6 +8,18 @@
     opacity: {{ section.settings.overlay_opacity | append: '%' }}
 
   }
+  .collectionBanner__description h1{
+    color: {{ section.settings.heading_color }};
+  }
+  .content-alignment--{{ section.settings.content_alignment }}{
+    text-align: {{ section.settings.content_alignment_mobile }};
+  }
+  @media(min-width: 1024px){
+    .content-alignment--{{ section.settings.content_alignment }}{
+      text-align: {{ section.settings.content_alignment }};
+    }
+  }
+  
 {% endstyle %}
 
 {% liquid
@@ -153,10 +166,22 @@
       ]
     },
     {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
       "type": "text_alignment",
       "id": "content_alignment",
-      "label": "Content alignment",
+      "label": "Content alignment - (Desktop)",
       "default": "left"
+    },
+    {
+      "type": "text_alignment",
+      "id": "content_alignment_mobile",
+      "label": "Content alignment - (Mobile)",
+      "default": "center"
     },
     {
       "type": "image_picker",

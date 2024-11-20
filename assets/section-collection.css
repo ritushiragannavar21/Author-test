@@ -145,6 +145,11 @@
 .collectionList__container {
   max-width: 576px;
 }
+/* .collectionList__filter span,
+.collectionList__filter label,
+.collectionList__filter select{
+  color: var(--primary-color) !important;
+} */
 .collectionList__filter {
   display: flex;
   justify-content: space-between;

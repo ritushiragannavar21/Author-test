@@ -1,12 +1,12 @@
 /*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "media_text_overlay_WJhYYY": {
@@ -133,7 +133,7 @@
             "video_url": "",
             "logo": "",
             "teaser": "",
-            "eyebrow": "<p>THE (F)ACTUALS™ – <br/>CODIFYING OUR  SPIRIT OF RADICAL TRANSPARENCY</p>",
+            "eyebrow": "<p>THE (F)ACTUALS™ – <br/>CODIFYING OUR �SPIRIT OF RADICAL TRANSPARENCY</p>",
             "heading": "",
             "subheading": "<p>For too long the beauty industry has hidden behind a shroud of mystery, with “miracle” ingredients and exaggerated claims falling far short of promises made. We all deserve better.</p>",
             "heading_block1": "",
@@ -349,4 +349,8 @@
     "media_text_overlay_4zQMgB",
     "media_text_overlay_qXjMq8"
   ]
-}
+ }
+ 
+ 
+ 
+ 

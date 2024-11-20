@@ -1263,7 +1263,8 @@ select {
 }
 
 body {
-  font-family: var(--font-body-family);
+  /* font-family: var(--font-body-family); */
+  font-family: var(--primary-font);
   font-size: calc(var(--font-body-scale) * 16px);
   font-weight: var(--font-body-weight);
 }
@@ -1280,7 +1281,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: var(--font-head-family);
+  /* font-family: var(--font-head-family); */
+  font-family: var(--primary-font);
   color: var(--color-text);
   margin-bottom: 8px;
   word-break: break-word;
@@ -1768,7 +1770,7 @@ h6,
   top: 50%;
   width: 15px;
   height: 1px;
-  background-color: var(--color-text);
+  background-color: var(--primary-color);
   opacity: 1;
   transition: 0.4s ease transform, 0.4s ease opacity;
   transform: rotate(90deg);
@@ -2761,7 +2763,7 @@ product-card {
   right: max(var(--block-border-radius) / 2, 8px);
 }
 .p_badge.on_sale {
-  background: var(--bg-sale-badge-color);
+  background: var(--primary-color);
   color: var(--text-sale-badge-color);
 }
 .p_badge.out_of_stock {
@@ -2989,8 +2991,8 @@ variant-dropdown select {
   width: 60px;
   padding-block: 4px;
   border-radius: 0;
-  border-right: 1px solid rgba(var(--color-input-color-rgb)/0.5);
-  border-left: 1px solid rgba(var(--color-input-color-rgb)/0.5);
+  border-right: 1px solid var(--primary-color);
+  border-left: 1px solid var(--primary-color);
 }
 .product-quantity__selector-wrapper .product-quantity__selector input::-webkit-inner-spin-button {
   display: none;
@@ -6185,6 +6187,12 @@ details summary::-webkit-details-marker {
   height: 100%;
   text-decoration: none;
 }
+.product-card-item p,
+.product-card-item span,
+.product-card-item del{
+  color: var(--primary-color);
+  font-family: var(--primary-font);
+}
 .product-card-item .w-100.position-relative {
   overflow: hidden;
   border-radius: var(--block-border-radius);
@@ -6228,7 +6236,7 @@ details summary::-webkit-details-marker {
   flex: 1;
 }
 .product-card-item__head {
-  font-weight: var(--font-body-weight-bold);
+  font-weight: var(--font-body-weight-bolder);
   font-size: calc(var(--font-body-scale) * 18px);
   line-height: 26px;
   color: var(--color-text);

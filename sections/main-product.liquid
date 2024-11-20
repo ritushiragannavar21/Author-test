@@ -333,8 +333,11 @@
                   style="padding-bottom: {{ block.settings.block_bottom_spacing | append: 'px' }}"
                   {{ block.shopify_attributes }}
                 >
-                  {{ product.title }}
+                  {{ product.title }}<sup>TM</sup>
+                  <br>
+                  {{ product.metafields.custom.product_subtitle }}
                 </h1>
+              
 
               {%- when 'price' -%}
                 {% comment %} Product Price {% endcomment %}

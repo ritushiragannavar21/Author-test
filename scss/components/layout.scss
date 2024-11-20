@@ -13,6 +13,9 @@
     --primary-font: "IBM Plex Mono", serif;
     --secondary-font: "IBM Plex Sans Condensed", sans-serif;
     --tertiary-font: "BIZ UDMincho", serif;
+    --primary-color: #282FEE;
+    --secondary-color: #E8FF5C;
+    --base-color: #000000;
 
     @media(min-width: 768px) {
         --grid-column-gap: 20px;

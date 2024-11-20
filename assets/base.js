@@ -2761,6 +2761,7 @@ class ProductForm extends HTMLElement {
                         {
                             productVariant: data.variant_id,
                             sections: data.sections,
+                            price: data.price
                         }
                     );
                     console.log(data);

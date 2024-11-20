@@ -2,73 +2,12 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/sections/factuals.js":
-/*!*********************************!*\
-  !*** ./js/sections/factuals.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/react-wrapper */ "./js/components/react-wrapper.js");
-/* harmony import */ var ReactComponents_factuals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ReactComponents/factuals */ "./js/components/react/factuals.js");
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  (0,JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(ReactComponents_factuals__WEBPACK_IMPORTED_MODULE_1__["default"], 'factual-data', '#factual-data');
-});
-
-/***/ }),
-
-/***/ "./js/sections/hello.js":
-/*!******************************!*\
-  !*** ./js/sections/hello.js ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
-/* harmony import */ var SvelteComponents_hello__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/hello */ "./js/components/svelte/hello.svelte");
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_hello__WEBPACK_IMPORTED_MODULE_1__["default"], 'svelte-sample', '#product-data');
-});
-
-/***/ }),
-
-/***/ "./js/sections/sections.js":
-/*!*********************************!*\
-  !*** ./js/sections/sections.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
-
-/* harmony import */ var _hello__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hello */ "./js/sections/hello.js");
-/* harmony import */ var _factuals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./factuals */ "./js/sections/factuals.js");
-/* harmony import */ var _variantOptions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./variantOptions */ "./js/sections/variantOptions.js");
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  (0,_hello__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_factuals__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  (0,_variantOptions__WEBPACK_IMPORTED_MODULE_2__["default"])();
-});
-
-/***/ }),
-
 /***/ "./js/sections/variantOptions.js":
 /*!***************************************!*\
   !*** ./js/sections/variantOptions.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
 /* harmony import */ var JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/react-wrapper */ "./js/components/react-wrapper.js");
 /* harmony import */ var ReactComponents_variant_selector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ReactComponents/variant-selector */ "./js/components/react/variant-selector.js");
 
@@ -81,7 +20,7 @@ document.addEventListener('Variant:Changed', ev => {
     window.updateSelectedVariant(updatedVariant);
   }
 });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
   (0,JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(ReactComponents_variant_selector__WEBPACK_IMPORTED_MODULE_1__["default"], 'variant-selector', '#variant-data');
 });
 
@@ -210,7 +149,7 @@ document.addEventListener('Variant:Changed', ev => {
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"sections": 0
+/******/ 			"variantOptions": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -260,7 +199,7 @@ document.addEventListener('Variant:Changed', ev => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/sections.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/variantOptions.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

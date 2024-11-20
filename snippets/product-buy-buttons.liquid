@@ -19,7 +19,7 @@
         assign gift_card_recipient_feature_active = true
       endif    
     %}
-    <product-form class="product-form" data-section-id="{{ section.id }}">
+    <product-form class="product-form" data-section-id="{{ section.id }}" data-product-form>
       {%- form 'product', product, id: form_id, class: 'form', novalidate: 'novalidate' -%}
         {% render 'custom-message', customClassName: 'product-ajax__message mb-2', custom_id: form_id %}
         <input
@@ -31,8 +31,17 @@
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
-        <div class="product-form__buttons">
+                <input name="selling_plan" class="selected-selling-plan-id" type="hidden" value="">
+                <input name="properties[_selling_frequency]" data-selling-frequency type="hidden" value="">
+                <input type="hidden" name="properties[_customer_segment]" value="{{ customer.metafields.tier.customer_type.value }}">
+                  {% capture segment_price %}
+                  {% render 'selling-price' , variant: product.selected_or_first_available_variant, money_price: product.selected_or_first_available_variant.price  %}
+                  {% endcapture %}   
+                  {% assign metafield_segment_price = segment_price | money_without_currency %}
 
+                <input type="hidden" name="properties[_segment_value]" value="{{ metafield_segment_price }}" data-segmented-price>
+        {% render 'variant-subscription' product: product %}
+        <div class="product-form__buttons">
           {% comment %} Add to cart Button {% endcomment %}
           <button
             class="btn {% if block.settings.show_dynamic_checkout == true %} btn--border {% else %} btn--fill  {% endif %} w-100 mb-16"

@@ -231,6 +231,7 @@
         --font-header-weight: {{ settings.type_header_font.weight }};
         --font-body-weight: {{ settings.type_body_font.weight }};
         --font-body-weight-bold: {{ body_font_bold.weight }};
+        --font-body-weight-bolder: 700;
         --font-button-weight: {{ settings.type_button_font.weight }};
         --font-head-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
@@ -302,11 +303,13 @@
     </script>
     {{'custom-carousel.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'common-imports.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'variant-options.css' | asset_url }}">
     <script src="{{'vendors.js' | asset_url }}" defer></script>  
+    <script src="{{'sections.js' | asset_url }}" defer></script>  
     <script src="{{'global.js' | asset_url }}" defer></script>  
     <script src="{{'shared.js' | asset_url }}" defer></script>
     <script src="{{'share.js' | asset_url }}" defer></script> 
-    <script src="{{'sections.js' | asset_url }}" defer></script>  
+    
   </head>
 
   <body class="gradient ">
