@@ -2,15 +2,17 @@
 
 {%  assign section_settings = section.settings %}
 <div class="daily-essential">
-    <div class="section-header">
-      <h2 class="section-header__title">{{section_settings.heading}}</h2>
-      <p class="section-header__content">{{ section_settings.content }}</p>    
-    </div>    
-    <div class="daily-essential__grid">
-        {% for block in section.blocks %} 
-            {%  assign product = block.settings.product %}
-              {%  render 'card-product', show_quick_view: true, media_aspect_ratio: 0.8, product: product, show_quick_buy: false, show_calltoaction_btn:false, show_buy_on_hover:true %}
-        {%  endfor %}
+    <div class="container">
+        <div class="section-header">
+        <h2 class="section-header__title">{{section_settings.heading}}</h2>
+        <p class="section-header__content">{{ section_settings.content }}</p>    
+        </div>    
+        <div class="daily-essential__grid">
+            {% for block in section.blocks %} 
+                {%  assign product = block.settings.product %}
+                {%  render 'card-product', show_quick_view: true, media_aspect_ratio: 0.8, product: product, show_quick_buy: false, show_calltoaction_btn:false, show_buy_on_hover:true %}
+            {%  endfor %}
+        </div>
     </div>
 </div>
 
