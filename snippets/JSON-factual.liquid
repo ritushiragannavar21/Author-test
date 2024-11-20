@@ -17,6 +17,7 @@
                             "text": "{{ block.settings.card1_text | escape }}",
                             "card_title": "{{ block.settings.card1_title }}",
                             "color": "{{ block.settings.card1_color }}",
+                            "sup":"{{ block.settings.card1_sup_tag }}",
                             "imageSrc": [ 
                                 {% if block.settings.first_card_image_1 != blank %}
                                     { "src": "{{ block.settings.first_card_image_1 | image_url }}", 
@@ -35,6 +36,7 @@
                             "text": "{{ block.settings.card2_text | escape }}",
                             "card_title": "{{ block.settings.card2_title }}",
                             "color": "{{ block.settings.card2_color }}",
+                            "sup":"{{ block.settings.card2_sup_tag }}",
                             "imageSrc": [ 
                                 {% if block.settings.second_card_image_1 != blank %}
                                     { "src": "{{ block.settings.second_card_image_1 | image_url }}", 
@@ -53,6 +55,7 @@
                             "text": "{{ block.settings.card3_text | escape }}",
                             "card_title": "{{ block.settings.card3_title }}",
                             "color": "{{ block.settings.card3_color }}",
+                            "sup":"{{ block.settings.card3_sup_tag }}",
                             "imageSrc": [ 
                                 {% if block.settings.third_card_image_1 != blank %}
                                     { "src": "{{ block.settings.third_card_image_1 | image_url }}", 

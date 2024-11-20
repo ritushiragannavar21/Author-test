@@ -7,6 +7,7 @@ const FactualSection = ({ shopifyData }) => {
   const blockCount = blocks.length;
   const imageArray = blocks.flatMap((block,index) => block.cards?.map((card) => card));
   const [selectedBlock, setselectedBlock] = useState(false);
+  const [isFirstImageOpen, setIsFirstImageOpen] = useState(false);
   const [isSecondImageOpen, setIsSecondImageOpen] = useState(false);
 
   const srcTokens = {
@@ -16,18 +17,18 @@ const FactualSection = ({ shopifyData }) => {
   };
 
   const handleCardClick = (cardIndex) => {
+    setIsFirstImageOpen(true);
     setselectedBlock(imageArray[cardIndex])
   };
 
   const handleCloseImage = () => {
+    setIsFirstImageOpen(false);
     setselectedBlock(false); 
   };
 
 
   const handleNextImage = () => {
-    // const secondImageSrc = selectedBlock.imageSrc[1];
     setIsSecondImageOpen(true);
-
   };
 
   useEffect(() => {
@@ -82,7 +83,7 @@ const FactualSection = ({ shopifyData }) => {
                             style={{
                               position: 'absolute',
                               top: '10px',
-                              right: '10px',
+                              right: '0',
                               cursor: 'pointer',
                               zIndex: 15,
                             }}
@@ -122,6 +123,7 @@ const FactualSection = ({ shopifyData }) => {
                   {selectedBlock && selectedBlock?.imageMobile[0] && (
                       <div className="factual__top-image" style={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 5 }}>  
                         <ResponsiveImage
+                          image_aspect_ratio_desktop={0.9}
                           image_aspect_ratio_mobile={0.582}
                           image={{ src: selectedBlock?.imageMobile[0]?.src, width, height }}
                           srcTokens={srcTokens}
@@ -149,7 +151,7 @@ const FactualSection = ({ shopifyData }) => {
                       </div>
                     )}
                   </div>
-                    <div className="factual__sub-container">
+                    <div className={`factual__sub-container ${isFirstImageOpen ? "factual__first-image-container" : ""}`}>
                       <h1 className="factual__title">
                         {block.title || "Default Title"}
                       </h1>
@@ -186,9 +188,7 @@ const FactualSection = ({ shopifyData }) => {
                                     }}
                                   ></div>
                                   <h1
-                                    className="factual__code"
-                                    dangerouslySetInnerHTML={{ __html: card.text }}
-                                  ></h1>
+                                    className="factual__code">{card.text}<sup>{card.sup}</sup> </h1>
                                 </div>
                               </div>
                             );
@@ -201,43 +201,44 @@ const FactualSection = ({ shopifyData }) => {
                 )}
                 
                 {/* Render static image if no dynamic image is set */}
-                <div className="factual__right">
-                  { isSecondImageOpen ? (
-                    <div className="factual__right-image" style={{ position: 'relative' }}>
-                      <ResponsiveImage
-                        image_aspect_ratio_desktop={0.9}
-                        image_aspect_ratio_mobile={0.59}
-                        image={{ src: selectedBlock?.imageSrc[1]?.src, width, height }}
-                        srcTokens={srcTokens}
-                      />
-                      <div
-                        className="close-icon"
-                        style={{
-                          position: 'absolute',
-                          top: '50%',
-                          right: '17px',
-                          cursor: 'pointer',
-                          zIndex: 15,
-                        }}
-                        onClick={() => setIsSecondImageOpen(false)}
-                      >
-                        <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="17.5" cy="17.5" r="17" transform="matrix(-1 0 0 1 35 0.5)" fill={selectedBlock?.color} stroke={selectedBlock?.color} />
-                          <path d="M21.2092 27.9548L10.6132 18.1175L21.2092 8.28074" stroke="#FEFDF6" stroke-width="2" />
-                        </svg>
-                      </div>
-                    </div>
-                  ) : (
-                    src && (
-                      <ResponsiveImage
-                        image_aspect_ratio_desktop={0.9}
-                        image_aspect_ratio_mobile={0.9}
-                        image={{ src, width, height }}
-                        srcTokens={srcTokens}
-                      />
-                    )
-                  )}
-                </div>
+                  <div className={`factual__right factual__right-${blockCount}`}> 
+                    {isSecondImageOpen && !isFirstBlock ? (
+                      <div className="factual__right-image" style={{ position: 'relative' }}>
+                        <ResponsiveImage
+                          image_aspect_ratio_desktop={0.9}
+                          image_aspect_ratio_mobile={0.59}
+                          image={{ src: selectedBlock?.imageSrc[1]?.src, width, height }}
+                          srcTokens={srcTokens}
+                        />
+                        <div
+                          className="close-icon"
+                          style={{
+                            position: 'absolute',
+                            top: '50%',
+                            right: '17px',
+                            cursor: 'pointer',
+                            zIndex: 15,
+                          }}
+                          onClick={() => setIsSecondImageOpen(false)}
+                        >
+                          <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="17.5" cy="17.5" r="17" transform="matrix(-1 0 0 1 35 0.5)" fill={selectedBlock?.color} stroke={selectedBlock?.color} />
+                            <path d="M21.2092 27.9548L10.6132 18.1175L21.2092 8.28074" stroke="#FEFDF6" stroke-width="2" />
+                          </svg>
+                        </div>
+                      </div> 
+                    ) : (
+                      src && (
+                        <ResponsiveImage
+                          image_aspect_ratio_desktop={0.9}
+                          image_aspect_ratio_mobile={0.9}
+                          image={{ src, width, height }}
+                          srcTokens={srcTokens}
+                        />
+                      ) 
+                    )}
+                  </div>
+ 
               </div>
             );
           })}

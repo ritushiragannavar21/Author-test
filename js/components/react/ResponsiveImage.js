@@ -21,7 +21,7 @@ export default ({ image_aspect_ratio_desktop, image_aspect_ratio_mobile, image, 
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // You can adjust this breakpoint as needed
+      setIsMobile(window.innerWidth < 768); // You can adjust this breakpoint as needed
     };
 
     window.addEventListener('resize', handleResize);

@@ -91,7 +91,7 @@
   var [isMobile, setIsMobile] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     var handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // You can adjust this breakpoint as needed
+      setIsMobile(window.innerWidth < 768); // You can adjust this breakpoint as needed
     };
     window.addEventListener('resize', handleResize);
     handleResize(); // Call once on mount to set initial state
@@ -193,6 +193,7 @@ var FactualSection = _ref => {
     return (_block$cards = block.cards) === null || _block$cards === void 0 ? void 0 : _block$cards.map(card => card);
   });
   var [selectedBlock, setselectedBlock] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  var [isFirstImageOpen, setIsFirstImageOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   var [isSecondImageOpen, setIsSecondImageOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   var srcTokens = {
     replacementToken: "?width=90&height=90",
@@ -200,13 +201,14 @@ var FactualSection = _ref => {
     srcToken: "?width=90&height=90"
   };
   var handleCardClick = cardIndex => {
+    setIsFirstImageOpen(true);
     setselectedBlock(imageArray[cardIndex]);
   };
   var handleCloseImage = () => {
+    setIsFirstImageOpen(false);
     setselectedBlock(false);
   };
   var handleNextImage = () => {
-    // const secondImageSrc = selectedBlock.imageSrc[1];
     setIsSecondImageOpen(true);
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -267,7 +269,7 @@ var FactualSection = _ref => {
       style: {
         position: 'absolute',
         top: '10px',
-        right: '10px',
+        right: '0',
         cursor: 'pointer',
         zIndex: 15
       },
@@ -336,6 +338,7 @@ var FactualSection = _ref => {
         zIndex: 5
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      image_aspect_ratio_desktop: 0.9,
       image_aspect_ratio_mobile: 0.582,
       image: {
         src: selectedBlock === null || selectedBlock === void 0 || (_selectedBlock$imageM = selectedBlock.imageMobile[0]) === null || _selectedBlock$imageM === void 0 ? void 0 : _selectedBlock$imageM.src,
@@ -379,7 +382,7 @@ var FactualSection = _ref => {
       stroke: "#FEFDF6",
       "stroke-width": "2"
     }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "factual__sub-container"
+      className: "factual__sub-container ".concat(isFirstImageOpen ? "factual__first-image-container" : "")
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
       className: "factual__title"
     }, block.title || "Default Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
@@ -423,14 +426,11 @@ var FactualSection = _ref => {
           __html: card.card_title
         }
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-        className: "factual__code",
-        dangerouslySetInnerHTML: {
-          __html: card.text
-        }
-      })));
+        className: "factual__code"
+      }, card.text, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("sup", null, card.sup), " ")));
     }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "factual__right"
-    }, isSecondImageOpen ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__right factual__right-".concat(blockCount)
+    }, isSecondImageOpen && !isFirstBlock ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__right-image",
       style: {
         position: 'relative'
