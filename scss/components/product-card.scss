@@ -1,0 +1,53 @@
+@use 'StyleComponents/colors';
+@import 'breakpoints';
+
+.product-card-item {
+  $block: &;
+
+  &__head {
+    margin-bottom: 0;
+  }
+
+  &__body {
+    @media(--lg) {
+      margin-top: 0;
+    }
+
+    &-wrapper {
+      @media(--lg) {
+        padding: 18px 28px;
+      }
+    }
+
+    &--hover {
+      position: relative;
+
+      @media(--lg) {
+        &:hover {
+          #{$block}__shop {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+
+  .product-price__wrapper {
+    margin-bottom: 0;
+  }
+
+  &__shop {
+    display: none;
+    text-transform: uppercase;
+    @include use-text-style('body-title');
+    font-family: var(--secondary-font);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    top: 0;
+    background: colors.$lime-yellow;
+    align-items: center;
+    text-decoration: none;
+  }
+}

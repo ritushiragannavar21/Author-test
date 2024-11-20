@@ -1,0 +1,54 @@
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+.daily-essential {
+    --color-button-background: #282FEE;
+    --base-margin: 16px;
+    --base-padding: 8px;
+    --block-border-radius: 1px;
+
+    @media(--lg) {
+        --base-margin: 32px;
+    }
+
+     background: #FEFDF6;
+    &__grid {
+        padding: var(--base-padding) 0 16px;
+        padding-left: var(--base-margin);
+        padding-right: var(--base-margin);
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 26px;
+        @media(--lg) {
+            padding:0;
+            grid-template-columns: repeat(3, 1fr);
+            gap:0;
+        }
+    }
+
+    .section-header {
+        padding: var(--base-margin);
+        text-align: center;
+        color: colors.$blue;
+        margin-bottom: 0;
+        &__title {
+            @include use-text-style('heading-2');
+            @media(--lg) {
+                @include use-text-style('heading-1');
+            }
+            font-family: var(--tertiary-font) !important;
+            color: colors.$blue;
+            font-weight: 400 !important;
+            margin-bottom: 10px;
+        }
+
+        &__content {
+            @include use-text-style('body-title');   
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+    }
+
+
+}

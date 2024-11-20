@@ -13,7 +13,7 @@
 {%- assign quick_buy_button_type = settings.quick_buy_button -%}
 {%- assign show_calltoaction_btn = show_calltoaction_btn | default: quick_buy_button_type, allow_false: true -%}
 {%- assign show_quick_view = show_quick_view | default: settings.show_quick_view -%}
-{%- assign show_quick_buy = settings.show_quick_buy %}
+{%- assign show_quick_buy = show_quick_buy | default: settings.show_quick_buy %}
 {%- assign product_form_id = 'product_form_' | append: product.id -%}
 {%- liquid
   assign no_of_columns_mobile = section.settings.columns_mobile
@@ -207,8 +207,8 @@
             </a>
           </div>
         </div>
-        <div class="product-card-item__body d-flex d-flex-dir-c">
-          <div class="d-flex d-flex-dir-c h-100">
+        <div class="product-card-item__body d-flex d-flex-dir-c {% if show_buy_on_hover %}product-card-item__body--hover {%  endif %}">
+          <div class="d-flex d-flex-dir-c h-100 product-card-item__body-wrapper">
             <div class="product-top-info">
               {% if product.featured_media %}
                 {% if show_product_vendor %}
@@ -381,6 +381,9 @@
               {% endif %}
             </div>
           </div>
+          <a class="product-card-item__shop product-card-item__body-wrapper" href="{{ product.url}}">
+            Shop now
+          </a>
         </div>
       </div>
     </product-card>
