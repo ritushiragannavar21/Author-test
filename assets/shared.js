@@ -221,7 +221,7 @@ var FactualSection = _ref => {
       gridTemplateColumns: "repeat(".concat(Math.min(blockCount, 2), ", 1fr)")
     }
   }, blocks.map((block, index) => {
-    var _block$image, _selectedBlock$imageS, _selectedBlock$imageS2, _selectedBlock$imageS3;
+    var _block$image, _selectedBlock$imageS, _selectedBlock$imageS2, _selectedBlock$imageM, _selectedBlock$imageS3;
     var image = (_block$image = block.image) === null || _block$image === void 0 ? void 0 : _block$image[0];
     var src = image === null || image === void 0 ? void 0 : image.src;
     var width = (image === null || image === void 0 ? void 0 : image.width) || 1920;
@@ -239,9 +239,11 @@ var FactualSection = _ref => {
       className: "button button__custom-button text__cta",
       href: block.url
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-      class: "btn-text button__btn-text"
+      className: "btn-text button__btn-text"
     }, " ", block.button, " "))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__left"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__popup-image-desktop"
     }, selectedBlock && (selectedBlock === null || selectedBlock === void 0 ? void 0 : selectedBlock.imageSrc[0]) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__top-image",
       style: {
@@ -260,7 +262,7 @@ var FactualSection = _ref => {
         height
       },
       srcTokens: srcTokens
-    }), selectedBlock && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }), selectedBlock && !isSecondImageOpen && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "close-icon",
       style: {
         position: 'absolute',
@@ -322,7 +324,61 @@ var FactualSection = _ref => {
       d: "M13.7908 27.9548L24.3868 18.1175L13.7908 8.28074",
       stroke: "#FEFDF6",
       "stroke-width": "2"
-    })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__popup-image-mobile"
+    }, selectedBlock && (selectedBlock === null || selectedBlock === void 0 ? void 0 : selectedBlock.imageMobile[0]) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "factual__top-image",
+      style: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        zIndex: 5
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      image_aspect_ratio_mobile: 0.582,
+      image: {
+        src: selectedBlock === null || selectedBlock === void 0 || (_selectedBlock$imageM = selectedBlock.imageMobile[0]) === null || _selectedBlock$imageM === void 0 ? void 0 : _selectedBlock$imageM.src,
+        width,
+        height
+      },
+      srcTokens: srcTokens
+    }), selectedBlock && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "close-icon",
+      style: {
+        position: 'absolute',
+        top: '10px',
+        right: '10px',
+        cursor: 'pointer',
+        zIndex: 15
+      },
+      onClick: handleCloseImage
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      width: "71",
+      height: "70",
+      viewBox: "0 0 71 70",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+      cx: "35.5",
+      cy: "35",
+      r: "17.5",
+      fill: selectedBlock === null || selectedBlock === void 0 ? void 0 : selectedBlock.color
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      x1: "27.8399",
+      y1: "26.6601",
+      x2: "41.9821",
+      y2: "40.8022",
+      stroke: "#FEFDF6",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      x1: "41.9805",
+      y1: "27.3321",
+      x2: "27.8384",
+      y2: "41.4742",
+      stroke: "#FEFDF6",
+      "stroke-width": "2"
+    }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__sub-container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
       className: "factual__title"

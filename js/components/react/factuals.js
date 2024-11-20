@@ -62,11 +62,12 @@ const FactualSection = ({ shopifyData }) => {
                   <>
                   {block.url && (
                     <div className="text-image__button">
-                    <a className="button button__custom-button text__cta" href={ block.url }><span class="btn-text button__btn-text"> { block.button } </span></a> 
+                    <a className="button button__custom-button text__cta" href={ block.url }><span className="btn-text button__btn-text"> { block.button } </span></a> 
                     </div>
                   )}
                   <div className="factual__left">
-                    {selectedBlock && selectedBlock?.imageSrc[0] && (
+                  <div className="factual__popup-image-desktop">
+                  {selectedBlock && selectedBlock?.imageSrc[0] && (
                       <div className="factual__top-image" style={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 5 }}>  
                         <ResponsiveImage
                           image_aspect_ratio_desktop={0.9}
@@ -75,7 +76,7 @@ const FactualSection = ({ shopifyData }) => {
                           srcTokens={srcTokens}
                         />
                         {/* Close icon */}
-                        {selectedBlock && (
+                        {selectedBlock && !isSecondImageOpen &&(
                           <div
                             className="close-icon"
                             style={{
@@ -116,6 +117,38 @@ const FactualSection = ({ shopifyData }) => {
                         )}
                       </div>
                     )}
+                  </div>
+                  <div className="factual__popup-image-mobile">
+                  {selectedBlock && selectedBlock?.imageMobile[0] && (
+                      <div className="factual__top-image" style={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 5 }}>  
+                        <ResponsiveImage
+                          image_aspect_ratio_mobile={0.582}
+                          image={{ src: selectedBlock?.imageMobile[0]?.src, width, height }}
+                          srcTokens={srcTokens}
+                        />
+                        {/* Close icon */}
+                        {selectedBlock && (
+                          <div
+                            className="close-icon"
+                            style={{
+                              position: 'absolute',
+                              top: '10px',
+                              right: '10px',
+                              cursor: 'pointer',
+                              zIndex: 15,
+                            }}
+                            onClick={handleCloseImage}
+                          >
+                            <svg width="71" height="70" viewBox="0 0 71 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="35.5" cy="35" r="17.5" fill={selectedBlock?.color} />
+                              <line x1="27.8399" y1="26.6601" x2="41.9821" y2="40.8022" stroke="#FEFDF6" stroke-width="2" />
+                              <line x1="41.9805" y1="27.3321" x2="27.8384" y2="41.4742" stroke="#FEFDF6" stroke-width="2" />
+                            </svg>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
                     <div className="factual__sub-container">
                       <h1 className="factual__title">
                         {block.title || "Default Title"}

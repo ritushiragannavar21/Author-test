@@ -46,7 +46,7 @@
                                       "height": "{{- block.settings.second_card_image_2.height | default: 1080 -}}",
                                       "width": "{{ block.settings.second_card_image_2.width | default: 1920 }}" }
                                 {%  endif %}],
-                            "image_mobile" :[ {% if block.settings.mobile_second_card_image_2 != blank %}{ "src": "{{ block.settings.mobile_second_card_image_2 | image_url }}", "height": "
+                            "imageMobile" :[ {% if block.settings.mobile_second_card_image_2 != blank %}{ "src": "{{ block.settings.mobile_second_card_image_2 | image_url }}", "height": "
                                 {{- block.settings.mobile_second_card_image_2.height | default: 1080 -}}","width": "{{ block.settings.mobile_second_card_image_2.width | default: 1920 }}" }{%  endif %}],
                         },
                         {
@@ -64,7 +64,7 @@
                                       "height": "{{- block.settings.third_card_image_2.height | default: 1080 -}}",
                                       "width": "{{ block.settings.third_card_image_2.width | default: 1920 }}" }
                                 {%  endif %}],
-                            "image_mobile" :[ {% if block.settings.mobile_second_card_image_3 != blank %}{ "src": "{{ block.settings.mobile_second_card_image_3 | image_url }}", "height": "
+                            "imageMobile" :[ {% if block.settings.mobile_second_card_image_3 != blank %}{ "src": "{{ block.settings.mobile_second_card_image_3 | image_url }}", "height": "
                                 {{- block.settings.mobile_second_card_image_3.height | default: 1080 -}}","width": "{{ block.settings.mobile_second_card_image_3.width | default: 1920 }}" }{%  endif %}],
                         }
                     ]

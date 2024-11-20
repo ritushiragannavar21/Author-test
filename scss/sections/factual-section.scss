@@ -141,6 +141,20 @@
     }
   }
 
+  &__popup-image-desktop{
+    display: none;
+    @media(--md){
+      display: block;
+    }
+  }
+
+  &__popup-image-mobile{
+    display: block;
+    @media(--md){
+      display: none;
+    }
+  }
+
 }
 
 .factual__card-item::before {
@@ -158,6 +172,17 @@
   transform: rotate(90deg);  
   border-left: 2px solid colors.$blue;
   
+}
+
+.factual__section{
+  .button__custom-button{
+    @media(--md){
+      bottom: 3%;
+    }
+    @media(--md-large){
+      bottom: 8%;
+    }
+  }
 }
 
 
