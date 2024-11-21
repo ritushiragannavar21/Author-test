@@ -68,6 +68,38 @@
         "overlay_reverse_mobile": false
       }
     },
+    "daily_essential_izd9Lm": {
+      "type": "daily-essential",
+      "blocks": {
+        "product_tgycpM": {
+          "type": "product",
+          "settings": {
+            "product": "c35-5tm-firming-glow-serum"
+          }
+        },
+        "product_dyedDT": {
+          "type": "product",
+          "settings": {
+            "product": "test-1"
+          }
+        },
+        "product_K7xtqn": {
+          "type": "product",
+          "settings": {
+            "product": "test™"
+          }
+        }
+      },
+      "block_order": [
+        "product_tgycpM",
+        "product_dyedDT",
+        "product_K7xtqn"
+      ],
+      "settings": {
+        "heading": "Daily Essentials",
+        "content": "Plant-based ingredients"
+      }
+    },
     "media_text_overlay_kQ48kH": {
       "type": "media-text-overlay",
       "blocks": {
@@ -349,47 +381,15 @@
         "swap_media_mobile": false,
         "overlay_reverse_mobile": false
       }
-    },
-    "daily_essential_izd9Lm": {
-      "type": "daily-essential",
-      "blocks": {
-        "product_tgycpM": {
-          "type": "product",
-          "settings": {
-            "product": "c35-5tm-firming-glow-serum"
-          }
-        },
-        "product_dyedDT": {
-          "type": "product",
-          "settings": {
-            "product": "test-1"
-          }
-        },
-        "product_K7xtqn": {
-          "type": "product",
-          "settings": {
-            "product": "test™"
-          }
-        }
-      },
-      "block_order": [
-        "product_tgycpM",
-        "product_dyedDT",
-        "product_K7xtqn"
-      ],
-      "settings": {
-        "heading": "Daily Essentials",
-        "content": "Plant-based ingredients"
-      }
     }
   },
   "order": [
     "media_text_overlay_WJhYYY",
+    "daily_essential_izd9Lm",
     "media_text_overlay_kQ48kH",
     "media_text_overlay_xtNpqk",
     "custom_testimonial_Lh4zwt",
     "media_text_overlay_4zQMgB",
-    "media_text_overlay_qXjMq8",
-    "daily_essential_izd9Lm"
+    "media_text_overlay_qXjMq8"
   ]
 }
