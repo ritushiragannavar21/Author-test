@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import OnetimeOptions from "./onetime-options";
 import SubscriptionOptions from "./subscription-options";
-// import VariantOptions from "./variant-options";
-import FrequencyOptions from "./frequency-options";
 // import 'StyleComponents/variant-options.scss';
 // import 'StyleComponents/subscription-sec.scss';
 
 export default ({ shopifyData }) => {
-    console.log(shopifyData)
+  console.log('shopify data.....', shopifyData)
   const [purchaseType, setPurchaseType] = useState('onetime');
-  const { variants, sellingplan, options, selected } = shopifyData.data
+  const { variants, sellingplan, options, selected, subscription_plan } = shopifyData.data
   const [selectedVariant, setSelectedVariant] = useState(variants.find(variant => variant.id == selected));
   const [selectedSellingPlan, setselectedSellingPlan] = useState(sellingplan[0]|| {});
 
@@ -112,7 +110,7 @@ export default ({ shopifyData }) => {
           <div className="variant-container__purchaseType-label variant-container__opt-label">Buying Options</div>
           <div className="variant-container__purchaseType-wrapper">
             <OnetimeOptions selectedVariant={selectedVariant} purchaseType={purchaseType} onUpdate={handleSwitch} />
-            {Object.keys(selectedSellingPlan).length > 0 && <SubscriptionOptions selectedVariant={selectedVariant} purchaseType={purchaseType} selectedSellingPlan={selectedSellingPlan} onUpdate={handleSwitch} />}
+            {Object.keys(selectedSellingPlan).length > 0 && <SubscriptionOptions updateSellingPlan={updateSellingPlan} sellingplan={sellingplan} selectedVariant={selectedVariant} purchaseType={purchaseType} selectedSellingPlan={selectedSellingPlan} onUpdate={handleSwitch} subscription_plan={subscription_plan} />}
           </div>
         </>
         :
@@ -120,7 +118,6 @@ export default ({ shopifyData }) => {
           <s> {productComparePrice}</s> <span className={productComparePrice ? "product-sale-color": ""}> {selectedVariant.price} </span> {(productComparePrice && <span className="product-sale-color"></span>)}
         </>
       }
-      {purchaseType != "onetime" && <FrequencyOptions sellingplan={sellingplan} selectedSellingPlan={selectedSellingPlan} onUpdate={updateSellingPlan} />}
     </>
   );
 }

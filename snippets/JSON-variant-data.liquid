@@ -38,5 +38,19 @@
             {%- unless forloop.last and forloop.parentloop.last -%} , {%- endunless -%}
             {% endfor %}
         {% endfor %}
+    ],
+    "subscription_plan": [
+        {% for usage in product.metafields.custom.product_usage.value %}
+            {
+                "frequency": "{{ usage.frequency }}",
+                "usage": "{{ usage.usage }}",
+                "benefits": [
+                    {% for benefits in usage.benefits.value %}
+                        "{{ benefits.benefit }}"
+                        {%- unless forloop.last and forloop.parentloop.last -%} , {%- endunless -%}
+                    {% endfor %}
+                ]
+            }{%- unless forloop.last and forloop.parentloop.last -%} , {%- endunless -%}
+        {% endfor %}
     ]
 }

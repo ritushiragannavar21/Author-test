@@ -518,6 +518,8 @@ var FactualSection = _ref => {
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tooltip__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tooltip */ "./js/components/react/tooltip.js");
+
 
 // import 'StyleComponents/variant-options.scss';
 
@@ -528,24 +530,74 @@ var FrequencyOptions = _ref => {
     onUpdate
   } = _ref;
   console.log('frequency...', sellingplan);
+  var [showFrequencyOption, setShowFrequencyOption] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  var [showTooltip, setShowTooltip] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  var updateToolTip = showTooltip => {
+    setShowTooltip(showTooltip);
+  };
   var extractFrequency = frequency => {
-    var [deliveryText] = frequency.split(',');
-    if (!deliveryText) return;
-    // deliveryText = (deliveryText?.toLowerCase()).split("delivery every")[1];
-
-    return deliveryText;
+    console.log(frequency);
+    if (frequency != selectedSellingPlan.frequency) {
+      var [deliveryText] = frequency.split(',');
+      if (!deliveryText) return;
+      // deliveryText = (deliveryText?.toLowerCase()).split("delivery every")[1];
+      return deliveryText;
+    }
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "frequency-container__freq-label variant-container__opt-label"
-  }, "Delivery every"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "frequency-container__freq-options variant-container__var-options"
+  }, "Ships every ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "dropdown_content",
+    onClick: () => setShowFrequencyOption(!showFrequencyOption)
+  }, selectedSellingPlan.frequency, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: showFrequencyOption ? 'dropdownOpen' : 'dropdownClose'
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "10",
+    height: "7",
+    viewBox: "0 0 10 7",
+    fill: "none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+    x1: "0.707107",
+    y1: "1.29289",
+    x2: "5.70711",
+    y2: "6.29289",
+    stroke: "#282FEE",
+    "stroke-width": "2"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+    x1: "4.29289",
+    y1: "6.29289",
+    x2: "9.29289",
+    y2: "1.29289",
+    stroke: "#282FEE",
+    "stroke-width": "2"
+  }))), showFrequencyOption && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "frequency_options"
   }, sellingplan.length && sellingplan.map((sellplan, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     key: index,
-    className: "frequency-container__freq-wrapper variant-container__var-wrapper ".concat(selectedSellingPlan.id === sellplan.id ? 'active' : ''),
-    onClick: () => onUpdate(sellplan)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
+    className: "frequency-container__freq-wrapper ".concat(selectedSellingPlan.id === sellplan.id ? 'active' : ''),
+    onClick: () => {
+      onUpdate(sellplan);
+      setShowFrequencyOption(false);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
     className: "frequency-container__freq-name variant-container__var-name"
-  }, extractFrequency(sellplan.frequency))))));
+  }, extractFrequency(sellplan.frequency)))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "7",
+    height: "10",
+    viewBox: "0 0 7 10",
+    fill: "none",
+    className: "tooltip_trigger",
+    onClick: () => setShowTooltip(!showTooltip)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+    d: "M2.77034 6.42V4.536C3.45834 4.504 3.99834 4.356 4.39034 4.092C4.78234 3.82 4.97834 3.412 4.97834 2.868V2.7C4.97834 2.252 4.84234 1.916 4.57034 1.692C4.30634 1.468 3.94234 1.356 3.47834 1.356C2.99834 1.356 2.61434 1.488 2.32634 1.752C2.03834 2.016 1.83834 2.352 1.72634 2.76L0.826344 2.424C0.906344 2.16 1.01834 1.912 1.16234 1.68C1.30634 1.44 1.48634 1.232 1.70234 1.056C1.92634 0.88 2.18634 0.74 2.48234 0.636C2.78634 0.532 3.13034 0.48 3.51434 0.48C3.89834 0.48 4.24234 0.536 4.54634 0.648C4.85834 0.752 5.12234 0.904 5.33834 1.104C5.55434 1.296 5.72234 1.532 5.84234 1.812C5.96234 2.092 6.02234 2.404 6.02234 2.748C6.02234 3.124 5.95434 3.456 5.81834 3.744C5.68234 4.024 5.50634 4.264 5.29034 4.464C5.07434 4.664 4.82634 4.828 4.54634 4.956C4.27434 5.076 3.99834 5.16 3.71834 5.208V6.42H2.77034ZM3.28634 9.108C2.95834 9.108 2.72634 9.04 2.59034 8.904C2.46234 8.768 2.39834 8.596 2.39834 8.388V8.172C2.39834 7.964 2.46234 7.792 2.59034 7.656C2.72634 7.52 2.95834 7.452 3.28634 7.452C3.61434 7.452 3.84234 7.52 3.97034 7.656C4.10634 7.792 4.17434 7.964 4.17434 8.172V8.388C4.17434 8.596 4.10634 8.768 3.97034 8.904C3.84234 9.04 3.61434 9.108 3.28634 9.108Z",
+    fill: "#282FEE"
+  })), showTooltip && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_tooltip__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    setShowTooltip: setShowTooltip
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FrequencyOptions);
 
@@ -590,7 +642,26 @@ var OnetimeOptions = _ref => {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "onetime-container__onetime-label"
-  }, "One-time Purchase"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "10",
+    height: "8",
+    viewBox: "0 0 10 8",
+    fill: "none",
+    className: "".concat(purchaseType == 'onetime' ? 'active' : '')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+    x1: "4.61589",
+    y1: "6.67991",
+    x2: "9.61589",
+    y2: "0.679908",
+    stroke: "white"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+    x1: "4.64645",
+    y1: "7.35355",
+    x2: "1.11091",
+    y2: "3.81802",
+    stroke: "white"
+  })), "One-time Purchase"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "onetime-container__oneTime-Price"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "sub-compare-at-price"
@@ -611,15 +682,19 @@ var OnetimeOptions = _ref => {
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _frequency_options__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./frequency-options */ "./js/components/react/frequency-options.js");
 
 // import "StyleComponents/subscription-sec.scss";
 
 var SubscriptionOptions = _ref => {
   var {
+    updateSellingPlan,
+    sellingplan,
     selectedVariant,
     selectedSellingPlan,
     onUpdate,
-    purchaseType
+    purchaseType,
+    subscription_plan
   } = _ref;
   var {
     price,
@@ -629,6 +704,7 @@ var SubscriptionOptions = _ref => {
     priceAdjustments,
     discount
   } = selectedSellingPlan;
+  var [subscriptionBenefits, setSubscriptionBenefits] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   var discountNum = parseFloat(discount);
   var numPriceWithoutCurrency = parseFloat(price.replace('$', '').replace(',', '')) || 0;
   var numPrice = parseFloat(price.replace('$', '')) || 0;
@@ -655,6 +731,10 @@ var SubscriptionOptions = _ref => {
       return "$".concat(newValue.toFixed(2));
     }
   };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    setSubscriptionBenefits();
+  }, [selectedSellingPlan]);
+  console.log(subscription_plan[0].benefits, selectedSellingPlan.frequency, subscription_plan[0].frequency);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "subscriptionOpt-container__subscription-wrapper variant-container__var-wrapper ".concat(purchaseType != 'onetime' ? 'active' : ''),
     onClick: () => {
@@ -662,13 +742,64 @@ var SubscriptionOptions = _ref => {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "subscriptionOpt-container__subscription-label"
-  }, "Subscribe ", discount > 0 && "& Save", "\xA0 ", discount > 0 && calculateOffer(priceAdjustments)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "10",
+    height: "8",
+    viewBox: "0 0 10 8",
+    fill: "none",
+    className: "".concat(purchaseType != 'onetime' ? 'active' : '')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+    x1: "4.61589",
+    y1: "6.67991",
+    x2: "9.61589",
+    y2: "0.679908",
+    stroke: "white"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+    x1: "4.64645",
+    y1: "7.35355",
+    x2: "1.11091",
+    y2: "3.81802",
+    stroke: "white"
+  })), "Subscribe ", discount > 0 && "& Save", "\xA0 ", discount > 0 && calculateOffer(priceAdjustments)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "subscriptionOpt-container__subscription-Price"
   }, calculateDiscountedPrice(priceAdjustments) < numPrice && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "sub-compare-at-price"
-  }, "$", numPrice), "\xA0$", calculateDiscountedPrice(priceAdjustments))));
+  }, "$", numPrice), "\xA0$", calculateDiscountedPrice(priceAdjustments)), purchaseType != "onetime" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_frequency_options__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    sellingplan: sellingplan,
+    selectedSellingPlan: selectedSellingPlan,
+    onUpdate: updateSellingPlan
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "subscription_benefits"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Subscription Benefits"), selectedSellingPlan.frequency === subscription_plan[0].frequency && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, subscription_plan[0].benefits.map((benefit, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    key: index
+  }, benefit)))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SubscriptionOptions);
+
+/***/ }),
+
+/***/ "./js/components/react/tooltip.js":
+/*!****************************************!*\
+  !*** ./js/components/react/tooltip.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var Tooltip = _ref => {
+  var {
+    setShowTooltip
+  } = _ref;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    onClick: () => setShowTooltip(false)
+  }, "Tooltip");
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tooltip);
 
 /***/ }),
 
@@ -686,14 +817,11 @@ var SubscriptionOptions = _ref => {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _onetime_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./onetime-options */ "./js/components/react/onetime-options.js");
 /* harmony import */ var _subscription_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./subscription-options */ "./js/components/react/subscription-options.js");
-/* harmony import */ var _frequency_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frequency-options */ "./js/components/react/frequency-options.js");
 
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 
 
-
-// import VariantOptions from "./variant-options";
 
 // import 'StyleComponents/variant-options.scss';
 // import 'StyleComponents/subscription-sec.scss';
@@ -702,13 +830,14 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
   var {
     shopifyData
   } = _ref;
-  console.log(shopifyData);
+  console.log('shopify data.....', shopifyData);
   var [purchaseType, setPurchaseType] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('onetime');
   var {
     variants,
     sellingplan,
     options,
-    selected
+    selected,
+    subscription_plan
   } = shopifyData.data;
   var [selectedVariant, setSelectedVariant] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(variants.find(variant => variant.id == selected));
   var [selectedSellingPlan, setselectedSellingPlan] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(sellingplan[0] || {});
@@ -803,19 +932,18 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
     purchaseType: purchaseType,
     onUpdate: handleSwitch
   }), Object.keys(selectedSellingPlan).length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_subscription_options__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    updateSellingPlan: updateSellingPlan,
+    sellingplan: sellingplan,
     selectedVariant: selectedVariant,
     purchaseType: purchaseType,
     selectedSellingPlan: selectedSellingPlan,
-    onUpdate: handleSwitch
+    onUpdate: handleSwitch,
+    subscription_plan: subscription_plan
   }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("s", null, " ", productComparePrice), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("span", {
     className: productComparePrice ? "product-sale-color" : ""
   }, " ", selectedVariant.price, " "), " ", productComparePrice && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("span", {
     className: "product-sale-color"
-  })), purchaseType != "onetime" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_frequency_options__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    sellingplan: sellingplan,
-    selectedSellingPlan: selectedSellingPlan,
-    onUpdate: updateSellingPlan
-  }));
+  })));
 });
 
 /***/ }),

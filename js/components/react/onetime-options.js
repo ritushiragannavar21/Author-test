@@ -17,7 +17,13 @@ const OnetimeOptions = ({ selectedVariant, onUpdate, purchaseType }) => {
   return (
     <>
       <div className={`onetime-container__onetime-wrapper variant-container__var-wrapper ${purchaseType === 'onetime' ? 'active' : ''}`} onClick={() => { onUpdate("onetime") }}>
-        <div className="onetime-container__onetime-label">One-time Purchase</div>
+        <div className="onetime-container__onetime-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8" fill="none" className={`${purchaseType == 'onetime' ? 'active': ''}`}>
+            <line x1="4.61589" y1="6.67991" x2="9.61589" y2="0.679908" stroke="white"/>
+            <line x1="4.64645" y1="7.35355" x2="1.11091" y2="3.81802" stroke="white"/>
+          </svg>
+        {/* <input type="radio" checked={purchaseType == 'onetime'} />  */}
+        One-time Purchase</div>
         <p className="onetime-container__oneTime-Price">
     
             <span className="sub-compare-at-price">{finalCompareAtPrice}</span>
