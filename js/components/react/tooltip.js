@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Tooltip = ({ setShowTooltip, subscriptionPlan }) => {
-    console.log('>>>>>>',subscriptionPlan)
   return (
     <div className='tooltip'>
         <div className='tooltip__header'>

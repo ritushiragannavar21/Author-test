@@ -530,14 +530,9 @@ var FrequencyOptions = _ref => {
     onUpdate,
     subscriptionPlan
   } = _ref;
-  console.log('frequency...', sellingplan);
   var [showFrequencyOption, setShowFrequencyOption] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   var [showTooltip, setShowTooltip] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  var updateToolTip = showTooltip => {
-    setShowTooltip(showTooltip);
-  };
   var extractFrequency = frequency => {
-    console.log(frequency);
     if (frequency != selectedSellingPlan.frequency) {
       var [deliveryText] = frequency.split(',');
       if (!deliveryText) return;
@@ -804,7 +799,6 @@ var Tooltip = _ref => {
     setShowTooltip,
     subscriptionPlan
   } = _ref;
-  console.log('>>>>>>', subscriptionPlan);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "tooltip"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {

@@ -3,14 +3,9 @@ import Tooltip from "./tooltip";
 // import 'StyleComponents/variant-options.scss';
 
 const FrequencyOptions = ({ sellingplan, selectedSellingPlan, onUpdate, subscriptionPlan }) => {
-    console.log('frequency...', sellingplan);
     const [showFrequencyOption, setShowFrequencyOption] = useState(false);
-    const [showTooltip, setShowTooltip] = useState(false);
-    const updateToolTip = (showTooltip) => {
-        setShowTooltip(showTooltip)
-    }
+    const [showTooltip, setShowTooltip] = useState(false); 
     const extractFrequency = (frequency) => {
-        console.log(frequency)
         if(frequency != selectedSellingPlan.frequency){
             let [deliveryText] = frequency.split(',');
             if (!deliveryText) return
