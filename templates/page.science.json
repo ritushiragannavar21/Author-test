@@ -41,7 +41,7 @@
             "cta_url": "",
             "button": "SHOP ALL",
             "button_url": "shopify://collections",
-            "hide_button_mobile": false
+            "hide_button_mobile": true
           }
         },
         "first_block_txFxj4": {
