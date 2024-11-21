@@ -36,10 +36,12 @@ const SubscriptionOptions = ({ updateSellingPlan, sellingplan, selectedVariant, 
   };
 
   useEffect(() => {
-
-    setSubscriptionBenefits()
+    subscription_plan.map(plan => {
+      if(selectedSellingPlan.frequency === plan.frequency){
+        setSubscriptionBenefits(plan.benefits)
+      }
+    })
   }, [selectedSellingPlan])
-  console.log(subscription_plan[0].benefits, selectedSellingPlan.frequency, subscription_plan[0].frequency)
 
   return (
     <>
@@ -51,35 +53,22 @@ const SubscriptionOptions = ({ updateSellingPlan, sellingplan, selectedVariant, 
           </svg>
         
           {/* <input type="radio" checked={purchaseType !== 'onetime'} /> */}
-           Subscribe {discount > 0 && "& Save"}&nbsp; {discount > 0 && calculateOffer(priceAdjustments)} 
+           <p>Subscribe {discount > 0 && "& Save"} {discount > 0 && calculateOffer(priceAdjustments)} </p>
         </div>
         <p className="subscriptionOpt-container__subscription-Price"> 
          {calculateDiscountedPrice(priceAdjustments) < numPrice && (
             <span className="sub-compare-at-price">${numPrice}</span>
-          )}&nbsp;${calculateDiscountedPrice(priceAdjustments)}</p> 
+          )} ${calculateDiscountedPrice(priceAdjustments)}</p> 
           {purchaseType != "onetime" && 
             <>
-              <FrequencyOptions sellingplan={sellingplan} selectedSellingPlan={selectedSellingPlan} onUpdate={updateSellingPlan} />
+              <FrequencyOptions sellingplan={sellingplan} selectedSellingPlan={selectedSellingPlan} onUpdate={updateSellingPlan} subscriptionPlan={subscription_plan} />
               <div className="subscription_benefits">
                 <p>Subscription Benefits</p>
-                {selectedSellingPlan.frequency === subscription_plan[0].frequency && (
                   <ul>
-                    {subscription_plan[0].benefits.map((benefit, index) => (
+                    {subscriptionBenefits.map((benefit, index) => (
                       <li key={index}>{benefit}</li>
                     ))}
                   </ul>
-                )}
-                {/* <ul>
-                  <li>
-                  {discount > 0 && calculateOffer(priceAdjustments)} off + exclusive gifts on every recurring order
-                  </li>
-                  <li>
-                    Bundle your routine for additional savings
-                  </li>
-                  <li>
-                    Skip or cancel anytime
-                  </li>
-                </ul> */}
               </div>
             </> 
           }

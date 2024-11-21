@@ -527,7 +527,8 @@ var FrequencyOptions = _ref => {
   var {
     sellingplan,
     selectedSellingPlan,
-    onUpdate
+    onUpdate,
+    subscriptionPlan
   } = _ref;
   console.log('frequency...', sellingplan);
   var [showFrequencyOption, setShowFrequencyOption] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
@@ -584,7 +585,9 @@ var FrequencyOptions = _ref => {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
     className: "frequency-container__freq-name variant-container__var-name"
-  }, extractFrequency(sellplan.frequency)))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+  }, extractFrequency(sellplan.frequency)))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tooltip_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     width: "7",
     height: "10",
@@ -596,8 +599,9 @@ var FrequencyOptions = _ref => {
     d: "M2.77034 6.42V4.536C3.45834 4.504 3.99834 4.356 4.39034 4.092C4.78234 3.82 4.97834 3.412 4.97834 2.868V2.7C4.97834 2.252 4.84234 1.916 4.57034 1.692C4.30634 1.468 3.94234 1.356 3.47834 1.356C2.99834 1.356 2.61434 1.488 2.32634 1.752C2.03834 2.016 1.83834 2.352 1.72634 2.76L0.826344 2.424C0.906344 2.16 1.01834 1.912 1.16234 1.68C1.30634 1.44 1.48634 1.232 1.70234 1.056C1.92634 0.88 2.18634 0.74 2.48234 0.636C2.78634 0.532 3.13034 0.48 3.51434 0.48C3.89834 0.48 4.24234 0.536 4.54634 0.648C4.85834 0.752 5.12234 0.904 5.33834 1.104C5.55434 1.296 5.72234 1.532 5.84234 1.812C5.96234 2.092 6.02234 2.404 6.02234 2.748C6.02234 3.124 5.95434 3.456 5.81834 3.744C5.68234 4.024 5.50634 4.264 5.29034 4.464C5.07434 4.664 4.82634 4.828 4.54634 4.956C4.27434 5.076 3.99834 5.16 3.71834 5.208V6.42H2.77034ZM3.28634 9.108C2.95834 9.108 2.72634 9.04 2.59034 8.904C2.46234 8.768 2.39834 8.596 2.39834 8.388V8.172C2.39834 7.964 2.46234 7.792 2.59034 7.656C2.72634 7.52 2.95834 7.452 3.28634 7.452C3.61434 7.452 3.84234 7.52 3.97034 7.656C4.10634 7.792 4.17434 7.964 4.17434 8.172V8.388C4.17434 8.596 4.10634 8.768 3.97034 8.904C3.84234 9.04 3.61434 9.108 3.28634 9.108Z",
     fill: "#282FEE"
   })), showTooltip && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_tooltip__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    setShowTooltip: setShowTooltip
-  }))));
+    setShowTooltip: setShowTooltip,
+    subscriptionPlan: subscriptionPlan
+  })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FrequencyOptions);
 
@@ -661,7 +665,7 @@ var OnetimeOptions = _ref => {
     x2: "1.11091",
     y2: "3.81802",
     stroke: "white"
-  })), "One-time Purchase"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "One-time Purchase")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "onetime-container__oneTime-Price"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "sub-compare-at-price"
@@ -732,9 +736,12 @@ var SubscriptionOptions = _ref => {
     }
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    setSubscriptionBenefits();
+    subscription_plan.map(plan => {
+      if (selectedSellingPlan.frequency === plan.frequency) {
+        setSubscriptionBenefits(plan.benefits);
+      }
+    });
   }, [selectedSellingPlan]);
-  console.log(subscription_plan[0].benefits, selectedSellingPlan.frequency, subscription_plan[0].frequency);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "subscriptionOpt-container__subscription-wrapper variant-container__var-wrapper ".concat(purchaseType != 'onetime' ? 'active' : ''),
     onClick: () => {
@@ -761,17 +768,18 @@ var SubscriptionOptions = _ref => {
     x2: "1.11091",
     y2: "3.81802",
     stroke: "white"
-  })), "Subscribe ", discount > 0 && "& Save", "\xA0 ", discount > 0 && calculateOffer(priceAdjustments)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Subscribe ", discount > 0 && "& Save", " ", discount > 0 && calculateOffer(priceAdjustments), " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "subscriptionOpt-container__subscription-Price"
   }, calculateDiscountedPrice(priceAdjustments) < numPrice && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "sub-compare-at-price"
-  }, "$", numPrice), "\xA0$", calculateDiscountedPrice(priceAdjustments)), purchaseType != "onetime" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_frequency_options__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "$", numPrice), " $", calculateDiscountedPrice(priceAdjustments)), purchaseType != "onetime" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_frequency_options__WEBPACK_IMPORTED_MODULE_1__["default"], {
     sellingplan: sellingplan,
     selectedSellingPlan: selectedSellingPlan,
-    onUpdate: updateSellingPlan
+    onUpdate: updateSellingPlan,
+    subscriptionPlan: subscription_plan
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "subscription_benefits"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Subscription Benefits"), selectedSellingPlan.frequency === subscription_plan[0].frequency && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, subscription_plan[0].benefits.map((benefit, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Subscription Benefits"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, subscriptionBenefits.map((benefit, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     key: index
   }, benefit)))))));
 };
@@ -793,11 +801,54 @@ var SubscriptionOptions = _ref => {
 
 var Tooltip = _ref => {
   var {
-    setShowTooltip
+    setShowTooltip,
+    subscriptionPlan
   } = _ref;
+  console.log('>>>>>>', subscriptionPlan);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tooltip"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tooltip__header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "tooltip__title"
+  }, "Frequency Recommendation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "tooltip__closeButton",
     onClick: () => setShowTooltip(false)
-  }, "Tooltip");
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "15",
+    height: "15",
+    viewBox: "0 0 15 15",
+    fill: "none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+    x1: "0.353553",
+    y1: "0.388634",
+    x2: "14.4957",
+    y2: "14.5308",
+    stroke: "#282FEE"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+    x1: "14.4942",
+    y1: "0.353553",
+    x2: "0.352042",
+    y2: "14.4957",
+    stroke: "#282FEE"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "tooltip__subtitle"
+  }, "We recommend the following replenishment cycle:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tooltip__content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tooltip__content--left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "usage_title"
+  }, "Usage:"), subscriptionPlan.map(plan => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "usage_content"
+  }, plan.usage))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tooltip__content--right"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "frequency_title"
+  }, "Frequency:"), subscriptionPlan.map(plan => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "frequency_content"
+  }, plan.frequency)))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tooltip);
 
@@ -830,7 +881,6 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
   var {
     shopifyData
   } = _ref;
-  console.log('shopify data.....', shopifyData);
   var [purchaseType, setPurchaseType] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('onetime');
   var {
     variants,

@@ -5,7 +5,6 @@ import SubscriptionOptions from "./subscription-options";
 // import 'StyleComponents/subscription-sec.scss';
 
 export default ({ shopifyData }) => {
-  console.log('shopify data.....', shopifyData)
   const [purchaseType, setPurchaseType] = useState('onetime');
   const { variants, sellingplan, options, selected, subscription_plan } = shopifyData.data
   const [selectedVariant, setSelectedVariant] = useState(variants.find(variant => variant.id == selected));
