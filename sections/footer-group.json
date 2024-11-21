@@ -18,7 +18,7 @@
           "type": "text",
           "settings": {
             "heading": "Heading",
-            "subText": "<p>Write information about your brand and vision with your customers. <\/p>"
+            "subText": "<p>Write information about your brand and vision with your customers. </p>"
           }
         },
         "menu-1": {
@@ -41,7 +41,7 @@
           "type": "newsletter",
           "settings": {
             "newsletter_header": "Newsletter",
-            "newsletter_subtext": "<p>Subscribe to get notified about product launches, special offers and company news<\/p>"
+            "newsletter_subtext": "<p>Subscribe to get notified about product launches, special offers and company news</p>"
           }
         }
       },
@@ -52,17 +52,28 @@
         "newsletter"
       ],
       "settings": {
-        "payment_enable": true,
+        "show_locale_selector": true,
         "show_country_selector": true,
         "show_country_flag": true,
         "show_country_name": false,
-        "show_locale_selector": true,
+        "payment_enable": true,
+        "enable_follow_on_shop": true,
         "padding_top": 56,
         "padding_bottom": 0,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-99f73b25-4598-4954-9e35-60094b44cb81",
         "pno_info_tag": "",
         "email_info_tag": "",
-        "use_outline_button_styles": true
+        "use_outline_button_styles": true,
+        "enable_sublinks": true,
+        "custom_link_1_heading": "",
+        "custom_link_1_url": "",
+        "custom_link_2_heading": "",
+        "custom_link_2_url": "",
+        "custom_link_3_heading": "",
+        "custom_link_3_url": "",
+        "bottom_image": "",
+        "bottom_image_width": 100,
+        "bottom_image_margin_bottom": 0
       }
     }
   },
