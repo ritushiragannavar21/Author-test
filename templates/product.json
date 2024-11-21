@@ -14,6 +14,7 @@
       "blocks": {
         "vendor": {
           "type": "vendor",
+          "disabled": true,
           "settings": {
             "block_bottom_spacing": 16
           }
@@ -64,6 +65,7 @@
         },
         "inventory": {
           "type": "inventory",
+          "disabled": true,
           "settings": {
             "show_status": "always",
             "inventory_threshold": 10,
@@ -83,6 +85,26 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true,
             "block_bottom_spacing": 16
+          }
+        },
+        "stay_ai_subscription_buybox_CXRAhi": {
+          "type": "shopify://apps/stay-ai-subscription/blocks/buybox/896a3134-375a-4df4-8274-d37b95eafdee",
+          "settings": {
+            "enabled": false,
+            "box_layout": "radio",
+            "selector_color": "#ffffff",
+            "selector_secondary_color": "#4A4A4A",
+            "selector_hover_color": "#4A4A4A",
+            "selector_hover_secondary_color": "#ffffff",
+            "selector_hover_border_color": "#4A4A4A",
+            "text_hover_color": "#ffffff",
+            "selector_border_radius": 4,
+            "selector_border_width": 1,
+            "text_color": "#4a4a4a",
+            "stroke_width": 2,
+            "border_radius": 12,
+            "remove_styles": false,
+            "styles": ""
           }
         },
         "pickup": {
@@ -113,23 +135,23 @@
           "type": "badges",
           "settings": {
             "badge_stack_style": "wrap",
-            "icon_style_1": "star",
-            "text_color_1": "#000000",
-            "background_color_1": "#fcf4e8",
-            "heading_1": "Badge 1",
-            "content_1": "",
-            "page_1": "",
-            "icon_style_2": "star",
-            "text_color_2": "#000000",
-            "background_color_2": "#fcf4e8",
-            "heading_2": "Badge 2",
+            "icon_style_1": "none",
+            "text_color_1": "#282fee",
+            "background_color_1": "#e8ff5c",
+            "heading_1": "All Skin Types",
+            "content_1": "<ul><li>Our products are cruelty free with absolutely no testing on animals.</li><li>Our products are cruelty free with absolutely no testing on animals</li><li>Our products are cruelty free with absolutely no testing on animals</li><li>Our products are cruelty free with absolutely no testing on animals</li></ul>",
+            "page_1": "contact",
+            "icon_style_2": "none",
+            "text_color_2": "#282fee",
+            "background_color_2": "#e8ff5c",
+            "heading_2": "{{ block.settings.page_2.title }}",
             "content_2": "",
-            "page_2": "",
-            "icon_style_3": "star",
-            "text_color_3": "#000000",
-            "background_color_3": "#fcf4e8",
-            "heading_3": "Badge 3",
-            "content_3": "",
+            "page_2": "cruelty-free",
+            "icon_style_3": "none",
+            "text_color_3": "#282fee",
+            "background_color_3": "#e8ff5c",
+            "heading_3": "Hypoallergenic",
+            "content_3": "<ul><li>Our products are cruelty free with absolutely no testing on animals.</li><li>Our products are cruelty free with absolutely no testing on animals</li><li>Our products are cruelty free with absolutely no testing on animals</li><li>Our products are cruelty free with absolutely no testing on animals</li></ul>",
             "page_3": "",
             "icon_style_4": "star",
             "text_color_4": "#000000",
@@ -176,6 +198,7 @@
         "quantity-selector",
         "inventory",
         "buy-buttons",
+        "stay_ai_subscription_buybox_CXRAhi",
         "pickup",
         "accordion_1",
         "accordion_2",
@@ -204,7 +227,6 @@
     },
     "product-recommendation": {
       "type": "product-recommendation",
-      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "products_to_show": 4,
@@ -237,8 +259,7 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
+            "button_url": ""
           }
         },
         "first_block_i7LC6e": {
@@ -260,8 +281,7 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
+            "button_url": ""
           }
         }
       },
@@ -296,8 +316,7 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
+            "button_url": ""
           }
         }
       },
@@ -310,7 +329,7 @@
         "overlay_reverse_mobile": false
       }
     },
-    "factuals_WDQYJk": {
+     "factuals_WDQYJk": {
       "type": "factuals",
       "blocks": {
         "image_C8YQxU": {
