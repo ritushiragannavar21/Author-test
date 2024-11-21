@@ -16,13 +16,7 @@
       "blocks": {
         "announcement-1": {
           "type": "announcement",
-          "settings": {
-            "text": "Announce something here",
-            "announcement_link": ""
-          }
-        },
-        "announcement-2": {
-          "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Announce something here",
             "announcement_link": ""
@@ -30,8 +24,7 @@
         }
       },
       "block_order": [
-        "announcement-1",
-        "announcement-2"
+        "announcement-1"
       ],
       "settings": {
         "enable_sticky": false,
