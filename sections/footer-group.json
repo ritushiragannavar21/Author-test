@@ -14,8 +14,18 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "brand_mnTGkG": {
+          "type": "brand",
+          "settings": {
+            "image_width": 105,
+            "heading": "",
+            "content": "<p>Write information about your brand and vision with your customers.</p>",
+            "brand_social_media_icons": true
+          }
+        },
         "text": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "heading": "Heading",
             "subText": "<p>Write information about your brand and vision with your customers. </p>"
@@ -54,6 +64,7 @@
         }
       },
       "block_order": [
+        "brand_mnTGkG",
         "text",
         "menu-1",
         "menu-2",
