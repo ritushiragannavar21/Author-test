@@ -10,6 +10,10 @@
     flex-direction: column;
     justify-content: stretch;
 
+    &__button {
+        z-index: 5;
+    }
+
     &__overlay-reverse{
         flex-direction:column-reverse;
         @media(--md){
@@ -50,7 +54,6 @@
     }
 
     &__image-wrapper {
-        // height: 100%;
         cursor: pointer;
 
         &--half-width {
@@ -68,7 +71,6 @@
     }
 
     .image {
-        // height:100%;
         &--desktop {
            display: none;
     

@@ -23,13 +23,25 @@
             "id": "bg_color",
             "label": "Background Color",
             "default": "#FF0000"
-          }
+          },
+          {
+            "type": "checkbox",
+            "id": "swap_media_mobile",
+            "label": "Swap blocks in mobile",
+            "default": false
+        },
         ],
         "blocks": [
             {
               "type": "image",
               "name": "image",
               "settings": [
+                {
+                  "type": "checkbox",
+                  "id": "hide_media_mobile",
+                  "label": "hide image in mobile",
+                  "default": false
+                },
                 {
                     "type":"image_picker",
                     "id":"image",

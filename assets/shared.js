@@ -219,6 +219,7 @@ var FactualSection = _ref => {
   }, blockCount > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "factual__section",
     style: {
+      background: "".concat(shopifyData.data.background_color),
       display: "grid",
       gridTemplateColumns: "repeat(".concat(Math.min(blockCount, 2), ", 1fr)")
     }
@@ -231,7 +232,7 @@ var FactualSection = _ref => {
     var isFirstBlock = index === 0;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       key: index,
-      className: "factual__item ".concat(isFirstBlock ? "factual__item--flex" : ""),
+      className: "factual__item ".concat(isFirstBlock ? "factual__item--flex" : "", " ").concat(shopifyData.data.swipeMedia === "true" ? "factual__swap-block-mobile" : ""),
       style: {
         position: "relative"
       }
@@ -393,41 +394,58 @@ var FactualSection = _ref => {
     }), block.cards && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__cards"
     }, block.cards.map((card, cardIndex) => {
-      var myStyle = {
-        background: "\n                                linear-gradient(to right bottom, transparent 50%, #fff 0) no-repeat 0 0 / 2em 2em,\n                                linear-gradient(135deg, transparent 1.41em, ".concat(card.color, " 0)")
-      };
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        key: cardIndex,
-        style: myStyle,
-        className: "factual__card-item",
-        onClick: () => handleCardClick(cardIndex)
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "factual__card-icon"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
-        width: "25",
-        height: "25",
-        viewBox: "0 0 25 25",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-        cx: "12.5",
-        cy: "12.5",
-        r: "12",
-        fill: "#FEFDF6",
-        stroke: "#FEFDF6"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-        d: "M12.9507 9.18C12.6241 9.18 12.3954 9.11467 12.2647 8.984C12.1341 8.844 12.0687 8.67133 12.0687 8.466V8.242C12.0687 8.03667 12.1341 7.86867 12.2647 7.738C12.3954 7.598 12.6241 7.528 12.9507 7.528C13.2774 7.528 13.5061 7.598 13.6367 7.738C13.7674 7.86867 13.8327 8.03667 13.8327 8.242V8.466C13.8327 8.67133 13.7674 8.844 13.6367 8.984C13.5061 9.11467 13.2774 9.18 12.9507 9.18ZM9.78673 17.048H12.3907V11.728H9.78673V10.776H13.5107V17.048H15.9467V18H9.78673V17.048Z",
-        fill: "#282FEE"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "factual__card-content"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "factual__card-title",
-        dangerouslySetInnerHTML: {
-          __html: card.card_title
-        }
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-        className: "factual__code"
-      }, card.text, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("sup", null, card.sup), " ")));
+      var text = card.text;
+      if (text) {
+        var myStyle = {
+          background: "\n                                  linear-gradient(to right bottom, transparent 50%, #fff 0) no-repeat 0 0 / 2em 2em,\n                                  linear-gradient(135deg, transparent 1.41em, ".concat(card.color, " 0)")
+        };
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          key: cardIndex,
+          style: myStyle,
+          className: "factual__card-item",
+          onClick: () => handleCardClick(cardIndex)
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          className: "factual__card-cut-icon"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+          width: "32",
+          height: "33",
+          viewBox: "0 0 32 33",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+          d: "M31 32H3L17 17.5L31 3V32Z",
+          fill: "white",
+          stroke: "#282FEE",
+          strokeWidth: "1.5"
+        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          className: "factual__card-icon"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+          width: "25",
+          height: "25",
+          viewBox: "0 0 25 25",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+          cx: "12.5",
+          cy: "12.5",
+          r: "12",
+          fill: "#FEFDF6",
+          stroke: "#FEFDF6"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+          d: "M12.9507 9.18C12.6241 9.18 12.3954 9.11467 12.2647 8.984C12.1341 8.844 12.0687 8.67133 12.0687 8.466V8.242C12.0687 8.03667 12.1341 7.86867 12.2647 7.738C12.3954 7.598 12.6241 7.528 12.9507 7.528C13.2774 7.528 13.5061 7.598 13.6367 7.738C13.7674 7.86867 13.8327 8.03667 13.8327 8.242V8.466C13.8327 8.67133 13.7674 8.844 13.6367 8.984C13.5061 9.11467 13.2774 9.18 12.9507 9.18ZM9.78673 17.048H12.3907V11.728H9.78673V10.776H13.5107V17.048H15.9467V18H9.78673V17.048Z",
+          fill: "#282FEE"
+        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          className: "factual__card-content"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          className: "factual__card-title",
+          dangerouslySetInnerHTML: {
+            __html: card.card_title
+          }
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+          className: "factual__code"
+        }, card.text, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("sup", null, card.sup))));
+      }
+      return null;
     }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "factual__right factual__right-".concat(blockCount)
     }, isSecondImageOpen && !isFirstBlock ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -471,7 +489,9 @@ var FactualSection = _ref => {
       d: "M21.2092 27.9548L10.6132 18.1175L21.2092 8.28074",
       stroke: "#FEFDF6",
       "stroke-width": "2"
-    })))) : src && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    })))) : src && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: " ".concat(block.hideImage === "true" ? "factual__hide-image" : "", " ")
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
       image_aspect_ratio_desktop: 0.9,
       image_aspect_ratio_mobile: 0.9,
       image: {
@@ -480,7 +500,7 @@ var FactualSection = _ref => {
         height
       },
       srcTokens: srcTokens
-    })));
+    }))));
   })) : '');
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FactualSection);

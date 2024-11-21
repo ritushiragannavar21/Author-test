@@ -1,10 +1,8 @@
-
 <style>
     .video-poster {
         position: relative;
-      }
-      
-      .play-button-overlay {
+    }
+    .play-button-overlay {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -14,13 +12,12 @@
         align-items: center;
         justify-content: center;
         z-index: 5;
-      } 
-      
+    } 
 </style> 
 
-{% if video_url  %}
-    <div class="video-poster" style="cursor: pointer;" onclick="loadVideo(this)">
-        <div class="play-button-overlay">
+{% if video_url %}
+    <div class="video-poster" style="cursor: pointer;">
+        <div class="play-button-overlay"onclick="loadVideo(this)">
             <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 50 50" fill="none">
                 <path d="M10 5L40 25L10 45V5Z" fill="yellow" />
             </svg>
@@ -29,28 +26,37 @@
             <div>
                 {% render 'shopify-responsive-image', image: image, aspect_ratio: aspect_ratio_desktop %}
             </div>
-        {% endif %}      
+        {% endif %}
     </div>
-    
-    <div class="video video--desktop {{ wrapper_class }}__video " {{ wrapper_attributes }} style="display: none;">
-        {% render 'responsive-video', video_url:video_url, desktop_aspect_ratio: desktop_aspect_ratio, crop :crop , mobile_aspect_ratio:aspect_ratio_mobile %}
-    </div>   
-{% else %} 
+
+    <div class="video video--desktop {{ wrapper_class }}__video" {{ wrapper_attributes }} style="display: none;">
+        {% render 'responsive-video', video_url: video_url, desktop_aspect_ratio: desktop_aspect_ratio, crop: crop, mobile_aspect_ratio: aspect_ratio_mobile %}
+    </div>
+{% else %}
     <div class="video-poster">
-        {% render 'responsive-video', video:video,desktop_aspect_ratio: desktop_aspect_ratio , crop :crop, mobile_aspect_ratio:aspect_ratio_mobile%}
-    </div>  
+        {% render 'responsive-video', video: video, desktop_aspect_ratio: desktop_aspect_ratio, crop: crop, mobile_aspect_ratio: aspect_ratio_mobile %}
+    </div>
 {% endif %}
 
+<script>
 
-  <script>
-    function loadVideo(posterElement) {
-        console.log("-----hiii")
-      var videoWrapper = posterElement.nextElementSibling;
-      var iframe = videoWrapper.querySelector('iframe');
-  
-      if (iframe) {
-        videoWrapper.style.display = 'block';
-        posterElement.style.display = 'none'; 
-      } 
-    }   
-  </script>
+    function loadVideo(playButtonElement) {
+        const textImageWrapper = playButtonElement.closest('.text-image');
+        if (!textImageWrapper) return;
+
+        const videoPoster = textImageWrapper.querySelector('.video-poster');
+        if (!videoPoster) return;
+    
+        const videoWrapper = textImageWrapper.querySelector('.video--desktop');
+
+        if (videoWrapper && videoWrapper.classList.contains('video--desktop')) {
+            videoWrapper.style.display = 'block';
+            videoPoster.style.display = 'none';
+            const textWrapper = textImageWrapper.querySelector('.text-image__text-wrapper');
+            if (textWrapper) {
+                textWrapper.style.display = 'none';
+            }
+        }
+    }
+    
+</script>

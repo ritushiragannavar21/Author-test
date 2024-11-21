@@ -10,7 +10,6 @@
   --base-card-margin:10px;
 
   &__section {
-    background-color: #f8f8f8;
     @media(max-width: 1023px){
       grid-template-columns: 1fr !important;
     }
@@ -85,7 +84,7 @@
     cursor: pointer;
     position: relative;
     height: 147px;
-    width: 121px;
+    width: 122px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,16 +92,26 @@
     font-size: 1.2rem;
     font-weight: bold;
     clip-path: polygon(2em 0, 100% 0, 100% 100%, 0 100%, 0 2em);
-    border: 2px solid colors.$blue;  
-
+    border: 2px solid colors.$blue;
     @media(--md-large){
-      width: 150.5px;
+      width: 151.5px;
       height:206px;
     }
    
     @media(--lg){
-      width: 170.5px;
+      width: 171.5px;
       height:206px;
+    }
+  }
+  
+
+  &__card-cut-icon{
+    position: absolute;
+    top: -7px;
+    left: -13px;
+      svg{
+        width: 60px;
+        height: 46px;
     }
   }
 
@@ -176,34 +185,34 @@
     }
   }
 
-}
-
-.factual__card-item::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -3px;
-  width: 2em;
-  height: 2em;
-  background: white; 
-  clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 92%, 0 90%);
-  border-left: 2px solid colors.$blue; 
-  border-top: 2px solid colors.$blue; 
-  border-right: 2px solid colors.$blue; 
-  transform: rotate(90deg);  
-  border-left: 2px solid colors.$blue;
-  
-}
-
-.factual__section{
-  .button__custom-button{
+  &__swap-block-mobile:nth-of-type(1) {
+    order: 1;
     @media(--md){
-      bottom: 3%;
+        order: 0; 
     }
-    @media(--lg){
-      bottom: 8%;
+} 
+
+  &__hide-image{
+    display: none;
+    @media(--md){
+      display: contents;
     }
   }
 }
+
+
+.factual__section{
+  .button__custom-button{
+      bottom: 3%;
+    @media(--md-large){
+      padding: 35px 52px;
+    }
+    @media(--lg){
+      bottom: 8%;
+      padding: 44px 52px;
+    }
+  }
+}
+
 
 

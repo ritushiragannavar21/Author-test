@@ -39,10 +39,7 @@ const FactualSection = ({ shopifyData }) => {
     <div className="container factual_container">
       {blockCount > 0 ? (
         <div
-          className="factual__section"
-          style={{
-            display: "grid",
-            gridTemplateColumns: `repeat(${Math.min(blockCount, 2)}, 1fr)`,
+          className={`factual__section`} style={{ background: `${shopifyData.data.background_color}`,display: "grid", gridTemplateColumns: `repeat(${Math.min(blockCount, 2)}, 1fr)`,
           }}
         >
           {blocks.map((block, index) => {
@@ -56,7 +53,7 @@ const FactualSection = ({ shopifyData }) => {
             return (
               <div
                 key={index}
-                className={`factual__item ${isFirstBlock ? "factual__item--flex" : ""}`}
+                className={`factual__item ${isFirstBlock ? "factual__item--flex" : ""} ${shopifyData.data.swipeMedia === "true" ? "factual__swap-block-mobile" : ""}`}
                 style={{ position: "relative" }}
               >
                 {isFirstBlock && (
@@ -162,36 +159,74 @@ const FactualSection = ({ shopifyData }) => {
                       {block.cards && (
                         <div className="factual__cards">
                           {block.cards.map((card, cardIndex) => {
-                            const myStyle = {
-                              background: `
-                                linear-gradient(to right bottom, transparent 50%, #fff 0) no-repeat 0 0 / 2em 2em,
-                                linear-gradient(135deg, transparent 1.41em, ${card.color} 0)`,
-                            };
-                            return (
-                              <div
-                                key={cardIndex}
-                                style={myStyle}
-                                className="factual__card-item"
-                                onClick={() => handleCardClick(cardIndex)}
-                              >
-                                <div className="factual__card-icon">
-                                  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12.5" cy="12.5" r="12" fill="#FEFDF6" stroke="#FEFDF6"/>
-                                    <path d="M12.9507 9.18C12.6241 9.18 12.3954 9.11467 12.2647 8.984C12.1341 8.844 12.0687 8.67133 12.0687 8.466V8.242C12.0687 8.03667 12.1341 7.86867 12.2647 7.738C12.3954 7.598 12.6241 7.528 12.9507 7.528C13.2774 7.528 13.5061 7.598 13.6367 7.738C13.7674 7.86867 13.8327 8.03667 13.8327 8.242V8.466C13.8327 8.67133 13.7674 8.844 13.6367 8.984C13.5061 9.11467 13.2774 9.18 12.9507 9.18ZM9.78673 17.048H12.3907V11.728H9.78673V10.776H13.5107V17.048H15.9467V18H9.78673V17.048Z" fill="#282FEE"/>
-                                  </svg>
+                            const text = card.text;
+                            if (text) {
+                              const myStyle = {
+                                background: `
+                                  linear-gradient(to right bottom, transparent 50%, #fff 0) no-repeat 0 0 / 2em 2em,
+                                  linear-gradient(135deg, transparent 1.41em, ${card.color} 0)`,
+                              };
+
+                              return (
+                                <div
+                                  key={cardIndex}
+                                  style={myStyle}
+                                  className="factual__card-item"
+                                  onClick={() => handleCardClick(cardIndex)}
+                                >
+                                  <div className="factual__card-cut-icon">
+                                    <svg
+                                      width="32"
+                                      height="33"
+                                      viewBox="0 0 32 33"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M31 32H3L17 17.5L31 3V32Z"
+                                        fill="white"
+                                        stroke="#282FEE"
+                                        strokeWidth="1.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                  <div className="factual__card-icon">
+                                    <svg
+                                      width="25"
+                                      height="25"
+                                      viewBox="0 0 25 25"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <circle
+                                        cx="12.5"
+                                        cy="12.5"
+                                        r="12"
+                                        fill="#FEFDF6"
+                                        stroke="#FEFDF6"
+                                      />
+                                      <path
+                                        d="M12.9507 9.18C12.6241 9.18 12.3954 9.11467 12.2647 8.984C12.1341 8.844 12.0687 8.67133 12.0687 8.466V8.242C12.0687 8.03667 12.1341 7.86867 12.2647 7.738C12.3954 7.598 12.6241 7.528 12.9507 7.528C13.2774 7.528 13.5061 7.598 13.6367 7.738C13.7674 7.86867 13.8327 8.03667 13.8327 8.242V8.466C13.8327 8.67133 13.7674 8.844 13.6367 8.984C13.5061 9.11467 13.2774 9.18 12.9507 9.18ZM9.78673 17.048H12.3907V11.728H9.78673V10.776H13.5107V17.048H15.9467V18H9.78673V17.048Z"
+                                        fill="#282FEE"
+                                      />
+                                    </svg>
+                                  </div>
+                                  <div className="factual__card-content">
+                                    <div
+                                      className="factual__card-title"
+                                      dangerouslySetInnerHTML={{
+                                        __html: card.card_title,
+                                      }}
+                                    ></div>
+                                    <h1 className="factual__code">
+                                      {card.text}
+                                      <sup>{card.sup}</sup>
+                                    </h1>
+                                  </div>
                                 </div>
-                                <div className="factual__card-content">
-                                  <div
-                                    className="factual__card-title"
-                                    dangerouslySetInnerHTML={{
-                                      __html: card.card_title,
-                                    }}
-                                  ></div>
-                                  <h1
-                                    className="factual__code">{card.text}<sup>{card.sup}</sup> </h1>
-                                </div>
-                              </div>
-                            );
+                              );
+                            }
+                            return null;
                           })}
                         </div>
                       )}
@@ -228,13 +263,15 @@ const FactualSection = ({ shopifyData }) => {
                         </div>
                       </div> 
                     ) : (
-                      src && (
+                        src && (
+                          <div className={` ${block.hideImage === "true" ? "factual__hide-image" : ""} `}>
                         <ResponsiveImage
                           image_aspect_ratio_desktop={0.9}
                           image_aspect_ratio_mobile={0.9}
                           image={{ src, width, height }}
                           srcTokens={srcTokens}
                         />
+                        </div>
                       ) 
                     )}
                   </div>
