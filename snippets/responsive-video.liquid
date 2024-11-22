@@ -1,5 +1,4 @@
-
-{% assign desktop_aspect_ratio = desktop_aspect_ratio  %}
+{% assign desktop_aspect_ratio = desktop_aspect_ratio %}
 {% assign mobile_aspect_ratio = mobile_aspect_ratio %}
 {% assign min = 100 %}
 {% assign max = 10000 %}
@@ -7,20 +6,21 @@
 {% assign generated_video_id = "now" | date: "%N" | modulo: diff | plus: min %}
 
 <style>
-  #VideoWrapper-{{ generated_video_id }}{
+  #VideoWrapper-{{ generated_video_id }} {
     position: relative;
     width: 100%;
     max-height: {{ max_width | default: '800' }}px;
     padding-top: {{ 100 | divided_by: mobile_aspect_ratio }}%;
     overflow: hidden;
   }
+
   @media(min-width: 1023px){
-     #VideoWrapper-{{ generated_video_id }}{
+     #VideoWrapper-{{ generated_video_id }} {
       padding-top: {{ 100 | divided_by: desktop_aspect_ratio }}%;
     }
   }
 
-  #Video-{{ generated_video_id }} ,  video{
+  #Video-{{ generated_video_id }} , video, iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,45 +30,53 @@
   }
 
   {% if crop == true %}
-    #VideoWrapper-{{ generated_video_id }} video {
+    #VideoWrapper-{{ generated_video_id }} video,
+    #VideoWrapper-{{ generated_video_id }} iframe {
       object-fit: cover;
     }
   {% endif %}
 
-  {% if fill == true %} 
-    #VideoWrapper-{{ generated_video_id }} video{
+  {% if fill == true %}
+    #VideoWrapper-{{ generated_video_id }} video,
+    #VideoWrapper-{{ generated_video_id }} iframe {
       object-fit: fill;
     }
   {% endif %}
 
-  {% if background == true %} 
-    #VideoWrapper-{{ generated_video_id }} video{
+  {% if background == true %}
+    #VideoWrapper-{{ generated_video_id }} video,
+    #VideoWrapper-{{ generated_video_id }} iframe {
       background-color:#fff;
     }
   {% endif %}
 
-
-  {% if contain == true %} 
-    #VideoWrapper-{{ generated_video_id }} video{
+  {% if contain == true %}
+    #VideoWrapper-{{ generated_video_id }} video,
+    #VideoWrapper-{{ generated_video_id }} iframe {
       object-fit: contain;
     }
   {% endif %}
-  
 </style>
 
 {% if video_url %}
-    <div id="VideoWrapper-{{ generated_video_id }}" >
-        <iframe
-          id="Video-{{ generated_video_id }}"
-          src="{{ video_url | replace: 'watch?v=', 'embed/' }}?autoplay=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          {% if no_lazyload == false %} loading="lazy" {% endif %}
-        ></iframe>
-    </div>
+  <iframe id="Video-{{ generated_video_id }}"
+    {% if video_url contains 'youtube.com' or video_url contains 'youtu.be' %}
+      src="
+      {% if video_url contains 'youtu.be' %}https://www.youtube.com/embed/{{ video_url | split: 'youtu.be/' | last }}
+      {% elsif video_url contains 'youtube.com' %}https://www.youtube.com/embed/{{ video_url | split: 'watch?v=' | last }}
+      {% endif %}?autoplay=1"
+    {% elsif video_url contains 'vimeo.com' %}
+      src="https://player.vimeo.com/video/{{ video_url | split: '/' | last }}?autoplay=1"
+    {% else %}
+      src="{{ video_url }}?autoplay=1"
+    {% endif %}
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+    {% if no_lazyload == false %} loading="lazy" {% endif %}
+  ></iframe>
 
 {% else %}
-    <div id="VideoWrapper-{{ generated_video_id }}" >
+    <div id="VideoWrapper-{{ generated_video_id }}">
        {{ video | video_tag: autoplay: true, loop: true, muted: true }}
     </div>
 {% endif %}
