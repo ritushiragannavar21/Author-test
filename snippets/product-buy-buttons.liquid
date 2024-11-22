@@ -40,7 +40,9 @@
                   {% assign metafield_segment_price = segment_price | money_without_currency %}
 
                 <input type="hidden" name="properties[_segment_value]" value="{{ metafield_segment_price }}" data-segmented-price>
-        {% render 'variant-subscription' product: product %}
+          {% if product.selling_plan_groups %}
+              {% render 'variant-subscription' product: product %}
+          {% endif %}
         <div class="product-form__buttons">
           {% comment %} Add to cart Button {% endcomment %}
           <button

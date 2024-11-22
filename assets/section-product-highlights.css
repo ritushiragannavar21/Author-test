@@ -243,7 +243,7 @@
   background-repeat: no-repeat;
 }
 .main-product__info {
-  color: var(--color-text);
+  color: var(--color-text) !important;
 }
 .main-product .product-slider--thumbnail-bottom .swiper-container .sliderControl {
   margin-top: 0 !important;

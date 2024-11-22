@@ -968,8 +968,6 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
     productComparePrice = selectedVariant.OriginalCompareAtPrice;
   }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, sellingplan.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    className: "variant-container__purchaseType-label variant-container__opt-label"
-  }, "Buying Options"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "variant-container__purchaseType-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_onetime_options__WEBPACK_IMPORTED_MODULE_2__["default"], {
     selectedVariant: selectedVariant,

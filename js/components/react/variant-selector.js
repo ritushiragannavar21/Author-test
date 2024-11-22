@@ -106,7 +106,6 @@ export default ({ shopifyData }) => {
     <>
       {sellingplan.length > 0 ?
         <>
-          <div className="variant-container__purchaseType-label variant-container__opt-label">Buying Options</div>
           <div className="variant-container__purchaseType-wrapper">
             <OnetimeOptions selectedVariant={selectedVariant} purchaseType={purchaseType} onUpdate={handleSwitch} />
             {Object.keys(selectedSellingPlan).length > 0 && <SubscriptionOptions updateSellingPlan={updateSellingPlan} sellingplan={sellingplan} selectedVariant={selectedVariant} purchaseType={purchaseType} selectedSellingPlan={selectedSellingPlan} onUpdate={handleSwitch} subscription_plan={subscription_plan} />}

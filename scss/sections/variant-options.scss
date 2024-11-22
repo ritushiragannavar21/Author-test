@@ -159,28 +159,28 @@
         font-family: var(--primary-font);
         font-size: 16px;
         font-weight: 700;
-        color: #000;
-        
         width: 100%;
         @media(--sm){
             margin-top: 10px;
             margin-bottom: 20px;
         }
     }
+
+    --offer-text: colors.$blue;
     
 }
 
 
-.variant-container__var-wrapper.active .variant-container__var-name, 
-.variant-container__var-wrapper.active .onetime-container__onetime-label,
-.variant-container__var-wrapper.active .onetime-container__oneTime-Price {
+.variant-container__var-wrapper .variant-container__var-name, 
+.variant-container__var-wrapper .onetime-container__onetime-label,
+.variant-container__var-wrapper .onetime-container__oneTime-Price {
     color: colors.$blue;
 }
 
-.variant-container__var-wrapper.active .variant-container__var-price, 
-.variant-container__var-wrapper.active .variant-container__opt-label,
-.variant-container__var-wrapper.active .subscriptionOpt-container__subscription-label,
-.variant-container__var-wrapper.active .subscriptionOpt-container__subscription-Price {
+.variant-container__var-wrapper .variant-container__var-price, 
+.variant-container__var-wrapper .variant-container__opt-label,
+.variant-container__var-wrapper .subscriptionOpt-container__subscription-label,
+.variant-container__var-wrapper .subscriptionOpt-container__subscription-Price {
     color: colors.$blue;
 }
 
