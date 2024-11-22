@@ -2914,6 +2914,7 @@ class VariantDropdown extends HTMLElement {
             this.updateQuantityRule();
             this.variantSKU && this.variantSKU.update(this.currentVariant.sku);
         }
+        console.log('this.currentVariant', this.currentVariant)
     }
 
     updateVariantLabel(e) {

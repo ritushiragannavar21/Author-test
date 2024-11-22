@@ -1,6 +1,7 @@
 import React from "react";
 
 const OnetimeOptions = ({ selectedVariant, onUpdate, purchaseType }) => {
+  console.log('selectedVariant..', selectedVariant)
   const { price, compareAtPrice, OriginalCompareAtPrice } = selectedVariant;
   // Remove dollar signs and parse the values to floats
   const numPriceWithoutCurrency = parseFloat(price.replace('$', '')) || 0;

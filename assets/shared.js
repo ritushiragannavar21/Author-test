@@ -620,6 +620,7 @@ var OnetimeOptions = _ref => {
     onUpdate,
     purchaseType
   } = _ref;
+  console.log('selectedVariant..', selectedVariant);
   var {
     price,
     compareAtPrice,
