@@ -78,7 +78,7 @@
         "show_country_flag": true,
         "show_country_name": false,
         "payment_enable": true,
-        "enable_follow_on_shop": true,
+        "enable_follow_on_shop": false,
         "padding_top": 56,
         "padding_bottom": 0,
         "color_scheme": "scheme-3c198b06-970a-4cd6-b876-83a23aa3b97f",
