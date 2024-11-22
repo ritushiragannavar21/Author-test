@@ -1,0 +1,86 @@
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+.our-solution {
+
+    &__main-heading p{
+        @include use-text-style('heading-2');
+        font-weight: typography.$regular-weight;
+        font-family: var(--tertiary-font);
+        padding: 26px;
+        text-align: center;
+        line-height: 40px;
+        margin-bottom: 0;
+        @media(--md){
+            @include use-text-style('heading-1');
+            font-weight: typography.$regular-weight;
+            font-family: var(--tertiary-font);
+        }
+    }
+
+    &__wrapper {
+        @media(max-width: 1023px){
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    &__info-wrapp{
+        border-bottom: 1px solid var(--COLOR-D9); 
+        @media(--md){
+            border-right: 1px solid var(--COLOR-D9); 
+        }
+    }
+
+    &__info-wrapp{
+        &:nth-of-type(3){
+            border-bottom: unset;
+            border-right: unset;    
+        }   
+    }
+
+    &__text-wrap{
+        padding: 20px 46px 20px 33px;
+        @media(--md){
+            padding: 23px 40px;
+        }
+    }
+
+    &__number {
+        font-size: 128px;
+        font-family: var(--secondary-font);
+        font-weight: 300;
+        line-height: 100px;
+    }
+
+    &__heading{
+        margin-top: 35px;
+        @include use-text-style('heading-2');
+        font-weight: typography.$regular-weight;
+        line-height: 41px;
+    }
+
+    &__description p{
+        margin-top: 20px;
+        line-height: 20px;
+        @include use-text-style('body-title');
+        font-weight: typography.$regular-weight;
+    }
+
+    &__arrow-icon{
+        margin-top: 55px;
+        padding: 0 15px;
+    }
+
+    &__text-highlight{
+        margin: 12px 20px 20px;
+        padding: 10px 15px;
+        background: colors.$lime-yellow;
+        @include use-text-style('body-title');
+        font-weight: typography.$regular-weight;
+        @media(--md){
+            margin: 50px 24px 25px;
+        }
+    }
+}

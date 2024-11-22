@@ -1,0 +1,124 @@
+{{ 'our-solution.css' | asset_url | stylesheet_tag }}
+
+{%liquid
+  assign bg_color = section.settings.bg_color
+  assign heading_bg_color = section.settings.heading_bg_color
+  assign heading = section.settings.heading
+  assign block_count = section.blocks.size
+%}
+
+<div class="our-solution__container">
+    {% if heading != blank %}
+        <div class="our-solution__main-heading" style="background-color:{{heading_bg_color}};">{{ heading }}</div>
+    {% endif %}
+    <div class="our-solution__wrapper" style="background-color:{{bg_color}};display: grid; grid-template-columns: repeat({{ block_count }}, minmax(200px, 1fr))">
+        {% for block in section.blocks %}
+            {%liquid
+                assign number = block.settings.large_number
+                assign title = block.settings.main_question
+                assign description = block.settings.description
+                assign text = block.settings.highlight_text
+                assign arrow = block.settings.show_down_arrow
+                assign button = block.settings.button
+                assign url = block.settings.button_url
+            %}
+            <div class="our-solution__info-wrapp">
+               <div class="our-solution__text-wrap">
+                  {% if number != blank %}<div class="our-solution__number">{{ number }}</div>{% endif %}
+                  {% if title != blank %} <div class="our-solution__heading">{{ title }}</div>{% endif %}
+                  {% if description != blank %} <div class="our-solution__description">{{ description }}</div>{% endif %}
+                  {% if arrow %}
+                      <div class="our-solution__arrow-icon">
+                          <svg width="16" height="34" viewBox="0 0 16 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.30461 33.7071C7.69513 34.0976 8.3283 34.0976 8.71882 33.7071L15.0828 27.3431C15.4733 26.9526 15.4733 26.3195 15.0828 25.9289C14.6923 25.5384 14.0591 25.5384 13.6686 25.9289L8.01172 31.5858L2.35486 25.9289C1.96434 25.5384 1.33117 25.5384 0.940648 25.9289C0.550124 26.3195 0.550124 26.9526 0.940648 27.3431L7.30461 33.7071ZM7.01172 -1.94821e-08L7.01172 33L9.01172 33L9.01172 1.94821e-08L7.01172 -1.94821e-08Z" fill="#282FEE"/>
+                          </svg>        
+                      </div>
+                  {% endif %}
+               </div>
+                {% if text != blank %}<div class="our-solution__text-highlight">{{ text }}</div>{% endif %}
+                {% if url != blank  %}
+                    <div class="text-image__button">
+                        <a class="button button__custom-button text__cta" href="{{ button_url }}"><span class="btn-text button__btn-text"> {{ button }} </span></a> 
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+  
+
+{% schema %}
+{
+  "name": "Our solution Information",
+  "settings":[
+    {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Main Heading"
+    },
+    {
+        "type": "color",
+        "id": "heading_bg_color",
+        "label": "heading Background color"
+    },
+    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content_block",
+      "name": "Content Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "large_number",
+          "label": "Large Number",
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "main_question",
+          "label": "Main Question",
+          "default": "What is in my product?"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>I'd like to have a good understanding of what exactly I’m using.</p>"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_down_arrow",
+            "label": "Show arrow",
+            "default": false
+        },
+        {
+          "type": "textarea",
+          "id": "highlight_text",
+          "label": "Highlight Text",
+          "default": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products."
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our solution Information",
+    }
+  ]
+}
+{% endschema %}
