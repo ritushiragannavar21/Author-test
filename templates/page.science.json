@@ -189,7 +189,7 @@
       ],
       "settings": {
         "bg_color": "",
-        "swap_media_mobile": true,
+        "swap_media_mobile": false,
         "overlay_reverse_mobile": false
       }
     },
