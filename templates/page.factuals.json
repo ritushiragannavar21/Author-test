@@ -142,7 +142,7 @@
           "type": "image",
           "settings": {
             "hide_media_mobile": false,
-            "image": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.24_AM.png",
+            "image": "shopify://shop_images/12_1.png",
             "title": "",
             "description": "",
             "card1_title": "",
@@ -179,8 +179,8 @@
           "settings": {
             "hide_media_mobile": false,
             "video_url": "",
-            "image_desktop": "shopify://shop_images/162-Pareva_1_1.png",
-            "image_mobile": "shopify://shop_images/162-Pareva_1_1.png",
+            "image_desktop": "shopify://shop_images/Mask_group_14.png",
+            "image_mobile": "shopify://shop_images/Mask_group_14.png",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",

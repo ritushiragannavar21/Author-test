@@ -10,6 +10,10 @@
     }
 }
 
+.media-text__image-carousel.container{
+    padding: 0;
+}
+
 .media-text{
     &__image-carousel{
         display: grid;
