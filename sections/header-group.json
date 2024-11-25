@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "name": "Header group",
   "type": "header",
   "sections": {
@@ -20,19 +20,12 @@
             "text": "Announce something here",
             "announcement_link": ""
           }
-        },
-        "announcement-2": {
-          "type": "announcement",
-          "settings": {
-            "text": "Announce something here",
-            "announcement_link": ""
-          }
         }
       },
       "block_order": [
-        "announcement-1",
-        "announcement-2"
+        "announcement-1"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky": false,
         "navigation": "slider",
@@ -86,8 +79,8 @@
         "logo_width": 140,
         "logo_mobile_width": 138,
         "menu": "menu",
-        "highlight_heading": "SHOP ALL",
-        "highlight_link": "#",
+        "highlight_heading": "",
+        "highlight_link": "",
         "use_outline_button_style": false,
         "enable_transparent_header": false,
         "show_on_only_homepage": false,

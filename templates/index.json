@@ -1,13 +1,13 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
-{
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
   "sections": {
     "media_text_overlay_WJhYYY": {
       "type": "media-text-overlay",
@@ -30,7 +30,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         },
         "first_block_nVMPqQ": {
@@ -52,7 +53,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "SHOP ALL",
-            "button_url": "shopify://collections"
+            "button_url": "shopify://collections",
+            "hide_button_mobile": false
           }
         }
       },
@@ -64,6 +66,38 @@
         "bg_color": "#ec99c2",
         "swap_media_mobile": false,
         "overlay_reverse_mobile": false
+      }
+    },
+    "daily_essential_izd9Lm": {
+      "type": "daily-essential",
+      "blocks": {
+        "product_tgycpM": {
+          "type": "product",
+          "settings": {
+            "product": "c35-5tm-firming-glow-serum"
+          }
+        },
+        "product_dyedDT": {
+          "type": "product",
+          "settings": {
+            "product": "test-1"
+          }
+        },
+        "product_K7xtqn": {
+          "type": "product",
+          "settings": {
+            "product": "test™"
+          }
+        }
+      },
+      "block_order": [
+        "product_tgycpM",
+        "product_dyedDT",
+        "product_K7xtqn"
+      ],
+      "settings": {
+        "heading": "Daily Essentials",
+        "content": "Plant-based ingredients"
       }
     },
     "media_text_overlay_kQ48kH": {
@@ -87,7 +121,8 @@
             "cta_text": "LEARN MORE",
             "cta_url": "shopify://collections",
             "button": "SHOP ALL",
-            "button_url": "shopify://collections"
+            "button_url": "shopify://collections",
+            "hide_button_mobile": false
           }
         },
         "first_block_Jcqm9P": {
@@ -109,7 +144,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         }
       },
@@ -143,7 +179,8 @@
             "cta_text": "LEARN MORE",
             "cta_url": "shopify://collections",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         },
         "first_block_dTN7Ry": {
@@ -164,7 +201,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "SHOP ALL",
-            "button_url": "shopify://collections"
+            "button_url": "shopify://collections",
+            "hide_button_mobile": false
           }
         }
       },
@@ -250,7 +288,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         },
         "first_block_FKLkXa": {
@@ -271,7 +310,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         }
       },
@@ -305,7 +345,8 @@
             "cta_text": "LEARN MORE",
             "cta_url": "shopify://collections",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         },
         "first_block_nKxEz4": {
@@ -326,7 +367,8 @@
             "cta_text": "",
             "cta_url": "",
             "button": "",
-            "button_url": ""
+            "button_url": "",
+            "hide_button_mobile": false
           }
         }
       },
@@ -401,6 +443,7 @@
   },
   "order": [
     "media_text_overlay_WJhYYY",
+    "daily_essential_izd9Lm",
     "media_text_overlay_kQ48kH",
     "media_text_overlay_xtNpqk",
     "custom_testimonial_Lh4zwt",
@@ -408,8 +451,4 @@
     "media_text_overlay_qXjMq8",
     "media_text_overlay_46KmLB"
   ]
- }
- 
- 
- 
- 
+}

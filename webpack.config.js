@@ -116,7 +116,7 @@ if (mode === 'development') {
         scripts: ['echo Webpack build in progress...🛠']
       },
       onBuildEnd: {
-        scripts: ['echo Build Complete 📦', `shopify theme dev --theme-editor-sync -s ${storeUrl} -t ${themeId}`],
+        scripts: ['echo Build Complete 📦', `shopify theme dev --theme-editor-sync -s ${storeUrl}`],
         parallel: true //this is required to make webpack watch run in background.
       }
     })
