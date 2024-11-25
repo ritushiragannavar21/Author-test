@@ -1,37 +1,47 @@
 @use 'StyleComponents/colors';
 @import 'breakpoints';
 
-.clinical__results{
-    // .beforeAfter__container{
-    //     flex-direction: column-reverse;
-    // }
-    h1{
-        text-transform: uppercase;
-        font-family: var(--secondary-font);
-    }
-    p{
-        font-size: 14px;
-    }
-    a{
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 10px;
-    }
-    .beforeAfter__wrp{
-        padding: 18px;
-    }
-    @media(--sm){
-        .beforeAfter__wrp{
-            background: colors.$lime-yellow;
-            width: 100%;
-            height: 100%;
-            padding: 50px;
-            animation-reveal{
-                background: colors.$white;
-                max-width: 440px;
-                max-height: auto;
-                padding: 20px;
+.beforeAfter{
+        
+        p{
+            font-size: 14px;
+        }
+        a{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+        &__wrp{
+            padding: 18px;
+            h1, h2, h3, h4, h5, h6{
+                text-transform: uppercase;
+                font-family: var(--secondary-font);
             }
         }
+        @media(--sm){
+            &__wrp{
+                background: colors.$lime-yellow;
+                width: 100%;
+                height: 100%;
+                padding: 50px;
+                animation-reveal{
+                    background: colors.$white;
+                    max-width: 440px;
+                    min-height: 555px;
+                    max-height: auto;
+                    padding: 20px;
+                    &.vertical_spacing{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    
+}
+.clinical__results{
+    &_heading{
+        margin-top: 0;
     }
 }

@@ -1,9 +1,15 @@
 {{ 'section-before-after.css' | asset_url | stylesheet_tag }}
+{{ 'clinical-results.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 | append: 'px' }};
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 | append: 'px' }};
+  }
+  @media(max-width: 767px){
+    .d-flex-md-row-reverse, .d-flex-md-row{
+      flex-direction: column-reverse;
+    }
   }
 
   @media screen and (min-width: 750px) {
@@ -570,7 +576,7 @@
           {{ block.shopify_attributes }}
         >
           <div class="beforeAfter__wrp text-{{ block.settings.content_alignment }}">
-            <animation-reveal aoi-type="stagger" aoi-delay="0.13" aoi-duration="0.5" aoi-amount="0.5">
+            <animation-reveal aoi-type="stagger" aoi-delay="0.13" aoi-duration="0.5" aoi-amount="0.5" class="{% if block.settings.vertical_spacing %} vertical_spacing {% endif %}">
               {% if block.settings.subheading != blank %}
                 <p class="fnt-16 clr-text mb-2">{{ block.settings.subheading }}</p>
               {% endif %}
@@ -813,6 +819,13 @@
           "id": "content_alignment",
           "label": "Content alignment",
           "default": "left"
+        },
+        {
+          "type": "checkbox",
+          "id": "vertical_spacing",
+          "label": "Vertical Spacing",
+          "info": "Give verticalspace between heading and content",
+          "default": true
         },
         {
           "type": "text",

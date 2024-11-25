@@ -2,9 +2,6 @@
   background: var(--color-background) var(--gradient-background) no-repeat 100% 100%;
   overflow: visible;
 }
-.clinical__results.beforeAfter__section .beforeAfter__container{
-  background: #E8FF5C;
-}
 @media screen and (max-width: 767px) {
   .beforeAfter__section .beforeAfter__container {
     flex-wrap: wrap;
@@ -24,7 +21,7 @@
   animation: beforeAfter-init var(--clip-timing);
 }
 .beforeAfter__section .beforeAfter__image {
-  min-height: var(--media-height);
+  min-height: 800px;
   margin: auto 0;
   -o-object-fit: cover;
      object-fit: cover;
@@ -97,16 +94,16 @@
   flex-grow: 1;
 }
 .beforeAfter__section .beforeAfter__wrp {
-  padding: 36px 84px;
+  /* padding: 36px 84px; */
 }
 @media (max-width: 991px) {
   .beforeAfter__section .beforeAfter__wrp {
-    padding: 36px;
+    /* padding: 36px; */
   }
 }
 @media (max-width: 767px) {
   .beforeAfter__section .beforeAfter__wrp {
-    padding: 36px 14px;
+    /* padding: 36px 14px; */
   }
 }
 .beforeAfter__section .beforeAfter__wrp h2 {
