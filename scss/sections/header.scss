@@ -29,6 +29,7 @@
         font-family: var(--secondary-font);
         font-weight: typography.$medium-weight !important; 
         text-decoration: unset; 
+        letter-spacing: 1px;
     }
 }
 
@@ -69,3 +70,23 @@ hamburger-menu{
         }
     }
 }
+
+.header-right__nav-pro a{
+    color: colors.$white;
+    background: colors.$blue;
+    padding: 8px 19px;
+    letter-spacing: 1px;
+}
+
+.header__menu-wrp {
+    .dropdown-menu__list-item {
+        .nav-item{
+            a{
+               letter-spacing: 1px;
+            }
+       }
+    }
+}
+
+
+

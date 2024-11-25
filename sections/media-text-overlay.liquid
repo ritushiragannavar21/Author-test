@@ -41,6 +41,7 @@
             assign hide_button_mobile = block.settings.hide_button_mobile
             assign top_overlay_mobile = section.settings.overlay_reverse_mobile
             assign teaser = block.settings.teaser
+            assign teaser_subheading = block.settings.teaset-subtext
             assign logo = block.settings.logo
             assign heading_block1 = block.settings.heading_block1
             assign subheading_block1 = block.settings.subheading_block1
@@ -82,6 +83,7 @@
                             hide_button_mobile: hide_button_mobile,
                             top_overlay_mobile:top_overlay_mobile,
                             teaser:teaser,
+                            teaser_subheading:teaser_subheading,
                             logo:logo
                     %}
                     
@@ -119,6 +121,7 @@
                             hide_button_mobile:hide_button_mobile,
                             top_overlay_mobile: top_overlay_mobile,
                             teaser:teaser,
+                            teaser_subheading:teaser_subheading,
                             logo:logo
                         %}
                     </div>
@@ -145,7 +148,7 @@
                             button_url:button_url,
                             hide_button_mobile:hide_button_mobile,
                             top_overlay_mobile: top_overlay_mobile,
-                            teaser:teaser,
+                            teaser:teaser,√:teaser_subheading,
                             logo:logo
                         %}
                 {% endif %}
@@ -238,6 +241,11 @@
             "type": "richtext",
             "id": "teaser",
             "label": "Teaser Text"
+        },
+        {
+          "type": "richtext",
+          "id": "teaset-subtext",
+          "label": "Subheading"
         },
         {
             "type": "header",

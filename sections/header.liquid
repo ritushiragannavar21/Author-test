@@ -367,7 +367,7 @@
             <div class="d-flex order-3 header__iconGroup">
               <ul class="d-flex">
                 {% liquid
-                  assign show_highlight_button = false
+                  assign show_highlight_button = false 
                   if section.settings.highlight_heading != blank
                     assign show_highlight_button = true
                   endif
@@ -385,12 +385,12 @@
                   > COMMUNITY
                   </a>
                 </li>
-                <li class="header-right__nav">
+                <li class="header-right__nav header-right__nav-pro">
                   <a
                     aria-label="Community"
                     class="d-v-center"
                     href="https://parevabeauty.com/pages/community"
-                  > Pros
+                  > PROS
                   </a>
                 </li>
                 {% if show_highlight_button %}

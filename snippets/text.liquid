@@ -7,14 +7,18 @@
 {% endstyle %}
 <div class="{{wrapper_class}}__text text__{{id}} text-wrapper__heigt" > 
 <div class="text-wrapper {{wrapper_class}}__text-wrapper text-wrapper__flex">
-  {% if logo != blank  or teaser != blank or eyebrow != blank %}
+  {% if logo != blank  or teaser != blank or eyebrow != blank or teaser_subheading != blank %}
     <div>
           {% if logo != blank  or teaser != blank %}
             <div class="text-wrapper__teaser">
                 <span class="text-wrapper__logo">{{ logo }}</span>
                 <span class="text-wrapper__text">{{ teaser }}</span>
+                
             </div>
           {% endif %} 
+          {% if teaser_subheading != blank %}
+            <span class="test-wrapper__teaser-subtext">{{ teaser_subheading }}</span>
+          {% endif %}
           {% if eyebrow != blank %}
             <div class="{{wrapper_class}}__eyebrow text__eyebrow">{{eyebrow}}</div>
           {% endif %}

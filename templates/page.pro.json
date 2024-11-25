@@ -7,231 +7,413 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
-    "sections": {
-      "main": {
-        "type": "main-page",
-        "disabled": true,
-        "settings": {
-          "content_width": 600,
-          "padding_top": 28,
-          "padding_bottom": 28,
-          "color_scheme": ""
-        }
-      },
-      "media_text_overlay_8nWGmY": {
-        "type": "media-text-overlay",
-        "blocks": {
-          "first_block_LUFAQW": {
-            "type": "first-block",
-            "settings": {
-              "hide_media_mobile": false,
-              "video": "shopify://files/videos/3b2a1aacfe23fee98f69a746403fd02972ac95ab (1).mov",
-              "video_url": "",
-              "logo": "",
-              "teaser": "",
-              "eyebrow": "<p>a PROBLEM Worth SOLVING</p>",
-              "heading": "",
-              "subheading": "<p>We believe passionately that there’s a better way.<br/><br/>All our products include a document – we call it The Factuals™ – that shares formulation details, product testing and our progress as a truly responsible beauty company.<br/><br/>We’re just getting started and we know we’ve a long way to go. Our promise is simple... we’ll   communicate the programs that reflect our values.</p>",
-              "heading_block1": "",
-              "subheading_block1": "",
-              "heading_block2": "",
-              "subheading_block2": "",
-              "cta_text": "",
-              "cta_url": "",
-              "button": "SHOP ALL",
-              "button_url": "shopify://collections",
-              "hide_button_mobile": true
-            }
-          }
-        },
-        "block_order": [
-          "first_block_LUFAQW"
-        ],
-        "settings": {
-          "bg_color": "",
-          "swap_media_mobile": true,
-          "overlay_reverse_mobile": false
-        }
-      },
-      "factuals_WDQYJk": {
-        "type": "factuals",
-        "blocks": {
-          "image_C8YQxU": {
-            "type": "image",
-            "settings": {
-              "hide_media_mobile": false,
-              "title": "THE (F)ACTUALS™",
-              "description": "<p>The (F)actuals is a breakdown of each and every ingredient in each of our products, along with its purpose and quantity. Click on any of the product icons below to read more.</p>",
-              "card1_title": "<p>FIRMING<br/>GLOW SERUM</p>",
-              "card1_text": "C35.5",
-              "card1_sup_tag": "TM",
-              "card1_color": "#ff0000",
-              "first_card_image_1": "shopify://shop_images/Group_2618_1.png",
-              "first_card_image_2": "shopify://shop_images/Group_2620_2.png",
-              "card2_title": "<p>GEL CREAM<br/>MOISTURIZER</p>",
-              "card2_text": "RH5.5",
-              "card2_sup_tag": "TM",
-              "card2_color": "#0000ff",
-              "second_card_image_1": "shopify://shop_images/Pareva_SHOT_08_1193_1.png",
-              "mobile_second_card_image_2": "shopify://shop_images/Group_2784_1.png",
-              "card3_title": "<p>HYDRABOND<br/>PRIMER</p>",
-              "card3_text": "COLL20",
-              "card3_sup_tag": "TM",
-              "card3_color": "#00ff00",
-              "button": "SHOP ALL",
-              "button_url": "shopify://collections"
-            }
-          },
-          "image_YNRcDT": {
-            "type": "image",
-            "settings": {
-              "hide_media_mobile": false,
-              "image": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.24_AM.png",
-              "title": "",
-              "description": "",
-              "card1_title": "",
-              "card1_text": "C35.5™",
-              "card1_sup_tag": "TM",
-              "card1_color": "#ff0000",
-              "card2_title": "",
-              "card2_text": "RH5.5™",
-              "card2_sup_tag": "TM",
-              "card2_color": "#0000ff",
-              "card3_title": "",
-              "card3_text": "COLL20™",
-              "card3_sup_tag": "TM",
-              "card3_color": "#00ff00",
-              "button": "",
-              "button_url": ""
-            }
-          }
-        },
-        "block_order": [
-          "image_C8YQxU",
-          "image_YNRcDT"
-        ],
-        "settings": {
-          "bg_color": "#fefdf6",
-          "swap_media_mobile": true
-        }
-      },
-      "media_text_overlay_iVbm6j": {
-        "type": "media-text-overlay",
-        "blocks": {
-          "first_block_KPNi4M": {
-            "type": "first-block",
-            "settings": {
-              "hide_media_mobile": false,
-              "video_url": "",
-              "image_desktop": "shopify://shop_images/162-Pareva_1_1.png",
-              "image_mobile": "shopify://shop_images/162-Pareva_1_1.png",
-              "logo": "",
-              "teaser": "",
-              "eyebrow": "",
-              "heading": "",
-              "subheading": "",
-              "heading_block1": "",
-              "subheading_block1": "",
-              "heading_block2": "",
-              "subheading_block2": "",
-              "cta_text": "",
-              "cta_url": "",
-              "button": "SHOP ALL",
-              "button_url": "shopify://collections",
-              "hide_button_mobile": true
-            }
-          },
-          "first_block_UcfjQH": {
-            "type": "first-block",
-            "settings": {
-              "hide_media_mobile": false,
-              "video_url": "",
-              "logo": "",
-              "teaser": "",
-              "eyebrow": "<p>A HIGH BAR FOR OUR future SELVES</p>",
-              "heading": "",
-              "subheading": "<p>We’ve set some demanding goals for the future and believe sharing them with our community is the first step to delivering:<br/><br/>1. Complete label transparency by 2030 (with only clinically studied and validated ingredients in each formula).<br/>2.  Fully recyclable packaging to 70% refillable and recycled materials by 2029<br/>3. Minimize complexities and simplify routines (less product = less waste) from day one.   <br/>4. Define a science-backed climate goal by 2028<br/>5. B Corp certification by 2029 <br/>6. No fear-mongering, age-shaming or judgment.</p>",
-              "heading_block1": "",
-              "subheading_block1": "",
-              "heading_block2": "",
-              "subheading_block2": "",
-              "cta_text": "",
-              "cta_url": "",
-              "button": "",
-              "button_url": "",
-              "hide_button_mobile": false
-            }
-          }
-        },
-        "block_order": [
-          "first_block_KPNi4M",
-          "first_block_UcfjQH"
-        ],
-        "settings": {
-          "bg_color": "#e8ff5c",
-          "swap_media_mobile": false,
-          "overlay_reverse_mobile": false
-        }
-      },
-      "our_solution_hENTfM": {
-        "type": "our-solution",
-        "blocks": {
-          "content_block_nHKgw8": {
-            "type": "content_block",
-            "settings": {
-              "large_number": "1",
-              "main_question": "WHAT IS IN MY PRODUCT?",
-              "description": "<p>I'd like to have a good understanding of what exactly I’m using.</p>",
-              "show_down_arrow": true,
-              "highlight_text": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products.",
-              "button": "",
-              "button_url": ""
-            }
-          },
-          "content_block_Uhjf3U": {
-            "type": "content_block",
-            "settings": {
-              "large_number": "2",
-              "main_question": "WHAT IS IN MY PRODUCT?",
-              "description": "<p>I'd like to have a good understanding of what exactly I’m using.</p>",
-              "show_down_arrow": true,
-              "highlight_text": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products.",
-              "button": "",
-              "button_url": ""
-            }
-          },
-          "content_block_aBzByg": {
-            "type": "content_block",
-            "settings": {
-              "large_number": "3",
-              "main_question": "WHAT IS IN MY PRODUCT?",
-              "description": "<p>I'd like to have a good understanding of what exactly I’m using.</p>",
-              "show_down_arrow": true,
-              "highlight_text": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products.",
-              "button": "",
-              "button_url": ""
-            }
-          }
-        },
-        "block_order": [
-          "content_block_nHKgw8",
-          "content_block_Uhjf3U",
-          "content_block_aBzByg"
-        ],
-        "settings": {
-          "heading": "<p>Our solution to <br/>the confusion</p>",
-          "heading_bg_color": "#fefdf6",
-          "bg_color": "#f4f1e8"
-        }
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": 600,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "color_scheme": ""
       }
     },
-    "order": [
-      "main",
-      "media_text_overlay_8nWGmY",
-      "factuals_WDQYJk",
-      "media_text_overlay_iVbm6j",
-      "our_solution_hENTfM"
-    ]
-  }
-  
+    "media_text_overlay_8nWGmY": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_LUFAQW": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video": "shopify://files/videos/f9d08e1b4b711958e4cc41df7fcd2ef599fadf4c.mov",
+            "video_url": "",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "<p>WELCOME TO THE<br/>PAREVA PRO SITE</p>",
+            "heading": "",
+            "subheading": "<p>Smitha and Kyle what do you want to write here? The following text is just place holders We believe passionately that there’s a better way.</p>",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": true
+          }
+        },
+        "first_block_3jtb48": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Mask_group_12.png",
+            "image_mobile": "shopify://shop_images/Mask_group_12.png",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "SHOP ALL",
+            "button_url": "shopify://collections/frontpage",
+            "hide_button_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "first_block_LUFAQW",
+        "first_block_3jtb48"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": true,
+        "overlay_reverse_mobile": false
+      }
+    },
+    "our_solution_hENTfM": {
+      "type": "our-solution",
+      "blocks": {
+        "content_block_nHKgw8": {
+          "type": "content_block",
+          "settings": {
+            "large_number": "",
+            "main_question": "CHECK US OUT",
+            "description": "<p>View our official catalog. <br/>Updated weekly</p>",
+            "show_down_arrow": false,
+            "highlight_text": "",
+            "button": "VIEW CATALOG",
+            "button_url": "shopify://collections"
+          }
+        },
+        "content_block_Uhjf3U": {
+          "type": "content_block",
+          "settings": {
+            "large_number": "",
+            "main_question": "WHOLESALE",
+            "description": "<p>Looking to resell?<br/>Please apply for a wholesale account and a rep will be in contact with you shortly.</p>",
+            "show_down_arrow": false,
+            "highlight_text": "",
+            "button": "APPLY NOW",
+            "button_url": "shopify://collections"
+          }
+        },
+        "content_block_aBzByg": {
+          "type": "content_block",
+          "settings": {
+            "large_number": "",
+            "main_question": "CORPORATE",
+            "description": "<p>Looking to order coporate gifts, tournament swag, uniforms, or bulk orders?<br/>Fill out our corporate order form.</p>",
+            "show_down_arrow": false,
+            "highlight_text": "",
+            "button": "ORDER FORM",
+            "button_url": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "content_block_nHKgw8",
+        "content_block_Uhjf3U",
+        "content_block_aBzByg"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_bg_color": "#fefdf6",
+        "bg_color": "#f4f1e8"
+      }
+    },
+    "media_text_overlay_iVbm6j": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_UcfjQH": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "<p>CLEAN BEAUTY REIMAGINED –  YES, WE’RE CLEAN, BUT WE BELIEVE WE CAN BE SOMUCH MORE</p>",
+            "heading": "",
+            "subheading": "<p>Our mission is to reimagine the beauty category with radical transparency, good science and real joy.</p>",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "LEARN MORE",
+            "cta_url": "shopify://collections",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        },
+        "first_block_KPNi4M": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Group_2755.png",
+            "image_mobile": "shopify://shop_images/Group_2755.png",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "first_block_UcfjQH",
+        "first_block_KPNi4M"
+      ],
+      "settings": {
+        "bg_color": "#e8ff5c",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
+    },
+    "custom_testimonial_9PDNNT": {
+      "type": "custom-testimonial",
+      "blocks": {
+        "testimonial_KwpHmQ": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "My skin looks and feels so much better. I look 8 years younger!",
+            "author": "SARAH",
+            "rating": 5,
+            "text_color": "#0000ff"
+          }
+        },
+        "testimonial_Jkr8CF": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "My skin looks and feels so much better. I look 8 years younger!",
+            "author": "SARAH",
+            "rating": 3,
+            "text_color": "#0000ff"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_KwpHmQ",
+        "testimonial_Jkr8CF"
+      ],
+      "settings": {
+        "heading": "DON’T TAKE OUR WORD FOR IT"
+      }
+    },
+    "media_text_overlay_iEkTXt": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_wah7HF": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "https://www.youtube.com/watch?v=FTQ-3CK5zjQ",
+            "cover_image": "shopify://shop_images/Pareva-23_1.png",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        },
+        "first_block_gWy7tj": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Group_2818.png",
+            "logo": "<svg width=\"26\" height=\"29\" viewbox=\"0 0 26 29\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12.7516 11.0045L9.20898 8.9614V4.87515L12.7516 2.83203L16.2943 4.87515V8.9614L12.7516 11.0045ZM10.2961 8.34284L12.7516 9.7674L15.2071 8.34284V5.51246L12.7516 4.0879L10.2961 5.51246V8.34284Z\" fill=\"#282FEE\"></path>\n<path d=\"M12.7516 25.5084L9.20898 23.4653V19.3791L12.7516 17.3359L16.2943 19.3791V23.4653L12.7516 25.5084ZM10.2961 22.8467L12.7516 24.2713L15.2071 22.8467V20.0164L12.7516 18.5918L10.2961 20.0164V22.8467Z\" fill=\"#282FEE\"></path>\n<path d=\"M8.90799 11.918H11.3822V16.3416H9.97641V13.3425C9.97641 13.3425 9.97641 13.1363 9.97641 12.9864C9.97641 12.8364 9.97641 12.7052 9.97641 12.6302L8.60808 16.3416H7.14603L5.79644 12.6302C5.79644 12.6302 5.79644 12.8364 5.79644 12.9864C5.79644 13.1363 5.79644 13.2676 5.79644 13.3425V16.3416H4.39062V11.918H6.88361L7.8958 14.5984L8.88924 11.918H8.90799Z\" fill=\"#282FEE\"></path>\n<path d=\"M12.7461 28.3553C12.1463 28.3553 11.5464 28.2054 11.0216 27.8867L1.72447 22.5259C0.656048 21.9073 0 20.7639 0 19.5268V8.8051C0 7.56798 0.656048 6.42458 1.72447 5.80603L11.0216 0.46392C12.09 -0.15464 13.4209 -0.15464 14.4893 0.46392L23.7677 5.82477C24.8361 6.44333 25.4922 7.58673 25.4922 8.82385V19.5455C25.4922 20.7827 24.8361 21.9261 23.7677 22.5446L14.4893 27.9055C13.9645 28.2054 13.3646 28.3741 12.7648 28.3741L12.7461 28.3553ZM12.7461 1.08248C12.3337 1.08248 11.9213 1.19494 11.5652 1.40113L2.26805 6.76198C1.53703 7.1931 1.08717 7.98036 1.08717 8.82385V19.5455C1.08717 20.389 1.53703 21.1763 2.26805 21.6074L11.5464 26.9683C12.2775 27.3994 13.1959 27.3994 13.927 26.9683L23.2054 21.6074C23.9364 21.1763 24.3862 20.389 24.3862 19.5455V8.82385C24.3862 7.98036 23.9364 7.1931 23.2054 6.76198L13.927 1.40113C13.5521 1.19494 13.1585 1.08248 12.7461 1.08248Z\" fill=\"#282FEE\"></path>\n<path d=\"M17.1325 18.2584L13.5898 16.2153V12.1291L17.1325 10.0859L20.6752 12.1291V16.2153L17.1325 18.2584ZM14.677 15.5967L17.1325 17.0213L19.588 15.5967V12.7664L17.1325 11.3418L14.677 12.7664V15.5967Z\" fill=\"#282FEE\"></path>\n</svg>",
+            "teaser": "<p>Molecur 3™</p>",
+            "teaset-subtext": "<p>Maintains the hallmarks of youth and targets Inflammation, Stress Damage, and UVA, the three leading causes of common skin ailments.   </p>",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "first_block_wah7HF",
+        "first_block_gWy7tj"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
+    },
+    "factuals_WDQYJk": {
+      "type": "factuals",
+      "blocks": {
+        "image_C8YQxU": {
+          "type": "image",
+          "settings": {
+            "hide_media_mobile": false,
+            "title": "THE (F)ACTUALS™",
+            "description": "<p>The (F)actuals is a breakdown of each and every ingredient in each of our products, along with its purpose and quantity. Click on any of the product icons below to read more.</p>",
+            "card1_title": "<p>FIRMING<br/>GLOW SERUM</p>",
+            "card1_text": "C35.5",
+            "card1_sup_tag": "TM",
+            "card1_color": "#ff0000",
+            "first_card_image_1": "shopify://shop_images/Group_2618_1.png",
+            "first_card_image_2": "shopify://shop_images/Group_2620_2.png",
+            "card2_title": "<p>GEL CREAM<br/>MOISTURIZER</p>",
+            "card2_text": "RH5.5",
+            "card2_sup_tag": "TM",
+            "card2_color": "#0000ff",
+            "second_card_image_1": "shopify://shop_images/Pareva_SHOT_08_1193_1.png",
+            "mobile_second_card_image_2": "shopify://shop_images/Group_2784_1.png",
+            "card3_title": "<p>HYDRABOND<br/>PRIMER</p>",
+            "card3_text": "COLL20",
+            "card3_sup_tag": "TM",
+            "card3_color": "#00ff00",
+            "button": "SHOP ALL",
+            "button_url": "shopify://collections"
+          }
+        },
+        "image_YNRcDT": {
+          "type": "image",
+          "settings": {
+            "hide_media_mobile": false,
+            "image": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.24_AM.png",
+            "title": "",
+            "description": "",
+            "card1_title": "",
+            "card1_text": "C35.5™",
+            "card1_sup_tag": "TM",
+            "card1_color": "#ff0000",
+            "card2_title": "",
+            "card2_text": "RH5.5™",
+            "card2_sup_tag": "TM",
+            "card2_color": "#0000ff",
+            "card3_title": "",
+            "card3_text": "COLL20™",
+            "card3_sup_tag": "TM",
+            "card3_color": "#00ff00",
+            "button": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_C8YQxU",
+        "image_YNRcDT"
+      ],
+      "settings": {
+        "bg_color": "#fefdf6",
+        "swap_media_mobile": true
+      }
+    },
+    "media_text_overlay_rUwBjG": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_yyBgYp": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.41_AM.png",
+            "image_mobile": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.41_AM.png",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        },
+        "first_block_GTm9Hy": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Mask_group_7.png",
+            "image_mobile": "shopify://shop_images/Mask_group_7.png",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "APPLY NOW",
+            "button_url": "shopify://collections",
+            "hide_button_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "first_block_yyBgYp",
+        "first_block_GTm9Hy"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "media_text_overlay_8nWGmY",
+    "our_solution_hENTfM",
+    "media_text_overlay_iVbm6j",
+    "custom_testimonial_9PDNNT",
+    "media_text_overlay_iEkTXt",
+    "factuals_WDQYJk",
+    "media_text_overlay_rUwBjG"
+  ]
+}

@@ -27,9 +27,17 @@
     }
 
     &__info-wrapp{
+        position: relative;  
         border-bottom: 1px solid var(--COLOR-D9); 
         @media(--md){
+            border-bottom: unset;
             border-right: 1px solid var(--COLOR-D9); 
+        }
+        .text-image__button{
+            .button__custom-button{
+                position: unset;
+                margin: 50px 30px 39px;
+            }
         }
     }
 
@@ -83,4 +91,12 @@
             margin: 50px 24px 25px;
         }
     }
-}
+
+    &__info-wrapp-flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+
+} 

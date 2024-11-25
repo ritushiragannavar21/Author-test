@@ -22,7 +22,7 @@
                 assign button = block.settings.button
                 assign url = block.settings.button_url
             %}
-            <div class="our-solution__info-wrapp">
+            <div class="our-solution__info-wrapp {% if url != blank %} our-solution__info-wrapp-flex {% endif %}">
                <div class="our-solution__text-wrap">
                   {% if number != blank %}<div class="our-solution__number">{{ number }}</div>{% endif %}
                   {% if title != blank %} <div class="our-solution__heading">{{ title }}</div>{% endif %}
@@ -38,7 +38,7 @@
                 {% if text != blank %}<div class="our-solution__text-highlight">{{ text }}</div>{% endif %}
                 {% if url != blank  %}
                     <div class="text-image__button">
-                        <a class="button button__custom-button text__cta" href="{{ button_url }}"><span class="btn-text button__btn-text"> {{ button }} </span></a> 
+                        <a class="button button__custom-button text__cta" href="{{ url }}"><span class="btn-text button__btn-text"> {{ button }} </span></a> 
                     </div>
                 {% endif %}
             </div>

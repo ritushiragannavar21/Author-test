@@ -3,7 +3,7 @@
 
 .button {
     background: colors.$lime-yellow; 
-    color: currentColor;
+    color: colors.$blue;
     border-radius: 4px;
     padding: 13px 14px;
     line-height: 1;
@@ -13,6 +13,11 @@
     letter-spacing: 0.3px;
     transition: color 0.3s ease;
     display: inline-flex;
+
+    &:hover{
+        background: colors.$blue; 
+        color: colors.$white;
+    }
 
 
     @media(--xxs) {
@@ -82,8 +87,8 @@
     &__btn-text{
         @include use-text-style('body-title');
         font-family: var(--secondary-font);
-        color: colors.$blue;
         letter-spacing: 1.2px;
+
     }
 
     &__hide_button{
