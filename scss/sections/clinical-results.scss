@@ -1,21 +1,22 @@
 @use 'StyleComponents/colors';
 @import 'breakpoints';
+@import 'Token';
 
 .beforeAfter{
-        
         p{
-            font-size: 14px;
+            @include use-text-style('body-title');   
         }
         a{
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 10px;
+            @include use-text-style('body-small');
         }
         &__wrp{
             padding: 18px;
             h1, h2, h3, h4, h5, h6{
                 text-transform: uppercase;
-                font-family: var(--secondary-font);
+                @include use-text-style('heading-1');
+                font-weight: 400;
             }
         }
         @media(--sm){
@@ -28,8 +29,7 @@
                     background: colors.$white;
                     max-width: 440px;
                     min-height: 555px;
-                    max-height: auto;
-                    padding: 20px;
+                    padding: 50px;
                     &.vertical_spacing{
                         display: flex;
                         flex-direction: column;
@@ -43,5 +43,6 @@
 .clinical__results{
     &_heading{
         margin-top: 0;
+        margin-bottom: 54px;
     }
 }
