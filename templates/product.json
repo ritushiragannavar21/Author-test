@@ -1,1 +1,451 @@
-{"sections":{"main-product":{"type":"main-product","blocks":{"vendor":{"type":"vendor","disabled":true,"settings":{"block_bottom_spacing":16}},"title":{"type":"title","settings":{"block_bottom_spacing":16}},"rating":{"type":"rating","settings":{"show_if_no_reviews":false,"block_bottom_spacing":16}},"price":{"type":"price","settings":{"show_taxes_notice":false,"block_bottom_spacing":30}},"description":{"type":"description","settings":{"collapse_content":false,"block_bottom_spacing":16}},"variant-picker":{"type":"variant_picker","settings":{"varaint_selector_type":"pills","show_swatches":true,"block_bottom_spacing":5,"guide_heading":"","guide_option":"","guide_content":""}},"quantity-selector":{"type":"quantity_selector","settings":{"block_bottom_spacing":30}},"inventory":{"type":"inventory","disabled":true,"settings":{"show_status":"always","inventory_threshold":10,"inventory_base_quantity":30,"show_inventory_quantity":true,"show_inventory_progress":true,"inventory_background_color":"#fcf4e8","inventory_instock_color":"#042436","inventory_lowstock_color":"#042436","inventory_outofstock_color":"#787878","block_bottom_spacing":16}},"buy-buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":true,"block_bottom_spacing":16}},"stay_ai_subscription_buybox_CXRAhi":{"type":"shopify:\/\/apps\/stay-ai-subscription\/blocks\/buybox\/896a3134-375a-4df4-8274-d37b95eafdee","settings":{"enabled":false,"box_layout":"radio","selector_color":"#ffffff","selector_secondary_color":"#4a4a4a","selector_hover_color":"#4a4a4a","selector_hover_secondary_color":"#ffffff","selector_hover_border_color":"#4a4a4a","text_hover_color":"#ffffff","selector_border_radius":4,"selector_border_width":1,"text_color":"#4a4a4a","stroke_width":2,"border_radius":12,"remove_styles":false,"styles":""}},"pickup":{"type":"pickup","settings":{"block_bottom_spacing":30}},"accordion_1":{"type":"accordion","settings":{"heading":"Heading","content":"<p>Write a clear and concise answer to guide your customers.<\/p>","page":"","block_bottom_spacing":5}},"accordion_2":{"type":"accordion","settings":{"heading":"Heading","content":"<p>Write a clear and concise answer to guide your customers.<\/p>","page":"","block_bottom_spacing":16}},"badges":{"type":"badges","settings":{"badge_stack_style":"wrap","icon_style_1":"none","text_color_1":"#282fee","background_color_1":"#e8ff5c","heading_1":"All Skin Types","content_1":"<ul><li>Our products are cruelty free with absolutely no testing on animals.<\/li><li>Our products are cruelty free with absolutely no testing on animals<\/li><li>Our products are cruelty free with absolutely no testing on animals<\/li><li>Our products are cruelty free with absolutely no testing on animals<\/li><\/ul>","page_1":"contact","icon_style_2":"none","text_color_2":"#282fee","background_color_2":"#e8ff5c","heading_2":"{{ block.settings.page_2.title }}","content_2":"","page_2":"cruelty-free","icon_style_3":"none","text_color_3":"#282fee","background_color_3":"#e8ff5c","heading_3":"Hypoallergenic","content_3":"<ul><li>Our products are cruelty free with absolutely no testing on animals.<\/li><li>Our products are cruelty free with absolutely no testing on animals<\/li><li>Our products are cruelty free with absolutely no testing on animals<\/li><li>Our products are cruelty free with absolutely no testing on animals<\/li><\/ul>","page_3":"","icon_style_4":"star","text_color_4":"#000000","background_color_4":"#fcf4e8","heading_4":"","content_4":"","page_4":"","icon_style_5":"star","text_color_5":"#000000","background_color_5":"#f7f3f3","heading_5":"","content_5":"","page_5":"","icon_style_6":"star","text_color_6":"#000000","background_color_6":"#fcf4e8","heading_6":"","content_6":"","page_6":"","block_bottom_spacing":30}},"share":{"type":"share","settings":{"block_bottom_spacing":16}},"complementary-products":{"type":"complementary-products","settings":{"heading":"Also Bought Together","block_bottom_spacing":16}}},"block_order":["vendor","title","rating","price","description","variant-picker","quantity-selector","inventory","buy-buttons","stay_ai_subscription_buybox_CXRAhi","pickup","accordion_1","accordion_2","badges","share","complementary-products"],"settings":{"display_options_layout":"grid-with-main-media","desktop_media_position":"left","desktop_media_size":"medium","image_aspect_ratio_desktop":"adapt","image_aspect_ratio_mobile":"adapt","media_autoplay":false,"slider_hide_arrows":false,"enable_media_zoom":true,"enable_sticky_add_to_cart":true,"sticky_add_to_cart_style":"button","show_only_for_mobile":false,"padding_top":52,"padding_bottom":52,"border_size":"hide","border_position":"both","color_scheme":"scheme-1"}},"clinical_results_HBjJbX":{"type":"clinical-results","blocks":{"slider_image_hyhWVz":{"type":"slider_image","settings":{"before_image":"{{ product.metafields.custom.before_image.value }}","after_image":"{{ product.metafields.custom.after_image.value }}","drag_position":50,"before_text":"","before_product":"","after_text":"","after_product":"","before_after_text_position":"bottom","control_bg":"#ffffff","control_arrow":"#042436","color_scheme":""}},"content_Et4QPh":{"type":"content","settings":{"content_alignment":"left","button_label":"Learn more","button_link":"shopify:\/\/collections","link_target":"_blank","overlay_color":"#000000","overlay_opacity":30,"color_scheme":"scheme-1"}}},"block_order":["slider_image_hyhWVz","content_Et4QPh"],"settings":{"full_width":true,"image_aspect_ratio":"md","image_position":"d-flex-md-row-reverse","padding_top":0,"padding_bottom":0,"border_size":"hide","border_position":"both","color_scheme":""}},"factuals_WDQYJk":{"type":"factuals","blocks":{"image_C8YQxU":{"type":"image","settings":{"hide_media_mobile":false,"title":"THE (F)ACTUALS™","description":"<p>The (F)actuals is a breakdown of each and every ingredient in each of our products, along with its purpose and quantity. Click on any of the product icons below to read more.<\/p>","card1_title":"<p>FIRMING<br\/>GLOW SERUM<\/p>","card1_text":"C35.5","card1_sup_tag":"TM","card1_color":"#ff0000","first_card_image_1":"shopify:\/\/shop_images\/Group_2618_1.png","first_card_image_2":"shopify:\/\/shop_images\/Group_2620_2.png","card2_title":"","card2_text":"","card2_sup_tag":"","card2_color":"#ffffff","card3_title":"","card3_text":"","card3_sup_tag":"","card3_color":"#ffffff","button":"SHOP ALL","button_url":"shopify:\/\/collections"}},"image_YNRcDT":{"type":"image","settings":{"hide_media_mobile":true,"image":"shopify:\/\/shop_images\/Screenshot_2024-10-29_at_10.23.24_AM.png","title":"","description":"","card1_title":"","card1_text":"C35.5™","card1_sup_tag":"TM","card1_color":"#ff0000","card2_title":"","card2_text":"RH5.5™","card2_sup_tag":"TM","card2_color":"#0000ff","card3_title":"","card3_text":"COLL20™","card3_sup_tag":"TM","card3_color":"#00ff00","button":"","button_url":""}}},"block_order":["image_C8YQxU","image_YNRcDT"],"settings":{"bg_color":"#fefdf6","swap_media_mobile":false}},"media_text_overlay_X3QrVH":{"type":"media-text-overlay","blocks":{"first_block_ikifjM":{"type":"first-block","settings":{"hide_media_mobile":false,"video_url":"https:\/\/www.youtube.com\/watch?v=FTQ-3CK5zjQ","cover_image":"shopify:\/\/shop_images\/Pareva_SHOT_01_0222_2_2.png","logo":"","teaser":"","eyebrow":"","heading":"","subheading":"","heading_block1":"","subheading_block1":"","heading_block2":"","subheading_block2":"","cta_text":"","cta_url":"","button":"","button_url":"","hide_button_mobile":false}},"first_block_i7LC6e":{"type":"first-block","settings":{"hide_media_mobile":false,"video_url":"","image_desktop":"shopify:\/\/shop_images\/Group_2795.png","image_mobile":"shopify:\/\/shop_images\/Group_2795.png","logo":"","teaser":"","eyebrow":"","heading":"","subheading":"","heading_block1":"","subheading_block1":"","heading_block2":"","subheading_block2":"","cta_text":"","cta_url":"","button":"","button_url":"","hide_button_mobile":false}}},"block_order":["first_block_ikifjM","first_block_i7LC6e"],"settings":{"bg_color":"","swap_media_mobile":false,"overlay_reverse_mobile":false}},"media_text_overlay_ftxkaz":{"type":"media-text-overlay","blocks":{"first_block_dKrKAK":{"type":"first-block","settings":{"hide_media_mobile":false,"video_url":"","image_desktop":"shopify:\/\/shop_images\/Mask_group_10.png","logo":"","teaser":"","eyebrow":"","heading":"<p>BENEFITS<\/p>","subheading":"<ul><li>Fewer visible lines and wrinkles<\/li><li>Intense hydration suitable for all skin types<\/li><li>Improved skin resiliency and bounce<\/li><li>Detoxing properties in the formula contribute to a well rested appearance<\/li><li>Powered by patented Molecur 3TM technology to turbocharge skin's youthful properties with exosomes and NAD+.<\/li><\/ul>","heading_block1":"<p>HOW IT’S <br\/>DIFFERENT<\/p>","subheading_block1":"<p>20% clinically proven technologies targeting youth collagen for a comprehensive skin rejuvenation system, targeting lines and wrinkles.<\/p>","heading_block2":"","subheading_block2":"","cta_text":"","cta_url":"","button":"","button_url":"","hide_button_mobile":false}}},"block_order":["first_block_dKrKAK"],"settings":{"bg_color":"","swap_media_mobile":false,"overlay_reverse_mobile":false}},"product-recommendation":{"type":"product-recommendation","settings":{"heading":"You may also like","products_to_show":4,"display_options":"grid","columns_desktop":"4","columns_mobile":"2","padding_top":52,"padding_bottom":52,"color_scheme":"scheme-1"}}},"order":["main-product","clinical_results_HBjJbX","factuals_WDQYJk","media_text_overlay_X3QrVH","media_text_overlay_ftxkaz","product-recommendation"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {
+            "block_bottom_spacing": 16
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "block_bottom_spacing": 16
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_if_no_reviews": false,
+            "block_bottom_spacing": 16
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false,
+            "block_bottom_spacing": 30
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "block_bottom_spacing": 16
+          }
+        },
+        "variant-picker": {
+          "type": "variant_picker",
+          "settings": {
+            "varaint_selector_type": "pills",
+            "show_swatches": true,
+            "block_bottom_spacing": 5,
+            "guide_heading": "",
+            "guide_option": "",
+            "guide_content": ""
+          }
+        },
+        "quantity-selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "block_bottom_spacing": 30
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "show_status": "always",
+            "inventory_threshold": 10,
+            "inventory_base_quantity": 30,
+            "show_inventory_quantity": true,
+            "show_inventory_progress": true,
+            "inventory_background_color": "#fcf4e8",
+            "inventory_instock_color": "#042436",
+            "inventory_lowstock_color": "#042436",
+            "inventory_outofstock_color": "#787878",
+            "block_bottom_spacing": 16
+          }
+        },
+        "buy-buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "block_bottom_spacing": 16
+          }
+        },
+        "stay_ai_subscription_buybox_CXRAhi": {
+          "type": "shopify://apps/stay-ai-subscription/blocks/buybox/896a3134-375a-4df4-8274-d37b95eafdee",
+          "settings": {
+            "enabled": false,
+            "box_layout": "radio",
+            "selector_color": "#ffffff",
+            "selector_secondary_color": "#4a4a4a",
+            "selector_hover_color": "#4a4a4a",
+            "selector_hover_secondary_color": "#ffffff",
+            "selector_hover_border_color": "#4a4a4a",
+            "text_hover_color": "#ffffff",
+            "selector_border_radius": 4,
+            "selector_border_width": 1,
+            "text_color": "#4a4a4a",
+            "stroke_width": 2,
+            "border_radius": 12,
+            "remove_styles": false,
+            "styles": ""
+          }
+        },
+        "pickup": {
+          "type": "pickup",
+          "settings": {
+            "block_bottom_spacing": 30
+          }
+        },
+        "accordion_1": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Heading",
+            "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+            "page": "",
+            "block_bottom_spacing": 5
+          }
+        },
+        "accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Heading",
+            "content": "<p>Write a clear and concise answer to guide your customers.</p>",
+            "page": "",
+            "block_bottom_spacing": 16
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {
+            "badge_stack_style": "wrap",
+            "icon_style_1": "none",
+            "text_color_1": "#282fee",
+            "background_color_1": "#e8ff5c",
+            "heading_1": "All Skin Types",
+            "content_1": "<ul><li>Our products are cruelty free with absolutely no testing on animals.</li><li>Our products are cruelty free with absolutely no testing on animals</li><li>Our products are cruelty free with absolutely no testing on animals</li><li>Our products are cruelty free with absolutely no testing on animals</li></ul>",
+            "page_1": "contact",
+            "icon_style_2": "none",
+            "text_color_2": "#282fee",
+            "background_color_2": "#e8ff5c",
+            "heading_2": "{{ block.settings.page_2.title }}",
+            "content_2": "",
+            "page_2": "cruelty-free",
+            "icon_style_3": "none",
+            "text_color_3": "#282fee",
+            "background_color_3": "#e8ff5c",
+            "heading_3": "Hypoallergenic",
+            "content_3": "<ul><li>Our products are cruelty free with absolutely no testing on animals.</li><li>Our products are cruelty free with absolutely no testing on animals</li><li>Our products are cruelty free with absolutely no testing on animals</li><li>Our products are cruelty free with absolutely no testing on animals</li></ul>",
+            "page_3": "",
+            "icon_style_4": "star",
+            "text_color_4": "#000000",
+            "background_color_4": "#fcf4e8",
+            "heading_4": "",
+            "content_4": "",
+            "page_4": "",
+            "icon_style_5": "star",
+            "text_color_5": "#000000",
+            "background_color_5": "#f7f3f3",
+            "heading_5": "",
+            "content_5": "",
+            "page_5": "",
+            "icon_style_6": "star",
+            "text_color_6": "#000000",
+            "background_color_6": "#fcf4e8",
+            "heading_6": "",
+            "content_6": "",
+            "page_6": "",
+            "block_bottom_spacing": 30
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "block_bottom_spacing": 16
+          }
+        },
+        "complementary-products": {
+          "type": "complementary-products",
+          "settings": {
+            "heading": "Also Bought Together",
+            "block_bottom_spacing": 16
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating",
+        "price",
+        "description",
+        "variant-picker",
+        "quantity-selector",
+        "inventory",
+        "buy-buttons",
+        "stay_ai_subscription_buybox_CXRAhi",
+        "pickup",
+        "accordion_1",
+        "accordion_2",
+        "badges",
+        "share",
+        "complementary-products"
+      ],
+      "settings": {
+        "display_options_layout": "grid-with-main-media",
+        "desktop_media_position": "left",
+        "desktop_media_size": "medium",
+        "image_aspect_ratio_desktop": "adapt",
+        "image_aspect_ratio_mobile": "adapt",
+        "media_autoplay": false,
+        "slider_hide_arrows": false,
+        "enable_media_zoom": true,
+        "enable_sticky_add_to_cart": true,
+        "sticky_add_to_cart_style": "button",
+        "show_only_for_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "clinical_results_HBjJbX": {
+      "type": "clinical-results",
+      "blocks": {
+        "slider_image_hyhWVz": {
+          "type": "slider_image",
+          "settings": {
+            "before_image": "{{ product.metafields.custom.before_image.value }}",
+            "after_image": "{{ product.metafields.custom.after_image.value }}",
+            "drag_position": 50,
+            "before_text": "",
+            "before_product": "",
+            "after_text": "",
+            "after_product": "",
+            "before_after_text_position": "bottom",
+            "control_bg": "#ffffff",
+            "control_arrow": "#042436",
+            "color_scheme": ""
+          }
+        },
+        "content_Et4QPh": {
+          "type": "content",
+          "settings": {
+            "content_alignment": "left",
+            "button_label": "Learn more",
+            "button_link": "shopify://collections",
+            "link_target": "_blank",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "color_scheme": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "slider_image_hyhWVz",
+        "content_Et4QPh"
+      ],
+      "settings": {
+        "full_width": true,
+        "image_aspect_ratio": "md",
+        "image_position": "d-flex-md-row-reverse",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": ""
+      }
+    },
+    "factuals_WDQYJk": {
+      "type": "factuals",
+      "blocks": {
+        "image_C8YQxU": {
+          "type": "image",
+          "settings": {
+            "hide_media_mobile": false,
+            "title": "THE (F)ACTUALS™",
+            "description": "<p>The (F)actuals is a breakdown of each and every ingredient in each of our products, along with its purpose and quantity. Click on any of the product icons below to read more.</p>",
+            "card1_title": "<p>FIRMING<br/>GLOW SERUM</p>",
+            "card1_text": "C35.5",
+            "card1_sup_tag": "TM",
+            "card1_color": "#ff0000",
+            "first_card_image_1": "shopify://shop_images/Group_2618_1.png",
+            "first_card_image_2": "shopify://shop_images/Group_2620_2.png",
+            "card2_title": "",
+            "card2_text": "",
+            "card2_sup_tag": "",
+            "card2_color": "#ffffff",
+            "card3_title": "",
+            "card3_text": "",
+            "card3_sup_tag": "",
+            "card3_color": "#ffffff",
+            "button": "SHOP ALL",
+            "button_url": "shopify://collections"
+          }
+        },
+        "image_YNRcDT": {
+          "type": "image",
+          "settings": {
+            "hide_media_mobile": true,
+            "image": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.24_AM.png",
+            "title": "",
+            "description": "",
+            "card1_title": "",
+            "card1_text": "C35.5™",
+            "card1_sup_tag": "TM",
+            "card1_color": "#ff0000",
+            "card2_title": "",
+            "card2_text": "RH5.5™",
+            "card2_sup_tag": "TM",
+            "card2_color": "#0000ff",
+            "card3_title": "",
+            "card3_text": "COLL20™",
+            "card3_sup_tag": "TM",
+            "card3_color": "#00ff00",
+            "button": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_C8YQxU",
+        "image_YNRcDT"
+      ],
+      "settings": {
+        "bg_color": "#fefdf6",
+        "swap_media_mobile": false
+      }
+    },
+    "media_text_overlay_X3QrVH": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_ikifjM": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "https://www.youtube.com/watch?v=FTQ-3CK5zjQ",
+            "cover_image": "shopify://shop_images/Pareva_SHOT_01_0222_2_2.png",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        },
+        "first_block_i7LC6e": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Group_2795.png",
+            "image_mobile": "shopify://shop_images/Group_2795.png",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "first_block_ikifjM",
+        "first_block_i7LC6e"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
+    },
+    "media_text_overlay_ftxkaz": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_dKrKAK": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Mask_group_10.png",
+            "logo": "",
+            "teaser": "",
+            "eyebrow": "",
+            "heading": "<p>BENEFITS</p>",
+            "subheading": "<ul><li>Fewer visible lines and wrinkles</li><li>Intense hydration suitable for all skin types</li><li>Improved skin resiliency and bounce</li><li>Detoxing properties in the formula contribute to a well rested appearance</li><li>Powered by patented Molecur 3TM technology to turbocharge skin's youthful properties with exosomes and NAD+.</li></ul>",
+            "heading_block1": "<p>HOW IT’S <br/>DIFFERENT</p>",
+            "subheading_block1": "<p>20% clinically proven technologies targeting youth collagen for a comprehensive skin rejuvenation system, targeting lines and wrinkles.</p>",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "first_block_dKrKAK"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
+    },
+    "product-recommendation": {
+      "type": "product-recommendation",
+      "settings": {
+        "heading": "You may also like",
+        "products_to_show": 4,
+        "display_options": "grid",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "color_scheme": "scheme-1"
+      }
+    }
+  },
+  "order": [
+    "main-product",
+    "clinical_results_HBjJbX",
+    "factuals_WDQYJk",
+    "media_text_overlay_X3QrVH",
+    "media_text_overlay_ftxkaz",
+    "product-recommendation"
+  ]
+}
