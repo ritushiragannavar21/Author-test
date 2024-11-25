@@ -133,58 +133,6 @@
         "cta_url": ""
       }
     },
-    "before_after_cqMbTa": {
-      "type": "before-after",
-      "blocks": {
-        "slider_image_7hh6t9": {
-          "type": "slider_image",
-          "settings": {
-            "before_image": "shopify://shop_images/Mask_group_4.png",
-            "after_image": "shopify://shop_images/Mask_group_8.png",
-            "drag_position": 50,
-            "before_text": "",
-            "before_product": "",
-            "after_text": "",
-            "after_product": "",
-            "before_after_text_position": "bottom",
-            "control_bg": "#ffffff",
-            "control_arrow": "#042436",
-            "color_scheme": ""
-          }
-        },
-        "content_GjGwa3": {
-          "type": "content",
-          "settings": {
-            "subheading": "",
-            "caption": "a powerful turbo charger",
-            "content": "<p>Molecur 3™ is designed to enhance the performance of other gold standard ingredients like Vitamin C, Hyaluronic Acid, Retinols and others. </p>",
-            "content_alignment": "left",
-            "vertical_spacing": true,
-            "button_label": "",
-            "button_link": "",
-            "link_target": "_top",
-            "use_outline_button": false,
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "color_scheme": "scheme-1"
-          }
-        }
-      },
-      "block_order": [
-        "slider_image_7hh6t9",
-        "content_GjGwa3"
-      ],
-      "settings": {
-        "full_width": true,
-        "image_aspect_ratio": "md",
-        "image_position": "d-flex-md-row-reverse",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "border_size": "hide",
-        "border_position": "both",
-        "color_scheme": "scheme-1"
-      }
-    },
     "media_text_overlay_iEkTXt": {
       "type": "media-text-overlay",
       "blocks": {
@@ -244,6 +192,119 @@
         "swap_media_mobile": false,
         "overlay_reverse_mobile": false
       }
+    },
+    "before_after_cqMbTa": {
+      "type": "before-after",
+      "blocks": {
+        "slider_image_7hh6t9": {
+          "type": "slider_image",
+          "settings": {
+            "before_image": "shopify://shop_images/Mask_group_4.png",
+            "after_image": "shopify://shop_images/Mask_group_8.png",
+            "drag_position": 50,
+            "before_text": "",
+            "before_product": "",
+            "after_text": "",
+            "after_product": "",
+            "before_after_text_position": "bottom",
+            "control_bg": "#ffffff",
+            "control_arrow": "#042436",
+            "color_scheme": ""
+          }
+        },
+        "content_GjGwa3": {
+          "type": "content",
+          "settings": {
+            "subheading": "",
+            "caption": "a powerful turbo charger",
+            "content": "<p>Molecur 3™ is designed to enhance the performance of other gold standard ingredients like Vitamin C, Hyaluronic Acid, Retinols and others. </p>",
+            "content_alignment": "left",
+            "vertical_spacing": true,
+            "button_label": "",
+            "button_link": "",
+            "link_target": "_top",
+            "use_outline_button": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "color_scheme": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "slider_image_7hh6t9",
+        "content_GjGwa3"
+      ],
+      "settings": {
+        "full_width": true,
+        "image_aspect_ratio": "md",
+        "image_position": "d-flex-md-row-reverse",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "media_text_overlay_6etfEU": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_hq68mV": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Pareva_SHOT_08_1193_1.png",
+            "image_mobile": "shopify://shop_images/Pareva_SHOT_08_1193_1.png",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        },
+        "first_block_miN3Xp": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.41_AM.png",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "first_block_hq68mV",
+        "first_block_miN3Xp"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
     }
   },
   "order": [
@@ -251,6 +312,7 @@
     "media_text_overlay_iYaMqC",
     "image_carousel_with_overlay_MWarci",
     "media_text_overlay_iEkTXt",
-    "before_after_cqMbTa"
+    "before_after_cqMbTa",
+    "media_text_overlay_6etfEU"
   ]
 }
