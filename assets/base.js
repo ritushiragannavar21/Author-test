@@ -2915,6 +2915,7 @@ class VariantDropdown extends HTMLElement {
             this.variantSKU && this.variantSKU.update(this.currentVariant.sku);
         }
         this.updateAccelaratedCheckoutURL();
+        window.updateSelectedVariant(this.currentVariant)
         console.log('this.currentVariant', this.currentVariant)
     }
 
@@ -2937,7 +2938,6 @@ class VariantDropdown extends HTMLElement {
                 swatchUpdate.style.setProperty("--swatch-border-white", 'var(--color-border)')
             }
             focalPoint && swatchUpdate.style.setProperty("--swatch-focal-point", focalPoint)
-
         }
     }
 
