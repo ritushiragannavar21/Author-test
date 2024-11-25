@@ -65,17 +65,7 @@
           </button>
           
           {% comment %} Buy It Now - button {% endcomment %}
-           <a href="/cart/{{ product.selected_or_first_available_variant.id }}:1">
-            <button
-              class="btn btn--fill w-100 mb-16"
-              {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-              type="submit"
-              name="add">       
-              <div class="btn--preloader">
-                <div class="btn--preloader--circular">
-                  <div class="checkmark draw"></div>
-                </div>
-              </div>
+           <a href="/cart/{{ product.selected_or_first_available_variant.id }}:1" class="w-100 btn mb-16 btn--fill accelerated_checkout_btn">
               <div class="btn--text">
                 {%- if product.selected_or_first_available_variant.available -%}
                   {{ 'Buy it now' }}
@@ -83,7 +73,6 @@
                   {{ 'products.product.button_out_of_stock' | t }}
                 {%- endif -%}
               </div>
-            </button>
           </a>
           {%- if block.settings.show_dynamic_checkout -%}
             {{ form | payment_button }}

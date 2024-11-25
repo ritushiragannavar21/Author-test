@@ -2914,6 +2914,7 @@ class VariantDropdown extends HTMLElement {
             this.updateQuantityRule();
             this.variantSKU && this.variantSKU.update(this.currentVariant.sku);
         }
+        this.updateAccelaratedCheckoutURL();
         console.log('this.currentVariant', this.currentVariant)
     }
 
@@ -3148,7 +3149,10 @@ class VariantDropdown extends HTMLElement {
             },
         });
     }
-
+    updateAccelaratedCheckoutURL(){
+        const currentCheckoutUrl = document.querySelector('.accelerated_checkout_btn');
+        currentCheckoutUrl.setAttribute('href', `/cart/${this.currentVariant.id}:1`);
+    }
     updateVariantStatuses() {
         const selectedOptionOneVariants = this.variantData.filter(
             (variant) =>
