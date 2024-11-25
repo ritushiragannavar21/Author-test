@@ -86,7 +86,6 @@
         "image_aPtVGJ": {
           "type": "image",
           "settings": {
-            "hide_media_mobile": false,
             "image_desktop": "shopify://shop_images/Pareva_SHOT_19_2539.png",
             "image_mobile": "shopify://shop_images/Pareva_SHOT_19_2539.png",
             "button": "",
@@ -97,7 +96,6 @@
         "image_9yqBUz": {
           "type": "image",
           "settings": {
-            "hide_media_mobile": false,
             "image_desktop": "shopify://shop_images/Pareva_SHOT_08_1082_1_1_1.png",
             "image_mobile": "shopify://shop_images/Pareva_SHOT_08_1082_1_1_1.png",
             "button": "",
@@ -109,7 +107,6 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "hide_media_mobile": false,
             "image_desktop": "shopify://shop_images/Pareva-23_1.png",
             "image_mobile": "shopify://shop_images/Pareva-23_1.png",
             "button": "",

@@ -30,6 +30,7 @@
             "video_url": "",
             "logo": "",
             "teaser": "",
+            "teaset-subtext": "",
             "eyebrow": "<p>a PROBLEM Worth SOLVING</p>",
             "heading": "",
             "subheading": "<p>We believe passionately that there’s a better way.<br/><br/>All our products include a document – we call it The Factuals™ – that shares formulation details, product testing and our progress as a truly responsible beauty company.<br/><br/>We’re just getting started and we know we’ve a long way to go. Our promise is simple... we’ll   communicate the programs that reflect our values.</p>",
@@ -52,6 +53,57 @@
         "bg_color": "",
         "swap_media_mobile": true,
         "overlay_reverse_mobile": false
+      }
+    },
+    "our_solution_hENTfM": {
+      "type": "our-solution",
+      "blocks": {
+        "content_block_nHKgw8": {
+          "type": "content_block",
+          "settings": {
+            "large_number": "1",
+            "main_question": "WHAT IS IN MY PRODUCT?",
+            "description": "<p>I'd like to have a good understanding of what exactly I’m using.</p>",
+            "show_down_arrow": true,
+            "highlight_text": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products.",
+            "button": "",
+            "button_url": ""
+          }
+        },
+        "content_block_Uhjf3U": {
+          "type": "content_block",
+          "settings": {
+            "large_number": "2",
+            "main_question": "WHAT IS IN MY PRODUCT?",
+            "description": "<p>I'd like to have a good understanding of what exactly I’m using.</p>",
+            "show_down_arrow": true,
+            "highlight_text": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products.",
+            "button": "",
+            "button_url": ""
+          }
+        },
+        "content_block_aBzByg": {
+          "type": "content_block",
+          "settings": {
+            "large_number": "3",
+            "main_question": "WHAT IS IN MY PRODUCT?",
+            "description": "<p>I'd like to have a good understanding of what exactly I’m using.</p>",
+            "show_down_arrow": true,
+            "highlight_text": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products.",
+            "button": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_block_nHKgw8",
+        "content_block_Uhjf3U",
+        "content_block_aBzByg"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_bg_color": "#fefdf6",
+        "bg_color": "#f4f1e8"
       }
     },
     "factuals_WDQYJk": {
@@ -131,6 +183,7 @@
             "image_mobile": "shopify://shop_images/162-Pareva_1_1.png",
             "logo": "",
             "teaser": "",
+            "teaset-subtext": "",
             "eyebrow": "",
             "heading": "",
             "subheading": "",
@@ -152,6 +205,7 @@
             "video_url": "",
             "logo": "",
             "teaser": "",
+            "teaset-subtext": "",
             "eyebrow": "<p>A HIGH BAR FOR OUR future SELVES</p>",
             "heading": "",
             "subheading": "<p>We’ve set some demanding goals for the future and believe sharing them with our community is the first step to delivering:<br/><br/>1. Complete label transparency by 2030 (with only clinically studied and validated ingredients in each formula).<br/>2.  Fully recyclable packaging to 70% refillable and recycled materials by 2029<br/>3. Minimize complexities and simplify routines (less product = less waste) from day one.   <br/>4. Define a science-backed climate goal by 2028<br/>5. B Corp certification by 2029 <br/>6. No fear-mongering, age-shaming or judgment.</p>",
@@ -176,64 +230,13 @@
         "swap_media_mobile": false,
         "overlay_reverse_mobile": false
       }
-    },
-    "our_solution_hENTfM": {
-      "type": "our-solution",
-      "blocks": {
-        "content_block_nHKgw8": {
-          "type": "content_block",
-          "settings": {
-            "large_number": "1",
-            "main_question": "WHAT IS IN MY PRODUCT?",
-            "description": "<p>I'd like to have a good understanding of what exactly I’m using.</p>",
-            "show_down_arrow": true,
-            "highlight_text": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products.",
-            "button": "",
-            "button_url": ""
-          }
-        },
-        "content_block_Uhjf3U": {
-          "type": "content_block",
-          "settings": {
-            "large_number": "2",
-            "main_question": "WHAT IS IN MY PRODUCT?",
-            "description": "<p>I'd like to have a good understanding of what exactly I’m using.</p>",
-            "show_down_arrow": true,
-            "highlight_text": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products.",
-            "button": "",
-            "button_url": ""
-          }
-        },
-        "content_block_aBzByg": {
-          "type": "content_block",
-          "settings": {
-            "large_number": "3",
-            "main_question": "WHAT IS IN MY PRODUCT?",
-            "description": "<p>I'd like to have a good understanding of what exactly I’m using.</p>",
-            "show_down_arrow": true,
-            "highlight_text": "We unmask the ingredients in our formula in an effort to give our users a thorough understanding of what’s in our products.",
-            "button": "",
-            "button_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "content_block_nHKgw8",
-        "content_block_Uhjf3U",
-        "content_block_aBzByg"
-      ],
-      "settings": {
-        "heading": "<p>Our solution to <br/>the confusion</p>",
-        "heading_bg_color": "#fefdf6",
-        "bg_color": "#f4f1e8"
-      }
     }
   },
   "order": [
     "main",
     "media_text_overlay_8nWGmY",
+    "our_solution_hENTfM",
     "factuals_WDQYJk",
-    "media_text_overlay_iVbm6j",
-    "our_solution_hENTfM"
+    "media_text_overlay_iVbm6j"
   ]
 }
