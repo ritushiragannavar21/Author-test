@@ -69,6 +69,7 @@
             "card1_color": "#ff0000",
             "first_card_image_1": "shopify://shop_images/Group_2618_1.png",
             "first_card_image_2": "shopify://shop_images/Group_2620_2.png",
+            "mobile_second_card_image_1": "shopify://shop_images/Group_2618_1.png",
             "card2_title": "<p>GEL CREAM<br/>MOISTURIZER</p>",
             "card2_text": "RH5.5",
             "card2_sup_tag": "TM",
@@ -80,6 +81,7 @@
             "card3_sup_tag": "TM",
             "card3_color": "#00ff00",
             "third_card_image_1": "shopify://shop_images/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
+            "third_card_image_2": "shopify://shop_images/aca669aecf59ee0170e5cedbea1d1e84_902cbc15-7275-4049-b957-bb425f70637c.png",
             "button": "SHOP ALL",
             "button_url": "shopify://collections"
           }
