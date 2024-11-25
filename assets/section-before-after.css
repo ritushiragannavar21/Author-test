@@ -2,6 +2,9 @@
   background: var(--color-background) var(--gradient-background) no-repeat 100% 100%;
   overflow: visible;
 }
+.clinical__results.beforeAfter__section .beforeAfter__container{
+  background: #E8FF5C;
+}
 @media screen and (max-width: 767px) {
   .beforeAfter__section .beforeAfter__container {
     flex-wrap: wrap;

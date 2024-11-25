@@ -2,6 +2,63 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./js/components/count-up.js":
+/*!***********************************!*\
+  !*** ./js/components/count-up.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  var targetElements = document.querySelectorAll('.counter');
+  var observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounting(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+  targetElements.forEach(element => observer.observe(element));
+  function startCounting(element) {
+    var targetCount = parseInt(element.getAttribute('data-count'), 10);
+    var range = {
+      min: 1,
+      max: targetCount
+    };
+    var delta = range.max - range.min;
+    var increment = Math.round(range.min + Math.random() * delta);
+    var randomDuration = 2000;
+    var randomInterval = setInterval(() => {
+      var range = {
+        min: 10,
+        max: targetCount
+      };
+      var delta = range.max - range.min;
+      element.textContent = formatNumber(Math.round(range.min + Math.random() * delta));
+    }, 30);
+    setTimeout(() => {
+      clearInterval(randomInterval);
+      var currentCount = 0;
+      var interval = setInterval(() => {
+        currentCount += increment;
+        if (currentCount >= targetCount) {
+          currentCount = targetCount;
+          clearInterval(interval);
+        }
+        element.textContent = formatNumber(currentCount);
+      }, 30);
+    }, randomDuration);
+  }
+  function formatNumber(number) {
+    return number < 10 ? "0".concat(number) : number;
+  }
+});
+
+/***/ }),
+
 /***/ "./js/sections/factuals.js":
 /*!*********************************!*\
   !*** ./js/sections/factuals.js ***!
@@ -49,6 +106,8 @@
 /* harmony import */ var _hello__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hello */ "./js/sections/hello.js");
 /* harmony import */ var _factuals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./factuals */ "./js/sections/factuals.js");
 /* harmony import */ var _variantOptions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./variantOptions */ "./js/sections/variantOptions.js");
+/* harmony import */ var _components_count_up__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/count-up */ "./js/components/count-up.js");
+
 
 
 
@@ -56,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_hello__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_factuals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_variantOptions__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_components_count_up__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 
 /***/ }),

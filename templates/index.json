@@ -381,64 +381,6 @@
         "swap_media_mobile": false,
         "overlay_reverse_mobile": false
       }
-    },
-    "media_text_overlay_46KmLB": {
-      "type": "media-text-overlay",
-      "blocks": {
-        "first_block_cAy3zw": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "https://vimeo.com/785152425",
-            "cover_image": "shopify://shop_images/aca669aecf59ee0170e5cedbea1d1e84_902cbc15-7275-4049-b957-bb425f70637c.png",
-            "logo": "",
-            "teaser": "",
-            "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        },
-        "first_block_NGFWHK": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "https://youtu.be/qP-7GNoDJ5c?si=Lm39Wr5349sbL2ZW",
-            "cover_image": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.41_AM.png",
-            "logo": "",
-            "teaser": "",
-            "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        }
-      },
-      "block_order": [
-        "first_block_cAy3zw",
-        "first_block_NGFWHK"
-      ],
-      "settings": {
-        "bg_color": "",
-        "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
-      }
     }
   },
   "order": [
@@ -448,7 +390,6 @@
     "media_text_overlay_xtNpqk",
     "custom_testimonial_Lh4zwt",
     "media_text_overlay_4zQMgB",
-    "media_text_overlay_qXjMq8",
-    "media_text_overlay_46KmLB"
+    "media_text_overlay_qXjMq8"
   ]
 }

@@ -2150,7 +2150,7 @@ h6,
 
 .btn {
   padding: 18px 32px;
-  font-family: var(--font-button-family);
+  font-family: var(--primary-font);
   font-weight: var(--font-button-weight);
   font-size: calc(var(--font-button-scale) * 16px);
   line-height: 19px;
