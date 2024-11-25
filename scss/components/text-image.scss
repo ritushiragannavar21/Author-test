@@ -148,7 +148,7 @@
             font-weight: typography.$regular-weight;
         }
     }
-    &__subheading{
+    &__subheading , &__subheading p{
         @include use-text-style('body-title');
         font-weight: typography.$regular-weight;
         letter-spacing: 0.2px;

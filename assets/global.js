@@ -181,7 +181,7 @@ class CustomCarousel extends HTMLElement {
           window[onSlideChange] && window[onSlideChange](swiper);
         }
       },
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Autoplay]
     }, carouselSettings));
     this.swiper.on('activeIndexChange', current => {
       var _parentSelector$query3, _parentSelector$query4;

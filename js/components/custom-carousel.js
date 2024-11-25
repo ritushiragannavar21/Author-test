@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination,Autoplay } from 'swiper/modules';
 
 class CustomCarousel extends HTMLElement {
   constructor() {
@@ -180,7 +180,7 @@ class CustomCarousel extends HTMLElement {
           window[onSlideChange] && window[onSlideChange](swiper);
         }
       },
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination,Autoplay],
       ...carouselSettings
     });
 

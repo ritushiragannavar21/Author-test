@@ -1,0 +1,212 @@
+{{ 'image-carousel-with-overlay.css' | asset_url | stylesheet_tag }}
+
+{% for block in section.blocks %}
+    {% liquid
+        assign background=section.settings.bg_color
+        assign block_count = section.blocks.size
+        assign hide_mobile = block.settings.hide_media_mobile
+        assign eyebrow = section.settings.eyebrow
+        assign heading = section.settings.heading
+        assign subheading = section.settings.subheading
+        assign cta_text = section.settings.cta_text
+        assign cta_url = section.settings.cta_url
+        assign button_type = 'text'
+        assign button_background_type = 'transparent'
+        assign top_overlay_mobile = section.settings.overlay_reverse_mobile
+        assign teaser = section.settings.teaser
+        assign teaser_subheading =section.settings.teaset-subtext
+        assign logo = section.settings.logo
+     %}
+{% endfor %}
+
+
+<div class="media-text media-text__image-carousel container" style="background:{{background}}" >
+    <div class="media-text__block {% if section.settings.swap_media_mobile == true %}media-text__block-reverse{% endif %}">
+        {% render 'image-with-text-overlay',
+            wrapper_class: 'media-text__bge-content',
+            id: id,
+            eyebrow: eyebrow,
+            heading: heading,
+            text_wrapper_class: 'image-carousel-text-block',
+            subheading: subheading,
+            cta_text: cta_text,
+            cta_url: cta_url,
+            mobile_aspect_ratio:mobile_ratio,
+            desktop_aspect_ratio:desktop_ratio,
+            button_type: button_type,
+            button_background_type: button_background_type,
+            hide_mobile:hide_mobile,
+            teaser:teaser,
+            teaser_subheading:teaser_subheading,
+            logo:logo
+        %}
+    </div>
+    <div class="media-text__image-block {% if section.settings.swap_media_mobile == true %}media-text__block-reverse{% endif %}" data-parent>
+        <custom-carousel>
+            <div class="custom-testimonial__content hide" style="text-align: center;" data-carousel-content>
+                {% for block in section.blocks %}
+                    {% liquid
+                        assign image_desktop = block.settings.image_desktop
+                        assign image_mobile = block.settings.image_mobile
+                        assign button = block.settings.button
+                        assign button_url = block.settings.button_url
+                        assign hide_button_mobile = block.settings.hide_button_mobile
+                
+                        if  block_count >= 2
+                            assign mobile_ratio = 0.928
+                            assign desktop_ratio = 0.9
+                        else
+                            assign mobile_ratio = 0.928
+                            assign desktop_ratio = 1.8
+                        endif
+                        %}
+                    {%- case block.type -%}
+                    {%- when 'image' -%}   
+                        <div class="swiper-slide">
+                            <div class="media-text__content">
+                                {% render 'image-with-text-overlay',
+                                    wrapper_class: 'media-text__image-content',
+                                    id: id,
+                                    image_desktop: image_desktop,
+                                    image_mobile: image_mobile,
+                                    text_wrapper_class: 'image-carousel',
+                                    mobile_aspect_ratio:mobile_ratio,
+                                    desktop_aspect_ratio:desktop_ratio,
+                                    desktop_crop: true,
+                                    mobile_crop: true,
+                                    hide_mobile:hide_mobile,
+                                    button:button,
+                                    button_url:button_url,
+                                    hide_button_mobile:hide_button_mobile,
+                                %}
+                            </div>
+                        </div>
+                    {%- endcase -%}
+                {% endfor %}
+            </div>
+            <div class="swiper-navigations" data-swiper-navigations></div>
+            <div class="carousel-placeholders"></div>
+            <script type="text/json" data-settings>
+                {
+                    "slidesPerView": 1,
+                    "autoplay": {
+                    "delay": 3000
+                    }
+                }
+            </script>
+        </custom-carousel>
+    </div>
+
+</div>
+
+{% schema %}
+{   
+  "name": "Image carousel",
+  "tag": "section",
+  "settings": [
+    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color"
+    },
+    {
+        "type": "checkbox",
+        "id": "swap_media_mobile",
+        "label": "Swap blocks in mobile",
+        "default": false
+    },
+    {
+        "type": "header",
+        "content": "Teaser"
+    },
+    {
+        "type": "html",
+        "id": "logo",
+        "label": "Logo Icon"        
+    },
+    {
+        "type": "richtext",
+        "id": "teaser",
+        "label": "Teaser Text"
+    },
+    {
+      "type": "richtext",
+      "id": "teaset-subtext",
+      "label": "Subheading"
+    },
+    {
+        "type": "header",
+        "content": "Text Overlay"
+    },
+    {
+      "type": "richtext",
+      "id": "eyebrow",
+      "label": "Heading"
+    },
+    {
+        "type": "header",
+        "content": "Text Block 1"
+    },
+    {
+      "type": "richtext", 
+      "id": "heading",
+      "label": "Block Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Block Subheading"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url"
+        },
+        {
+            "type": "checkbox",
+            "id": "hide_button_mobile",
+            "label": "hide button in mobile",
+            "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image carousel"
+    }
+  ]
+}
+{% endschema %}
+

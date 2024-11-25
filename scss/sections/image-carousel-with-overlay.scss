@@ -1,0 +1,28 @@
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+
+.media-text__image-block{
+    .carousel__container{
+        max-width: 100%;
+    }
+}
+
+.media-text{
+    &__image-carousel{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(200px, 1fr)) !important ;
+        @media(--md){
+            grid-template-columns: repeat(2, minmax(200px, 1fr)) !important ;
+        }
+    }
+    &__block-reverse:nth-of-type(1) {
+        order: 1;
+        @media(--md){
+            order: 0; 
+        }
+    } 
+}
+
