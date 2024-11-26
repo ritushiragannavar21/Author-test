@@ -75,6 +75,9 @@
 .main-product__price__wrapper .product-price_top.add-bottom-spacing {
   margin-bottom: 4px;
 }
+.main-product__price__wrapper .product-price_top .discount-text{
+  color: var(--color-text);
+}
 .main-product__vendor {
   margin: 0 0 0 0;
   color: var(--color-text);
