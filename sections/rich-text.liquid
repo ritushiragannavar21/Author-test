@@ -1,4 +1,6 @@
 {{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+{{ 'rich-text.css' | asset_url | stylesheet_tag }}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 | append: 'px;' }}
@@ -40,7 +42,7 @@
 {% endunless %}
 <div
   aria-label="Rich text Section"
-  class="rich-text {% if section.settings.container_size %} section-{{ section.id }}-padding full-width-container color-{{ section.settings.color_scheme }} {% endif %}"
+  class="rich-text {% if request.path == '/pages/faq' %} faq-section {% endif %}{% if section.settings.container_size %} section-{{ section.id }}-padding full-width-container color-{{ section.settings.color_scheme }} {% endif %}"
   role="region"
 >
   <div class="container">
@@ -69,7 +71,7 @@
             {% when 'button' %}
               <animation-reveal aoi-type="fade-up" aoi-duration="0.5" aoi-amount="0.3">
                 <a
-                  class="btn {% if block.settings.use_outline_button %}  btn--border {% else %} btn--fill {% endif %}"
+                  class="btn custom-button {% if block.settings.use_outline_button %}  btn--border {% else %} btn--fill {% endif %}"
                   href="{{ block.settings.link }}"
                   target="{{ block.settings.link_target }}"
                 >

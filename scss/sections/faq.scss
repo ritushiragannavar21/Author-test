@@ -1,0 +1,34 @@
+@use 'StyleComponents/colors';
+@import 'breakpoints';
+@import 'Token';
+
+.faq-section{
+    --line-height: var(--line-height);
+    padding: 20px;
+    @media(--md){
+        padding: 60px;
+    }
+    .faq-container{
+        .h2, .h3, tab-item{
+            text-transform: uppercase;
+            font-weight: 400 !important;
+            @include use-text-style('heading-2');
+            line-height: var(--line-height);
+        }
+        .h2{
+            max-width: 50%;
+            line-height: var(--line-height);
+        }
+        .faq-multi-column__tabs{
+            width: 300px;
+            tab-item{
+                margin-bottom: 17px;
+                a{
+                    @include use-text-style('body-alt');
+                }
+            }
+        }
+        
+    }
+}
+

@@ -1,0 +1,21 @@
+@use 'StyleComponents/colors';
+@import 'breakpoints';
+@import 'Token';
+
+.rich-text.faq-section{
+    h2{
+        font-family: var(--primary-font) !important;
+        @include use-text-style('heading-1');   
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 41.6px;
+    }
+   .custom-button{
+        padding: 44px 52px;
+        background-color: colors.$lime-yellow !important;
+        color: colors.$blue;
+        border-radius: 0;
+        border: none;
+        @include use-text-style('body-title');   
+    }
+}

@@ -1,6 +1,7 @@
 {{ 'section-faq.css' | asset_url | stylesheet_tag }}
 {{ 'section-faq-multi-column.css' | asset_url | stylesheet_tag }}
 {{ 'section-dropdown.css' | asset_url | stylesheet_tag }}
+{{ 'faq.css' | asset_url | stylesheet_tag }}
 
 <script defer src="{{ 'dropdown.js' | asset_url }}"></script>
 <script defer src="{{ 'faq.js' | asset_url }}"></script>
@@ -33,11 +34,11 @@
   id="{{ section.id }}"
 >
   <div class="container" id="{{ section.settings.faqLink }}">
-    <h1 class="h2 clr-b">{{ section.settings.heading }}</h1>
     <div class="faq-container">
       <div class="faq-multi-column__container ">
         <!-- Navigation tabs for desktop -->
         <div class="sticky-element desktop-only">
+          <h1 class="h2 clr-b">{{ section.settings.heading }}</h1>
           <div class="faq-multi-column__tabsContainer">
             <div class="faq-multi-column__tabs" aria-label="{{ section.settings.heading }}" role="navigation">
               {% assign headBlock = section.blocks | where: 'type', 'category' %}

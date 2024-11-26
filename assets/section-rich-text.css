@@ -56,8 +56,12 @@
 @media (max-width: 991px) {
   .rich-text__descption {
     padding: 16px 0px;
+    background: ;
   }
 }
+.rich-text__descption .custom-button{
+  padding: 44px 52px;
+} 
 .rich-text__descption h2,
 .rich-text__descption p {
   color: var(--color-text);
