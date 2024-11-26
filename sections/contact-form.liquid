@@ -1,6 +1,7 @@
 {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+{{ 'contact-us.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
+{% comment %} {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 | append: 'px' }};
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 | append: 'px' }};
@@ -12,7 +13,7 @@
       padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
     }
   }
-{%- endstyle -%}
+{%- endstyle -%} {% endcomment %}
 
 <section
   class="contact-us section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}"
@@ -49,7 +50,7 @@
       </section>
     {%- endif -%}
 
-    <div class="container">
+
       {% assign mapBlock = section.blocks | where: 'type', 'map' %}
       <div class="contact-us__row {% if mapBlock == blank %} justify-content-center {% endif %}">
         <!-- google map component -->
@@ -97,7 +98,7 @@
                 {% endif %}
               </div>
             {% when 'form' %}
-              <div class="col-50 d-flex align-item-center ">
+              <div class="col-50 d-flex align-item-center p-56">
                 <div class="form-container" role="region" aria-label="contact form">
                   {% render 'section-heading', section: section %}
                   <div class="form-group">
@@ -163,7 +164,7 @@
                     </textarea>
                     </div>
                   </div>
-                  <button class="btn btn--fill w-100" type="submit" aria-label="{{ 'contact.form.button_label' | t }}">
+                  <button class="btn custom-button btn--fill w-100" type="submit" aria-label="{{ 'contact.form.button_label' | t }}">
                     {{ 'contact.form.button_label' | t }}
                   </button>
                 </div>
@@ -171,7 +172,6 @@
           {% endcase %}
         {% endfor %}
       </div>
-    </div>
   {% endform %}
 </section>
 

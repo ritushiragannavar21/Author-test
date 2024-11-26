@@ -1,0 +1,26 @@
+@use 'StyleComponents/colors';
+@import 'breakpoints';
+@import 'Token';
+
+.contact-us{
+    .p-56{
+        padding: 56px;
+        .section-heading{
+            h2{
+                text-transform: uppercase;
+                @include use-text-style('heading-2');
+                font-weight: 400;
+            }
+        }
+    }
+    .custom-button{
+        max-width: 171px;
+        padding: 44px 52px;
+        background-color: colors.$lime-yellow !important;
+        color: colors.$blue;
+        border-radius: 0;
+        border: none;
+        @include use-text-style('body-title');  
+        float: right;
+    }
+}
