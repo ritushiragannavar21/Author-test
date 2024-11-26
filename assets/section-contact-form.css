@@ -3,7 +3,7 @@
 }
 .contact-us__row {
   display: flex;
-  gap: 42px;
+  /* gap: 42px; */
 }
 @media (max-width: 991px) {
   .contact-us__row {
