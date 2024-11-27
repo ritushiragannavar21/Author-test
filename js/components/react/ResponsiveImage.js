@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import 'lazysizes';
-
-export default ({ image_aspect_ratio_desktop, image_aspect_ratio_mobile, image, srcTokens }) => {
+import React, { useState, useEffect } from "react";
+export default ({ aspectratio, aspect_ratio_mobile, image, settings }) => {
   const min = 100;
   const max = 10000;
   const diff = max - min;
@@ -16,24 +14,9 @@ export default ({ image_aspect_ratio_desktop, image_aspect_ratio_mobile, image, 
     };
   }
 
-  // Set aspect ratio based on screen size
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // You can adjust this breakpoint as needed
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Call once on mount to set initial state
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const aspectRatio = isMobile ? image_aspect_ratio_mobile : image_aspect_ratio_desktop;
+  const {imageFit} = settings || {};
   let { height: maxHeightImage, id: image_id, src: imageSrc, width: maxWidthImage } = displayImage;
-  const IMAGE_WIDTHS = [180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2376, 2592, 2808, 3024];
-  
+  const IMAGE_WIDTHS = [180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2376, 2592, 2808, 3024]
   const getImageWidths = nativeWidth => {
     const imageWidths = [];
     for (let i = 0; i < IMAGE_WIDTHS.length; i++) {
@@ -46,22 +29,28 @@ export default ({ image_aspect_ratio_desktop, image_aspect_ratio_mobile, image, 
       }
     }
     return imageWidths.join(',');
-  };
-
-  const imageWidth = getImageWidths(displayImage.width);
-  let urlTokens = srcTokens;
-  let uriEncodedSrc = `${encodeURI(imageSrc)}?width=300&height=300`;
-  let dataSrcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.dataSrcToken);
-  let srcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.srcToken);
-
-  if (aspectRatio <= 1) {
-    maxWidthImage = parseInt(maxHeightImage) * aspectRatio;
-  } else {
-    maxHeightImage = parseInt(maxWidthImage) / aspectRatio;
   }
+  const imageSizes = (getImageWidths(displayImage.width)).split(',');
+  const imageSrcSet = imageSizes.map(width => {
+    return `${displayImage.src}&width=${width} ${width}w`;
+  }).join(",");
 
+  // Determine the aspect ratio based on screen size
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 525);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 525);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const currentAspectRatio = isMobile ? aspect_ratio_mobile : aspectratio;
+  if (currentAspectRatio <= 1) {
+    maxWidthImage = parseInt(maxHeightImage) * currentAspectRatio;
+  } else {
+    maxHeightImage = parseInt(maxWidthImage) / currentAspectRatio;
+  }
   const maxWidthImageFloat = maxWidthImage * 1.0;
-
   const getWrapperStyles = () => {
     return {
       '--padding-top': `${(maxHeightImage / maxWidthImageFloat) * 100}%`,
@@ -69,15 +58,12 @@ export default ({ image_aspect_ratio_desktop, image_aspect_ratio_mobile, image, 
       '--max-width': `${maxWidthImage}px`
     };
   };
-
   const getImageStyle = () => {
     return {
-      maxWidth: `${maxWidthImage}px`,
-      maxHeight: `${maxHeightImage}px`,
-      objectFit: 'contain'
+      objectFit: `${imageFit ? imageFit : 'contain'}`,
+      aspectRatio:`${currentAspectRatio}`,
     };
   };
-
   const css = `
   .responsive-image__wrapper:before {
     content: '';
@@ -85,22 +71,23 @@ export default ({ image_aspect_ratio_desktop, image_aspect_ratio_mobile, image, 
     display: block;
     padding-top: var(--padding-top);
   }
-
   .responsive-image__wrapper {
       height: 100%;
       position: relative;
       max-width: var(--max-width);
       max-height: var(--max-height);
   }
-
   .responsive-image__image {
       position: absolute;
       top: 0;
       height: 100%;
       left: 0;
       width: 100%;
+      object-fit: var(--objectFit);
+      aspect-ratio: var(--aspectRatio);
+      
   }`
-
+ 
   return (
     <>
       <div
@@ -109,24 +96,24 @@ export default ({ image_aspect_ratio_desktop, image_aspect_ratio_mobile, image, 
         className="responsive-image__wrapper"
         style={getWrapperStyles()}
       >
-        {imageSrc && (
-          <img
-            id={`Image-${image_id}-${generated_image_id}`}
-            className="responsive-image__image lazyload"
-            src={srcUrl}
-            srcSet={uriEncodedSrc}
-            data-src={dataSrcUrl}
-            data-widths={`[${imageWidth}]`}
-            data-aspectratio={aspectRatio}
-            data-sizes="auto"
-            tabIndex="-1"
-            style={getImageStyle()}
-          />
-        )}
+        
+        <img
+          id={`Image-${image_id}-${generated_image_id}`}
+          className="responsive-image__image"
+          src={displayImage.src}
+          load="lazy"
+          srcSet={imageSrcSet}
+          data-widths={`[${imageSizes}]`}
+          data-aspectratio={currentAspectRatio}
+          data-sizes="auto"
+          tabIndex="-1"
+          style={getImageStyle()}
+        />
+        <style>
+            {css}
+        </style>
       </div>
-      <style>
-        {css}
-      </style>
+   
     </>
   )
 }

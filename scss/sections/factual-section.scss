@@ -22,8 +22,12 @@
 
   &__sub-container{
     padding: 17px 15px !important;
+    @media(max-width: 600px){
+      min-height: 660px;
+    }
     @media(--md){
       padding: 17px 50px !important;
+      min-height: 100%;
     }
   }
 

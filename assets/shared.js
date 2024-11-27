@@ -62,16 +62,13 @@
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lazysizes */ "./node_modules/lazysizes/lazysizes.js");
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_1__);
-
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {
   var {
-    image_aspect_ratio_desktop,
-    image_aspect_ratio_mobile,
+    aspectratio,
+    aspect_ratio_mobile,
     image,
-    srcTokens
+    settings
   } = _ref;
   var min = 100;
   var max = 10000;
@@ -86,19 +83,9 @@
       src: 'https://cdn.shopify.com/s/files/1/0422/2255/1191/files/placeholderImage.webp?v=1692958737'
     };
   }
-
-  // Set aspect ratio based on screen size
-  var [isMobile, setIsMobile] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    var handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // You can adjust this breakpoint as needed
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Call once on mount to set initial state
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  var aspectRatio = isMobile ? image_aspect_ratio_mobile : image_aspect_ratio_desktop;
+  var {
+    imageFit
+  } = settings || {};
   var {
     height: maxHeightImage,
     id: image_id,
@@ -119,15 +106,25 @@
     }
     return imageWidths.join(',');
   };
-  var imageWidth = getImageWidths(displayImage.width);
-  var urlTokens = srcTokens;
-  var uriEncodedSrc = "".concat(encodeURI(imageSrc), "?width=300&height=300");
-  var dataSrcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.dataSrcToken);
-  var srcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.srcToken);
-  if (aspectRatio <= 1) {
-    maxWidthImage = parseInt(maxHeightImage) * aspectRatio;
+  var imageSizes = getImageWidths(displayImage.width).split(',');
+  var imageSrcSet = imageSizes.map(width => {
+    return "".concat(displayImage.src, "&width=").concat(width, " ").concat(width, "w");
+  }).join(",");
+
+  // Determine the aspect ratio based on screen size
+  var [isMobile, setIsMobile] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(window.innerWidth <= 525);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    var handleResize = () => {
+      setIsMobile(window.innerWidth <= 525);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  var currentAspectRatio = isMobile ? aspect_ratio_mobile : aspectratio;
+  if (currentAspectRatio <= 1) {
+    maxWidthImage = parseInt(maxHeightImage) * currentAspectRatio;
   } else {
-    maxHeightImage = parseInt(maxWidthImage) / aspectRatio;
+    maxHeightImage = parseInt(maxWidthImage) / currentAspectRatio;
   }
   var maxWidthImageFloat = maxWidthImage * 1.0;
   var getWrapperStyles = () => {
@@ -139,29 +136,28 @@
   };
   var getImageStyle = () => {
     return {
-      maxWidth: "".concat(maxWidthImage, "px"),
-      maxHeight: "".concat(maxHeightImage, "px"),
-      objectFit: 'contain'
+      objectFit: "".concat(imageFit ? imageFit : 'contain'),
+      aspectRatio: "".concat(currentAspectRatio)
     };
   };
-  var css = "\n  .responsive-image__wrapper:before {\n    content: '';\n    width: 100%;\n    display: block;\n    padding-top: var(--padding-top);\n  }\n\n  .responsive-image__wrapper {\n      height: 100%;\n      position: relative;\n      max-width: var(--max-width);\n      max-height: var(--max-height);\n  }\n\n  .responsive-image__image {\n      position: absolute;\n      top: 0;\n      height: 100%;\n      left: 0;\n      width: 100%;\n  }";
+  var css = "\n  .responsive-image__wrapper:before {\n    content: '';\n    width: 100%;\n    display: block;\n    padding-top: var(--padding-top);\n  }\n  .responsive-image__wrapper {\n      height: 100%;\n      position: relative;\n      max-width: var(--max-width);\n      max-height: var(--max-height);\n  }\n  .responsive-image__image {\n      position: absolute;\n      top: 0;\n      height: 100%;\n      left: 0;\n      width: 100%;\n      object-fit: var(--objectFit);\n      aspect-ratio: var(--aspectRatio);\n      \n  }";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "ImageWrapper-".concat(image_id, "-").concat(generated_image_id),
     "data-image-id": image_id,
     className: "responsive-image__wrapper",
     style: getWrapperStyles()
-  }, imageSrc && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     id: "Image-".concat(image_id, "-").concat(generated_image_id),
-    className: "responsive-image__image lazyload",
-    src: srcUrl,
-    srcSet: uriEncodedSrc,
-    "data-src": dataSrcUrl,
-    "data-widths": "[".concat(imageWidth, "]"),
-    "data-aspectratio": aspectRatio,
+    className: "responsive-image__image",
+    src: displayImage.src,
+    load: "lazy",
+    srcSet: imageSrcSet,
+    "data-widths": "[".concat(imageSizes, "]"),
+    "data-aspectratio": currentAspectRatio,
     "data-sizes": "auto",
     tabIndex: "-1",
     style: getImageStyle()
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("style", null, css));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("style", null, css)));
 });
 
 /***/ }),
@@ -257,8 +253,8 @@ var FactualSection = _ref => {
         zIndex: 5
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      image_aspect_ratio_desktop: 0.9,
-      image_aspect_ratio_mobile: 0.59,
+      aspectratio: 0.9,
+      aspect_ratio_mobile: 0.59,
       image: {
         src: selectedBlock === null || selectedBlock === void 0 || (_selectedBlock$imageS = selectedBlock.imageSrc[0]) === null || _selectedBlock$imageS === void 0 ? void 0 : _selectedBlock$imageS.src,
         width,
@@ -339,8 +335,8 @@ var FactualSection = _ref => {
         zIndex: 5
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      image_aspect_ratio_desktop: 0.9,
-      image_aspect_ratio_mobile: 0.582,
+      aspectratio: 0.9,
+      aspect_ratio_mobile: 0.582,
       image: {
         src: selectedBlock === null || selectedBlock === void 0 || (_selectedBlock$imageM = selectedBlock.imageMobile[0]) === null || _selectedBlock$imageM === void 0 ? void 0 : _selectedBlock$imageM.src,
         width,
@@ -454,8 +450,8 @@ var FactualSection = _ref => {
         position: 'relative'
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      image_aspect_ratio_desktop: 0.9,
-      image_aspect_ratio_mobile: 0.59,
+      aspectratio: 0.9,
+      aspect_ratio_mobile: 0.59,
       image: {
         src: selectedBlock === null || selectedBlock === void 0 || (_selectedBlock$imageS3 = selectedBlock.imageSrc[1]) === null || _selectedBlock$imageS3 === void 0 ? void 0 : _selectedBlock$imageS3.src,
         width,
@@ -492,8 +488,8 @@ var FactualSection = _ref => {
     })))) : src && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: " ".concat(block.hideImage === "true" ? "factual__hide-image" : "", " ")
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      image_aspect_ratio_desktop: 0.9,
-      image_aspect_ratio_mobile: 0.9,
+      aspectratio: 0.9,
+      aspect_ratio_mobile: 0.9,
       image: {
         src,
         width,

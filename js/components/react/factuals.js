@@ -68,8 +68,8 @@ const FactualSection = ({ shopifyData }) => {
                   {selectedBlock && selectedBlock?.imageSrc[0] && (
                       <div className="factual__top-image" style={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 5 }}>  
                         <ResponsiveImage
-                          image_aspect_ratio_desktop={0.9}
-                          image_aspect_ratio_mobile={0.59}
+                          aspectratio={0.9}
+                          aspect_ratio_mobile={0.59}
                           image={{ src: selectedBlock?.imageSrc[0]?.src, width, height }}
                           srcTokens={srcTokens}
                         />
@@ -120,8 +120,8 @@ const FactualSection = ({ shopifyData }) => {
                   {selectedBlock && selectedBlock?.imageMobile[0] && (
                       <div className="factual__top-image" style={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 5 }}>  
                         <ResponsiveImage
-                          image_aspect_ratio_desktop={0.9}
-                          image_aspect_ratio_mobile={0.582}
+                          aspectratio={0.9}
+                          aspect_ratio_mobile={0.582}
                           image={{ src: selectedBlock?.imageMobile[0]?.src, width, height }}
                           srcTokens={srcTokens}
                         />
@@ -240,8 +240,8 @@ const FactualSection = ({ shopifyData }) => {
                     {isSecondImageOpen && !isFirstBlock ? (
                       <div className="factual__right-image" style={{ position: 'relative' }}>
                         <ResponsiveImage
-                          image_aspect_ratio_desktop={0.9}
-                          image_aspect_ratio_mobile={0.59}
+                          aspectratio={0.9}
+                          aspect_ratio_mobile={0.59}
                           image={{ src: selectedBlock?.imageSrc[1]?.src, width, height }}
                           srcTokens={srcTokens}
                         />
@@ -266,8 +266,8 @@ const FactualSection = ({ shopifyData }) => {
                         src && (
                           <div className={` ${block.hideImage === "true" ? "factual__hide-image" : ""} `}>
                         <ResponsiveImage
-                          image_aspect_ratio_desktop={0.9}
-                          image_aspect_ratio_mobile={0.9}
+                          aspectratio={0.9}
+                          aspect_ratio_mobile={0.9}
                           image={{ src, width, height }}
                           srcTokens={srcTokens}
                         />
