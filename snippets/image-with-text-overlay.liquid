@@ -53,7 +53,7 @@
         {% endif %}
       </div>
     {% endif %}
-    {% if eyebrow != blank or heading != blank or subheading != blank or cta_text != blank %}
+    {% if teaser_subheading != blank or teaser != blank or eyebrow != blank or heading != blank or subheading != blank or cta_text != blank %}
       <div class="text-image__text-wrapper text-image__text-wrapper-{{id}} content {{primary_class}}__text-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %}  {% if overlay == false %} text-image__text-wrapper--no-overlay {% endif%}{% if hide_mobile == true %}text-image__text-wrapper--no-overlay__mobile{% endif%} {% if subheading != blank or cta_text != blank %}text-image__justify-between{% endif %}"
       >
         {% render 'text', 
