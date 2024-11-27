@@ -7,77 +7,81 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
-    "sections": {
-      "main": {
-        "type": "main-page",
-        "disabled": true,
-        "settings": {
-          "content_width": 600,
-          "padding_top": 28,
-          "padding_bottom": 28,
-          "color_scheme": ""
-        }
-      },
-      "media_text_overlay_cfhMbw": {
-        "type": "media-text-overlay",
-        "blocks": {
-          "first_block_mE94mp": {
-            "type": "first-block",
-            "settings": {
-              "hide_media_mobile": false,
-              "video_url": "",
-              "logo": "",
-              "teaser": "",
-              "eyebrow": "<p>THE POWER OF <br/>SCIENCE. <br/>THE JOY OF FEELING <br/>BEAUTIFUL.</p>",
-              "heading": "",
-              "subheading": "<p>Our name – Pareva – is derived from Parivartha, Sanskrit for transformation. </p><p>We believe deeply in transformation: The personal transformation that comes from looking and feeling your best.The industry transformation that is possible when brands like ours really put their back into doing more good and less harm in the world.And the transformation necessary to make every woman feel beautiful and worthy. </p>",
-              "heading_block1": "",
-              "subheading_block1": "",
-              "heading_block2": "",
-              "subheading_block2": "",
-              "cta_text": "",
-              "cta_url": "",
-              "button": "",
-              "button_url": ""
-            }
-          },
-          "first_block_UJN9jq": {
-            "type": "first-block",
-            "settings": {
-              "hide_media_mobile": false,
-              "video_url": "",
-              "image_desktop": "shopify://shop_images/Pareva-24_1.png",
-              "image_mobile": "shopify://shop_images/Pareva-24_1.png",
-              "logo": "",
-              "teaser": "",
-              "eyebrow": "",
-              "heading": "",
-              "subheading": "",
-              "heading_block1": "",
-              "subheading_block1": "",
-              "heading_block2": "",
-              "subheading_block2": "",
-              "cta_text": "",
-              "cta_url": "",
-              "button": "",
-              "button_url": ""
-            }
-          }
-        },
-        "block_order": [
-          "first_block_mE94mp",
-          "first_block_UJN9jq"
-        ],
-        "settings": {
-          "bg_color": "#e8ff5c",
-          "swap_media_mobile": false,
-          "overlay_reverse_mobile": false
-        }
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": 600,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "color_scheme": ""
       }
     },
-    "order": [
-      "main",
-      "media_text_overlay_cfhMbw"
-    ]
-  }
+    "media_text_overlay_cfhMbw": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_mE94mp": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "<p>THE POWER OF <br/>SCIENCE. <br/>THE JOY OF FEELING <br/>BEAUTIFUL.</p>",
+            "heading": "",
+            "subheading": "<p>Our name – Pareva – is derived from Parivartha, Sanskrit for transformation. </p><p>We believe deeply in transformation: The personal transformation that comes from looking and feeling your best.The industry transformation that is possible when brands like ours really put their back into doing more good and less harm in the world.And the transformation necessary to make every woman feel beautiful and worthy. </p>",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        },
+        "first_block_UJN9jq": {
+          "type": "first-block",
+          "settings": {
+            "hide_media_mobile": false,
+            "video_url": "",
+            "image_desktop": "shopify://shop_images/Section1.jpg",
+            "image_mobile": "shopify://shop_images/Section1.jpg",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "first_block_mE94mp",
+        "first_block_UJN9jq"
+      ],
+      "settings": {
+        "bg_color": "#e8ff5c",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "media_text_overlay_cfhMbw"
+  ]
+}
