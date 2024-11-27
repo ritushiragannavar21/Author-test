@@ -73,16 +73,16 @@
     "daily_essential_izd9Lm": {
       "type": "daily-essential",
       "blocks": {
-        "product_tgycpM": {
+        "product_dyedDT": {
           "type": "product",
           "settings": {
             "product": "c35-5tm-firming-glow-serum"
           }
         },
-        "product_dyedDT": {
+        "product_tgycpM": {
           "type": "product",
           "settings": {
-            "product": "test-1"
+            "product": "c35-5tm-firming-glow-serum"
           }
         },
         "product_K7xtqn": {
@@ -93,8 +93,8 @@
         }
       },
       "block_order": [
-        "product_tgycpM",
         "product_dyedDT",
+        "product_tgycpM",
         "product_K7xtqn"
       ],
       "settings": {
