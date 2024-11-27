@@ -27,7 +27,7 @@
           "settings": {
             "hide_media_mobile": false,
             "video_url": "https://www.youtube.com/watch?v=FTQ-3CK5zjQ",
-            "cover_image": "shopify://shop_images/Screenshot_2024-09-08_at_9.02.25_AM_2.png",
+            "cover_image": "shopify://shop_images/Section1_c7716719-665d-4dd8-8db1-d8fb53c300b8.jpg",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -86,8 +86,8 @@
         "image_aPtVGJ": {
           "type": "image",
           "settings": {
-            "image_desktop": "shopify://shop_images/Pareva_SHOT_19_2539.png",
-            "image_mobile": "shopify://shop_images/Pareva_SHOT_19_2539.png",
+            "image_desktop": "shopify://shop_images/Section2_1_7b81f3d9-c53a-4322-9cd1-c603f8a94da3.jpg",
+            "image_mobile": "shopify://shop_images/Section2_1_7b81f3d9-c53a-4322-9cd1-c603f8a94da3.jpg",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false
@@ -96,8 +96,8 @@
         "image_9yqBUz": {
           "type": "image",
           "settings": {
-            "image_desktop": "shopify://shop_images/Pareva_SHOT_08_1082_1_1_1.png",
-            "image_mobile": "shopify://shop_images/Pareva_SHOT_08_1082_1_1_1.png",
+            "image_desktop": "shopify://shop_images/Section2_2_db0f2a62-5920-48da-b0c2-17ffad1c15e0.jpg",
+            "image_mobile": "shopify://shop_images/Section2_2_db0f2a62-5920-48da-b0c2-17ffad1c15e0.jpg",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false
