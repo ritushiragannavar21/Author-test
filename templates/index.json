@@ -279,13 +279,23 @@
             "rating": 4,
             "text_color": "#0000ff"
           }
+        },
+        "testimonial_gmb6Ge": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "My skin looks and feels so much better. I look 8 years younger!",
+            "author": "Sarah",
+            "rating": 5,
+            "text_color": "#0000FF"
+          }
         }
       },
       "block_order": [
         "testimonial_XUFbK8",
         "testimonial_XPqUAG",
         "testimonial_W6aXKk",
-        "testimonial_3pnA3y"
+        "testimonial_3pnA3y",
+        "testimonial_gmb6Ge"
       ],
       "settings": {
         "heading": "REAL PEOPLE, REAL RESULTS"

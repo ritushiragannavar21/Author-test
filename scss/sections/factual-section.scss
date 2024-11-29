@@ -45,7 +45,7 @@
     }
   }
 
-  &__card-title {
+  &__card-title , &__card-title p{
     @include use-text-style('body-title');
     font-weight: typography.$regular-weight;
     margin-bottom: var(--base-card-margin);
@@ -53,11 +53,28 @@
     @media(--sm){
       margin-bottom: 0;
     }
+    @media(--md){
+      font-size: 12px;
+      width: 114%;
+    }
     @media(--md-large){
       margin-bottom: 20px;
-      width: 68%;
     }
   }
+
+  &__card-title{
+    @media(--md-large){
+      width: 62%;
+    }
+  }
+
+  &__card-title p{
+      @media(--md-large){
+        margin-bottom: 20px;
+        width: 106%;
+      }
+  }
+
 
   &__description {
     margin-top: 2rem;
