@@ -5,7 +5,7 @@
     "blocks": [
         {% for block in section.blocks %}
             {
-                "title": "{% if block.settings.title != blank %}{{ block.settings.title }} {% endif %}",
+                "title": "{{ block.settings.title }}",
                 "block_size": {{ forloop.index }},
                 "description": "{{ block.settings.description }}",
                 "button":"{% if block.settings.button_url != blank %}{{ block.settings.button }}{% endif %}",
@@ -13,7 +13,7 @@
                 "hideImage":"{{ block.settings.hide_media_mobile }}",
                 "image" :[ {% if block.settings.image != blank %}{ "src": "{{ block.settings.image | image_url }}", "height": "
                     {{- block.settings.image.height | default: 1080 -}}","width": "{{ block.settings.image.width | default: 1920 }}" }{%  endif %}],
-                {% if block.settings.card1_text != blank or block.settings.card2_text!= blank or block.settings.card3_text!= blank %}
+              
                     "cards": [
                         {
                             "text": "{{ block.settings.card1_text | escape }}",
@@ -73,7 +73,6 @@
                                 {{- block.settings.mobile_second_card_image_3.height | default: 1080 -}}","width": "{{ block.settings.mobile_second_card_image_3.width | default: 1920 }}" }{%  endif %}],
                         }
                     ]
-                {% endif %}
             }{%- unless forloop.last %}, {% endunless %}
         {% endfor %}
     ]

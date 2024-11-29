@@ -277,17 +277,19 @@
       "blocks": {
         "image_C8YQxU": {
           "type": "image",
+          "repeater": "{{ product.metafields.custom.factual.value }}",
           "settings": {
             "hide_media_mobile": false,
-            "title": "THE (F)ACTUALS™",
-            "description": "<p>The (F)actuals is a breakdown of each and every ingredient in each of our products, along with its purpose and quantity. Click on any of the product icons below to read more.</p>",
-            "card1_title": "<p>FIRMING<br/>GLOW SERUM</p>",
-            "card1_text": "C35.5",
-            "card1_sup_tag": "TM",
-            "card1_color": "#ff0000",
-            "first_card_image_1": "shopify://shop_images/Group_2618_2.png",
-            "first_card_image_2": "shopify://shop_images/Group_2620_2.png",
-            "mobile_second_card_image_1": "shopify://shop_images/Group_2784_1.png",
+            "image": "{{ block.repeater.image.value }}",
+            "title": "{{ block.repeater.section_title.value }}",
+            "description": "<p>{{ block.repeater.section_description | metafield_tag }}</p>",
+            "card1_title": "<p>{{ block.repeater.first_card_eyebrow | metafield_tag }}</p>",
+            "card1_text": "{{ block.repeater.card_1_text.value }}",
+            "card1_sup_tag": "{{ block.repeater.superscript_text.value }}",
+            "card1_color": "{{ block.repeater.card_1_background_color.value }}",
+            "first_card_image_1": "{{ block.repeater.popup_info.value }}",
+            "first_card_image_2": "{{ block.repeater.popup_info_1.value }}",
+            "mobile_second_card_image_1": "{{ block.repeater.mobile_popup_info.value }}",
             "card2_title": "",
             "card2_text": "",
             "card2_sup_tag": "",
@@ -302,6 +304,7 @@
         },
         "image_YNRcDT": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "hide_media_mobile": true,
             "image": "shopify://shop_images/C35.5_Flower.jpg",
@@ -442,6 +445,46 @@
         "padding_bottom": 52,
         "color_scheme": "scheme-1"
       }
+    },
+    "media_text_overlay_PjyKH9": {
+      "type": "media-text-overlay",
+      "blocks": {
+        "first_block_YrBxWK": {
+          "type": "first-block",
+          "repeater": "{{ product.metafields.custom.media_text_overlay.value }}",
+          "settings": {
+            "hide_media_mobile": false,
+            "video": "{{ block.repeater.video.value }}",
+            "video_url": "",
+            "cover_image": "{{ block.repeater.cover_image.value }}",
+            "image_desktop": "{{ block.repeater.image_desktop.value }}",
+            "image_mobile": "{{ block.repeater.image_mobile.value }}",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "cta_text": "",
+            "cta_url": "{{ block.repeater.video_url.value }}",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "first_block_YrBxWK"
+      ],
+      "settings": {
+        "bg_color": "",
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false
+      }
     }
   },
   "order": [
@@ -450,6 +493,7 @@
     "factuals_WDQYJk",
     "media_text_overlay_X3QrVH",
     "media_text_overlay_ftxkaz",
-    "product-recommendation"
+    "product-recommendation",
+    "media_text_overlay_PjyKH9"
   ]
 }

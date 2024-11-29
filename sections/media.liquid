@@ -1,0 +1,1128 @@
+{{ 'section-image-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'section-video.css' | asset_url | stylesheet_tag }}
+{{ 'media-with-text-overlay.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 | append: 'px' }}
+    ;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 | append: 'px' }}
+    ;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | append: 'px' }}
+      ;
+      padding-bottom: {{ section.settings.padding_bottom | append: 'px' }}
+      ;
+    }
+  }
+{%- endstyle -%}
+
+{% liquid
+  assign section_width = false
+  assign is_full_width = false
+  if section_width == 'full'
+    assign is_full_width = true
+  endif
+
+  assign loading = 'eager'
+  assign fetchpriority = 'auto'
+  if section.index == 1
+    assign fetchpriority = 'high'
+  elsif section.index > 2
+    assign loading = 'lazy'
+  endif
+
+  assign page_width = settings.page_width
+  assign widths = '500, 780, 1060, 1280'
+  assign bg_foregound_color = false
+  if section.settings.color_scheme.settings.background == section.settings.background_color
+    assign bg_foregound_color = true
+  endif
+  assign ratio = 1
+  assign noFullWidth = true
+  if section.settings.full_width
+    assign noFullWidth = false
+  endif
+  assign textBlockSize = section.blocks | where: 'type', 'text-content' | size
+%}
+
+{%- capture sizes -%}
+  {%- unless section.settings.full_width -%}
+    (min-width: {{ page_width }}px) {{ page_width | minus: 100 | divided_by: 2 }}px,
+    (min-width: 768px) calc(50vw - 50px), calc(100vw - 200px)
+    {%- else -%}
+    (min-width: 768px) calc(50vw - 50px), calc(100vw - 200px)
+  {%- endunless -%}
+{%- endcapture -%}
+{% unless section.settings.border_size == 'hide' %}
+  {% if section.settings.border_position == 'both' or section.settings.border_position == 'top' %}
+    {% unless section.settings.border_size == 'full_width' %}
+      <div class="container">
+    {% endunless %}
+    <div class="spacer-wrapper color-{{ section.settings.color_scheme }}">
+      <div
+        class="spacer border-top"
+      ></div>
+    </div>
+    {% unless section.settings.border_size == 'full_width' %}
+      </div>
+    {% endunless %}
+  {% endif %}
+{% endunless %}
+<div
+  aria-label="Media with text"
+  class="section-{{ section.id }}-padding "
+  role="region"
+  style="background-color: {{ section.settings.background_color }}"
+>
+  {% unless section.settings.full_width %}
+    <div class="container">
+  {% endunless %}
+
+  <div class="imageWithText media-with-text{% unless section.settings.full_width or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} border-radius border-radus--block {% endunless %}">
+    <div class="{% if section.settings.section_width == 'fixed' %} container {% endif %}">
+      <div class="imageWithText__container image-fixed color-{{ section.settings.color_scheme }} {% if section.settings.swap_media_mobile == true %}media-text__flex-block-reverse{% endif %}" >
+        {% for block in section.blocks %}
+
+          {% liquid
+            assign media_autoplay = block.settings.media_autoplay
+            assign mediaType = block.settings.video_url.type
+            assign cover_image = block.settings.cover_image
+            unless cover_image
+              if block.settings.video
+                assign cover_image = block.settings.video.preview_image
+              endif
+            endunless
+          %}
+
+          {% case block.type %}
+            {% when 'text-content' %}
+                {% liquid
+                    assign eyebrow = block.settings.eyebrow
+                    assign heading = block.settings.heading
+                    assign subheading = block.settings.subheading
+                    assign cta_text = block.settings.cta_text
+                    assign cta_url = block.settings.cta_url
+                    assign button_type = 'text'
+                    assign button_background_type = 'transparent'
+                    assign button = block.settings.button
+                    assign button_url = block.settings.button_url
+                    assign hide_button_mobile = block.settings.hide_button_mobile
+                    assign teaser = block.settings.teaser
+                    assign teaser_subheading = block.settings.teaset-subtext
+                    assign logo = block.settings.logo
+                    assign heading_block1 = block.settings.heading_block1
+                    assign subheading_block1 = block.settings.subheading_block1
+                    assign heading_block2 = block.settings.heading_block2
+                    assign subheading_block2 = block.settings.subheading_block2
+                %}
+              <div
+                class="imageWithText__content {% if forloop.first %} mobile-order-2 {% endif %} {% if section.settings.section_width == 'full' %} container{% endif %} "
+                {{ block.shopify_attributes }}
+                style=" {% if forloop.first %} --media-width: {{ section.settings.media_width | append : "%" }} {% else %} flex:1; {% endif %}"
+              >
+                {% render 'image-with-text-overlay',
+                    wrapper_class: 'media-text__bge-content',
+                    id: id,
+                    eyebrow: eyebrow,
+                    heading: heading,
+                    text_wrapper_class: 'image-banner',
+                    subheading: subheading,
+                    heading_block1:heading_block1,
+                    subheading_block1:subheading_block1,
+                    heading_block2:heading_block2,
+                    subheading_block2:subheading_block2,
+                    cta_text: cta_text,
+                    cta_url: cta_url,
+                    mobile_aspect_ratio:mobile_ratio,
+                    desktop_aspect_ratio:desktop_ratio,
+                    button_type: button_type,
+                    button_background_type: button_background_type,
+                    hide_mobile:hide_mobile,
+                    button:button,
+                    button_url:button_url,
+                    hide_button_mobile:hide_button_mobile,
+                    top_overlay_mobile: top_overlay_mobile,
+                    teaser:teaser,
+                    teaser_subheading:teaser_subheading,
+                    logo:logo
+                %}
+              </div>
+            {% when 'image' %}
+              {% liquid
+                assign eyebrow = block.settings.eyebrow
+                assign hide_mobile = block.settings.hide_media_mobile
+                assign heading = block.settings.heading
+                assign subheading = block.settings.subheading
+                assign cta_text = block.settings.cta_text
+                assign cta_url = block.settings.cta_url
+                assign button_type = 'text'
+                assign button_background_type = 'transparent'
+                assign button = block.settings.button
+                assign button_url = block.settings.button_url
+                assign hide_button_mobile = block.settings.hide_button_mobile
+                assign teaser = block.settings.teaser
+                assign teaser_subheading = block.settings.teaset-subtext
+                assign logo = block.settings.logo
+                assign heading_block1 = block.settings.heading_block1
+                assign subheading_block1 = block.settings.subheading_block1
+                assign heading_block2 = block.settings.heading_block2
+                assign subheading_block2 = block.settings.subheading_block2
+                assign video = block.settings.video
+                assign video_url = block.settings.video_url
+                assign image = block.settings.image
+
+                if section.settings.media_size == 'adapt' and block.settings.image != blank
+                  assign ratio = block.settings.image.aspect_ratio
+                  if block.settings.image_mobile != blank
+                    assign mobile_ratio = block.settings.image_mobile.aspect_ratio
+                  endif
+                endif
+              %}
+              <div
+                class="imageWithText__media block-media-size--{{ section.settings.media_size }} {%  if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %}  {% endif %}"
+                {{ block.shopify_attributes }}
+                style="   
+                 {% if block.settings.image_mobile == blank %}display: none;{% endif %}             
+                  {%- if section.settings.media_size == 'adapt' -%}
+                    --aspect-ratio: {{ ratio }};
+                    {% if block.settings.image_mobile != blank %}
+                    --mobile-aspect-ratio: {{ mobile_ratio }};
+                    {% endif %}
+                  {%- endif -%} {%- if forloop.first -%} --media-width: {{ section.settings.media_width | append : "%" }} {%- else -%} flex-grow:1; {%- endif -%}
+                "
+              >
+                {% if block.settings.image != blank %}
+                 <div class="image-with-text__overlay image-with-text__desktop ">
+                    <div class="imageWithTextImageContainer image-with-text-media {% if block.settings.image_mobile != blank %} tab-only {% endif %}">
+                        <animation-reveal
+                          class="imageWithTextImageContainer"
+                          aoi-type="scale"
+                          aoi-duration="0.5"
+                          aoi-amount="0.2"
+                        >
+                          {%- capture imagealt -%}
+                                  {{ block.settings.image.alt | default: 'image' }}
+                                {%- endcapture -%}
+                          {{
+                            block.settings.image
+                            | image_url: width: block.settings.image.width
+                            | image_tag:
+                              loading: loading,
+                              fetchpriority: fetchpriority,
+                              sizes: sizes,
+                              widths: widths,
+                              class: 'set-100-percentage-size-media',
+                              alt: imagealt
+                          }}
+                        </animation-reveal>
+                        {% if button_url != blank  and button != blank %}
+                            <div class="text-image__button {% if hide_mobile == true %}button__hide_button{% endif%} {% if hide_button_mobile == true %}button__hide_button{% endif%}">
+                             <a class="button button__custom-button {{wrapper_class}}__cta text__cta" href="{{ button_url }}"><span class="btn-text button__btn-text"> {{ button }} </span></a> 
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% render 'Text',
+                        wrapper_class: 'media-text__bge-content',
+                        id: id,
+                        eyebrow: eyebrow,
+                        heading: heading,
+                        text_wrapper_class: 'image-banner',
+                        subheading: subheading,
+                        heading_block1:heading_block1,
+                        subheading_block1:subheading_block1,
+                        heading_block2:heading_block2,
+                        subheading_block2:subheading_block2,
+                        cta_text: cta_text,
+                        cta_url: cta_url,
+                        mobile_aspect_ratio:mobile_ratio,
+                        desktop_aspect_ratio:desktop_ratio,
+                        button_type: button_type,
+                        button_background_type: button_background_type,
+                        hide_mobile:hide_mobile,
+                        button:button,
+                        button_url:button_url,
+                        hide_button_mobile:hide_button_mobile,
+                        top_overlay_mobile: top_overlay_mobile,
+                        teaser:teaser,
+                        teaser_subheading:teaser_subheading,
+                        logo:logo,
+                        video:video,
+                        image:image,
+                        video_url:video_url
+                    %}
+                    
+                </div>
+                {% else %}
+                  <div class="imageWithTextImageContainer image-with-text-media {% if block.settings.image_mobile != blank %} tab-only {% endif %}">
+                    <animation-reveal
+                      class="imageWithTextImageContainer"
+                      aoi-type="scale"
+                      aoi-duration="0.7"
+                      aoi-amount="0.2"
+                    >
+                      {{ 'hero-apparel-1' | placeholder_svg_tag }}
+                    </animation-reveal>
+                  </div>
+                {% endif %}
+
+                {% if block.settings.image_mobile != blank %}
+                  <div class="imageWithTextImageContainer image-with-text__mobile image-with-text-media {% if block.settings.image_mobile != blank %} mobile-sm-only {% endif %}">
+                    <animation-reveal
+                      class="imageWithTextImageContainer"
+                      aoi-type="scale"
+                      aoi-duration="0.5"
+                      aoi-amount="0.2"
+                    >
+                      {%- capture imagealt -%}
+                            {{ block.settings.image_mobile.alt | default: 'image' }}
+                          {%- endcapture -%}
+                      {{
+                        block.settings.image_mobile
+                        | image_url: width: block.settings.image_mobile.width
+                        | image_tag:
+                          loading: loading,
+                          fetchpriority: fetchpriority,
+                          sizes: sizes,
+                          widths: widths,
+                          class: 'set-100-percentage-size-media',
+                          alt: imagealt
+                      }}
+                    </animation-reveal>
+                    {% if button_url != blank  and button != blank %}
+                        <div class="text-image__button {% if hide_mobile == true %}button__hide_button{% endif%} {% if hide_button_mobile == true %}button__hide_button{% endif%}">
+                         <a class="button button__custom-button {{wrapper_class}}__cta text__cta" href="{{ button_url }}"><span class="btn-text button__btn-text"> {{ button }} </span></a> 
+                        </div>
+                    {% endif %}
+                  </div>
+                  {% render 'Text',
+                    wrapper_class: 'media-text__mobile',
+                    id: id,
+                    eyebrow: eyebrow,
+                    heading: heading,
+                    text_wrapper_class: 'image-banner',
+                    subheading: subheading,
+                    heading_block1:heading_block1,
+                    subheading_block1:subheading_block1,
+                    heading_block2:heading_block2,
+                    subheading_block2:subheading_block2,
+                    cta_text: cta_text,
+                    cta_url: cta_url,
+                    mobile_aspect_ratio:mobile_ratio,
+                    desktop_aspect_ratio:desktop_ratio,
+                    button_type: button_type,
+                    button_background_type: button_background_type,
+                    hide_mobile:hide_mobile,
+                    button:button,
+                    button_url:button_url,
+                    hide_button_mobile:hide_button_mobile,
+                    top_overlay_mobile: top_overlay_mobile,
+                    teaser:teaser,
+                    teaser_subheading:teaser_subheading,
+                    logo:logo,
+                    video:video,
+                    image:image,
+                    video_url:video_url
+                %}
+                {% endif %}
+              </div>
+            {% when 'video' %}
+              {% liquid
+                assign eyebrow = block.settings.eyebrow
+                assign hide_mobile_video = block.settings.hide_media_mobile_video
+                assign heading = block.settings.heading
+                assign subheading = block.settings.subheading
+                assign cta_text = block.settings.cta_text
+                assign cta_url = block.settings.cta_url
+                assign button_type = 'text'
+                assign button_background_type = 'transparent'
+                assign button = block.settings.button
+                assign button_url = block.settings.button_url
+                assign hide_button_mobile = block.settings.hide_button_mobile
+                assign teaser = block.settings.teaser
+                assign teaser_subheading = block.settings.teaset-subtext
+                assign logo = block.settings.logo
+                assign heading_block1 = block.settings.heading_block1
+                assign subheading_block1 = block.settings.subheading_block1
+                assign heading_block2 = block.settings.heading_block2
+                assign subheading_block2 = block.settings.subheading_block2
+                assign video = block.settings.video
+                assign video_url = block.settings.video_url
+                assign image = block.settings.image
+
+                if section.settings.media_size == 'adapt'
+                  assign ratio = cover_image.aspect_ratio
+                endif
+              %}
+              {%- capture imagealt -%}
+                    {{ block.settings.cover_image.alt | default: 'Media and text video' }}
+                  {%- endcapture -%}
+              <div 
+                class="imageWithText__media block-media-size--{{ section.settings.media_size }} {% if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %}"
+                {{ block.shopify_attributes }}
+                style="
+                  {%- if section.settings.media_size == 'adapt' -%}
+                    --aspect-ratio: {{ ratio }};
+                  {%- endif -%} {%- if forloop.first -%} --media-width: {{ section.settings.media_width | append : "%" }} {%- else -%} flex-grow:1; {%- endif -%}
+                "
+              >
+                <div rrrrr data-video-parent class="image-with-text__overlay image-with-text_overlay-video {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %}">
+                    {%- if block.settings.video -%}
+                        <div class="video__section {% if hide_mobile_video == true %}hide_video__mobile{% endif %} ">
+                            <default-player
+                            class="d-block custom__player__element position-relative aspect-size-media set-100-percentage-size-media"
+                            watch-element
+                            {% if media_autoplay or is_full_width %}
+                                media-autoplay
+                            {% endif %}
+                            >
+                            <animation-reveal
+                                class="imageWithTextImageContainer"
+                                aoi-type="scale"
+                                aoi-duration="0.5"
+                                aoi-amount="0.2"
+                            >
+                                <video
+                                alt="{{ block.settings.video.alt }}"
+                                preload="metadata"
+                                poster="false"
+                                webkit-playsinline
+                                playsinline
+                                {% unless media_autoplay or is_full_width %}
+                                    controls
+                                {% endunless %}
+                                >
+                                {%- for source in block.settings.video.sources -%}
+                                    <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                                {%- endfor -%}
+                                Your browser does not support the video tag.
+                                </video>
+    
+                                <div
+                                class="set-100-percentage-size-media media-preview-element position-absolute"
+                                video-preview-elements
+                                >
+                                <div class="video__main__poster">
+                                    {%- capture imagealt -%}
+                                        {%- if block.settings.cover_image -%}
+                                        {{ block.settings.cover_image.alt }}
+                                        {%- elsif block.settings.video.preview_image -%}
+                                        {{ block.settings.video.preview_image.alt }}
+                                        {%- else -%}
+                                        Media and text video preview image
+                                        {%- endif -%}
+                                    {%- endcapture -%}
+                                    {% if cover_image != blank %}
+                                    {{
+                                        cover_image
+                                        | image_url: width: cover_image.width
+                                        | image_tag:
+                                        loading: loading,
+                                        fetchpriority: fetchpriority,
+                                        sizes: sizes,
+                                        widths: widths,
+                                        class: 'set-100-percentage-size-media',
+                                        alt: imagealt
+                                    }}
+                                    {% elsif block.settings.video.preview_image %}
+                                    {{
+                                        block.settings.video.preview_image
+                                        | image_url: width: block.settings.video.preview_image.width
+                                        | image_tag:
+                                        loading: loading,
+                                        fetchpriority: fetchpriority,
+                                        sizes: sizes,
+                                        widths: widths,
+                                        class: 'set-100-percentage-size-media',
+                                        alt: imagealt
+                                    }}
+                                    {% else %}
+                                    {{ 'hero-apparel-2' | placeholder_svg_tag: 'set-100-percentage-size-media' }}
+                                    {% endif %}
+                                </div>
+                                </div>
+                            </animation-reveal>
+                            {% unless media_autoplay or is_full_width %}
+                                <div class="video__overlay__elements" video-overlay-elements>
+                                <div
+                                    class="play__icon icon-center"
+                                    play-media
+                                    role="button"
+                                    tabindex="0"
+                                    {{ block.shopify_attributes }}
+                                >
+                                    <svg width="87" height="102" viewBox="0 0 87 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M87 51L2.89853e-06 101.229L7.28973e-06 0.770523L87 51Z" fill="#E8FF5C"/>
+                                    </svg>
+                                        
+                                </div>
+                                </div>
+                            {% endunless %}
+                            <div
+                                class="video__overlay position-absolute"
+                                style="background-color:rgba()"
+                                video-overlay-elements
+                            ></div>
+                            </default-player>
+                            {% if button_url != blank  and button != blank %}
+                                <div class="text-image__button {% if hide_mobile == true %}button__hide_button{% endif%} {% if hide_button_mobile == true %}button__hide_button{% endif%}">
+                                 <a class="button button__custom-button {{wrapper_class}}__cta text__cta" href="{{ button_url }}"><span class="btn-text button__btn-text"> {{ button }} </span></a> 
+                                </div>
+                            {% endif %}
+                        </div>
+                        {%- else -%}
+                        {%- assign iframe_id = section.id | append: '-' | append: block.settings.video_url.id -%}
+                        {% comment %} Render external Video Link {% endcomment %}
+                        {%- case mediaType -%}
+                        {%- when 'youtube' -%}
+                            <div
+                                class="video__section {% if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} border-radius border-radius--block {% endif %}"
+                                style=" {% if forloop.first %} --media-width: {{ section.settings.media_width | append : "%" }} {% else %} flex-grow:1; {% endif %}"
+                            >
+                                <youtube-player
+                                class="d-block custom__player__element position-relative aspect-size-media set-100-percentage-size-media"
+                                video-id="{{ block.settings.video_url.id }}"
+                                watch-element
+                                {% if media_autoplay or is_full_width %}
+                                    media-autoplay
+                                {% endif %}
+                                >
+                                <div id="{{ iframe_id }}" iframe-element></div>
+                                <animation-reveal
+                                    class="imageWithTextImageContainer"
+                                    aoi-type="scale"
+                                    aoi-duration="0.5"
+                                    aoi-amount="0.5"
+                                >
+                                    <div
+                                    class="set-100-percentage-size-media media-preview-element position-absolute"
+                                    video-preview-elements
+                                    >
+                                    <div class="video__main__poster set-100-percentage-size-media">
+                                        {% if cover_image != blank %}
+                                        {{
+                                            cover_image
+                                            | image_url: width: cover_image.width
+                                            | image_tag:
+                                            loading: loading,
+                                            fetchpriority: fetchpriority,
+                                            sizes: sizes,
+                                            widths: widths,
+                                            class: 'set-100-percentage-size-media',
+                                            alt: imagealt
+                                        }}
+                                        {% else %}
+                                        {{ 'hero-apparel-3' | placeholder_svg_tag: 'set-100-percentage-size-media' }}
+                                        {% endif %}
+                                    </div>
+                                    </div>
+                                </animation-reveal>
+                                {% unless media_autoplay or is_full_width %}
+                                    <div class="video__overlay__elements" video-overlay-elements>
+                                    <div
+                                        class="play__icon icon-center"
+                                        play-media
+                                        role="button"
+                                        tabindex="0"
+                                        {{ block.shopify_attributes }}
+                                    >
+                                        <svg width="87" height="102" viewBox="0 0 87 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M87 51L2.89853e-06 101.229L7.28973e-06 0.770523L87 51Z" fill="#E8FF5C"/>
+                                        </svg>  
+                                    </div>
+                                    </div>
+                                    <div
+                                    class="video__overlay position-absolute"
+                                    style="background-color:rgba()"
+                                    video-overlay-elements
+                                    ></div>
+                                {% endunless %}
+                                </youtube-player>
+                            </div>
+    
+                            {%- when 'vimeo' -%}
+                                {{ hide_mobile_video }}
+                            <div
+                                class="video__section{% if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} border-radius border-radius--block {% endif %}"
+                                style="{% if forloop.first %} --media-width: {{ section.settings.media_width | append : "%" }} {% else %} flex-grow:1; {% endif %}"
+                            >
+                                <animation-reveal
+                                class="imageWithTextImageContainer"
+                                aoi-type="scale"
+                                aoi-duration="0.5"
+                                aoi-amount="0.2"
+                                >
+                                <vimeo-player
+                                    class="d-block custom__player__element aspect-size-media position-relative set-100-percentage-size-media"
+                                    video-id="{{ block.settings.video_url.id }}"
+                                    watch-element
+                                    {% if media_autoplay or is_full_width %}
+                                    media-autoplay
+                                    {% endif %}
+                                >
+                                    <div
+                                    class="set-100-percentage-size-media position-absolute"
+                                    id="{{ iframe_id }}"
+                                    iframe-element
+                                    ></div>
+    
+                                    <div class="set-100-percentage-size-media position-absolute" video-preview-elements>
+                                    <div class="video__main__poster set-100-percentage-size-media">
+                                        {% if cover_image != blank %}
+                                        {{
+                                            cover_image
+                                            | image_url: width: cover_image.width
+                                            | image_tag:
+                                            loading: loading,
+                                            fetchpriority: fetchpriority,
+                                            sizes: sizes,
+                                            widths: widths,
+                                            class: 'set-100-percentage-size-media',
+                                            alt: imagealt
+                                        }}
+                                        {% else %}
+                                        {{ 'hero-apparel-2' | placeholder_svg_tag: 'set-100-percentage-size-media' }}
+                                        {% endif %}
+                                    </div>
+                                    </div>
+                                    {% unless media_autoplay or is_full_width %}
+                                    <div class="video__overlay__elements" video-overlay-elements>
+                                        <div
+                                        class="play__icon icon-center"
+                                        play-media
+                                        role="button"
+                                        tabindex="0"
+                                        {{ block.shopify_attributes }}
+                                        >
+                                            <svg width="87" height="102" viewBox="0 0 87 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M87 51L2.89853e-06 101.229L7.28973e-06 0.770523L87 51Z" fill="#E8FF5C"/>
+                                             </svg>s
+                                                
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="video__overlay position-absolute"
+                                        style="background-color:rgba()"
+                                        video-overlay-elements
+                                    ></div>
+                                    {% endunless %}
+                                </vimeo-player>
+                                </animation-reveal>
+                            </div>
+                        {% endcase %}
+                        {%- endif -%}
+
+                        {% render 'Text',
+                            wrapper_class: 'media-text__bge-content',
+                            id: id,
+                            eyebrow: eyebrow,
+                            heading: heading,
+                            text_wrapper_class: 'image-banner',
+                            subheading: subheading,
+                            heading_block1:heading_block1,
+                            subheading_block1:subheading_block1,
+                            heading_block2:heading_block2,
+                            subheading_block2:subheading_block2,
+                            cta_text: cta_text,
+                            cta_url: cta_url,
+                            mobile_aspect_ratio:mobile_ratio,
+                            desktop_aspect_ratio:desktop_ratio,
+                            button_type: button_type,
+                            button_background_type: button_background_type,
+                            hide_mobile:hide_mobile,
+                            button:button,
+                            button_url:button_url,
+                            hide_button_mobile:hide_button_mobile,
+                            top_overlay_mobile: top_overlay_mobile,
+                            teaser:teaser,
+                            teaser_subheading:teaser_subheading,
+                            logo:logo,
+                            video:video,
+                            image:image,
+                            video_url:video_url
+                        %}
+                </div>
+               
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% unless section.settings.full_width %}
+    </div>
+  {% endunless %}
+</div>
+{% unless section.settings.border_size == 'hide' %}
+  {% if section.settings.border_position == 'both' or section.settings.border_position == 'bottom' %}
+    {% unless section.settings.border_size == 'full_width' %}
+      <div class="container">
+    {% endunless %}
+    <div class="spacer-wrapper color-{{ section.settings.color_scheme }}">
+      <div
+        class="spacer border-bottom"
+      ></div>
+    </div>
+    {% unless section.settings.border_size == 'full_width' %}
+      </div>
+    {% endunless %}
+  {% endif %}
+{% endunless %}
+
+
+
+{% schema %}
+{
+  "name": "Ritu",
+  "tag": "section",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+        "type": "checkbox",
+        "id": "swap_media_mobile",
+        "label": "Swap blocks in mobile",
+        "default": false
+    },
+    {
+        "type": "checkbox",
+        "id": "overlay_reverse_mobile",
+        "label": "top overlay mobile",
+        "default": false
+    },
+    {
+      "type": "range",
+      "id": "media_width",
+      "min": 30,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "First column width",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "media_size",
+      "label": "Media size",
+      "options": [
+        {
+          "label": "Adapt to image",
+          "value": "adapt"
+        },
+        {
+          "label": "Small",
+          "value": "sm"
+        },
+        {
+          "label": "Medium",
+          "value": "md"
+        },
+        {
+          "label": "Large",
+          "value": "lg"
+        }
+      ],
+      "default": "lg"
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings_schema.global.section.padding.settings.padding_top.label",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings_schema.global.section.padding.settings.padding_bottom.label",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "border_size",
+      "label": "Border",
+      "options": [
+        {
+          "label": "Hide",
+          "value": "hide"
+        },
+        {
+          "label": "Full width",
+          "value": "full_width"
+        },
+        {
+          "label": "Fixed width",
+          "value": "fixed_width"
+        }
+      ],
+      "default": "hide"
+    },
+    {
+      "type": "select",
+      "id": "border_position",
+      "label": "Border position",
+      "options": [
+        {
+          "label": "Both",
+          "value": "both"
+        },
+        {
+          "label": "Top",
+          "value": "top"
+        },
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        }
+      ],
+      "default": "both"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-4",
+      "label": "Color scheme"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Text",
+      "type": "text-content",
+      "settings": [
+        {
+            "type": "header",
+            "content": "Teaser"
+        },
+        {
+            "type": "html",
+            "id": "logo",
+            "label": "Logo Icon"        
+        },
+        {
+            "type": "richtext",
+            "id": "teaser",
+            "label": "Teaser Text"
+        },
+        {
+          "type": "richtext",
+          "id": "teaset-subtext",
+          "label": "Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Overlay"
+        },
+        {
+          "type": "richtext",
+          "id": "eyebrow",
+          "label": "Heading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 1"
+        },
+        {
+          "type": "richtext", 
+          "id": "heading",
+          "label": "Block Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Block Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 2"
+        },
+        {
+          "type": "richtext", 
+          "id": "heading_block1",
+          "label": "Block Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading_block1",
+          "label": "Block Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 3"
+        },
+        {
+          "type": "richtext", 
+          "id": "heading_block2",
+          "label": "Block Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading_block2",
+          "label": "Block Subheading"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA url"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_button_mobile",
+          "label": "hide button in mobile",
+          "default": false
+        }
+      ]
+    },
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [
+        {
+            "type": "checkbox",
+            "id": "hide_media_mobile",
+            "label": "hide media in mobile",
+            "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1440 x 1280px (large) .jpg recommended"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image",
+          "info": "800 x 800px (square 1:1)  .jpg recommended"
+        },
+        {
+            "type": "html",
+            "id": "logo",
+            "label": "Logo Icon"        
+        },
+        {
+            "type": "richtext",
+            "id": "teaser",
+            "label": "Teaser Text"
+        },
+        {
+          "type": "richtext",
+          "id": "teaset-subtext",
+          "label": "Subheading"
+        },
+        {
+            "type": "richtext",
+            "id": "eyebrow",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_button_mobile",
+          "label": "hide button in mobile",
+          "default": false
+      }
+      ]
+    },
+    {
+      "name": "Video",
+      "type": "video",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "media_autoplay",
+          "label": "Enable video autoplay",
+          "info": "Video will be muted",
+          "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "hide_media_mobile_video",
+            "label": "hide media in mobile",
+            "default": false
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "label": "Video URL",
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "accept": ["youtube", "vimeo"]
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Cover image",
+          "info": "1440 x 1280px (large) .jpg recommended"
+        },
+        {
+            "type": "header",
+            "content": "Teaser"
+        },
+        {
+            "type": "html",
+            "id": "logo",
+            "label": "Logo Icon"        
+        },
+        {
+            "type": "richtext",
+            "id": "teaser",
+            "label": "Teaser Text"
+        },
+        {
+          "type": "richtext",
+          "id": "teaset-subtext",
+          "label": "Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Overlay"
+        },
+        {
+          "type": "richtext",
+          "id": "eyebrow",
+          "label": "Heading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 1"
+        },
+        {
+          "type": "richtext", 
+          "id": "heading",
+          "label": "Block Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Block Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 2"
+        },
+        {
+          "type": "richtext", 
+          "id": "heading_block1",
+          "label": "Block Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading_block1",
+          "label": "Block Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 3"
+        },
+        {
+          "type": "richtext", 
+          "id": "heading_block2",
+          "label": "Block Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading_block2",
+          "label": "Block Subheading"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA url"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_button_mobile",
+          "label": "hide button in mobile",
+          "default": false
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ritu",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "text-content"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["*"]
+  }
+}
+{% endschema %}
+

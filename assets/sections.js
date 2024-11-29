@@ -59,6 +59,49 @@
 
 /***/ }),
 
+/***/ "./js/components/handle-video-overlay.js":
+/*!***********************************************!*\
+  !*** ./js/components/handle-video-overlay.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  // Select the video player element
+  var videoPlayers = document.querySelectorAll('default-player');
+  // Add an event listener for the "video-play" event
+  videoPlayers.forEach(videoPlayer => {
+    videoPlayer.addEventListener('video-play', event => {
+      var target = event.target;
+      if (!target) return;
+      var parent = target.closest('[data-video-parent]');
+      if (!parent) return;
+      var overlay = parent.querySelect('[data-overlay]');
+      if (!overlay) return;
+      if (overlay.classList.contains('overlay--active')) {
+        overlay.classList.remove('overlay--active');
+      }
+    });
+
+    // Add an event listener for the "video-pause" event
+    videoPlayer.addEventListener('video-pause', event => {
+      var target = event.target;
+      if (!target) return;
+      var parent = target.closest('[data-video-parent]');
+      if (!parent) return;
+      var overlay = parent.querySelect('[data-overlay]');
+      if (!overlay) return;
+      if (!overlay.classList.contains('overlay--active')) {
+        overlay.classList.add('overlay--active');
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./js/sections/factuals.js":
 /*!*********************************!*\
   !*** ./js/sections/factuals.js ***!
@@ -107,6 +150,8 @@
 /* harmony import */ var _factuals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./factuals */ "./js/sections/factuals.js");
 /* harmony import */ var _variantOptions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./variantOptions */ "./js/sections/variantOptions.js");
 /* harmony import */ var _components_count_up__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/count-up */ "./js/components/count-up.js");
+/* harmony import */ var JsComponents_handle_video_overlay__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/handle-video-overlay */ "./js/components/handle-video-overlay.js");
+
 
 
 
@@ -116,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_factuals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_variantOptions__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_components_count_up__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,JsComponents_handle_video_overlay__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 
 /***/ }),

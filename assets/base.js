@@ -392,30 +392,18 @@ class defaultVideoPlayer extends HTMLElement {
     constructor() {
         super();
         this.player = this.querySelector('video');
-        this.mediaType = this.dataset.mediaType;
-        // Set to true once video is played
+        this.mediaType = this.getAttribute('media-type');
+        this.videoId = this.getAttribute('video-id'); // Fetching video-id from the attribute
         this.videoPlayed = false;
         this.videoIsPlaying = false;
-        // Refere play button on video player
         this.playButton = this.querySelector('[play-media]');
-        // Refer video wrapper preview element for poster and play button
-        this.videoPreviewElements = this.querySelector(
-            '[video-preview-elements]'
-        );
-
+        this.videoPreviewElements = this.querySelector('[video-preview-elements]');
         this.mediaAutoplay = this.hasAttribute('media-autoplay');
+        this.videoOverlayElements = this.querySelectorAll('[video-overlay-elements]');
 
-        this.videoOverlayElements = this.querySelectorAll(
-            '[video-overlay-elements]'
-        );
-
-        // If play button is present in DOM then attach e vent listener to play the video once clicked
+        // Attach event listeners to play button
         if (this.playButton) {
-            this.playButton.addEventListener(
-                'click',
-                this._renderMedia.bind(this)
-            );
-            // Play video when you press "Enter" key
+            this.playButton.addEventListener('click', this._renderMedia.bind(this));
             this.playButton.addEventListener('keyup', (e) => {
                 if (e.keyCode === 13) {
                     this._renderMedia();
@@ -423,38 +411,33 @@ class defaultVideoPlayer extends HTMLElement {
             });
         }
 
+        // Handle autoplay behavior
         if (this.mediaAutoplay) {
             this.addEventListener(_EVENT_HELPER.elementIsInCurrentView, (e) => {
-                // Only if video is not playing then play the video
                 if (!this.videoIsPlaying) {
                     this._renderMedia();
                 }
             });
         }
-
-        if(this.mediaType === 'video'){
-            this.player.addEventListener('play', () => {
-                this.videoIsPlaying = true;
-            });
-
-            this.player.addEventListener('pause', () => {
-                this.videoIsPlaying = false;
-            });
-        }
     }
 
-    // Hide preview element wrapper which consist of poster and play button
+    // Dispatch custom event with video ID and playing state
+    _dispatchCustomEvent(eventName) {
+        const event = new CustomEvent(eventName);
+        this.dispatchEvent(event);
+    }
+
+    // Hide preview element
     _hidePosterAndPlayButton() {
         if (
             this.videoPreviewElements &&
-            !this.videoPreviewElements.classList.contains(
-                'video-elements-hidden'
-            )
+            !this.videoPreviewElements.classList.contains('video-elements-hidden')
         ) {
             this.videoPreviewElements.classList.add('video-elements-hidden');
         }
     }
 
+    // Hide video overlays
     _hideVideoOverlay() {
         this.videoOverlayElements &&
             this.videoOverlayElements.forEach((el) => {
@@ -466,14 +449,17 @@ class defaultVideoPlayer extends HTMLElement {
     _play() {
         this.player.play();
         this.videoIsPlaying = true;
+        this._dispatchCustomEvent('video-play');
     }
 
-    // Pause Video
+    // Pause video
     _pause() {
         this.player.pause();
         this.videoIsPlaying = false;
+        this._dispatchCustomEvent('video-pause');
     }
-    // Call to render media like iframe for vimeo and youtube player
+
+    // Render media
     _renderMedia() {
         if (this.mediaAutoplay) {
             this.player.muted = true;
@@ -483,17 +469,13 @@ class defaultVideoPlayer extends HTMLElement {
         this._handleSupportMediaAndPlayVideo();
     }
 
-    // Handle Support media and play
+    // Handle media rendering and play
     _handleSupportMediaAndPlayVideo() {
-        // Hide poster image and play button
         if (!this.mediaAutoplay) {
             this._hideVideoOverlay();
         }
         this._hidePosterAndPlayButton();
-        // Play video
         this._play();
-        this.videoIsPlaying = true;
-        // Set play media to true once played
         if (!this.videoPlayed) {
             this.videoPlayed = true;
         }
@@ -709,6 +691,7 @@ class Model3dComponent extends HTMLElement {
         this.modelViewer = this.querySelector('model-viewer');
     }
 
+
     _play() {
         this.player.play();
 
@@ -717,11 +700,13 @@ class Model3dComponent extends HTMLElement {
                 Skips then current 3d model slide  
         */
 
+
         HELPER_UTIL.dispatchCustomEvent(_EVENT_HELPER.disableSlide, this);
     }
 
     _pause() {
         this.player.pause();
+        
     }
 
     // Add wrapper functionality to interact google model-viwer

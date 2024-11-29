@@ -5,40 +5,113 @@
 @import 'breakpoints';
 
 
-.media-text.container{
-    padding: 0;
+.block-media-size--lg .imageWithTextImageContainer, .video__section default-player{
+    min-height: 420px;
+    @media(--sm){
+        min-height: 800px;
+    }
+    @media(--md){
+        min-height: 522px;
+    }
+    @media(--md-large){
+        min-height: 800px;
+    }
 }
 
-.media-text {
-    column-gap:0;
-    row-gap: 0;
-    min-height: 400px;
-
-    &__wrapper{
-        width: 100%;
+.image-with-text__overlay{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.image-with-text__overlay{
+    height: 100%;
+}
+.video__section .media-text__position-text{
+    @media(--sm){
+        height: 400px;
     }
-    @media(max-width: 1023px){
-        grid-template-columns: 1fr !important;
+    @media(--md){
+        height: 100%;
     }
+}
+.text-image , .image-with-text_overlay-video {
+    width: 100%;
+}
 
-    &__block-reverse:nth-of-type(1) {
-        order: 1;
-        @media(--md){
-            order: 0; 
-        }
-    } 
-} 
-
-.image--desktop{
+.image-with-text__desktop{
     display: none;
     @media(--md){
         display: block;
     }
 }
-.image--mobile{
+
+.image-with-text__mobile, .media-text__mobile__text {
     display: block !important;
     @media(--md){
         display: none !important;
     }
 }
 
+
+.imageWithText .image-fixed .imageWithText__media{
+
+    @media(--sm){
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .imageWithText__container {
+        flex-wrap: wrap;
+    }
+    .imageWithText__media {
+        width: 100%;
+        flex-direction: column;
+    }
+    .media-text__mobile__text{
+        width: 100%;
+    }
+}
+
+.imageWithText .video__section{
+    height: auto;
+    @media(--md){
+        height: 100%;
+    }
+}
+
+.imageWithText__media svg {
+    position: unset;
+}
+
+.media-text {
+    @media(max-width: 1023px){
+        grid-template-columns: 1fr !important;
+    }
+} 
+
+.media-text__flex-block-reverse , .image-text-overlay__reverse{
+    flex-direction: column-reverse;
+    @media(--md){
+        flex-direction: row;
+    }
+}
+
+.media-text__position-text{
+    @media(--md){
+        height: 80%;
+    }
+    @media(--md-large){
+        height: 100%;
+    }
+}
+
+.video__section .play__icon{
+    height: 75px;
+    width: 75px;
+    @media(--sm){
+        height: 116px;
+        width: 116px;
+    }
+}

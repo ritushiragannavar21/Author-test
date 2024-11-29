@@ -9,15 +9,16 @@
  */
 {
   "sections": {
-    "media_text_overlay_WJhYYY": {
-      "type": "media-text-overlay",
+    "media_rnJY3D": {
+      "type": "media",
       "blocks": {
-        "first_block_QY9Ftn": {
-          "type": "first-block",
+        "video_fe6Rij": {
+          "type": "video",
           "settings": {
-            "hide_media_mobile": false,
+            "media_autoplay": true,
+            "hide_media_mobile_video": false,
             "video": "shopify://files/videos/f192e66f4a6087266431651412a8e9f4b06f57a6.mov",
-            "video_url": "",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -35,25 +36,16 @@
             "hide_button_mobile": false
           }
         },
-        "first_block_nVMPqQ": {
-          "type": "first-block",
+        "image_QYGXiY": {
+          "type": "image",
           "settings": {
             "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Section1_1_8f53db3c-c642-40eb-b9e2-7b23c774c482.jpg",
+            "image": "shopify://shop_images/Section1_1_8f53db3c-c642-40eb-b9e2-7b23c774c482.jpg",
             "image_mobile": "shopify://shop_images/Section1_1_8f53db3c-c642-40eb-b9e2-7b23c774c482.jpg",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
             "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
             "button": "SHOP ALL",
             "button_url": "shopify://collections",
             "hide_button_mobile": false
@@ -61,13 +53,21 @@
         }
       },
       "block_order": [
-        "first_block_QY9Ftn",
-        "first_block_nVMPqQ"
+        "video_fe6Rij",
+        "image_QYGXiY"
       ],
       "settings": {
-        "bg_color": "#ec99c2",
+        "full_width": true,
         "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
+        "overlay_reverse_mobile": false,
+        "media_width": 50,
+        "media_size": "lg",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
       }
     },
     "daily_essential_izd9Lm": {
@@ -102,15 +102,16 @@
         "content": "Plant-based ingredients"
       }
     },
-    "media_text_overlay_kQ48kH": {
-      "type": "media-text-overlay",
+    "media_XiNCUp": {
+      "type": "media",
       "blocks": {
-        "first_block_DQrx4F": {
-          "type": "first-block",
+        "video_CCkdn6": {
+          "type": "video",
           "settings": {
-            "hide_media_mobile": true,
+            "media_autoplay": true,
+            "hide_media_mobile_video": true,
             "video": "shopify://files/videos/f9d08e1b4b711958e4cc41df7fcd2ef599fadf4c.mov",
-            "video_url": "",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -122,31 +123,22 @@
             "heading_block2": "",
             "subheading_block2": "",
             "cta_text": "LEARN MORE",
-            "cta_url": "shopify://collections",
-            "button": "SHOP ALL",
-            "button_url": "shopify://collections",
+            "cta_url": "shopify://collections/all",
+            "button": "",
+            "button_url": "",
             "hide_button_mobile": false
           }
         },
-        "first_block_Jcqm9P": {
-          "type": "first-block",
+        "image_E8qDHm": {
+          "type": "image",
           "settings": {
             "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Section3_b59e4a6b-b515-4288-aeb5-790ff8c7aceb.jpg",
+            "image": "shopify://shop_images/Section3_b59e4a6b-b515-4288-aeb5-790ff8c7aceb.jpg",
             "image_mobile": "shopify://shop_images/Section3_b59e4a6b-b515-4288-aeb5-790ff8c7aceb.jpg",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
             "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false
@@ -154,161 +146,38 @@
         }
       },
       "block_order": [
-        "first_block_DQrx4F",
-        "first_block_Jcqm9P"
+        "video_CCkdn6",
+        "image_E8qDHm"
       ],
       "settings": {
-        "bg_color": "#e8ff5c",
+        "full_width": true,
         "swap_media_mobile": true,
-        "overlay_reverse_mobile": false
+        "overlay_reverse_mobile": false,
+        "media_width": 50,
+        "media_size": "lg",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
       }
     },
-    "media_text_overlay_xtNpqk": {
-      "type": "media-text-overlay",
+    "media_3ey3XL": {
+      "type": "media",
       "blocks": {
-        "first_block_XHr47H": {
-          "type": "first-block",
+        "video_gRTHQz": {
+          "type": "video",
           "settings": {
-            "hide_media_mobile": false,
+            "media_autoplay": false,
+            "hide_media_mobile_video": false,
+            "video": "shopify://files/videos/3b2a1aacfe23fee98f69a746403fd02972ac95ab (1).mov",
             "video_url": "",
+            "cover_image": "shopify://shop_images/Section1_c7716719-665d-4dd8-8db1-d8fb53c300b8.jpg",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
-            "eyebrow": "<p>THE (F)ACTUALS™ – <br/>CODIFYING OUR SPIRIT OF RADICAL TRANSPARENCY</p>",
-            "heading": "",
-            "subheading": "<p>For too long the beauty industry has hidden behind a shroud of mystery, with “miracle” ingredients and exaggerated claims falling far short of promises made. We all deserve better.</p>",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "LEARN MORE",
-            "cta_url": "shopify://collections",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        },
-        "first_block_dTN7Ry": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video": "shopify://files/videos/bb67956dfbc84a2d6af349f40f0fd7f5baec37f8 (1).mov",
-            "video_url": "",
-            "logo": "",
-            "teaser": "",
-            "teaset-subtext": "",
-            "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "SHOP ALL",
-            "button_url": "shopify://collections",
-            "hide_button_mobile": false
-          }
-        }
-      },
-      "block_order": [
-        "first_block_XHr47H",
-        "first_block_dTN7Ry"
-      ],
-      "settings": {
-        "bg_color": "#e8ff5c",
-        "swap_media_mobile": true,
-        "overlay_reverse_mobile": false
-      }
-    },
-    "custom_testimonial_Lh4zwt": {
-      "type": "custom-testimonial",
-      "blocks": {
-        "testimonial_LFkHjz": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "My skin looks and feels so much better. I look 8 years younger!",
-            "author": "SARAH",
-            "rating": 3,
-            "text_color": "#0000ff"
-          }
-        },
-        "testimonial_WYKanz": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "My skin looks and feels so much better. I look 8 years younger!",
-            "author": "Sarah",
-            "rating": 2,
-            "text_color": "#2828e2"
-          }
-        },
-        "testimonial_6fUjiW": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "My skin looks and feels so much better. I look 8 years younger!",
-            "author": "SARAH",
-            "rating": 5,
-            "text_color": "#0000ff"
-          }
-        },
-        "testimonial_inYCCw": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "My skin looks and feels so much better. I look 8 years younger!",
-            "author": "SARAH",
-            "rating": 4,
-            "text_color": "#0000ff"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_LFkHjz",
-        "testimonial_WYKanz",
-        "testimonial_6fUjiW",
-        "testimonial_inYCCw"
-      ],
-      "settings": {
-        "heading": "REAL PEOPLE, REAL RESULTS"
-      }
-    },
-    "media_text_overlay_4zQMgB": {
-      "type": "media-text-overlay",
-      "blocks": {
-        "first_block_aqg9Xq": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Section6_1.jpg",
-            "image_mobile": "shopify://shop_images/Section6_1.jpg",
-            "logo": "",
-            "teaser": "",
-            "teaset-subtext": "",
-            "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        },
-        "first_block_FKLkXa": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Section6_2.jpg",
-            "logo": "",
-            "teaser": "",
-            "teaset-subtext": "",
-            "eyebrow": "",
+            "eyebrow": "<p>sssssss</p>",
             "heading": "",
             "subheading": "",
             "heading_block1": "",
@@ -324,82 +193,27 @@
         }
       },
       "block_order": [
-        "first_block_aqg9Xq",
-        "first_block_FKLkXa"
+        "video_gRTHQz"
       ],
       "settings": {
-        "bg_color": "",
+        "full_width": true,
         "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
-      }
-    },
-    "media_text_overlay_qXjMq8": {
-      "type": "media-text-overlay",
-      "blocks": {
-        "first_block_WUJTYQ": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "",
-            "logo": "<svg width=\"25\" height=\"28\" viewbox=\"0 0 25 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12.4997 11.057L9.02539 9.10333V5.1959L12.4997 3.24219L15.9739 5.1959V9.10333L12.4997 11.057ZM10.0916 8.51184L12.4997 9.87406L14.9077 8.51184V5.80532L12.4997 4.44309L10.0916 5.80532V8.51184Z\" fill=\"#282FEE\"></path>\n<path d=\"M12.4997 24.932L9.02539 22.9783V19.0709L12.4997 17.1172L15.9739 19.0709V22.9783L12.4997 24.932ZM10.0916 22.3868L12.4997 23.7491L14.9077 22.3868V19.6803L12.4997 18.3181L10.0916 19.6803V22.3868Z\" fill=\"#282FEE\"></path>\n<path d=\"M8.73093 11.9375H11.1574V16.1676H9.77872V13.2997C9.77872 13.2997 9.77872 13.1026 9.77872 12.9592C9.77872 12.8158 9.77872 12.6903 9.77872 12.6186L8.43681 16.1676H7.00299L5.67946 12.6186C5.67946 12.6186 5.67946 12.8158 5.67946 12.9592C5.67946 13.1026 5.67946 13.228 5.67946 13.2997V16.1676H4.30078V11.9375H6.74563L7.73828 14.5006L8.71255 11.9375H8.73093Z\" fill=\"#282FEE\"></path>\n<path d=\"M12.5 27.6575C11.9118 27.6575 11.3235 27.5141 10.8088 27.2094L1.69118 22.0831C0.643382 21.4916 0 20.3983 0 19.2153V8.96276C0 7.77978 0.643382 6.68641 1.69118 6.09492L10.8088 0.986587C11.8566 0.395096 13.1618 0.395096 14.2096 0.986587L23.3088 6.11285C24.3566 6.70434 25 7.7977 25 8.98068V19.2332C25 20.4162 24.3566 21.5095 23.3088 22.101L14.2096 27.2273C13.6949 27.5141 13.1066 27.6754 12.5184 27.6754L12.5 27.6575ZM12.5 1.57808C12.0956 1.57808 11.6912 1.68562 11.3419 1.88279L2.22426 7.00905C1.50735 7.4213 1.06618 8.1741 1.06618 8.98068V19.2332C1.06618 20.0398 1.50735 20.7926 2.22426 21.2048L11.3235 26.3311C12.0404 26.7434 12.9412 26.7434 13.6581 26.3311L22.7574 21.2048C23.4743 20.7926 23.9154 20.0398 23.9154 19.2332V8.98068C23.9154 8.1741 23.4743 7.4213 22.7574 7.00905L13.6581 1.88279C13.2904 1.68562 12.9044 1.57808 12.5 1.57808Z\" fill=\"#282FEE\"></path>\n<path d=\"M16.8004 17.9984L13.3262 16.0447V12.1373L16.8004 10.1836L20.2747 12.1373V16.0447L16.8004 17.9984ZM14.3923 15.4532L16.8004 16.8155L19.2085 15.4532V12.7467L16.8004 11.3845L14.3923 12.7467V15.4532Z\" fill=\"#282FEE\"></path>\n</svg>",
-            "teaser": "<p>MOLECUR 3™</p>",
-            "teaset-subtext": "",
-            "eyebrow": "<p>IT’S ONE OF OUR SUPER-POWERS<br/> (THE OTHER <br/>IS JOY!)</p>",
-            "heading": "",
-            "subheading": "<p>Good science is at the heart of everything we do. Our proprietary technology, Molecur 3™ is the scientific breakthrough that powers all Pareva products and their game changing results.</p>",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "LEARN MORE",
-            "cta_url": "shopify://collections",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        },
-        "first_block_nKxEz4": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": true,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/section7.jpg",
-            "logo": "",
-            "teaser": "",
-            "teaset-subtext": "",
-            "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        }
-      },
-      "block_order": [
-        "first_block_WUJTYQ",
-        "first_block_nKxEz4"
-      ],
-      "settings": {
-        "bg_color": "#e8ff5c",
-        "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
+        "overlay_reverse_mobile": false,
+        "media_width": 100,
+        "media_size": "lg",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
       }
     }
   },
   "order": [
-    "media_text_overlay_WJhYYY",
+    "media_rnJY3D",
     "daily_essential_izd9Lm",
-    "media_text_overlay_kQ48kH",
-    "media_text_overlay_xtNpqk",
-    "custom_testimonial_Lh4zwt",
-    "media_text_overlay_4zQMgB",
-    "media_text_overlay_qXjMq8"
+    "media_XiNCUp",
+    "media_3ey3XL"
   ]
 }

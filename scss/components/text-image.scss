@@ -29,6 +29,7 @@
         max-height: 610px;
         width: 100%;
         background: colors.$white;
+        z-index: 1;
         @media(--xs){
             max-height: 560px;
         }
@@ -118,6 +119,7 @@
     justify-content: space-between; 
     align-items: left;
     flex-direction: column;
+    height: 100%;
 }
 
 .hide_video__mobile, .hide_video__mobile{
