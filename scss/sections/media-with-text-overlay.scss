@@ -5,7 +5,7 @@
 @import 'breakpoints';
 
 
-.block-media-size--lg .imageWithTextImageContainer, .video__section default-player{
+.block-media-size--lg .imageWithTextImageContainer, .video__section default-player , .video__section youtube-player {
     min-height: 420px;
     @media(--sm){
         min-height: 800px;
@@ -39,7 +39,7 @@
     width: 100%;
 }
 
-.image-with-text__desktop .imageWithTextImageContainer {
+.image-with-text__desktop , .imageWithTextImageContainer {
     display: none;
     @media(--md){
         display: block;
@@ -56,7 +56,7 @@
 
 .imageWithText .image-fixed .imageWithText__media{
 
-    @media(--sm){
+    @media(--md){
         display: block;
     }
 }
@@ -126,15 +126,15 @@
     }
 }
 
-.imageWithText__media{
+.make-video-width__half , .text-content__custom{
     @media(--md){
         width: 50%;
     }
 }
 
 .mobile-image__display{
-    display: none;
+    display: none !important;
     @media(--md){
-        display: block;
+        display: block !important;
     }
 }

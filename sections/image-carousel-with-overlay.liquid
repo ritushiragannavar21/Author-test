@@ -22,7 +22,7 @@
 
 <div class="media-text__image-carousel container" style="background:{{background}}" >
     <div class="media-text__block {% if section.settings.swap_media_mobile == true %}media-text__block-reverse{% endif %}">
-        {% render 'image-with-text-overlay',
+        {% render 'image-carousel-overlay',
             wrapper_class: 'media-text__bge-content',
             id: id,
             eyebrow: eyebrow,
@@ -64,7 +64,7 @@
                     {%- when 'image' -%}   
                         <div class="swiper-slide">
                             <div class="media-text__content">
-                                {% render 'image-with-text-overlay',
+                                {% render 'image-carousel-overlay',
                                     wrapper_class: 'media-text__image-content',
                                     id: id,
                                     image_desktop: image_desktop,

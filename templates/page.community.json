@@ -19,14 +19,12 @@
         "color_scheme": ""
       }
     },
-    "media_text_overlay_cfhMbw": {
-      "type": "media-text-overlay",
+    "media_77LUbN": {
+      "type": "media",
       "blocks": {
-        "first_block_mE94mp": {
-          "type": "first-block",
+        "text_content_4mfQJT": {
+          "type": "text-content",
           "settings": {
-            "hide_media_mobile": false,
-            "video_url": "",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -44,12 +42,11 @@
             "hide_button_mobile": false
           }
         },
-        "first_block_UJN9jq": {
-          "type": "first-block",
+        "image_biJhEb": {
+          "type": "image",
           "settings": {
             "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Section1.jpg",
+            "image": "shopify://shop_images/Section1.jpg",
             "image_mobile": "shopify://shop_images/Section1.jpg",
             "logo": "",
             "teaser": "",
@@ -61,8 +58,6 @@
             "subheading_block1": "",
             "heading_block2": "",
             "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false
@@ -70,18 +65,26 @@
         }
       },
       "block_order": [
-        "first_block_mE94mp",
-        "first_block_UJN9jq"
+        "text_content_4mfQJT",
+        "image_biJhEb"
       ],
       "settings": {
-        "bg_color": "#e8ff5c",
-        "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
+        "full_width": false,
+        "swap_media_mobile": true,
+        "overlay_reverse_mobile": false,
+        "media_width": 50,
+        "media_size": "lg",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
       }
     }
   },
   "order": [
     "main",
-    "media_text_overlay_cfhMbw"
+    "media_77LUbN"
   ]
 }

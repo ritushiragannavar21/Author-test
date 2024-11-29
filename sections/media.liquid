@@ -88,6 +88,7 @@
         {% for block in section.blocks %}
 
           {% liquid
+            assign block_count = section.blocks.size
             assign media_autoplay = block.settings.media_autoplay
             assign mediaType = block.settings.video_url.type
             assign cover_image = block.settings.cover_image
@@ -120,9 +121,8 @@
                     assign subheading_block2 = block.settings.subheading_block2
                 %}
               <div
-                class="imageWithText__content {% if forloop.first %} mobile-order-2 {% endif %} {% if section.settings.section_width == 'full' %} container{% endif %} "
+                class="imageWithText__content text-content__custom {% if forloop.first %} mobile-order-2 {% endif %} {% if section.settings.section_width == 'full' %} container{% endif %} "
                 {{ block.shopify_attributes }}
-                style=" {% if forloop.first %} --media-width: {{ section.settings.media_width | append : "%" }} {% else %} flex:1; {% endif %}"
               >
                 {% render 'image-with-text-overlay',
                     wrapper_class: 'media-text__bge-content',
@@ -183,7 +183,7 @@
                 endif
               %}
               <div
-                class="imageWithText__media block-media-size--{{ section.settings.media_size }}{% if hide_mobile == true %}mobile-image__display{% endif %}{%  if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %}{% if block.settings.image_mobile == blank %}mobile-image__display{% endif %} "
+                class="imageWithText__media block-media-size--{{ section.settings.media_size }} {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %} {%  if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %}{% if block.settings.image_mobile == blank %}mobile-image__display{% endif %}{% if block.settings.hide_media_mobile == true %} mobile-image__display{% endif %} {% if block_count > 1 %}make-video-width__half{% endif %}"
                 {{ block.shopify_attributes }}
                 style="              
                   {%- if section.settings.media_size == 'adapt' -%}
@@ -360,15 +360,15 @@
                     {{ block.settings.cover_image.alt | default: 'Media and text video' }}
                   {%- endcapture -%}
               <div 
-                class="imageWithText__media block-media-size--{{ section.settings.media_size }} {% if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %}"
+                class="imageWithText__media block-media-size--{{ section.settings.media_size }} {% if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %} {% if block_count > 1 %}make-video-width__half{% endif %}"
                 {{ block.shopify_attributes }}
                 style="
                   {%- if section.settings.media_size == 'adapt' -%}
                     --aspect-ratio: {{ ratio }};
-                  {%- endif -%} {%- if forloop.first -%} --media-width: {{ section.settings.media_width | append : "%" }} {%- else -%} flex-grow:1; {%- endif -%}
+                  {%- endif -%} {%- if forloop.first -%} --media-width: {{ section.settings.media_width | append : "%" }} {%- else -%} flex-grow:1; {%- endif -%};
                 "
               >
-                <div rrrrr data-video-parent class="image-with-text__overlay image-with-text_overlay-video {% if block.settings.cover_image != blank %}video-with__cover-image{% endif %} {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %}">
+                <div class="image-with-text__overlay image-with-text_overlay-video {% if block.settings.cover_image != blank %}video-with__cover-image{% endif %} {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %}">
                     {%- if block.settings.video -%}
                         <div class="video__section {% if hide_mobile_video == true %}hide_video__mobile{% endif %}">
                             <default-player

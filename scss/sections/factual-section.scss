@@ -45,15 +45,17 @@
     }
   }
 
-  &__card-title p{
+  &__card-title {
     @include use-text-style('body-title');
     font-weight: typography.$regular-weight;
     margin-bottom: var(--base-card-margin);
+    width: 90%;
     @media(--sm){
       margin-bottom: 0;
     }
     @media(--md-large){
       margin-bottom: 20px;
+      width: 68%;
     }
   }
 

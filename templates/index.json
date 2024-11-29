@@ -229,7 +229,7 @@
       ],
       "settings": {
         "full_width": false,
-        "swap_media_mobile": true,
+        "swap_media_mobile": false,
         "overlay_reverse_mobile": false,
         "media_width": 50,
         "media_size": "lg",

@@ -285,6 +285,68 @@
         "color_scheme": "scheme-1"
       }
     },
+    "factuals_3kGbNN": {
+      "type": "factuals",
+      "blocks": {
+        "image_ayTEdp": {
+          "type": "image",
+          "source": "{{ product.metafields.custom.factual_card.value }}",
+          "settings": {
+            "hide_media_mobile": false,
+            "title": "{{ product.metafields.custom.factual_card.value.section_title.value }}",
+            "description": "<p>{{ product.metafields.custom.factual_card.value.section_description | metafield_tag }}</p>",
+            "card1_title": "<p>{{ product.metafields.custom.factual_card.value.first_card_eyebrow | metafield_tag }}</p>",
+            "card1_text": "{{ product.metafields.custom.factual_card.value.card_1_text.value }}",
+            "card1_sup_tag": "{{ product.metafields.custom.factual_card.value.superscript_text.value }}",
+            "card1_color": "{{ product.metafields.custom.factual_card.value.card_1_background_color.value }}",
+            "first_card_image_1": "{{ product.metafields.custom.factual_card.value.popup_info.value }}",
+            "first_card_image_2": "{{ product.metafields.custom.factual_card.value.popup_info_1.value }}",
+            "mobile_second_card_image_1": "{{ product.metafields.custom.factual_card.value.mobile_popup_info.value }}",
+            "card2_title": "",
+            "card2_text": "",
+            "card2_sup_tag": "",
+            "card2_color": "rgba(0,0,0,0)",
+            "card3_title": "",
+            "card3_text": "",
+            "card3_sup_tag": "",
+            "card3_color": "rgba(0,0,0,0)",
+            "button": "",
+            "button_url": ""
+          }
+        },
+        "image_Um94qM": {
+          "type": "image",
+          "settings": {
+            "hide_media_mobile": true,
+            "image": "{{ product.metafields.custom.factual_image.value }}",
+            "title": "",
+            "description": "",
+            "card1_title": "",
+            "card1_text": "",
+            "card1_sup_tag": "",
+            "card1_color": "rgba(0,0,0,0)",
+            "card2_title": "",
+            "card2_text": "",
+            "card2_sup_tag": "",
+            "card2_color": "rgba(0,0,0,0)",
+            "card3_title": "",
+            "card3_text": "",
+            "card3_sup_tag": "",
+            "card3_color": "rgba(0,0,0,0)",
+            "button": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_ayTEdp",
+        "image_Um94qM"
+      ],
+      "settings": {
+        "bg_color": "#fefdf6",
+        "swap_media_mobile": false
+      }
+    },
     "media_jr3tDa": {
       "type": "media",
       "blocks": {
@@ -399,6 +461,7 @@
     "main-product",
     "clinical_results_HBjJbX",
     "product-recommendation",
+    "factuals_3kGbNN",
     "media_jr3tDa",
     "media_7rciaD"
   ]

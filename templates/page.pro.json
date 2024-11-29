@@ -19,13 +19,14 @@
         "color_scheme": ""
       }
     },
-    "media_text_overlay_8nWGmY": {
-      "type": "media-text-overlay",
+    "media_7iGQ6H": {
+      "type": "media",
       "blocks": {
-        "first_block_LUFAQW": {
-          "type": "first-block",
+        "video_XDK6fC": {
+          "type": "video",
           "settings": {
-            "hide_media_mobile": false,
+            "media_autoplay": true,
+            "hide_media_mobile_video": false,
             "video": "shopify://files/videos/f9d08e1b4b711958e4cc41df7fcd2ef599fadf4c.mov",
             "video_url": "",
             "logo": "",
@@ -42,15 +43,14 @@
             "cta_url": "",
             "button": "",
             "button_url": "",
-            "hide_button_mobile": true
+            "hide_button_mobile": false
           }
         },
-        "first_block_3jtb48": {
-          "type": "first-block",
+        "image_MkUT68": {
+          "type": "image",
           "settings": {
             "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Mask_group_12.png",
+            "image": "shopify://shop_images/Mask_group_12.png",
             "image_mobile": "shopify://shop_images/Mask_group_12.png",
             "logo": "",
             "teaser": "",
@@ -62,22 +62,28 @@
             "subheading_block1": "",
             "heading_block2": "",
             "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
             "button": "SHOP ALL",
-            "button_url": "shopify://collections/frontpage",
+            "button_url": "shopify://collections/hi",
             "hide_button_mobile": false
           }
         }
       },
       "block_order": [
-        "first_block_LUFAQW",
-        "first_block_3jtb48"
+        "video_XDK6fC",
+        "image_MkUT68"
       ],
       "settings": {
-        "bg_color": "",
+        "full_width": false,
         "swap_media_mobile": true,
-        "overlay_reverse_mobile": false
+        "overlay_reverse_mobile": false,
+        "media_width": 50,
+        "media_size": "lg",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
       }
     },
     "our_solution_hENTfM": {
@@ -131,14 +137,12 @@
         "bg_color": "#f4f1e8"
       }
     },
-    "media_text_overlay_iVbm6j": {
-      "type": "media-text-overlay",
+    "media_6inXyf": {
+      "type": "media",
       "blocks": {
-        "first_block_UcfjQH": {
-          "type": "first-block",
+        "text_content_4Ba4pt": {
+          "type": "text-content",
           "settings": {
-            "hide_media_mobile": false,
-            "video_url": "",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -150,19 +154,18 @@
             "heading_block2": "",
             "subheading_block2": "",
             "cta_text": "LEARN MORE",
-            "cta_url": "shopify://collections",
+            "cta_url": "shopify://products/test-bundle",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false
           }
         },
-        "first_block_KPNi4M": {
-          "type": "first-block",
+        "image_xR9EdT": {
+          "type": "image",
           "settings": {
             "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Group_2755.png",
-            "image_mobile": "shopify://shop_images/Group_2755.png",
+            "image": "shopify://shop_images/Section3_b59e4a6b-b515-4288-aeb5-790ff8c7aceb.jpg",
+            "image_mobile": "shopify://shop_images/Section3_b59e4a6b-b515-4288-aeb5-790ff8c7aceb.jpg",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -173,22 +176,28 @@
             "subheading_block1": "",
             "heading_block2": "",
             "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
             "button": "",
             "button_url": "",
-            "hide_button_mobile": true
+            "hide_button_mobile": false
           }
         }
       },
       "block_order": [
-        "first_block_UcfjQH",
-        "first_block_KPNi4M"
+        "text_content_4Ba4pt",
+        "image_xR9EdT"
       ],
       "settings": {
-        "bg_color": "#e8ff5c",
+        "full_width": true,
         "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
+        "overlay_reverse_mobile": false,
+        "media_width": 50,
+        "media_size": "lg",
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
       }
     },
     "custom_testimonial_9PDNNT": {
@@ -221,15 +230,17 @@
         "heading": "DON’T TAKE OUR WORD FOR IT"
       }
     },
-    "media_text_overlay_iEkTXt": {
-      "type": "media-text-overlay",
+    "media_8kjN3T": {
+      "type": "media",
       "blocks": {
-        "first_block_wah7HF": {
-          "type": "first-block",
+        "video_bDiBEp": {
+          "type": "video",
           "settings": {
-            "hide_media_mobile": false,
-            "video_url": "https://www.youtube.com/watch?v=FTQ-3CK5zjQ",
-            "cover_image": "shopify://shop_images/Pareva-23_1.png",
+            "media_autoplay": false,
+            "hide_media_mobile_video": false,
+            "video": "shopify://files/videos/f192e66f4a6087266431651412a8e9f4b06f57a6.mov",
+            "video_url": "",
+            "cover_image": "shopify://shop_images/Section3_e32378d2-07c4-4d46-9929-91f14b741165.jpg",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -247,12 +258,12 @@
             "hide_button_mobile": false
           }
         },
-        "first_block_gWy7tj": {
-          "type": "first-block",
+        "image_cCh89N": {
+          "type": "image",
           "settings": {
             "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Group_2818.png",
+            "image": "shopify://shop_images/Group_2818.png",
+            "image_mobile": "shopify://shop_images/Group_2818.png",
             "logo": "<svg width=\"26\" height=\"29\" viewbox=\"0 0 26 29\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12.7516 11.0045L9.20898 8.9614V4.87515L12.7516 2.83203L16.2943 4.87515V8.9614L12.7516 11.0045ZM10.2961 8.34284L12.7516 9.7674L15.2071 8.34284V5.51246L12.7516 4.0879L10.2961 5.51246V8.34284Z\" fill=\"#282FEE\"></path>\n<path d=\"M12.7516 25.5084L9.20898 23.4653V19.3791L12.7516 17.3359L16.2943 19.3791V23.4653L12.7516 25.5084ZM10.2961 22.8467L12.7516 24.2713L15.2071 22.8467V20.0164L12.7516 18.5918L10.2961 20.0164V22.8467Z\" fill=\"#282FEE\"></path>\n<path d=\"M8.90799 11.918H11.3822V16.3416H9.97641V13.3425C9.97641 13.3425 9.97641 13.1363 9.97641 12.9864C9.97641 12.8364 9.97641 12.7052 9.97641 12.6302L8.60808 16.3416H7.14603L5.79644 12.6302C5.79644 12.6302 5.79644 12.8364 5.79644 12.9864C5.79644 13.1363 5.79644 13.2676 5.79644 13.3425V16.3416H4.39062V11.918H6.88361L7.8958 14.5984L8.88924 11.918H8.90799Z\" fill=\"#282FEE\"></path>\n<path d=\"M12.7461 28.3553C12.1463 28.3553 11.5464 28.2054 11.0216 27.8867L1.72447 22.5259C0.656048 21.9073 0 20.7639 0 19.5268V8.8051C0 7.56798 0.656048 6.42458 1.72447 5.80603L11.0216 0.46392C12.09 -0.15464 13.4209 -0.15464 14.4893 0.46392L23.7677 5.82477C24.8361 6.44333 25.4922 7.58673 25.4922 8.82385V19.5455C25.4922 20.7827 24.8361 21.9261 23.7677 22.5446L14.4893 27.9055C13.9645 28.2054 13.3646 28.3741 12.7648 28.3741L12.7461 28.3553ZM12.7461 1.08248C12.3337 1.08248 11.9213 1.19494 11.5652 1.40113L2.26805 6.76198C1.53703 7.1931 1.08717 7.98036 1.08717 8.82385V19.5455C1.08717 20.389 1.53703 21.1763 2.26805 21.6074L11.5464 26.9683C12.2775 27.3994 13.1959 27.3994 13.927 26.9683L23.2054 21.6074C23.9364 21.1763 24.3862 20.389 24.3862 19.5455V8.82385C24.3862 7.98036 23.9364 7.1931 23.2054 6.76198L13.927 1.40113C13.5521 1.19494 13.1585 1.08248 12.7461 1.08248Z\" fill=\"#282FEE\"></path>\n<path d=\"M17.1325 18.2584L13.5898 16.2153V12.1291L17.1325 10.0859L20.6752 12.1291V16.2153L17.1325 18.2584ZM14.677 15.5967L17.1325 17.0213L19.588 15.5967V12.7664L17.1325 11.3418L14.677 12.7664V15.5967Z\" fill=\"#282FEE\"></path>\n</svg>",
             "teaser": "<p>Molecur 3™</p>",
             "teaset-subtext": "<p>Maintains the hallmarks of youth and targets Inflammation, Stress Damage, and UVA, the three leading causes of common skin ailments.   </p>",
@@ -263,8 +274,6 @@
             "subheading_block1": "",
             "heading_block2": "",
             "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false
@@ -272,13 +281,21 @@
         }
       },
       "block_order": [
-        "first_block_wah7HF",
-        "first_block_gWy7tj"
+        "video_bDiBEp",
+        "image_cCh89N"
       ],
       "settings": {
-        "bg_color": "",
+        "full_width": true,
         "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
+        "overlay_reverse_mobile": false,
+        "media_width": 50,
+        "media_size": "lg",
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
       }
     },
     "factuals_WDQYJk": {
@@ -343,16 +360,15 @@
         "swap_media_mobile": true
       }
     },
-    "media_text_overlay_rUwBjG": {
-      "type": "media-text-overlay",
+    "media_HnREBC": {
+      "type": "media",
       "blocks": {
-        "first_block_yyBgYp": {
-          "type": "first-block",
+        "image_LnzUN6": {
+          "type": "image",
           "settings": {
             "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.41_AM.png",
-            "image_mobile": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.41_AM.png",
+            "image": "shopify://shop_images/Section5_2.jpg",
+            "image_mobile": "shopify://shop_images/Section5_2.jpg",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -363,20 +379,17 @@
             "subheading_block1": "",
             "heading_block2": "",
             "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false
           }
         },
-        "first_block_GTm9Hy": {
-          "type": "first-block",
+        "image_8UcG3X": {
+          "type": "image",
           "settings": {
             "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Mask_group_7.png",
-            "image_mobile": "shopify://shop_images/Mask_group_7.png",
+            "image": "shopify://shop_images/Section6_2.jpg",
+            "image_mobile": "shopify://shop_images/Section6_2.jpg",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -387,33 +400,39 @@
             "subheading_block1": "",
             "heading_block2": "",
             "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
             "button": "APPLY NOW",
-            "button_url": "shopify://collections",
+            "button_url": "shopify://products/coll20™-firming-glow-serum",
             "hide_button_mobile": false
           }
         }
       },
       "block_order": [
-        "first_block_yyBgYp",
-        "first_block_GTm9Hy"
+        "image_LnzUN6",
+        "image_8UcG3X"
       ],
       "settings": {
-        "bg_color": "",
+        "full_width": true,
         "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
+        "overlay_reverse_mobile": false,
+        "media_width": 50,
+        "media_size": "lg",
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
       }
     }
   },
   "order": [
     "main",
-    "media_text_overlay_8nWGmY",
+    "media_7iGQ6H",
     "our_solution_hENTfM",
-    "media_text_overlay_iVbm6j",
+    "media_6inXyf",
     "custom_testimonial_9PDNNT",
-    "media_text_overlay_iEkTXt",
+    "media_8kjN3T",
     "factuals_WDQYJk",
-    "media_text_overlay_rUwBjG"
+    "media_HnREBC"
   ]
 }
