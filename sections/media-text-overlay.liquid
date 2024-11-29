@@ -8,7 +8,7 @@
 {% endfor %}
 
 
-<div class="media-text container" style= "display: grid; grid-template-columns: repeat({{ block_count }}, minmax(200px, 1fr) ) ;background:{{background}}" >
+<div class="media-text container" data-video-parent style= "display: grid; grid-template-columns: repeat({{ block_count }}, minmax(200px, 1fr) ) ;background:{{background}}" >
     {% for block in section.blocks %}
         {% if  block_count == 2 %}
             {% liquid

@@ -421,6 +421,18 @@ class defaultVideoPlayer extends HTMLElement {
         }
     }
 
+    connectedCallback() {
+        this.player.addEventListener('pause', (ev) => {
+            if(!this.mediaAutoplay) {
+                this._dispatchCustomEvent('video-pause');
+                this._showVideoOverlay();
+            }
+        })
+      }
+
+
+
+
     // Dispatch custom event with video ID and playing state
     _dispatchCustomEvent(eventName) {
         const event = new CustomEvent(eventName);
@@ -445,18 +457,29 @@ class defaultVideoPlayer extends HTMLElement {
             });
     }
 
+    // Hide video overlays
+    _showVideoOverlay() {
+        this.videoOverlayElements &&
+            this.videoOverlayElements.forEach((el) => {
+                if(el.classList.contains('video-elements-hidden')) {
+                  el.classList.remove('video-elements-hidden');
+                }
+            });
+    }
+
     // Play video
     _play() {
         this.player.play();
         this.videoIsPlaying = true;
-        this._dispatchCustomEvent('video-play');
+        if(!this.mediaAutoplay) {
+            this._dispatchCustomEvent('video-play');
+        }
     }
 
     // Pause video
     _pause() {
         this.player.pause();
         this.videoIsPlaying = false;
-        this._dispatchCustomEvent('video-pause');
     }
 
     // Render media

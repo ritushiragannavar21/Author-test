@@ -78,10 +78,10 @@
       if (!target) return;
       var parent = target.closest('[data-video-parent]');
       if (!parent) return;
-      var overlay = parent.querySelect('[data-overlay]');
+      var overlay = parent.querySelector('[data-overlay]');
       if (!overlay) return;
-      if (overlay.classList.contains('overlay--active')) {
-        overlay.classList.remove('overlay--active');
+      if (!overlay.classList.contains('overlay--hidden')) {
+        overlay.classList.add('overlay--hidden');
       }
     });
 
@@ -91,10 +91,10 @@
       if (!target) return;
       var parent = target.closest('[data-video-parent]');
       if (!parent) return;
-      var overlay = parent.querySelect('[data-overlay]');
+      var overlay = parent.querySelector('[data-overlay]');
       if (!overlay) return;
-      if (!overlay.classList.contains('overlay--active')) {
-        overlay.classList.add('overlay--active');
+      if (overlay.classList.contains('overlay--hidden')) {
+        overlay.classList.remove('overlay--hidden');
       }
     });
   });

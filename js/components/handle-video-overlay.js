@@ -8,10 +8,10 @@ export default () => {
         if(!target) return;
         const parent = target.closest('[data-video-parent]');
         if(!parent) return;
-        const overlay = parent.querySelect('[data-overlay]')
+        const overlay = parent.querySelector('[data-overlay]')
         if(!overlay) return;
-        if(overlay.classList.contains('overlay--active')) {
-            overlay.classList.remove('overlay--active')
+        if(!overlay.classList.contains('overlay--hidden')) {
+            overlay.classList.add('overlay--hidden')
         }
     });
    
@@ -21,10 +21,10 @@ export default () => {
         if(!target) return;
         const parent = target.closest('[data-video-parent]');
         if(!parent) return;
-        const overlay = parent.querySelect('[data-overlay]')
+        const overlay = parent.querySelector('[data-overlay]')
         if(!overlay) return;
-        if(!overlay.classList.contains('overlay--active')) {
-            overlay.classList.add('overlay--active');
+        if(overlay.classList.contains('overlay--hidden')) {
+            overlay.classList.remove('overlay--hidden');
         }
     });
  })

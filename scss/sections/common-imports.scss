@@ -3,3 +3,7 @@
 @import 'StyleComponents/button';
 @import 'StyleComponents/text-image';
 @import 'StyleComponents/product-card';
+
+.overlay--hidden {
+    display: none;
+}
