@@ -74,7 +74,7 @@
 {% endunless %}
 <div
   aria-label="Media with text"
-  class="section-{{ section.id }}-padding "
+  class="section-{{ section.id }}-padding media-with-text__overlay-section"
   role="region"
   style="background-color: {{ section.settings.background_color }}"
 >
@@ -183,10 +183,9 @@
                 endif
               %}
               <div
-                class="imageWithText__media block-media-size--{{ section.settings.media_size }} {%  if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %}  {% endif %}"
+                class="imageWithText__media block-media-size--{{ section.settings.media_size }}{% if hide_mobile == true %}mobile-image__display{% endif %}{%  if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %}{% if block.settings.image_mobile == blank %}mobile-image__display{% endif %} "
                 {{ block.shopify_attributes }}
-                style="   
-                 {% if block.settings.image_mobile == blank %}display: none;{% endif %}             
+                style="              
                   {%- if section.settings.media_size == 'adapt' -%}
                     --aspect-ratio: {{ ratio }};
                     {% if block.settings.image_mobile != blank %}
@@ -232,10 +231,10 @@
                         heading: heading,
                         text_wrapper_class: 'image-banner',
                         subheading: subheading,
-                        heading_block1:heading_block1,
-                        subheading_block1:subheading_block1,
-                        heading_block2:heading_block2,
-                        subheading_block2:subheading_block2,
+                        heading_block_one:heading_block1,
+                        subheading_block_one:subheading_block1,
+                        heading_block_two:heading_block2,
+                        subheading_block_two:subheading_block2,
                         cta_text: cta_text,
                         cta_url: cta_url,
                         mobile_aspect_ratio:mobile_ratio,
@@ -953,6 +952,48 @@
             "type": "richtext",
             "id": "eyebrow",
             "label": "Heading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 1"
+        },
+        {
+            "type": "richtext", 
+            "id": "heading",
+            "label": "Block Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "subheading",
+            "label": "Block Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 2"
+        },
+        {
+            "type": "richtext", 
+            "id": "heading_block1",
+            "label": "Block Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "subheading_block1",
+            "label": "Block Subheading"
+        },
+        {
+            "type": "header",
+            "content": "Text Block 3"
+        },
+        {
+            "type": "richtext", 
+            "id": "heading_block2",
+            "label": "Block Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "subheading_block2",
+            "label": "Block Subheading"
         },
         {
             "type": "text",

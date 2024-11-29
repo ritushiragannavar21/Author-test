@@ -39,7 +39,7 @@
     width: 100%;
 }
 
-.image-with-text__desktop{
+.image-with-text__desktop .imageWithTextImageContainer {
     display: none;
     @media(--md){
         display: block;
@@ -114,5 +114,27 @@
 .video-with__cover-image .text-image__text-wrapper {
     @media(--md){
         left: 3%;
+    }
+}
+
+.media-with-text__overlay-section{
+    .container{
+        padding: 0;
+        .imageWithText{
+            border-radius: 0;
+        }
+    }
+}
+
+.imageWithText__media{
+    @media(--md){
+        width: 50%;
+    }
+}
+
+.mobile-image__display{
+    display: none;
+    @media(--md){
+        display: block;
     }
 }

@@ -146,8 +146,20 @@
                     {% if show_product_vendor %}
                       <p class="fnt-14 text-color">{{ product.vendor }}</p>
                     {% endif %}
-
-                    <p class="product-card-item__head">{{ product.title }}</p>
+                    {% assign product_title = product.metafields.custom.product_title.value %}
+                    {% if product_title != blank %}
+                      {% assign productTitle = product_title | parse_json %}
+                      {% if productTitle.main_title or productTitle.title %}
+                        <p class="product-card-item__head">
+                          {% if productTitle.main_title %}
+                            <span>{{ productTitle.main_title }}</span>
+                          {% endif %}
+                        </p>
+                          {% if productTitle.title %}
+                            <div>{{ productTitle.title }}</div>
+                          {% endif %}
+                      {% endif %}
+                    {% endif %}
                   </div>
                 </div>
               {% endif %}
@@ -215,7 +227,20 @@
                   <p class="fnt-14 text-color">{{ product.vendor }}</p>
                 {% endif %}
                 <a class="" href="{{ product.url }}">
-                  <p class="product-card-item__head">{{ product.title }}</p>
+                  {% assign product_title = product.metafields.custom.product_title.value %}
+                  {% if product_title != blank %}
+                    {% assign productTitle = product_title | parse_json %}
+                    {% if productTitle.main_title or productTitle.title %}
+                      <p class="product-card-item__head">
+                        {% if productTitle.main_title %}
+                          <span>{{ productTitle.main_title }}</span>
+                        {% endif %}
+                      </p>
+                      {% if productTitle.title %}
+                        <div>{{ productTitle.title }}</div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
                 </a>
               {% endif %}
               {% if show_product_rating %}

@@ -272,167 +272,6 @@
         "color_scheme": ""
       }
     },
-    "factuals_WDQYJk": {
-      "type": "factuals",
-      "blocks": {
-        "image_C8YQxU": {
-          "type": "image",
-          "repeater": "{{ product.metafields.custom.factual.value }}",
-          "settings": {
-            "hide_media_mobile": false,
-            "image": "{{ block.repeater.image.value }}",
-            "title": "{{ block.repeater.section_title.value }}",
-            "description": "<p>{{ block.repeater.section_description | metafield_tag }}</p>",
-            "card1_title": "<p>{{ block.repeater.first_card_eyebrow | metafield_tag }}</p>",
-            "card1_text": "{{ block.repeater.card_1_text.value }}",
-            "card1_sup_tag": "{{ block.repeater.superscript_text.value }}",
-            "card1_color": "{{ block.repeater.card_1_background_color.value }}",
-            "first_card_image_1": "{{ block.repeater.popup_info.value }}",
-            "first_card_image_2": "{{ block.repeater.popup_info_1.value }}",
-            "mobile_second_card_image_1": "{{ block.repeater.mobile_popup_info.value }}",
-            "card2_title": "",
-            "card2_text": "",
-            "card2_sup_tag": "",
-            "card2_color": "#ffffff",
-            "card3_title": "",
-            "card3_text": "",
-            "card3_sup_tag": "",
-            "card3_color": "#ffffff",
-            "button": "SHOP ALL",
-            "button_url": "shopify://collections"
-          }
-        },
-        "image_YNRcDT": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "hide_media_mobile": true,
-            "image": "shopify://shop_images/C35.5_Flower.jpg",
-            "title": "",
-            "description": "",
-            "card1_title": "",
-            "card1_text": "C35.5™",
-            "card1_sup_tag": "TM",
-            "card1_color": "#ff0000",
-            "card2_title": "",
-            "card2_text": "RH5.5™",
-            "card2_sup_tag": "TM",
-            "card2_color": "#0000ff",
-            "card3_title": "",
-            "card3_text": "COLL20™",
-            "card3_sup_tag": "TM",
-            "card3_color": "#00ff00",
-            "button": "",
-            "button_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_C8YQxU",
-        "image_YNRcDT"
-      ],
-      "settings": {
-        "bg_color": "#fefdf6",
-        "swap_media_mobile": false
-      }
-    },
-    "media_text_overlay_X3QrVH": {
-      "type": "media-text-overlay",
-      "blocks": {
-        "first_block_ikifjM": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "https://www.youtube.com/watch?v=FTQ-3CK5zjQ",
-            "cover_image": "shopify://shop_images/C35.5_VideoThumbN.jpg",
-            "logo": "",
-            "teaser": "",
-            "teaset-subtext": "",
-            "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        },
-        "first_block_i7LC6e": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Group_2795.png",
-            "image_mobile": "shopify://shop_images/Group_2795.png",
-            "logo": "",
-            "teaser": "",
-            "teaset-subtext": "",
-            "eyebrow": "",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        }
-      },
-      "block_order": [
-        "first_block_ikifjM",
-        "first_block_i7LC6e"
-      ],
-      "settings": {
-        "bg_color": "",
-        "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
-      }
-    },
-    "media_text_overlay_ftxkaz": {
-      "type": "media-text-overlay",
-      "blocks": {
-        "first_block_dKrKAK": {
-          "type": "first-block",
-          "settings": {
-            "hide_media_mobile": false,
-            "video_url": "",
-            "image_desktop": "shopify://shop_images/Mask_group_10.png",
-            "logo": "",
-            "teaser": "",
-            "teaset-subtext": "",
-            "eyebrow": "",
-            "heading": "<p>BENEFITS</p>",
-            "subheading": "<ul><li>Fewer visible lines and wrinkles</li><li>Intense hydration suitable for all skin types</li><li>Improved skin resiliency and bounce</li><li>Detoxing properties in the formula contribute to a well rested appearance</li><li>Powered by patented Molecur 3TM technology to turbocharge skin's youthful properties with exosomes and NAD+.</li></ul>",
-            "heading_block1": "<p>HOW IT’S <br/>DIFFERENT</p>",
-            "subheading_block1": "<p>20% clinically proven technologies targeting youth collagen for a comprehensive skin rejuvenation system, targeting lines and wrinkles.</p>",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        }
-      },
-      "block_order": [
-        "first_block_dKrKAK"
-      ],
-      "settings": {
-        "bg_color": "",
-        "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
-      }
-    },
     "product-recommendation": {
       "type": "product-recommendation",
       "settings": {
@@ -446,19 +285,17 @@
         "color_scheme": "scheme-1"
       }
     },
-    "media_text_overlay_PjyKH9": {
-      "type": "media-text-overlay",
+    "media_jr3tDa": {
+      "type": "media",
       "blocks": {
-        "first_block_YrBxWK": {
-          "type": "first-block",
-          "repeater": "{{ product.metafields.custom.media_text_overlay.value }}",
+        "video_N7nggc": {
+          "type": "video",
           "settings": {
-            "hide_media_mobile": false,
-            "video": "{{ block.repeater.video.value }}",
-            "video_url": "",
-            "cover_image": "{{ block.repeater.cover_image.value }}",
-            "image_desktop": "{{ block.repeater.image_desktop.value }}",
-            "image_mobile": "{{ block.repeater.image_mobile.value }}",
+            "media_autoplay": false,
+            "hide_media_mobile_video": false,
+            "video": "{{ product.metafields.custom.media_overlay.value.video.value }}",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "{{ product.metafields.custom.media_overlay.value.cover_image.value }}",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",
@@ -470,7 +307,28 @@
             "heading_block2": "",
             "subheading_block2": "",
             "cta_text": "",
-            "cta_url": "{{ block.repeater.video_url.value }}",
+            "cta_url": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        },
+        "image_EMiJPm": {
+          "type": "image",
+          "settings": {
+            "hide_media_mobile": false,
+            "image": "{{ product.metafields.custom.media_overlay.value.image.value }}",
+            "image_mobile": "{{ product.metafields.custom.media_overlay.value.mobile_image.value }}",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "heading_block1": "",
+            "subheading_block1": "",
+            "heading_block2": "",
+            "subheading_block2": "",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false
@@ -478,22 +336,70 @@
         }
       },
       "block_order": [
-        "first_block_YrBxWK"
+        "video_N7nggc",
+        "image_EMiJPm"
       ],
       "settings": {
-        "bg_color": "",
+        "full_width": false,
         "swap_media_mobile": false,
-        "overlay_reverse_mobile": false
+        "overlay_reverse_mobile": false,
+        "media_width": 50,
+        "media_size": "lg",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
+      }
+    },
+    "media_7rciaD": {
+      "type": "media",
+      "blocks": {
+        "image_Xac8H9": {
+          "type": "image",
+          "settings": {
+            "hide_media_mobile": false,
+            "image": "shopify://shop_images/Mask_group_10.png",
+            "logo": "",
+            "teaser": "",
+            "teaset-subtext": "",
+            "eyebrow": "",
+            "heading": "<p>BENEFITS</p>",
+            "subheading": "<ul><li>Fewer visible lines and wrinkles</li><li>Intense hydration suitable for all skin types</li><li>Improved skin resiliency and bounce</li><li>Detoxing properties in the formula contribute to a well rested appearance</li><li>Powered by patented Molecur 3TM technology to turbocharge skin's youthful properties with exosomes and NAD+.</li></ul>",
+            "heading_block1": "<p>HOW IT’S <br/>DIFFERENT</p>",
+            "subheading_block1": "<p>20% clinically proven technologies targeting youth collagen for a comprehensive skin rejuvenation system, targeting lines and wrinkles.</p>",
+            "heading_block2": "",
+            "subheading_block2": "",
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "image_Xac8H9"
+      ],
+      "settings": {
+        "full_width": false,
+        "swap_media_mobile": false,
+        "overlay_reverse_mobile": false,
+        "media_width": 100,
+        "media_size": "lg",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "",
+        "background_color": "#ffffff"
       }
     }
   },
   "order": [
     "main-product",
     "clinical_results_HBjJbX",
-    "factuals_WDQYJk",
-    "media_text_overlay_X3QrVH",
-    "media_text_overlay_ftxkaz",
     "product-recommendation",
-    "media_text_overlay_PjyKH9"
+    "media_jr3tDa",
+    "media_7rciaD"
   ]
 }
