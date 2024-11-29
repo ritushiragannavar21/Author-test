@@ -667,6 +667,267 @@ var OnetimeOptions = _ref => {
 
 /***/ }),
 
+/***/ "./js/components/react/slider.js":
+/*!***************************************!*\
+  !*** ./js/components/react/slider.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ResponsiveImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ResponsiveImage */ "./js/components/react/ResponsiveImage.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+
+
+
+var slider = _ref => {
+  var _shopifyData$data;
+  var {
+    shopifyData
+  } = _ref;
+  var slides = (_shopifyData$data = shopifyData.data) === null || _shopifyData$data === void 0 ? void 0 : _shopifyData$data.blocks;
+  var blockSize = slides.length;
+  var [currentSlideIndex, setCurrentSlideIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  var [currentSlide, setCurrentSlide] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(slides[0]);
+  var width = 1920;
+  var height = 1080;
+  console.log(shopifyData);
+  var settings = {
+    imageFit: 'cover'
+  };
+  var renderNavigationBar = () => {
+    var bars = [];
+    for (var i = 0; i < blockSize; i++) {
+      bars.push(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+        className: currentSlideIndex == i ? 'bar active' : 'bar'
+      }));
+    }
+    return bars;
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    setCurrentSlide(slides[currentSlideIndex]);
+  }, [currentSlideIndex]);
+  var slideVariants = {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1
+    },
+    exit: {
+      opacity: 0
+    }
+  };
+  if (currentSlide) {
+    var _currentSlide$slide_i, _currentSlide$bundle_;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+      className: "h1 slideshow__head mb-1 mobile-only"
+    }, currentSlide === null || currentSlide === void 0 ? void 0 : currentSlide.slide_header), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "slideshow bannerSlider"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
+      className: "slideshow__banner-image",
+      key: currentSlideIndex,
+      initial: "initial",
+      animate: "animate",
+      exit: "exit",
+      variants: slideVariants,
+      transition: {
+        duration: 0.9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponsiveImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      aspectratio: 1.8,
+      aspect_ratio_mobile: 1.4,
+      image: {
+        src: currentSlide === null || currentSlide === void 0 || (_currentSlide$slide_i = currentSlide.slide_image[0]) === null || _currentSlide$slide_i === void 0 ? void 0 : _currentSlide$slide_i.src,
+        width,
+        height
+      },
+      settings: settings
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "slideshow__card-content slideshow__slideBody d-flex d-flex-dir-c justify-content-space-btw desktop-only",
+      role: "region",
+      "aria-label": "Slide Text"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+      className: "h1 slideshow__head mb-1"
+    }, currentSlide === null || currentSlide === void 0 ? void 0 : currentSlide.slide_header), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+      className: "mb-2"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "slide_index"
+    }, currentSlideIndex + 1), currentSlide === null || currentSlide === void 0 ? void 0 : currentSlide.subheading), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "slideshow__subtext"
+    }, currentSlide === null || currentSlide === void 0 ? void 0 : currentSlide.slide_sub_text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "slideshow__navigation"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      style: {
+        opacity: currentSlideIndex === 0 ? 0.5 : 1,
+        pointerEvents: currentSlideIndex === 0 ? 'none' : 'auto'
+      },
+      width: "36",
+      height: "36",
+      viewBox: "0 0 36 36",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      onClick: () => currentSlideIndex > 0 && setCurrentSlideIndex(currentSlideIndex - 1)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+      r: "17.5",
+      transform: "matrix(-1 0 0 1 18 18)",
+      stroke: "rgba(var(--color-controls)/1)"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M14.5234 13.4961L9.81889 18.2006L14.5234 22.9052",
+      stroke: "rgba(var(--color-controls)/1)"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M10.0234 18.2031L26.1825 18.2031",
+      stroke: "rgba(var(--color-controls)/1)"
+    })), renderNavigationBar(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      style: {
+        opacity: currentSlideIndex == blockSize - 1 ? 0.5 : 1,
+        pointerEvents: currentSlideIndex == blockSize ? 'none' : 'auto'
+      },
+      width: "36",
+      height: "36",
+      viewBox: "0 0 36 36",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      onClick: () => currentSlideIndex < blockSize - 1 && setCurrentSlideIndex(currentSlideIndex + 1)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+      cx: "18",
+      cy: "18",
+      r: "17.5",
+      stroke: "rgba(var(--color-controls)/1)"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M21.4766 13.4961L26.1811 18.2006L21.4766 22.9052",
+      stroke: "rgba(var(--color-controls)/1)"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M25.9766 18.2031L9.81747 18.2031",
+      stroke: "rgba(var(--color-controls)/1)"
+    }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "btn--wrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      className: "btn btn--fill slideshow__shop-btn",
+      href: currentSlide.slide_product_url
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "slideshow__shop-btn-text"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Shop the ", currentSlide === null || currentSlide === void 0 ? void 0 : currentSlide.slide_product_title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, currentSlide === null || currentSlide === void 0 || (_currentSlide$bundle_ = currentSlide.bundle_products) === null || _currentSlide$bundle_ === void 0 ? void 0 : _currentSlide$bundle_.join(', ')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, currentSlide === null || currentSlide === void 0 ? void 0 : currentSlide.slide_product_price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "slideshow__shop-btn--hover-text"
+    }, "SHOP NOW")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "slideshow__slideBody slideshow__slideBody--mobile mobile-only"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+      className: "mb-2"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "slide_index"
+    }, currentSlideIndex + 1), currentSlide === null || currentSlide === void 0 ? void 0 : currentSlide.subheading), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "navigations mobile-only"
+    }, currentSlideIndex != 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      className: "slide-prev--mobile",
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick: () => currentSlideIndex > 0 && setCurrentSlideIndex(currentSlideIndex - 1)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 -0.707107 -0.707107 -0.707107 10.5703 22.5703)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 -0.707107 -0.707107 -0.707107 10.5703 22.5703)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 -0.707107 -0.707107 -0.707107 10.5703 22.5703)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 0.707107 0.707107 -0.707107 12.002 0)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 0.707107 0.707107 -0.707107 12.002 0)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 0.707107 0.707107 -0.707107 12.002 0)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    })), currentSlideIndex < blockSize - 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick: () => currentSlideIndex < blockSize - 1 && setCurrentSlideIndex(currentSlideIndex + 1)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 -0.707107 -0.707107 -0.707107 10.5703 22.5703)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 -0.707107 -0.707107 -0.707107 10.5703 22.5703)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 -0.707107 -0.707107 -0.707107 10.5703 22.5703)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 0.707107 0.707107 -0.707107 12.002 0)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 0.707107 0.707107 -0.707107 12.002 0)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
+      y1: "-1",
+      x2: "16.9706",
+      y2: "-1",
+      transform: "matrix(0.707107 0.707107 0.707107 -0.707107 12.002 0)",
+      stroke: "#282FEE",
+      "stroke-width": "2"
+    })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "slideshow__subtext"
+    }, currentSlide === null || currentSlide === void 0 ? void 0 : currentSlide.slide_sub_text)));
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);
+
+/***/ }),
+
 /***/ "./js/components/react/subscription-options.js":
 /*!*****************************************************!*\
   !*** ./js/components/react/subscription-options.js ***!

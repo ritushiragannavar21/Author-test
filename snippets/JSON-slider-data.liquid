@@ -1,0 +1,41 @@
+{
+    "section_width": "{{ section.settings.section_width }}",
+    "blocks":[
+        {% for block in section.blocks  %}
+            {% assign product = block.settings.slide_product %}
+            {
+                "slide_image": [ 
+                            {% if block.settings.slide_image != blank %}
+                                { 
+                                    "src": "{{ block.settings.slide_image | image_url }}", 
+                                    "height": "{{- block.settings.slide_image.height | default: 1080 -}}",
+                                    "width": "{{ block.settings.slide_image.width | default: 1920 }}" 
+                                }
+                            {%  endif %}
+                        ],
+                "mobile_image": [ 
+                            {% if block.settings.mobile_slide_image != blank %}
+                                { 
+                                    "src": "{{ block.settings.mobile_slide_image | image_url }}", 
+                                    "height": "{{- block.settings.mobile_slide_image.height | default: 1080 -}}",
+                                    "width": "{{ block.settings.mobile_slide_image.width | default: 1920 }}" 
+                                }
+                            {%  endif %}
+                        ],
+                "slide_header": "{{ block.settings.slide_header }}",
+                "subheading": "{{ block.settings.subheading }}",
+                "slide_sub_text": "{{ block.settings.slide_sub_text | strip_html }}",
+                "slide_product_title": "{{ product.title }}",
+                "slide_product_price": "{{ product.price | money }}",
+                "slide_product_url": "{{ product.url }}",
+                "bundle_products": [
+                    {% for metaobject in product.metafields.custom.bundle_products.value %}
+                        "{{ metaobject.title | split: '|' | first }}"
+                        {% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                ]
+            }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ]
+    
+}

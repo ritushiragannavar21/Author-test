@@ -146,22 +146,44 @@
   \*********************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony import */ var _hello__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hello */ "./js/sections/hello.js");
-/* harmony import */ var _factuals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./factuals */ "./js/sections/factuals.js");
-/* harmony import */ var _variantOptions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./variantOptions */ "./js/sections/variantOptions.js");
-/* harmony import */ var _components_count_up__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/count-up */ "./js/components/count-up.js");
-/* harmony import */ var JsComponents_handle_video_overlay__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/handle-video-overlay */ "./js/components/handle-video-overlay.js");
+/* harmony import */ var _hello__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hello */ "./js/sections/hello.js");
+/* harmony import */ var _factuals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./factuals */ "./js/sections/factuals.js");
+/* harmony import */ var _variantOptions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./variantOptions */ "./js/sections/variantOptions.js");
+/* harmony import */ var _components_count_up__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/count-up */ "./js/components/count-up.js");
+/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider */ "./js/sections/slider.js");
+/* harmony import */ var JsComponents_handle_video_overlay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! JsComponents/handle-video-overlay */ "./js/components/handle-video-overlay.js");
+
 
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  (0,_hello__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_factuals__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  (0,_variantOptions__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_components_count_up__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  (0,JsComponents_handle_video_overlay__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_hello__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_factuals__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_variantOptions__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_components_count_up__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,JsComponents_handle_video_overlay__WEBPACK_IMPORTED_MODULE_5__["default"])();
+});
+
+/***/ }),
+
+/***/ "./js/sections/slider.js":
+/*!*******************************!*\
+  !*** ./js/sections/slider.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/react-wrapper */ "./js/components/react-wrapper.js");
+/* harmony import */ var ReactComponents_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ReactComponents/slider */ "./js/components/react/slider.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(ReactComponents_slider__WEBPACK_IMPORTED_MODULE_1__["default"], 'slider', '#slider-data');
 });
 
 /***/ }),

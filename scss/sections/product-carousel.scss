@@ -1,0 +1,165 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+
+.slideshow{
+    // height: 800px;
+    position: relative;
+    h1{
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+    &__head{
+        font-weight: 400 !important;
+        &.mobile-only{
+            padding: 15px;
+        }
+    }
+    &__slideBody{
+        background: colors.$white;
+        padding: 20px;
+        height: fit-content;
+        @media(--md){
+            height: 475px;
+            padding: 10px 10px 40px 10px !important;
+        }
+        animation-reveal{
+            height: 100%;
+        }
+        .mb-2{
+            .slide_index{
+                font-size: 128px;
+            }
+        }
+        &--mobile{
+            .mb-2{
+                margin: 0;
+                .slide_index{
+                    line-height: 0.7;
+                }
+            }
+            &__slideBody{
+                position: relative;
+            }
+            .navigations{
+                display: flex;
+                justify-content: flex-end;
+                position: absolute;
+                width: 90%;
+                top: 73%;
+            }
+            .slide-prev--mobile{
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &__head, &__slideBody p{
+        color: colors.$blue !important;
+        span{
+            font-size: 128px;
+            font-weight: 300;
+        }
+    }
+    [slider-controller]{
+        .sliderControl{
+            max-width: calc(12px * var(--pagination-width) + 4px * var(--pagination-width) + 10px);
+        }
+        .sliderPagination__next, .sliderPagination__prev{
+            svg{
+                circle, path{
+                    stroke: colors.$blue;
+                }
+            }
+        }
+        .swiper-pagination-bullet, .swiper-pagination-bullet-active{
+            max-width: 12px;
+            &::after{
+                background-color: colors.$blue !important;
+            }
+            
+        }
+    }
+    &__card-content{
+        position: absolute;
+        top: 6%;
+        width: 440px;
+        left: 6%;
+    }
+    .btn--wrap{
+        position: absolute;
+        right: 0;
+        width: 75%;
+        height: 105px;
+        bottom: 0;
+        background: colors.$white;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        @include use-text-style('body-title');
+        .slideshow__shop-btn-text{
+            display: block;
+        }
+        .slideshow__shop-btn--hover-text{
+            display: none;
+        }
+        @media(--sm){
+            width: 50%;
+            padding: 19px 42px;
+            @include use-text-style('body-alt');
+            &:hover{
+                background: colors.$lime-yellow !important;
+                opacity: 1;
+                .slideshow__shop-btn-text{
+                    display: none;
+                }
+                .slideshow__shop-btn--hover-text{
+                    display: block;
+                    text-align: center;
+                    color: colors.$blue;
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    &__shop-btn{
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        color: colors.$blue;
+        text-align: left;
+        padding: 0;
+        p:first-child{
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+    }
+    &__navigation{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        .bar{
+            width: 12px;
+            height: 4px;
+            background: colors.$blue;
+            opacity: 0.25;
+            margin-right: 4px;
+            &.active{
+                opacity: 1;
+            }
+        }
+        svg{
+            width: 19px;
+            height: 19px;
+        }
+    }
+    &__subtext{
+        font-size: 13px;
+    }
+}

@@ -425,6 +425,58 @@
         "color_scheme": "",
         "background_color": "#ffffff"
       }
+    },
+    "product_carousel_nJw9pL": {
+      "type": "product-carousel",
+      "blocks": {
+        "image_slide_HfjDNw": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Screenshot_2024-10-23_at_11.31.48_AM_1_1.png",
+            "subheading": "Prevent",
+            "slide_header": "A BLUEPRINT FOR SKIN LONGEVITY",
+            "slide_sub_text": "<p>Defend against the effects of environmental and internal free radicals, to help prevent future signs of aging and reveal brighter, firmer skin.</p>",
+            "slide_product": "test-bundle"
+          }
+        },
+        "image_slide_mmJk7C": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Screenshot_2024-09-08_at_9.02.25_AM_2.png",
+            "subheading": "Restore",
+            "slide_header": "A BLUEPRINT FOR SKIN LONGEVITY",
+            "slide_sub_text": "<p>Target signs of aging by addressing youth collagen to rejuvenate skin with intense hydration for fewer visible lines and wrinkles .</p>",
+            "slide_product": "test-bundle"
+          }
+        },
+        "image_slide_Ecppzw": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Screenshot_2024-10-23_at_11.31.48_AM_1_1.png",
+            "subheading": "Prep",
+            "slide_header": "A BLUEPRINT FOR SKIN LONGEVITY",
+            "slide_sub_text": "<p>Prime and prepare skin to improve makeup application, with hydrators and pore-minimizers without silicon and oil. </p>",
+            "slide_product": "test-bundle"
+          }
+        },
+        "image_slide_zKY47A": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/C35.5_VideoThumbN_cc80affb-2417-4ab3-a8bf-c3f0528d1a6f.jpg",
+            "subheading": "testing",
+            "slide_header": "Slide Heading - testing",
+            "slide_sub_text": "<p>Briefly describe what this slide is about.</p>",
+            "slide_product": "c35-5tm-firming-glow-serum"
+          }
+        }
+      },
+      "block_order": [
+        "image_slide_HfjDNw",
+        "image_slide_mmJk7C",
+        "image_slide_Ecppzw",
+        "image_slide_zKY47A"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -434,6 +486,7 @@
     "media_afRtRj",
     "custom_testimonial_kJY7ND",
     "media_g34Ufg",
-    "media_xt4NFe"
+    "media_xt4NFe",
+    "product_carousel_nJw9pL"
   ]
 }

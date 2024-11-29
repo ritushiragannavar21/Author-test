@@ -1,0 +1,97 @@
+  {{ 'section-slide-show.css' | asset_url | stylesheet_tag }}
+  {{ 'section-video.css' | asset_url | stylesheet_tag }}
+  {{ 'product-carousel.css' | asset_url | stylesheet_tag }}
+
+  <div
+    class="slideshow bannerSlider  section-{{ section.id }}-padding "
+    id="section-{{ section.id }}"
+    role="region"
+    aria-label="Slider Section"
+    animate-section
+    aoi-no-container
+  >
+    <div class="full-width">
+        <slider>
+          <script id="slider-data" type="text/json">
+              {
+                "data": {% render 'JSON-slider-data' section: section %}
+              }
+          </script>
+        </slider>
+      
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Product Carousel",
+    "tag": "section",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "image_slide",
+        "name": "Image slide",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "slide_image",
+            "label": "Image",
+            "info": "2880 x 1280px (large) .jpg recommended"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_slide_image",
+            "label": "Mobile image",
+            "info": "740 x 1100px (large) .jpg recommended"
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading",
+            "default": "Subheading"
+          },
+          {
+            "type": "text",
+            "id": "slide_header",
+            "label": "Heading",
+            "default": "Slide Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "slide_sub_text",
+            "label": "Content",
+            "default": "<p>Briefly describe what this slide is about.</p>"
+          },
+          {
+            "type": "product",
+            "id": "slide_product",
+            "label": "Slide product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Carousel",
+        "blocks": [
+          {
+            "type": "image_slide"
+          }
+        ]
+      }
+    ],
+    "disabled_on": {
+      "groups": ["*"]
+    }
+  }
+  {% endschema %}
+  
