@@ -27,14 +27,14 @@
 .image-with-text__overlay{
     height: 100%;
 }
-.video__section .media-text__position-text{
-    @media(--sm){
-        height: 400px;
-    }
-    @media(--md){
-        height: 100%;
-    }
-}
+// .video__section .media-text__position-text{
+//     @media(--sm){
+//         height: 400px;
+//     }
+//     @media(--md){
+//         height: 100%;
+//     }
+// }
 .text-image , .image-with-text_overlay-video {
     width: 100%;
 }
@@ -98,20 +98,21 @@
     }
 }
 
-.media-text__position-text{
-    @media(--md){
-        height: 80%;
-    }
-    @media(--md-large){
-        height: 100%;
-    }
-}
-
 .video__section .play__icon{
     height: 75px;
     width: 75px;
     @media(--sm){
         height: 116px;
         width: 116px;
+    }
+}
+
+.text-image__justify-between .text-wrapper__heigt {
+    height: 100%;
+}
+
+.video-with__cover-image .text-image__text-wrapper {
+    @media(--md){
+        left: 3%;
     }
 }

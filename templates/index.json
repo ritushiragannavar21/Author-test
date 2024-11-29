@@ -162,58 +162,11 @@
         "color_scheme": "",
         "background_color": "#ffffff"
       }
-    },
-    "media_3ey3XL": {
-      "type": "media",
-      "blocks": {
-        "video_gRTHQz": {
-          "type": "video",
-          "settings": {
-            "media_autoplay": false,
-            "hide_media_mobile_video": false,
-            "video": "shopify://files/videos/3b2a1aacfe23fee98f69a746403fd02972ac95ab (1).mov",
-            "video_url": "",
-            "cover_image": "shopify://shop_images/Section1_c7716719-665d-4dd8-8db1-d8fb53c300b8.jpg",
-            "logo": "",
-            "teaser": "",
-            "teaset-subtext": "",
-            "eyebrow": "<p>sssssss</p>",
-            "heading": "",
-            "subheading": "",
-            "heading_block1": "",
-            "subheading_block1": "",
-            "heading_block2": "",
-            "subheading_block2": "",
-            "cta_text": "",
-            "cta_url": "",
-            "button": "",
-            "button_url": "",
-            "hide_button_mobile": false
-          }
-        }
-      },
-      "block_order": [
-        "video_gRTHQz"
-      ],
-      "settings": {
-        "full_width": true,
-        "swap_media_mobile": false,
-        "overlay_reverse_mobile": false,
-        "media_width": 100,
-        "media_size": "lg",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "border_size": "hide",
-        "border_position": "both",
-        "color_scheme": "",
-        "background_color": "#ffffff"
-      }
     }
   },
   "order": [
     "media_rnJY3D",
     "daily_essential_izd9Lm",
-    "media_XiNCUp",
-    "media_3ey3XL"
+    "media_XiNCUp"
   ]
 }

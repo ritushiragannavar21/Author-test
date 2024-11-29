@@ -369,9 +369,9 @@
                   {%- endif -%} {%- if forloop.first -%} --media-width: {{ section.settings.media_width | append : "%" }} {%- else -%} flex-grow:1; {%- endif -%}
                 "
               >
-                <div rrrrr data-video-parent class="image-with-text__overlay image-with-text_overlay-video {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %}">
+                <div rrrrr data-video-parent class="image-with-text__overlay image-with-text_overlay-video {% if block.settings.cover_image != blank %}video-with__cover-image{% endif %} {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %}">
                     {%- if block.settings.video -%}
-                        <div class="video__section {% if hide_mobile_video == true %}hide_video__mobile{% endif %} ">
+                        <div class="video__section {% if hide_mobile_video == true %}hide_video__mobile{% endif %}">
                             <default-player
                             class="d-block custom__player__element position-relative aspect-size-media set-100-percentage-size-media"
                             watch-element
@@ -476,7 +476,7 @@
                         {%- else -%}
                         {%- assign iframe_id = section.id | append: '-' | append: block.settings.video_url.id -%}
                         {% comment %} Render external Video Link {% endcomment %}
-                        {%- case mediaType -%}
+                        {%- case mediaType -%}                         
                         {%- when 'youtube' -%}
                             <div
                                 class="video__section {% if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} border-radius border-radius--block {% endif %}"
@@ -544,9 +544,8 @@
                             </div>
     
                             {%- when 'vimeo' -%}
-                                {{ hide_mobile_video }}
                             <div
-                                class="video__section{% if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} border-radius border-radius--block {% endif %}"
+                                class="video__section vimeo-video {% if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} border-radius border-radius--block {% endif %}"
                                 style="{% if forloop.first %} --media-width: {{ section.settings.media_width | append : "%" }} {% else %} flex-grow:1; {% endif %}"
                             >
                                 <animation-reveal
@@ -677,7 +676,7 @@
 
 {% schema %}
 {
-  "name": "Ritu",
+  "name": "Media Overlay",
   "tag": "section",
   "max_blocks": 2,
   "settings": [
@@ -1109,7 +1108,7 @@
   ],
   "presets": [
     {
-      "name": "Ritu",
+      "name": "Media Overlay",
       "blocks": [
         {
           "type": "image"

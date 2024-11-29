@@ -8,7 +8,7 @@
 
 
 {% if logo != blank  or teaser != blank or eyebrow != blank or teaser_subheading != blank or subheading != blank or cta_text != blank or heading != blank or heading_block_one != blank  or subheading_block_one != blank or heading_block_two != blank  or subheading_block_two != blank%}
-  <div data-overlay class="{{wrapper_class}}__text text__{{id}} text-wrapper__heigt text-content{% if video != blank or image != blank or video_url != blank %} media-text__position-text text-image__text-wrapper{% endif %}" > 
+  <div data-overlay class="{{wrapper_class}}__text text__{{id}} text-wrapper__heigt text-content{% if video != blank or image != blank or video_url != blank %} media-text__position-text text-image__text-wrapper{% endif %}  {% if subheading != blank or cta_text != blank %}text-image__justify-between{% endif %}" > 
     <div class="text-wrapper {{wrapper_class}}__text-wrapper text-wrapper__flex">
       {% if logo != blank  or teaser != blank or eyebrow != blank or teaser_subheading != blank %}
         <div>

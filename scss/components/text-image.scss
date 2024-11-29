@@ -34,11 +34,14 @@
             max-height: 560px;
         }
         @media(--md){
-            width: 440px;
+            width: 410px;
             top: 6%;
             left:6%;
             position: absolute;
             max-height: 88%;
+        }
+        @media(--md-large){
+            width: 440px;
         }
         @media(--lg){
             max-height: 69%;
