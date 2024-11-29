@@ -422,7 +422,7 @@ class defaultVideoPlayer extends HTMLElement {
     }
 
     connectedCallback() {
-        this.player.addEventListener('pause', (ev) => {
+        this.player?.addEventListener('pause', (ev) => {
             if(!this.mediaAutoplay) {
                 this._dispatchCustomEvent('video-pause');
                 this._showVideoOverlay();

@@ -359,7 +359,7 @@
               {%- capture imagealt -%}
                     {{ block.settings.cover_image.alt | default: 'Media and text video' }}
                   {%- endcapture -%}
-              <div 
+              <div data-video-parent
                 class="imageWithText__media block-media-size--{{ section.settings.media_size }} {% if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %} {% if block_count > 1 %}make-video-width__half{% endif %}"
                 {{ block.shopify_attributes }}
                 style="
