@@ -5567,7 +5567,7 @@ details summary::-webkit-details-marker {
 @media (max-width: 767px) {
   .footer__logoWrp {
     max-width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 0;
   }
 }
 @media (max-width: 767px) {
