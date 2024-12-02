@@ -42,8 +42,8 @@
             "subheading_block2": "",
             "cta_text": "",
             "cta_url": "",
-            "button": "",
-            "button_url": "",
+            "button": "SHOP",
+            "button_url": "shopify://blogs/news",
             "hide_button_mobile": false
           }
         }
