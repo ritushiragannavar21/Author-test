@@ -134,14 +134,15 @@
             "card2_text": "RH5.5",
             "card2_sup_tag": "TM",
             "card2_color": "#0000ff",
-            "second_card_image_1": "shopify://shop_images/Pareva_SHOT_08_1193_1.png",
+            "second_card_image_1": "shopify://shop_images/Artboard_1_copy_2_2x-100.png",
+            "second_card_image_2": "shopify://shop_images/Artboard_1_copy_3_2x-100.png",
             "mobile_second_card_image_2": "shopify://shop_images/Group_2784_1.png",
             "card3_title": "<p>HYDRABOND<br/>PRIMER</p>",
             "card3_text": "COLL20",
             "card3_sup_tag": "TM",
             "card3_color": "#00ff00",
-            "third_card_image_1": "shopify://shop_images/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
-            "third_card_image_2": "shopify://shop_images/aca669aecf59ee0170e5cedbea1d1e84_902cbc15-7275-4049-b957-bb425f70637c.png",
+            "third_card_image_1": "shopify://shop_images/Artboard_1_copy_4_2x-100.png",
+            "third_card_image_2": "shopify://shop_images/Artboard_1_copy_5_2x-100.png",
             "button": "SHOP ALL",
             "button_url": "shopify://collections"
           }
