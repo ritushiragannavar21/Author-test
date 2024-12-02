@@ -90,7 +90,7 @@
         "stay_ai_subscription_buybox_CXRAhi": {
           "type": "shopify://apps/stay-ai-subscription/blocks/buybox/896a3134-375a-4df4-8274-d37b95eafdee",
           "settings": {
-            "enabled": false,
+            "enabled": true,
             "box_layout": "radio",
             "selector_color": "#ffffff",
             "selector_secondary_color": "#4a4a4a",
