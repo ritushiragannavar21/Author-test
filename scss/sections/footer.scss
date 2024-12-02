@@ -95,3 +95,33 @@
 .accordion__item.active .footer-item__list svg{
     rotate: 180deg;
 }
+
+.footer__hide-mobile , .new-letter-6{
+    display: none;
+    @media(--sm){
+        display: block;
+    }
+}
+
+.footer__hide-desktop , .new-letter-2{
+    display: block;
+    margin-top: var(--heading-margin);
+    @media(--sm){
+        display: none;
+    }
+}
+
+.footer-new-letter__block{
+    margin-bottom: 32px;
+    font-size: 12px;
+    text-align: center;
+    @media(--sm){
+        text-align: left;
+    }
+}
+
+.footer-new-letter__block{
+    .footerlink-link , .footerlink-head{
+        text-align: left;
+    }
+}

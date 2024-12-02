@@ -24,6 +24,13 @@
             "brand_social_media_icons": true
           }
         },
+        "newsletter_GiKBb3": {
+          "type": "newsletter",
+          "settings": {
+            "newsletter_header": "SIGN UP",
+            "newsletter_subtext": "<p>Be the first to find out about new products, exclusive offers, and community news</p>"
+          }
+        },
         "menu-1": {
           "type": "menu",
           "settings": {
@@ -54,22 +61,15 @@
             "newsletter_header": "SIGN UP",
             "newsletter_subtext": "<p>Be the first to find out about new products, exclusive offers, and community news</p>"
           }
-        },
-        "text_iV3WVb": {
-          "type": "text",
-          "settings": {
-            "heading": "",
-            "subText": ""
-          }
         }
       },
       "block_order": [
         "brand_HMNnEJ",
+        "newsletter_GiKBb3",
         "menu-1",
         "menu-2",
         "menu_YTRPw6",
-        "newsletter",
-        "text_iV3WVb"
+        "newsletter"
       ],
       "settings": {
         "show_locale_selector": true,

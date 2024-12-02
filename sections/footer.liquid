@@ -35,6 +35,7 @@
       <div class="footer__wrapper">
         {% if section.blocks.size > 0 %}
           {% for block in section.blocks %}
+            {% assign block_count = forloop.index %}
             {% case block.type %}
               {% when 'brand' %}
                 <div
@@ -67,7 +68,7 @@
                   {% endif %}
 
                   {% if block.settings.content %}
-                    <div class="fnt-14 text-color RTE-content footer__logoContent">
+                    <div class="fnt-14 text-color RTE-content footer__logoContent footer__hide-mobile">
                       {{ block.settings.content }}
                     </div>
                   {% endif %}
@@ -174,14 +175,14 @@
                 </div>
 
               {% when 'newsletter' %}
-                <div class="new-letter" {{ block.shopify_attributes }}>
+                <div class="new-letter new-letter-{{ block_count }}" {{ block.shopify_attributes }}>
                   {% if block.settings.heading != blank %}
                     <h2 class="footerlink-head">
                       {{ block.settings.heading }}
                     </h2>
                   {% endif %}
 
-                  <div>
+                  <div class="footer-new-letter__block">
                     {% if block.settings.newsletter_header %}
                       <h2 class="footerlink-head">
                         {{ block.settings.newsletter_header }}
@@ -254,9 +255,18 @@
                         </section>
                       {% endif %}
                     {%- endform -%}
+                    <div class="new-letter__below-text">Instagram / TikTok / X / Facebook</div>
                   </div>
                 </div>
             {% endcase %}
+            
+          {% endfor %}
+          {% for block in section.blocks %}
+            {% if block.settings.content %}
+              <div class="fnt-14 text-color RTE-content footer__logoContent footer__hide-desktop">
+                {{ block.settings.content }}
+              </div>
+            {% endif %}
           {% endfor %}
         {% endif %}
       </div>
