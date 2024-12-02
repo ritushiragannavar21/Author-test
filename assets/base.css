@@ -1758,7 +1758,7 @@ h6,
   content: "";
   width: 15px;
   height: 1px;
-  background-color: var(--color-text);
+  /* background-color: var(--color-text); */
   right: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -1770,7 +1770,7 @@ h6,
   top: 50%;
   width: 15px;
   height: 1px;
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
   opacity: 1;
   transition: 0.4s ease transform, 0.4s ease opacity;
   transform: rotate(90deg);

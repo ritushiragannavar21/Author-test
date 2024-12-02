@@ -115,15 +115,28 @@
                         class="accordion__item d-block"
                         {{ block.shopify_attributes }}
                       >
-                        <summary class="accordion__item__head">
+                        <summary class="accordion__item__head kkkkkkk">
                           {% if block.settings.show_menu_title and block.settings.menu.title %}
-                            <h2 class="footerlink-head">
-                              {{ block.settings.menu.title }}
-                            </h2>
+                            <div class="footer-item__list">
+                              <h2 class="footerlink-head">
+                                {{ block.settings.menu.title }}
+                              </h2>
+                              <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line y1="-0.5" x2="7.99616" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1.67578 4.97852)" stroke="#FEFDF6"/>
+                                <line y1="-0.5" x2="7.99616" y2="-0.5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 12.3105 5.6582)" stroke="#FEFDF6"/>
+                              </svg>
+                            </div>
+                              
                           {% elsif block.settings.heading != blank %}
-                            <h2 class="footerlink-head">
-                              {{ block.settings.heading }}
-                            </h2>
+                            <div class="footer-item__list">
+                              <h2 class="footerlink-head">
+                                {{ block.settings.heading }}
+                              </h2>
+                              <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line y1="-0.5" x2="7.99616" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1.67578 4.97852)" stroke="#FEFDF6"/>
+                                <line y1="-0.5" x2="7.99616" y2="-0.5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 12.3105 5.6582)" stroke="#FEFDF6"/>
+                              </svg>
+                            </div>
                           {% endif %}
                         </summary>
                         <div accordionBody class="accordion__item__body">

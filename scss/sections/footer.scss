@@ -86,3 +86,12 @@
     top: 0;
     right: 0;
 }
+
+.footer-item__list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion__item.active .footer-item__list svg{
+    rotate: 180deg;
+}
