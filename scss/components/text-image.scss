@@ -97,7 +97,7 @@
             height: 555px;
         }
         @media(--sm){
-            height: 425px;
+            height: 470px;
         }
         // @media(--md){
         //     height: auto;
@@ -176,6 +176,10 @@
         margin-top: 26px;
         @include use-text-style('body-regular');
         font-weight: typography.$regular-weight;
+    }
+
+    &__eyebrow p{
+        letter-spacing: 2.9px;
     }
 }
 

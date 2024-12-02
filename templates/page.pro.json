@@ -187,12 +187,12 @@
         "image_xR9EdT"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "swap_media_mobile": false,
         "overlay_reverse_mobile": false,
         "media_width": 50,
         "media_size": "lg",
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 0,
         "border_size": "hide",
         "border_position": "both",
@@ -298,68 +298,6 @@
         "background_color": "#ffffff"
       }
     },
-    "factuals_WDQYJk": {
-      "type": "factuals",
-      "blocks": {
-        "image_C8YQxU": {
-          "type": "image",
-          "settings": {
-            "hide_media_mobile": false,
-            "title": "THE (F)ACTUALS™",
-            "description": "<p>The (F)actuals is a breakdown of each and every ingredient in each of our products, along with its purpose and quantity. Click on any of the product icons below to read more.</p>",
-            "card1_title": "<p>FIRMING <br/>GLOW SERUM</p>",
-            "card1_text": "C35.5",
-            "card1_sup_tag": "TM",
-            "card1_color": "#ff0000",
-            "first_card_image_1": "shopify://shop_images/Group_2618_1.png",
-            "first_card_image_2": "shopify://shop_images/Group_2620_2.png",
-            "card2_title": "<p>GEL CREAM<br/>MOISTURIZER</p>",
-            "card2_text": "RH5.5",
-            "card2_sup_tag": "TM",
-            "card2_color": "#0000ff",
-            "second_card_image_1": "shopify://shop_images/Pareva_SHOT_08_1193_1.png",
-            "mobile_second_card_image_2": "shopify://shop_images/Group_2784_1.png",
-            "card3_title": "<p>HYDRABOND<br/>PRIMER</p>",
-            "card3_text": "COLL20",
-            "card3_sup_tag": "TM",
-            "card3_color": "#00ff00",
-            "button": "SHOP ALL",
-            "button_url": "shopify://collections"
-          }
-        },
-        "image_YNRcDT": {
-          "type": "image",
-          "settings": {
-            "hide_media_mobile": false,
-            "image": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.24_AM.png",
-            "title": "",
-            "description": "",
-            "card1_title": "",
-            "card1_text": "C35.5™",
-            "card1_sup_tag": "TM",
-            "card1_color": "#ff0000",
-            "card2_title": "",
-            "card2_text": "RH5.5™",
-            "card2_sup_tag": "TM",
-            "card2_color": "#0000ff",
-            "card3_title": "",
-            "card3_text": "COLL20™",
-            "card3_sup_tag": "TM",
-            "card3_color": "#00ff00",
-            "button": "",
-            "button_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_C8YQxU",
-        "image_YNRcDT"
-      ],
-      "settings": {
-        "bg_color": "#fefdf6",
-        "swap_media_mobile": true
-      }
-    },
     "media_HnREBC": {
       "type": "media",
       "blocks": {
@@ -423,6 +361,118 @@
         "color_scheme": "",
         "background_color": "#ffffff"
       }
+    },
+    "factuals_WDQYJk": {
+      "type": "factuals",
+      "blocks": {
+        "image_C8YQxU": {
+          "type": "image",
+          "settings": {
+            "hide_media_mobile": false,
+            "title": "THE (F)ACTUALS™",
+            "description": "<p>The (F)actuals is a breakdown of each and every ingredient in each of our products, along with its purpose and quantity. Click on any of the product icons below to read more.</p>",
+            "card1_title": "<p>FIRMING <br/>GLOW SERUM</p>",
+            "card1_text": "C35.5",
+            "card1_sup_tag": "TM",
+            "card1_color": "#ff0000",
+            "first_card_image_1": "shopify://shop_images/Artboard_1_2x-100.png",
+            "first_card_image_2": "shopify://shop_images/Artboard_1_copy_2x-100.png",
+            "card2_title": "<p>GEL CREAM<br/>MOISTURIZER</p>",
+            "card2_text": "COLL20",
+            "card2_sup_tag": "TM",
+            "card2_color": "#0000ff",
+            "second_card_image_1": "shopify://shop_images/Artboard_1_copy_2_2x-100.png",
+            "second_card_image_2": "shopify://shop_images/Artboard_1_copy_3_2x-100.png",
+            "mobile_second_card_image_2": "shopify://shop_images/Group_2784_1.png",
+            "card3_title": "<p>HYDRABOND<br/>PRIMER</p>",
+            "card3_text": "RH5.5",
+            "card3_sup_tag": "TM",
+            "card3_color": "#1fb573",
+            "third_card_image_1": "shopify://shop_images/Artboard_1_copy_4_2x-100.png",
+            "third_card_image_2": "shopify://shop_images/Artboard_1_copy_5_2x-100.png",
+            "button": "SHOP ALL",
+            "button_url": "shopify://collections"
+          }
+        },
+        "image_YNRcDT": {
+          "type": "image",
+          "settings": {
+            "hide_media_mobile": false,
+            "image": "shopify://shop_images/Screenshot_2024-10-29_at_10.23.24_AM.png",
+            "title": "",
+            "description": "",
+            "card1_title": "",
+            "card1_text": "C35.5™",
+            "card1_sup_tag": "TM",
+            "card1_color": "#ff0000",
+            "card2_title": "",
+            "card2_text": "RH5.5™",
+            "card2_sup_tag": "TM",
+            "card2_color": "#0000ff",
+            "card3_title": "",
+            "card3_text": "COLL20™",
+            "card3_sup_tag": "TM",
+            "card3_color": "#00ff00",
+            "button": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_C8YQxU",
+        "image_YNRcDT"
+      ],
+      "settings": {
+        "bg_color": "#fefdf6",
+        "swap_media_mobile": true
+      }
+    },
+    "clinical_results_N9nqfT": {
+      "type": "clinical-results",
+      "blocks": {
+        "slider_image_zVWYt3": {
+          "type": "slider_image",
+          "settings": {
+            "before_image": "shopify://shop_images/C35.5_VideoThumbN_cc80affb-2417-4ab3-a8bf-c3f0528d1a6f.jpg",
+            "after_image": "shopify://shop_images/Section2_2_db0f2a62-5920-48da-b0c2-17ffad1c15e0.jpg",
+            "drag_position": 50,
+            "before_text": "Before",
+            "before_product": "",
+            "after_text": "After",
+            "after_product": "",
+            "before_after_text_position": "bottom",
+            "control_bg": "#ffffff",
+            "control_arrow": "#042436",
+            "color_scheme": ""
+          }
+        },
+        "content_E78x8d": {
+          "type": "content",
+          "settings": {
+            "content_alignment": "left",
+            "button_label": "Button label",
+            "button_link": "",
+            "link_target": "_top",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slider_image_zVWYt3",
+        "content_E78x8d"
+      ],
+      "settings": {
+        "full_width": false,
+        "image_aspect_ratio": "md",
+        "image_position": "d-flex-md-row-reverse",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": ""
+      }
     }
   },
   "order": [
@@ -432,7 +482,8 @@
     "media_6inXyf",
     "custom_testimonial_9PDNNT",
     "media_8kjN3T",
+    "media_HnREBC",
     "factuals_WDQYJk",
-    "media_HnREBC"
+    "clinical_results_N9nqfT"
   ]
 }
