@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "name": "Header group",
   "type": "header",
   "sections": {
@@ -85,7 +85,7 @@
         "enable_transparent_header": false,
         "show_on_only_homepage": false,
         "transparent_header_text_color": "#282fee",
-        "hamberger_menu": "menu",
+        "hamberger_menu": "mobile-menu",
         "show_locale_selector": false,
         "show_country_selector": false,
         "show_country_flag": false,
