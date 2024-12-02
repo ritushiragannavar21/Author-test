@@ -4289,7 +4289,6 @@ shopify-accelerated-checkout-cart {
 }
 .header__iconGroup > ul {
   display: flex;
-  gap: 0 20px;
   align-items: center;
 }
 .header__iconGroup > ul > li {

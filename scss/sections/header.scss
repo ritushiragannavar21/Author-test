@@ -78,9 +78,41 @@ hamburger-menu{
     letter-spacing: 1px;
 }
 
+.header-right__nav-pro{
+    @media(--md-large){
+        margin-left: 53px;
+    }
+}
+
+.search-icon__desktop{
+    @media(--md-large){
+        margin-left: 62px;
+    }
+}
+
+.account-iocn__dektop{
+    @media(--md-large){
+        margin-left: 34px;
+    }
+}
+
+.cart-button__desktop{
+    @media(--md-large){
+        margin-left: 44px;
+    }
+}
+
 .header__menu-wrp {
     .dropdown-menu__list-item {
         .nav-item{
+            @media(--md-large){
+                padding-right: 71px;
+            }
+            &:last-child{
+                @media(--md-large){
+                    padding-right: 0;
+                }
+            }
             a{
                letter-spacing: 1px;
             }
@@ -88,5 +120,10 @@ hamburger-menu{
     }
 }
 
+@media(max-width:1199px){
+    .header__iconGroup > ul {
+        gap: 0 20px;
+      }
+}
 
 

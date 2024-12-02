@@ -21,7 +21,7 @@
             width: 408px;
         }
         @media(--md){
-            width: 600px;
+            width: 700px;
         }
     }
 
@@ -46,6 +46,11 @@
         @media(--md){
             line-height: 40px;
             letter-spacing: 2.4px;
+        }
+        @media(--md-large){
+            @include use-text-style('heading-1');
+            font-weight: typography.$regular-weight;
+            font-family: var(--tertiary-font);
         }
     }
 

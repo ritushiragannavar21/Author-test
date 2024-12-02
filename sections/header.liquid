@@ -403,7 +403,7 @@
                     </a>
                   </li>
                 {% endif %}
-                <li class="search-icon mb-0">
+                <li class="search-icon mb-0 search-icon__desktop">
                   <a
                     search_page_link
                     aria-label="Search"
@@ -422,7 +422,7 @@
                   </button>
                 </li>
                 {% if shop.customer_accounts_enabled %}
-                  <li class="desktop-only mb-0">
+                  <li class="desktop-only mb-0 account-iocn__dektop">
                     <a
                       aria-label="Account"
                       class="d-v-center icon-label header__icon"
@@ -432,7 +432,7 @@
                     </a>
                   </li>
                 {% endif %}
-                <li class="mb-0">
+                <li class="mb-0 cart-button__desktop">
                   {% unless settings.cart_type == 'page' %}
                     <button
                       aria-label="{{ 'general.header.cart_count' | t : count : cart.item_count }}"
