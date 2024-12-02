@@ -215,7 +215,7 @@
         "content_GjGwa3"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "image_aspect_ratio": "md",
         "image_position": "d-flex-md-row-reverse",
         "padding_top": 0,
