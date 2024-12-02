@@ -189,7 +189,7 @@
   margin: 0 -24px;
   padding: 12px 0 15px;
   z-index: 1;
-  color: rgb(var(--free-shipping-color-text));
+  color: rgb(var(--color-text));
   background: rgb(var(--free-shipping-color-background));
 }
 .cart__drawer .cart-drawer__checkoutButtons-additional {

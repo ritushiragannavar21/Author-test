@@ -168,7 +168,7 @@
   border-radius: 8px;
 }
 .priceFilter--input .field-currency {
-  color: rgba(var(--color-input-color-rgb)/1);
+  color: var(--color-text);
 }
 .priceFilter--input .field__input {
   border: none;
@@ -178,7 +178,7 @@
   width: 100%;
   font-size: calc(var(--font-body-scale) * 14px);
   line-height: 24px;
-  color: rgba(var(--color-input-color-rgb)/1);
+  color: var(--color-text);
 }
 .priceFilter--input .field__input::-webkit-inner-spin-button, .priceFilter--input .field__input::-webkit-outer-spin-button {
   -webkit-appearance: none;

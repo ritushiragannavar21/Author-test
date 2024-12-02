@@ -186,7 +186,7 @@
 }
 .search-form__input {
   border: 1px solid var(--color-input-color);
-  color: rgba(var(--color-input-color-rgb)/1);
+  color: var(--color-text);
   background-color: transparent;
   position: relative;
   z-index: 99;

@@ -19,7 +19,7 @@
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  color: rgba(var(--color-input-color-rgb)/1);
+  color: var(--color-text);
 }
 .priceFilter--input .field__input {
   border: none;
@@ -28,7 +28,7 @@
   text-align: right;
   font-size: calc(var(--font-body-scale) * 16px);
   line-height: 24px;
-  color: rgba(var(--color-input-color-rgb)/1);
+  color: var(--color-text);
 }
 .priceFilter .range-slider {
   --range-slider-value-low-fallback: calc(

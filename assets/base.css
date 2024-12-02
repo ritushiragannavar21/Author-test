@@ -1556,6 +1556,13 @@ h6,
   padding-right: 15px;
 }
 
+@media(min-width:1200px) {
+  .container {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+}
+
 .right-container {
   max-width: 100%;
   margin-left: auto;
@@ -2959,7 +2966,7 @@ variant-dropdown select {
 }
 .product-quantity__selector-wrapper .product-quantity__selector {
   background: transparent;
-  border: 1px solid rgba(var(--color-input-color-rgb)/1);
+  border: 1px solid var(--color-text);
   padding: 12px 18px;
   max-width: 151px;
   border-radius: var(--input-border-radius);
@@ -2967,6 +2974,7 @@ variant-dropdown select {
   display: flex;
   justify-content: space-between;
   margin-right: 4px;
+  color: var(--color-text);
 }
 .product-quantity__selector-wrapper .product-quantity__selector label {
   font-weight: var(--font-body-weight-bold);
@@ -3099,7 +3107,7 @@ shop-login-button {
 .account-form input {
   display: inline-block;
   padding: 14px 16px;
-  border: 1px solid var(--color-input-color);
+  border: 1px solid var(--color-text);
   background-color: transparent;
   border-radius: var(--input-border-radius);
 }
@@ -3544,13 +3552,13 @@ show-more-ui [elements--hidden] {
 
 input,
 textarea {
-  color: var(--color-input-color);
+  color: var(--color-text);
 }
 input::placeholder,
 textarea::placeholder {
   font-size: calc(var(--font-body-scale) * 16px);
   line-height: 19px;
-  color: rgba(var(--color-input-color-rgb)/0.3);
+  color: rgba(var(--color-text-rgb)/0.3);
 }
 
 .localization-dropdown__list {
@@ -6168,7 +6176,7 @@ details summary::-webkit-details-marker {
   max-width: 340px;
   width: 100%;
   height: 5px;
-  background: rgba(var(--free-shipping-color-text)/0.25);
+  background: var(--color-button-text);
   border-radius: 30px;
   margin-left: auto;
   margin-right: auto;
@@ -6176,7 +6184,7 @@ details summary::-webkit-details-marker {
 .free__shipping-progress__bar .progressBar__handle {
   width: 0%;
   height: 100%;
-  background-color: rgba(var(--free-shipping-color-text)/1);
+  background-color: var(--color-text);
   display: block;
   border-radius: 30px;
   transition: width 0.3s ease-in;

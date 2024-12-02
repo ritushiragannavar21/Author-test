@@ -15,7 +15,6 @@
     <h1 class="h2 ">{{ 'cart.header_text' | t }}</h1>
     <div
       class="cart-table__container"
-      style="--free-shipping-color-text: {{ settings.free_shipping_color_text_bar.rgb }}; --free-shipping-color-background: {{ settings.free_shipping_color_background.rgb }};"
     >
       <div class="cart-table__wrp">
         <cart-page
@@ -296,7 +295,7 @@
                               decrease-value
                               type="button"
                             >
-                              {% render 'icon' with 'minus', color_var: 'rgb(var(--color-input-color-rgb)/ 1)' %}
+                              {% render 'icon' with 'minus', color_var: 'var(--color-text)' %}
                             </button>
                             <label for="updates_{{ line_item.id }}" class="visually-hidden"> Quantity </label>
                             <input
@@ -315,7 +314,7 @@
                               increase-value
                               type="button"
                             >
-                              {% render 'icon' with 'plus', color_var: 'rgb(var(--color-input-color-rgb)/ 1)' %}
+                              {% render 'icon' with 'plus', color_var: 'var(--color-text)' %}
                             </button>
                           </quantity-selector>
                         </div>

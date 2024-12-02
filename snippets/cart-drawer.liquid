@@ -48,7 +48,6 @@
       {% comment %} Drawer Content/Body area {% endcomment %}
       <div
         class="drawer__body"
-        style="--free-shipping-color-text: {{ settings.free_shipping_color_text_bar.rgb }}; --free-shipping-color-background: {{ settings.free_shipping_color_background.rgb }};"
       >
         <div class="drawer__body__wrapper p-0">
           <drawer-cart
@@ -262,7 +261,7 @@
                                         type="button"
                                       >
                                         {% render 'icon' with 'minus',
-                                          color_var: 'rgb(var(--color-input-color-rgb)/ 1)'
+                                          color_var: 'var(--color-text)'
                                         %}
                                       </button>
                                       <label for="quantity-{{ line_item.key }}" class="visually-hidden">Quantity</label>
@@ -283,7 +282,7 @@
                                         type="button"
                                       >
                                         {% render 'icon' with 'plus',
-                                          color_var: 'rgb(var(--color-input-color-rgb)/ 1)'
+                                          color_var: 'var(--color-text)'
                                         %}
                                       </button>
                                     </quantity-selector>

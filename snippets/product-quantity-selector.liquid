@@ -16,7 +16,7 @@
       aria-label="{{ 'products.product.quantity.decrease' | t: product: product_title }}"
       decrease-value
     >
-      {%- render 'icon' with 'minus', color_var: 'rgb(var(--color-input-color-rgb)/ 1)' -%}
+      {%- render 'icon' with 'minus', color_var: 'var(--color-text)' -%}
     </button>
     <label class="visually-hidden" for="quantity-{{ form_id }}"> Quantity </label>
     <input
@@ -35,7 +35,7 @@
       aria-label="{{ 'products.product.quantity.increase' | t: product: product_title }}"
       increase-value
     >
-      {%- render 'icon' with 'plus', color_var: 'rgb(var(--color-input-color-rgb)/ 1)' -%}
+      {%- render 'icon' with 'plus', color_var: 'var(--color-text)' -%}
     </button>
   </quantity-selector>
 </div>

@@ -36,7 +36,7 @@
 }
 
 .cart__free__shipping__alignment {
-  color: rgb(var(--free-shipping-color-text));
+  color: rgb(var(--color-text));
   background: rgb(var(--free-shipping-color-background));
   padding: 16px 0;
   margin-bottom: 5px;
