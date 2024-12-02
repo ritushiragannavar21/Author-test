@@ -118,11 +118,11 @@
   }
 }
 .beforeAfter__section .beforeAfter__desc {
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
 }
 @media (min-width: 768px) {
   .beforeAfter__section .beforeAfter__desc {
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
   }
 }
 .beforeAfter__section .beforeAfter__text {

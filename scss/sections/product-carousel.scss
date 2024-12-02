@@ -3,6 +3,10 @@
 @import 'breakpoints';
 @import 'Token';
 
+.slideshow.bannerSlider{
+    max-width: 1920px;
+    margin: 0 auto;
+}
 
 .slideshow{
     // height: 800px;
@@ -90,8 +94,8 @@
     .btn--wrap{
         position: absolute;
         right: 0;
-        width: 75%;
-        height: 105px;
+        width: 63%;
+        height: 78px;
         bottom: 0;
         background: colors.$white;
         padding: 15px;
@@ -106,6 +110,7 @@
             display: none;
         }
         @media(--sm){
+            height: 105px;
             width: 50%;
             padding: 19px 42px;
             @include use-text-style('body-alt');
@@ -161,5 +166,13 @@
     }
     &__subtext{
         font-size: 13px;
+    }
+}
+
+.slideshow__shop-btn-text{
+    p{
+        font-size: 13px;
+        line-height: 16.9px;
+        margin: 2px;
     }
 }

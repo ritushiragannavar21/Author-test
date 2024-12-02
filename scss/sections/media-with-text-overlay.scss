@@ -6,7 +6,7 @@
 
 
 .block-media-size--lg .imageWithTextImageContainer, .video__section default-player , .video__section youtube-player {
-    min-height: 420px;
+    min-height: 420px !important;
     @media(--sm){
         min-height: 800px;
     }
@@ -75,7 +75,7 @@
 }
 
 .imageWithText .video__section{
-    height: auto;
+    // height: auto;
     @media(--md){
         height: 100%;
     }

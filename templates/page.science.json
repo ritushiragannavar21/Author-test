@@ -173,14 +173,14 @@
         "background_color": "#ffffff"
       }
     },
-    "before_after_cqMbTa": {
-      "type": "before-after",
+    "clinical_results_LaRnfJ": {
+      "type": "clinical-results",
       "blocks": {
-        "slider_image_7hh6t9": {
+        "slider_image_3h4rMm": {
           "type": "slider_image",
           "settings": {
-            "before_image": "shopify://shop_images/Mask_group_4.png",
-            "after_image": "shopify://shop_images/Mask_group_8.png",
+            "before_image": "shopify://shop_images/C35.5_VideoThumbN_cc80affb-2417-4ab3-a8bf-c3f0528d1a6f.jpg",
+            "after_image": "shopify://shop_images/Section2_2_db0f2a62-5920-48da-b0c2-17ffad1c15e0.jpg",
             "drag_position": 50,
             "before_text": "",
             "before_product": "",
@@ -192,18 +192,13 @@
             "color_scheme": ""
           }
         },
-        "content_GjGwa3": {
+        "content_rqGkFL": {
           "type": "content",
           "settings": {
-            "subheading": "",
-            "caption": "a powerful turbo charger",
-            "content": "<p>Molecur 3™ is designed to enhance the performance of other gold standard ingredients like Vitamin C, Hyaluronic Acid, Retinols and others. </p>",
             "content_alignment": "left",
-            "vertical_spacing": true,
             "button_label": "",
             "button_link": "",
             "link_target": "_top",
-            "use_outline_button": false,
             "overlay_color": "#000000",
             "overlay_opacity": 30,
             "color_scheme": "scheme-1"
@@ -211,10 +206,12 @@
         }
       },
       "block_order": [
-        "slider_image_7hh6t9",
-        "content_GjGwa3"
+        "slider_image_3h4rMm",
+        "content_rqGkFL"
       ],
       "settings": {
+        "heading": "a powerful turbo charger",
+        "description": "<p>Molecur 3™ is designed to enhance the performance of other gold standard ingredients like Vitamin C, Hyaluronic Acid, Retinols and others. </p>",
         "full_width": false,
         "image_aspect_ratio": "md",
         "image_position": "d-flex-md-row-reverse",
@@ -222,7 +219,7 @@
         "padding_bottom": 0,
         "border_size": "hide",
         "border_position": "both",
-        "color_scheme": "scheme-1"
+        "color_scheme": ""
       }
     },
     "media_DLXYKY": {
@@ -294,7 +291,7 @@
     "media_QLbqjm",
     "image_carousel_with_overlay_MWarci",
     "media_xEXfbb",
-    "before_after_cqMbTa",
+    "clinical_results_LaRnfJ",
     "media_DLXYKY"
   ]
 }

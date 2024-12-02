@@ -129,7 +129,7 @@
             "heading_block2": "",
             "subheading_block2": "",
             "cta_text": "LEARN MORE",
-            "cta_url": "shopify://collections/all",
+            "cta_url": "shopify://pages/factuals",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false
@@ -217,8 +217,8 @@
             "subheading_block2": "",
             "cta_text": "",
             "cta_url": "",
-            "button": "",
-            "button_url": "",
+            "button": "SHOP ALL",
+            "button_url": "shopify://collections",
             "hide_button_mobile": false
           }
         }
@@ -286,7 +286,7 @@
             "quote": "My skin looks and feels so much better. I look 8 years younger!",
             "author": "Sarah",
             "rating": 5,
-            "text_color": "#0000FF"
+            "text_color": "#0000ff"
           }
         }
       },
@@ -381,7 +381,7 @@
             "heading_block2": "",
             "subheading_block2": "",
             "cta_text": "LEARN MORE",
-            "cta_url": "shopify://collections",
+            "cta_url": "shopify://pages/science",
             "button": "",
             "button_url": "",
             "hide_button_mobile": false

@@ -80,7 +80,7 @@
   role="region"
 >
   {% unless section.settings.full_width %}
-    <div class="container">
+    <div class="cilinical-result__section container">
   {% endunless %}
   <div class="beforeAfter__section{% if sliderBlocks.size > 1 %} slider-enabled{% endif %} clinical__results">
     <div class="beforeAfter__container {% unless section.settings.full_width or bg_foregound_color %} {% if textBlockSize > 0 and section.settings.color_scheme.settings.background != "rgba(0,0,0,0)" %} border-radius border-radius--block {% endif %} {% endunless %} d-flex position-relative image-fixed {{ section.settings.image_position }}">
@@ -594,11 +594,18 @@
                 {% endif %}
               </div> {% endcomment %}
               <div class="beforeAfter__desc" data-module="countup">
-                <h1 class="clinical__results_heading">Clinical results</h1>
+                <div class="{% if section.settings.description != blank %} beforeAfter__heading-desc {% endif %}">
+                  <h1 class="clinical__results_heading">{{ section.settings.heading }}</h1>
+                  {% if section.settings.description %}<div class="clinical__results_heading-desc">{{ section.settings.description }}</div>{% endif %}
+                </div>
                 {% for result in product.metafields.custom.before_after_section_data.value %}
                  <h1><span class="counter" data-count="{{ result.percentage_value }}">{{ result.percentage_value }}</span>% of Users</h1>
                   <p>{{ result.result_description }}</p>
                 {% endfor %}
+                {% for result in page.metafields.custom.before_after_section_data.value %}
+                  <h1><span class="counter" data-count="{{ result.percentage_value }}">{{ result.percentage_value }}</span>% of Users</h1>
+                   <p>{{ result.result_description }}</p>
+                 {% endfor %}
               </div>
               {% unless block.settings.button_label == blank %}
                 <div class="btn--wrap">
@@ -679,6 +686,17 @@
   "name": "Clinical results",
   "tag": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Clinical results"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
     {
       "type": "checkbox",
       "id": "full_width",

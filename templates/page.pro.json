@@ -285,12 +285,12 @@
         "image_cCh89N"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "swap_media_mobile": false,
         "overlay_reverse_mobile": false,
         "media_width": 50,
         "media_size": "lg",
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 0,
         "border_size": "hide",
         "border_position": "both",
@@ -349,17 +349,66 @@
         "image_8UcG3X"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "swap_media_mobile": false,
         "overlay_reverse_mobile": false,
         "media_width": 50,
         "media_size": "lg",
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 0,
         "border_size": "hide",
         "border_position": "both",
         "color_scheme": "",
         "background_color": "#ffffff"
+      }
+    },
+    "clinical_results_N9nqfT": {
+      "type": "clinical-results",
+      "blocks": {
+        "slider_image_zVWYt3": {
+          "type": "slider_image",
+          "settings": {
+            "before_image": "shopify://shop_images/C35.5_VideoThumbN_cc80affb-2417-4ab3-a8bf-c3f0528d1a6f.jpg",
+            "after_image": "shopify://shop_images/Section2_2_db0f2a62-5920-48da-b0c2-17ffad1c15e0.jpg",
+            "drag_position": 36,
+            "before_text": "",
+            "before_product": "",
+            "after_text": "",
+            "after_product": "",
+            "before_after_text_position": "bottom",
+            "control_bg": "#ffffff",
+            "control_arrow": "#042436",
+            "color_scheme": ""
+          }
+        },
+        "content_E78x8d": {
+          "type": "content",
+          "settings": {
+            "content_alignment": "left",
+            "button_label": "Button label",
+            "button_link": "",
+            "link_target": "_top",
+            "overlay_color": "#282fee",
+            "overlay_opacity": 30,
+            "color_scheme": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "slider_image_zVWYt3",
+        "content_E78x8d"
+      ],
+      "settings": {
+        "heading": "Clinical results",
+        "description": "",
+        "full_width": false,
+        "image_aspect_ratio": "md",
+        "image_position": "d-flex-md-row",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "border_size": "hide",
+        "border_position": "both",
+        "color_scheme": "scheme-1"
       }
     },
     "factuals_WDQYJk": {
@@ -426,53 +475,6 @@
         "bg_color": "#fefdf6",
         "swap_media_mobile": true
       }
-    },
-    "clinical_results_N9nqfT": {
-      "type": "clinical-results",
-      "blocks": {
-        "slider_image_zVWYt3": {
-          "type": "slider_image",
-          "settings": {
-            "before_image": "shopify://shop_images/C35.5_VideoThumbN_cc80affb-2417-4ab3-a8bf-c3f0528d1a6f.jpg",
-            "after_image": "shopify://shop_images/Section2_2_db0f2a62-5920-48da-b0c2-17ffad1c15e0.jpg",
-            "drag_position": 50,
-            "before_text": "Before",
-            "before_product": "",
-            "after_text": "After",
-            "after_product": "",
-            "before_after_text_position": "bottom",
-            "control_bg": "#ffffff",
-            "control_arrow": "#042436",
-            "color_scheme": ""
-          }
-        },
-        "content_E78x8d": {
-          "type": "content",
-          "settings": {
-            "content_alignment": "left",
-            "button_label": "Button label",
-            "button_link": "",
-            "link_target": "_top",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "color_scheme": ""
-          }
-        }
-      },
-      "block_order": [
-        "slider_image_zVWYt3",
-        "content_E78x8d"
-      ],
-      "settings": {
-        "full_width": false,
-        "image_aspect_ratio": "md",
-        "image_position": "d-flex-md-row-reverse",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "border_size": "hide",
-        "border_position": "both",
-        "color_scheme": ""
-      }
     }
   },
   "order": [
@@ -483,7 +485,7 @@
     "custom_testimonial_9PDNNT",
     "media_8kjN3T",
     "media_HnREBC",
-    "factuals_WDQYJk",
-    "clinical_results_N9nqfT"
+    "clinical_results_N9nqfT",
+    "factuals_WDQYJk"
   ]
 }
