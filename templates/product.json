@@ -180,7 +180,7 @@
             "block_bottom_spacing": 16
           }
         },
-        "complementary-products": {
+        "complementary_products_pLm4Pr": {
           "type": "complementary-products",
           "settings": {
             "heading": "Also Bought Together",
@@ -204,7 +204,7 @@
         "accordion_2",
         "badges",
         "share",
-        "complementary-products"
+        "complementary_products_pLm4Pr"
       ],
       "settings": {
         "display_options_layout": "grid-with-main-media",
@@ -262,6 +262,8 @@
         "content_Et4QPh"
       ],
       "settings": {
+        "heading": "Clinical results",
+        "description": "",
         "full_width": true,
         "image_aspect_ratio": "md",
         "image_position": "d-flex-md-row-reverse",
