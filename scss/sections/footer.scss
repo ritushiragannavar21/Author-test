@@ -37,7 +37,8 @@
         font-weight: typography.$heading-weight !important; 
     }
     .footers-linkList.tab-only a{
-        font-family: var(--primary-font);
+        font-size: typography.$body-regular-size !important;
+        font-family: var(--secondary-font);
         font-weight: typography.$regular-weight !important; 
     }
 }
@@ -113,7 +114,7 @@
 
 .footer-new-letter__block{
     margin-bottom: 32px;
-    font-size: 12px;
+    font-size: typography.$body-regular-size !important;
     text-align: center;
     @media(--sm){
         text-align: left;
@@ -126,9 +127,8 @@
     }
 }
 
-.footer__logo{
-    img{
-        width: 150px;
-        height: 78px;
+.footer__logoWrp {
+    .footerlink-head p{
+        font-size: typography.$body-regular-size !important;
     }
 }

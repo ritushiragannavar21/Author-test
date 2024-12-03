@@ -65,7 +65,7 @@
   fill: var(--color-button-background);
 }
 .beforeAfter__section .beforeAfter__thumb svg.thumb path {
-  stroke: var(--color-button-text);
+  stroke: #282FEE ;
 }
 @media (min-width: 768px) {
   .beforeAfter__section .beforeAfter__thumb svg.thumb {

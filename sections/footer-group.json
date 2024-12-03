@@ -18,10 +18,10 @@
           "type": "brand",
           "settings": {
             "footer_logo": "shopify://shop_images/Group_4fee15a7-19ff-4bfd-975d-006229f36b87.png",
-            "image_width": 105,
+            "image_width": 150,
             "heading": "<p>Super Glam Office<br/>100 Madison Avenue<br/>New York, NY, 10023</p>",
             "content": "<p><strong>PAREVA BEAUTY INC.</strong><br/>All rights reserved Pareva 2024</p>",
-            "brand_social_media_icons": true
+            "brand_social_media_icons": false
           }
         },
         "newsletter_GiKBb3": {

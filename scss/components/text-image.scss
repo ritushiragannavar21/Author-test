@@ -43,9 +43,9 @@
         @media(--md-large){
             width: 440px;
         }
-        @media(--lg){
-            max-height: 69%;
-        }
+        // @media(--lg){
+        //     max-height: 69%;
+        // }
         &--no-overlay {
             position: static;
             transform: none;
@@ -99,11 +99,11 @@
         @media(--sm){
             height: 470px;
         }
-        // @media(--md){
-        //     height: auto;
-        // }
+        @media(--md-large){
+            height: 490px;
+        }
         @media(--lg){
-            height: 69%;
+            height: 555px;
         }
         .text-wrapper__flex{
             display: flex;
