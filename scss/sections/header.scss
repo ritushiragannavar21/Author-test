@@ -126,4 +126,28 @@ hamburger-menu{
       }
 }
 
+.header__nav-list {
+    @media(--md-large){
+        gap: 0;
+    }
+}
+
+.navbar{
+    .container{
+        @media(--md-large){
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+    }
+}
+
+.mega-menu-container{
+    .container{
+        @media(--md-large){
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+    }
+}
+
 
