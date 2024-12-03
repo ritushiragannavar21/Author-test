@@ -1,1 +1,52 @@
-{"sections":{"banner":{"type":"main-collection-banner","settings":{"full-width":true,"show_collection_title":true,"show_collection_description":true,"show_collection_image":true,"heading_size":"h1","heading_color":"#282fee","content_alignment":"left","collection_background_image":"{{ collection.image }}","image_size":"sm","overlay_color":"#ffffff","overlay_opacity":0,"color_scheme":"scheme-90d6ffd7-cb95-4570-a227-21863f6991a9"}},"product-grid":{"type":"main-collection-product-grid","settings":{"products_per_page":16,"columns_desktop":"4","columns_mobile":"2","show_sort_by":true,"show_filters":true,"show_filter_group_name":false,"show_product_tags_to_filter":false,"desktop_filter_type":"drawer","filter_accordion":"closed","padding_top":36,"padding_bottom":36,"color_scheme":""}}},"order":["banner","product-grid"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "full-width": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "heading_size": "h1",
+        "heading_color": "#282fee",
+        "content_alignment": "left",
+        "content_alignment_mobile": "center",
+        "collection_background_image": "{{ collection.image }}",
+        "image_size": "sm",
+        "overlay_color": "#ffffff",
+        "overlay_opacity": 0,
+        "color_scheme": "scheme-90d6ffd7-cb95-4570-a227-21863f6991a9"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": "3",
+        "columns_mobile": "1",
+        "show_sort_by": true,
+        "show_filters": true,
+        "show_filter_group_name": false,
+        "show_product_tags_to_filter": false,
+        "desktop_filter_type": "drawer",
+        "filter_accordion": "closed",
+        "padding_top": 4,
+        "padding_bottom": 36,
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

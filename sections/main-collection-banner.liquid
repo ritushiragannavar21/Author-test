@@ -39,10 +39,10 @@
     endif
   endif
 %}
-<div class="collectionBanner  color-{{ section.settings.color_scheme }} ">
-  <div class="{% unless section.settings.show_collection_image %} collectionBanner--{{ section.id }} {% endunless %} {% if section.settings.show_collection_image and collection.image %} collection-hero--with-image {% endif %} {% unless section.settings.full-width %} container {% endunless %}">
+<div class="collectionBanner color-{{ section.settings.color_scheme }} ">
+  <div class="{% unless section.settings.show_collection_image %}collectionBanner--{{ section.id }} {% endunless %} {% if section.settings.show_collection_image and collection.image %}collection-hero--with-image {% endif %} {% unless section.settings.full-width %} container {% endunless %}">
     <div
-      class="collectionBanner__container  {% if section.settings.show_collection_image %} {% if collection.image or section.settings.collection_background_image != blank %} media-size--{{ section.settings.image_size }} {% endif %} {% endif %} content-aligment--{{ section.settings.content_alignment }}"
+      class="collectionBanner__container {% if section.settings.show_collection_image == true %}banner_image{% endif %} {% if section.settings.show_collection_image %}{% if collection.image or section.settings.collection_background_image != blank %} media-size--{{ section.settings.image_size }} {% endif %} {% endif %} content-aligment--{{ section.settings.content_alignment }}"
       {%- if section.settings.image_size == 'adapt' -%}
         style=" --aspect-ratio: {{ ratio }};"
       {%- endif -%}

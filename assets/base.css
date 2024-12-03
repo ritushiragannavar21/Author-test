@@ -2770,12 +2770,12 @@ product-card {
   right: max(var(--block-border-radius) / 2, 8px);
 }
 .p_badge.on_sale {
-  background: var(--primary-color);
-  color: var(--text-sale-badge-color);
+  color: var(--primary-color);
+  background-color: #E8FF5C;
 }
 .p_badge.out_of_stock {
-  background: var(--bg-soldout-badge-color);
-  color: var(--text-soldout-badge-color);
+  color: var(--bg-soldout-badge-color);
+  background: #E8FF5C;
 }
 
 .d_badge {
@@ -5101,7 +5101,7 @@ shopify-accelerated-checkout-cart {
   bottom: 0;
   left: -25px;
   width: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color:var(--color-text);
 }
 .bundle__title {
   font-weight: var(--font-header-weight);

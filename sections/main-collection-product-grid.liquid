@@ -23,6 +23,7 @@
 %}
 
 {{ 'section-main-collection-product-grid.css' | asset_url | stylesheet_tag }}
+{{ 'collection.css' | asset_url | stylesheet_tag }}
 <script defer="defer" src="{{ 'collection.js' | asset_url }}"></script>
 <script src="{{ 'toggle-filter-sidebar.js' | asset_url}}" defer="defer"></script>
 
@@ -64,7 +65,7 @@
   class="collectionList product_collection section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}"
   show-filter-sidebar="true"
 >
-  <div class="container">
+  <div class="container collection-main__container">
     <div id="collection-grid" data-id="{{ section.id }}" aria-label="{{ collection.title }}" role="region">
       <div class="collectionList__filter">
         {% if section.settings.show_filters and collection.filters.size > 0 %}

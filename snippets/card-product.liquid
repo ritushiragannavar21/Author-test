@@ -221,11 +221,18 @@
         </div>
         <div class="product-card-item__body d-flex d-flex-dir-c {% if show_buy_on_hover %}product-card-item__body--hover {%  endif %}">
           <div class="d-flex d-flex-dir-c h-100 product-card-item__body-wrapper">
-            <div class="product-top-info">
+            <div class="product-top-info fffff">
               {% if product.featured_media %}
                 {% if show_product_vendor %}
                   <p class="fnt-14 text-color">{{ product.vendor }}</p>
                 {% endif %}
+                {% if template.name != 'index' %}
+                  <a class="" href="{{ product.url }}">
+                    <p class="product-card-item__head">
+                        <span>{{ product.title }}</span>
+                    </p>
+                  </a>
+                {% else %}
                 <a class="" href="{{ product.url }}">
                   {% assign product_title = product.metafields.custom.product_title.value %}
                   {% if product_title != blank %}
@@ -242,6 +249,7 @@
                     {% endif %}
                   {% endif %}
                 </a>
+              {% endif %}
               {% endif %}
               {% if show_product_rating %}
                 <div class="mb-4">

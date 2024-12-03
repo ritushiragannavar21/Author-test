@@ -120,9 +120,15 @@ hamburger-menu{
     }
 }
 
-@media(max-width:1199px){
+@media(max-width:389px){
     .header__iconGroup > ul {
-        gap: 0 20px;
+        gap: 0 16px !important;
+      }
+}
+
+@media(min-width:390px) and (max-width:1199px){
+    .header__iconGroup > ul {
+        gap:20px ;
       }
 }
 

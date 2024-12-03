@@ -50,11 +50,11 @@
   row-gap: 10px;
   align-items: flex-end;
 }
-@media screen and (max-width: 991px) {
+/* @media screen and (max-width: 991px) {
   .collectionList__filter {
     margin-bottom: 24px;
   }
-}
+} */
 .collectionList__filter filter-drawer form,
 .collectionList__filter filter-drawer .collectionList__filterDropdown,
 .collectionList__filter filter-drawer select {
@@ -282,5 +282,12 @@ noscript .select-wrapper {
   .product_collection .collectionList__filter-btn {
     margin-top: 16px;
     margin-bottom: 0;
+  }
+}
+
+.collectionList__filter{
+  margin-bottom: 0;
+  @media(min-width: 992px){
+    margin-bottom: 24px;
   }
 }
