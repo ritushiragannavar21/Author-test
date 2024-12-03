@@ -72,6 +72,9 @@
         "video_XDK6fC",
         "image_MkUT68"
       ],
+      "custom_css": [
+        "@media (max-width: 767px) {.text-image__justify-between {height: 400px; }}"
+      ],
       "settings": {
         "full_width": false,
         "swap_media_mobile": true,
