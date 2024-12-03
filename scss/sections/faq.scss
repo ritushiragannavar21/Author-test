@@ -1,4 +1,5 @@
 @use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
 @import 'breakpoints';
 @import 'Token';
 
@@ -32,3 +33,18 @@
     }
 }
 
+.faq-multi-column__tabs-wrp{
+    p{
+        font-size: typography.$body-title-size; 
+    }
+    .accordion__item__head::before {
+        background-color: var(--color-text);
+    }
+    .accordion__item__head::after {
+        background-color: var(--primary-color);
+    }
+}
+
+.rich-text.faq-section h2{
+    font-size: typography.$heading-2-size !important; 
+}

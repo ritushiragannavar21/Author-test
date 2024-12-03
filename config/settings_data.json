@@ -31,6 +31,7 @@
     "free_shipping_amount": 300,
     "free_shipping_color_text_bar": "#042436",
     "free_shipping_color_background": "#e3e8ec",
+    "scrollToTop_bg_color": "#282fee",
     "sale_badge_type": "sale",
     "checkout_logo_image": "shopify://shop_images/logo.svg",
     "checkout_logo_size": "small",

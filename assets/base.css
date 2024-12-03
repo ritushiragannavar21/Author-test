@@ -2519,7 +2519,7 @@ h6,
 }
 
 .section-header {
-  margin-bottom: 24px;
+  margin-bottom: 57px;
 }
 .section-heading {
   display: flex;
@@ -5658,7 +5658,7 @@ details summary::-webkit-details-marker {
   padding-left: 0;
 }
 .footer .footerlink-link:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 @media (max-width: 767px) {
   .footer .footerlink-link:not(:last-child) {

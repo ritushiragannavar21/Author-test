@@ -45,7 +45,7 @@
 
 .footer__content{
     @media(--md-large){
-        padding: 0 80px;
+        padding: 0 15px;
     }
 }
 
@@ -130,5 +130,8 @@
 .footer__logoWrp {
     .footerlink-head p{
         font-size: typography.$body-regular-size !important;
+    }
+    .footer__logo{
+        margin-bottom: 20px;
     }
 }

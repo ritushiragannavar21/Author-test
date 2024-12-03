@@ -131,7 +131,7 @@
                   <div class="swiper-slide">
                     {%- if enable_media_zoom and product_first_media.media_type == 'image' -%}
                       <product-zoom class="icon-product-zoom" data-index="{% increment i %}">
-                        {%- render 'icon', icon: 'product-zoom' -%}
+                        {%- render 'icon', icon: 'product-zoom-svg' -%}
                       </product-zoom>
                     {%- endif -%}
                     {% render 'media',
@@ -149,7 +149,7 @@
                       <div class="swiper-slide">
                         {%- if enable_media_zoom and media.media_type == 'image' -%}
                           <product-zoom class="icon-product-zoom" data-index="{% increment i %}">
-                            {%- render 'icon', icon: 'product-zoom' -%}
+                            {%- render 'icon', icon: 'product-zoom-svg' -%}
                           </product-zoom>
                         {%- endif -%}
                         {% render 'media',
@@ -269,7 +269,7 @@
                 >
                   {%- if enable_media_zoom and product_first_media.media_type == 'image' -%}
                     <product-zoom class="icon-product-zoom" data-index="{% increment j %}">
-                      {%- render 'icon', icon: 'product-zoom' -%}
+                      {%- render 'icon', icon: 'product-zoom-svg' -%}
                     </product-zoom>
                   {%- endif -%}
                   {% render 'media',
@@ -286,7 +286,7 @@
                     <div class="grid__layout__item position-relative" data-media-target-id="media-{{ media.id }}">
                       {%- if enable_media_zoom and media.media_type == 'image' -%}
                         <product-zoom class="icon-product-zoom" data-index="{% increment j %}">
-                          {%- render 'icon', icon: 'product-zoom' -%}
+                          {%- render 'icon', icon: 'product-zoom-svg' -%}
                         </product-zoom>
                       {%- endif -%}
                       {% render 'media',

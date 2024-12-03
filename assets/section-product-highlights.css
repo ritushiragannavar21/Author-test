@@ -22,9 +22,9 @@
   font-family: var(--primary-font);
   color: var(--primary-color) !important;
 } */
-.main-product svg path{
+/* .main-product svg path{
   stroke: var(--primary-color);
-}
+} */
 @media (min-width: 768px) {
   .main-product__info {
     flex: 1;

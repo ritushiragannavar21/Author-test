@@ -112,7 +112,7 @@
 .beforeAfter__section .beforeAfter__media {
   width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .beforeAfter__section .beforeAfter__media {
     width: 50%;
   }

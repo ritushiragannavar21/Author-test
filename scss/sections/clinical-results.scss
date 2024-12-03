@@ -27,7 +27,7 @@
                 padding:50px;
                 animation-reveal{
                     background: colors.$white;
-                    max-width: 440px;
+                    max-width: 100%;
                     height: 555px;
                     padding: 50px;
                     &.vertical_spacing{
@@ -101,6 +101,21 @@
             .beforeAfter__desc{
                 margin-bottom: 0;
             }
+        }
+    }
+}
+
+.beforeAfter__container  {
+    flex-direction: column-reverse;
+    @media(--md){
+        flex-direction: row-reverse;
+    }
+}
+
+.beforeAfter__wrp {
+    animation-reveal{
+        @media(--md){
+            max-width: 440px;
         }
     }
 }

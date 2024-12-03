@@ -8,13 +8,13 @@
 .block-media-size--lg .imageWithTextImageContainer, .video__section default-player , .video__section youtube-player {
     min-height: 420px !important;
     @media(--sm){
-        min-height: 800px;
+        min-height: 800px !important;
     }
     @media(--md){
-        min-height: 522px;
+        min-height: 522px !important;
     }
     @media(--md-large){
-        min-height: 800px;
+        min-height: 800px !important;
     }
 }
 
