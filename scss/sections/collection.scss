@@ -75,6 +75,11 @@
     padding: 83px 0;
 }
 
+.collectionBanner__description h1{
+    font-size: 24px;
+    font-family: var(--secondary-font);
+}
+
 @media(min-width:991px){
     .collection-hero--with-image  {
         margin-bottom: 100px;
@@ -82,11 +87,22 @@
     .collection-hero--with-image  .collectionBanner__container{
         padding: 139px 0;
     }
+    .collectionBanner__description h1{
+        font-size: 40px;
+        font-family: var(--secondary-font);
+    }
 }
 
 .filter-button-wrapper {
     @media(min-width: 768px) and (max-width: 1023px){
         display: flex;
         flex-direction: row-reverse;
+    }
+}
+
+
+.collectionList__filterDropdown label{
+    @media(min-width: 768px){
+        display: block !important;
     }
 }

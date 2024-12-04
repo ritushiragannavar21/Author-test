@@ -29,7 +29,7 @@
   padding: 18px;
 }
 .collection .collectionCard__title > * {
-  color: var(--block-text-color);
+  color: var(--color-text);
 }
 .collection .collectionCard__title p {
   word-break: break-all;
