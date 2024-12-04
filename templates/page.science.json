@@ -249,7 +249,7 @@
         "image_mxRUmq": {
           "type": "image",
           "settings": {
-            "hide_media_mobile": true,
+            "hide_media_mobile": false,
             "image": "shopify://shop_images/Section5_2.jpg",
             "logo": "",
             "teaser": "",

@@ -410,8 +410,9 @@
         "image_Xac8H9": {
           "type": "image",
           "settings": {
-            "hide_media_mobile": false,
+            "hide_media_mobile": true,
             "image": "shopify://shop_images/Dropper.jpg",
+            "image_mobile": "shopify://shop_images/Dropper.jpg",
             "logo": "",
             "teaser": "",
             "teaset-subtext": "",

@@ -5,7 +5,7 @@
 @import 'breakpoints';
 
 
-.block-media-size--lg .imageWithTextImageContainer, .video__section default-player , .video__section youtube-player {
+.block-media-size--lg .imageWithTextImageContainer , .video__section youtube-player {
     min-height: 420px !important;
     @media(--sm){
         min-height: 800px !important;
@@ -138,3 +138,9 @@
         display: block !important;
     }
 }
+
+// .data-video-parent{
+//     default-player{
+//         height: 100% !important;
+//     }
+// }

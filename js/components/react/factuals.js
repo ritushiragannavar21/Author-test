@@ -163,8 +163,8 @@ const FactualSection = ({ shopifyData }) => {
                             if (text) {
                               const myStyle = {
                                 background: `
-                                  linear-gradient(to right bottom, transparent 50%, #fff 0) no-repeat 0 0 / 2em 2em,
-                                  linear-gradient(135deg, transparent 1.41em, ${card.color} 0)`,
+                                  linear-gradient(to right bottom, transparent 41%, #fff 0) no-repeat 0 0 / 1.5em 1.5em, 
+                                  linear-gradient(135deg, transparent 0.41em, ${card.color} 0)`,
                               };
 
                               return (

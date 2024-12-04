@@ -183,7 +183,7 @@
                 endif
               %}
               <div
-                class="imageWithText__media block-media-size--{{ section.settings.media_size }} {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %} {%  if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %}{% if block.settings.image_mobile == blank %}mobile-image__display{% endif %}{% if block.settings.hide_media_mobile == true %} mobile-image__display{% endif %} {% if block_count > 1 %}make-video-width__half{% endif %}"
+                class="imageWithText__media block-media-size--{{ section.settings.media_size }} {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %} {%  if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %}{% if block_count > 1 %}make-video-width__half{% endif %} {% if block.settings.image_mobile == blank %}mobile-image__display{% endif %}"
                 {{ block.shopify_attributes }}
                 style="              
                   {%- if section.settings.media_size == 'adapt' -%}
@@ -269,7 +269,7 @@
                 {% endif %}
 
                 {% if block.settings.image_mobile != blank %}
-                  <div class="imageWithTextImageContainer image-with-text__mobile image-with-text-media {% if block.settings.image_mobile != blank %} mobile-sm-only {% endif %}">
+                  <div class="imageWithTextImageContainer image-with-text__mobile image-with-text-media{% if block.settings.hide_media_mobile == true %} mobile-image__display{% endif %} {% if block.settings.image_mobile != blank %} mobile-sm-only {% endif %}">
                     <animation-reveal
                       class="imageWithTextImageContainer"
                       aoi-type="scale"
@@ -298,16 +298,16 @@
                     {% endif %}
                   </div>
                   {% render 'Text',
-                    wrapper_class: 'media-text__mobile',
+                    wrapper_class: 'media-text__bge-content',
                     id: id,
                     eyebrow: eyebrow,
                     heading: heading,
                     text_wrapper_class: 'image-banner',
                     subheading: subheading,
-                    heading_block1:heading_block1,
-                    subheading_block1:subheading_block1,
-                    heading_block2:heading_block2,
-                    subheading_block2:subheading_block2,
+                    heading_block_one:heading_block1,
+                    subheading_block_one:subheading_block1,
+                    heading_block_two:heading_block2,
+                    subheading_block_two:subheading_block2,
                     cta_text: cta_text,
                     cta_url: cta_url,
                     mobile_aspect_ratio:mobile_ratio,
@@ -325,7 +325,7 @@
                     video:video,
                     image:image,
                     video_url:video_url
-                %}
+                  %}
                 {% endif %}
               </div>
             {% when 'video' %}

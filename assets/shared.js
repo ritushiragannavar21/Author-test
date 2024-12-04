@@ -393,7 +393,7 @@ var FactualSection = _ref => {
       var text = card.text;
       if (text) {
         var myStyle = {
-          background: "\n                                  linear-gradient(to right bottom, transparent 50%, #fff 0) no-repeat 0 0 / 2em 2em,\n                                  linear-gradient(135deg, transparent 1.41em, ".concat(card.color, " 0)")
+          background: "\n                                  linear-gradient(to right bottom, transparent 41%, #fff 0) no-repeat 0 0 / 1.5em 1.5em, \n                                  linear-gradient(135deg, transparent 0.41em, ".concat(card.color, " 0)")
         };
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
           key: cardIndex,
