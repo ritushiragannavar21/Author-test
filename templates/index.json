@@ -452,29 +452,18 @@
         "image_slide_Ecppzw": {
           "type": "image_slide",
           "settings": {
-            "slide_image": "shopify://shop_images/Screenshot_2024-10-23_at_11.31.48_AM_1_1.png",
+            "slide_image": "shopify://shop_images/Section8_3_1.jpg",
             "subheading": "Prep",
             "slide_header": "A BLUEPRINT FOR SKIN LONGEVITY",
             "slide_sub_text": "<p>Prime and prepare skin to improve makeup application, with hydrators and pore-minimizers without silicon and oil. </p>",
             "slide_product": "test-bundle"
-          }
-        },
-        "image_slide_zKY47A": {
-          "type": "image_slide",
-          "settings": {
-            "slide_image": "shopify://shop_images/C35.5_VideoThumbN_cc80affb-2417-4ab3-a8bf-c3f0528d1a6f.jpg",
-            "subheading": "testing",
-            "slide_header": "Slide Heading - testing",
-            "slide_sub_text": "<p>Briefly describe what this slide is about.</p>",
-            "slide_product": "c35-5tm-firming-glow-serum"
           }
         }
       },
       "block_order": [
         "image_slide_HfjDNw",
         "image_slide_mmJk7C",
-        "image_slide_Ecppzw",
-        "image_slide_zKY47A"
+        "image_slide_Ecppzw"
       ],
       "settings": {}
     }
