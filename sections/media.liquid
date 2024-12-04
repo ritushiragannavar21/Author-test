@@ -182,8 +182,9 @@
                   endif
                 endif
               %}
-              <div
-                class="imageWithText__media block-media-size--{{ section.settings.media_size }} {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %} {%  if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %}{% if block_count > 1 %}make-video-width__half{% endif %} {% if block.settings.image_mobile == blank %}mobile-image__display{% endif %}"
+              
+              <div 
+                class="imageWithText__media {%if section.settings.media_width == 100 %}single-image__width-full{% endif %} block-media-size--{{ section.settings.media_size }} {% if section.settings.overlay_reverse_mobile == true %}image-text-overlay__reverse{% endif %} {%  if noFullWidth and bg_foregound_color or section.settings.color_scheme.settings.background == "rgba(0,0,0,0)" %} {% if textBlockSize > 0 %} border-radius border-radius--block {% endif %} {% endif %}{% if block_count > 1 %}make-video-width__half{% endif %} {% if block.settings.image_mobile == blank %}mobile-image__display{% endif %}"
                 {{ block.shopify_attributes }}
                 style="              
                   {%- if section.settings.media_size == 'adapt' -%}

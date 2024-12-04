@@ -225,7 +225,10 @@
                               aria-describedby="ContactFooter-success"
                             {% endif -%}
                             required
-                          > <div
+                          >
+                        </div>
+                        <div>
+                          <button
                             aria-label="{{ 'newsletter.button_label' | t }}"
                             class="btn btn--fill btn--sm"
                             id="SubscribeFooter"
@@ -235,11 +238,8 @@
                             <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M15.8536 4.85355C16.0488 4.65829 16.0488 4.34171 15.8536 4.14645L12.6716 0.964466C12.4763 0.769204 12.1597 0.769204 11.9645 0.964466C11.7692 1.15973 11.7692 1.47631 11.9645 1.67157L14.7929 4.5L11.9645 7.32843C11.7692 7.52369 11.7692 7.84027 11.9645 8.03553C12.1597 8.2308 12.4763 8.2308 12.6716 8.03553L15.8536 4.85355ZM0.5 5L15.5 5L15.5 4L0.5 4L0.5 5Z" fill="#F4F1E8"/>
                             </svg>
-                              
-                          </div>
-                        </div>
-                        <div>
-                         
+                           
+                          </button>
                         </div>
                       </div>
                       {% if form.posted_successfully? %}

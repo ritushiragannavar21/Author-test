@@ -49,8 +49,8 @@
 }
 .recommendation__item {
   padding: 10px;
-  border: 1px solid rgba(var(--color-border)/0.7);
-  border-radius: calc(var(--block-border-radius) / 2);
+  border: 1px solid #282FEE40;
+  /* border-radius: calc(var(--block-border-radius) / 2); */
 }
 .recommendation__item:hover button {
   opacity: 1;
@@ -66,7 +66,7 @@
 }
 .recommendation__item .image--aspectSize {
   padding-top: 100%;
-  border-radius: calc(var(--block-border-radius) / 2);
+  /* border-radius: calc(var(--block-border-radius) / 2); */
 }
 .recommendation__item .product-cart-no-image-container {
   background: var(--card-image-background);

@@ -8,7 +8,6 @@
 
 .newsletterForm__input{
     border: 0;
-    border-bottom: 1px solid colors.$milk-color;
     border-radius: 0;
 }
 
@@ -83,9 +82,6 @@
 #SubscribeFooter{
     background: none;
     border: none;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .footer-item__list{
@@ -133,5 +129,21 @@
     }
     .footer__logo{
         margin-bottom: 20px;
+    }
+}
+
+.footer__content{
+    .mobile-sm-only{
+        .footer-item__list h2{
+            font-weight: typography.$heading-weight !important;
+        }
+    }
+}
+
+.footer-new-letter__block{
+    .newsletterForm {
+        border-bottom: 1px solid colors.$milk-color;
+        display: flex;
+        flex-direction: row;
     }
 }

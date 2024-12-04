@@ -353,6 +353,11 @@
                 }}
               </div>
             {% endif %}
+            {% if block.settings.button_url != blank  and block.settings.button != blank %}
+              <div class="text-image__button {% if block.settings.hide_mobile == true %}button__hide_button{% endif%} {% if block.settings.hide_button_mobile == true %}button__hide_button{% endif%}">
+               <a class="button button__custom-button {{wrapper_class}}__cta text__cta" href="{{ block.settings.button_url }}"><span class="btn-text button__btn-text"> {{ block.settings.button }} </span></a> 
+              </div>
+          {% endif %}
           </before-after>
         {% endfor %}
         {% if sliderBlocks.size > 1 %}
@@ -992,7 +997,23 @@
           "id": "color_scheme",
           "default": "scheme-1",
           "label": "Color scheme"
-        }
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button Text"
+      },
+      {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button url"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_button_mobile",
+        "label": "hide button in mobile",
+        "default": false
+      }
       ]
     }
   ],

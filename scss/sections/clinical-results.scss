@@ -59,6 +59,13 @@
         }
         &__results_heading-desc{
             margin-bottom: 0;
+            width: 86%;
+            @media(--sm){
+                width: 40%;
+            }
+            @media(--md){
+                width: 100%;
+            }
         }
     
 }
@@ -108,7 +115,7 @@
 .beforeAfter__container  {
     flex-direction: column-reverse;
     @media(--md){
-        flex-direction: row-reverse;
+        flex-direction: row;
     }
 }
 
@@ -124,5 +131,10 @@
     .beforeAfter__section .beforeAfter__image{
         min-height: 420px;
     }
+}
 
+.btn--wrap{
+    a{
+        text-decoration: none;
+    }
 }

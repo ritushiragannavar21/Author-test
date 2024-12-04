@@ -139,8 +139,18 @@
     }
 }
 
-// .data-video-parent{
-//     default-player{
-//         height: 100% !important;
-//     }
-// }
+.single-image__width-full{
+    @media(--md){
+        max-height: 600px;
+    }
+    @media(--ld){
+        max-height: 800px;
+    }
+    
+}
+
+.make-video-width__half{
+    .custom__player__element{
+        min-height: 420px;
+    }
+}  

@@ -189,7 +189,10 @@
             "before_after_text_position": "bottom",
             "control_bg": "#ffffff",
             "control_arrow": "#042436",
-            "color_scheme": ""
+            "color_scheme": "",
+            "button": "APPLY NOW",
+            "button_url": "shopify://collections",
+            "hide_button_mobile": true
           }
         },
         "content_rqGkFL": {
