@@ -101,7 +101,6 @@ export default ({ aspectratio, aspect_ratio_mobile, image, settings }) => {
           id={`Image-${image_id}-${generated_image_id}`}
           className="responsive-image__image"
           src={displayImage.src}
-          loading="lazy"
           srcSet={imageSrcSet}
           data-widths={`[${imageSizes}]`}
           data-aspectratio={currentAspectRatio}

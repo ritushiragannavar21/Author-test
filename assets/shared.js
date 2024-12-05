@@ -150,7 +150,6 @@
     id: "Image-".concat(image_id, "-").concat(generated_image_id),
     className: "responsive-image__image",
     src: displayImage.src,
-    loading: "lazy",
     srcSet: imageSrcSet,
     "data-widths": "[".concat(imageSizes, "]"),
     "data-aspectratio": currentAspectRatio,
