@@ -16,6 +16,12 @@
     @media(--md-large){
         min-height: 800px !important;
     }
+    @media(min-width: 1600px){
+        min-height: 933px !important;
+    }
+    @media(min-width: 1800px){
+        min-height: 1000px !important;
+    }
 }
 
 .image-with-text__overlay{
@@ -152,5 +158,14 @@
 .make-video-width__half{
     .custom__player__element{
         min-height: 420px;
+        @media(min-width: 1520px){
+            min-height: 933px;
+        }
+        @media(min-width: 1600px){
+            min-height: 933px;
+        }
+        @media(min-width: 1800px){
+            min-height: 1000px;
+        }
     }
 }  
