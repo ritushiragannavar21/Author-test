@@ -190,9 +190,9 @@
             "control_bg": "#ffffff",
             "control_arrow": "#042436",
             "color_scheme": "",
-            "button": "APPLY NOW",
-            "button_url": "shopify://collections",
-            "hide_button_mobile": true
+            "button": "",
+            "button_url": "",
+            "hide_button_mobile": false
           }
         },
         "content_rqGkFL": {
